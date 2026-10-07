@@ -1,0 +1,39 @@
+name: Repack Lily R2 CustomAnim Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/repack-lily-r2-customanim-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  repack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download first package artifact and expose package root
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifact package
+          gh run download 37681636521 -n LilyCombat_R2_CustomAnimProbe_v1 -D artifact
+          test -f artifact/LilyCombat_R2_CustomAnimProbe_v1.zip
+          unzip -q artifact/LilyCombat_R2_CustomAnimProbe_v1.zip -d package
+          test -f package/Mods/LilyCombat_R2_CustomAnimProbe/Scripts/main.lua
+          test -f package/README.txt
+          test -f package/MANIFEST_SHA256.txt
+          (cd package && sha256sum -c MANIFEST_SHA256.txt)
+      - name: Upload direct package
+        uses: actions/upload-artifact@v4
+        with:
+          name: LilyCombat_R2_CustomAnimProbe_v1_DIRECT
+          path: package/
+          include-hidden-files: true
+          retention-days: 30
