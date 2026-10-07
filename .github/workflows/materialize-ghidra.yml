@@ -1,0 +1,87 @@
+name: Materialize Ghidra 12.1.4
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/materialize-ghidra.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download official Ghidra 12.1.4
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip'
+          curl -fL --retry 5 --retry-delay 3 "$URL" -o "$RUNNER_TEMP/ghidra.zip"
+
+      - name: Verify upstream SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED='ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db'
+          ACTUAL="$(sha256sum "$RUNNER_TEMP/ghidra.zip" | awk '{print $1}')"
+          echo "Expected: $EXPECTED"
+          echo "Actual:   $ACTUAL"
+          test "$ACTUAL" = "$EXPECTED"
+
+      - name: Extract and validate exact tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf "$RUNNER_TEMP/ghidra-extract"
+          mkdir -p "$RUNNER_TEMP/ghidra-extract"
+          unzip -q "$RUNNER_TEMP/ghidra.zip" -d "$RUNNER_TEMP/ghidra-extract"
+
+          SRC="$RUNNER_TEMP/ghidra-extract/ghidra_12.1.4_PUBLIC"
+          test -d "$SRC"
+
+          FILES="$(find "$SRC" -type f | wc -l | tr -d ' ')"
+          BYTES="$(find "$SRC" -type f -printf '%s\n' | awk '{s+=$1} END {printf "%.0f", s}')"
+          EMPTY="$(find "$SRC" -type f -size 0c | wc -l | tr -d ' ')"
+
+          echo "files=$FILES"
+          echo "bytes=$BYTES"
+          echo "empty_files=$EMPTY"
+
+          test "$FILES" = '5219'
+          test "$BYTES" = '905891804'
+          test "$EMPTY" = '154'
+
+          TOO_LARGE="$(find "$SRC" -type f -size +100M -print -quit)"
+          if [ -n "$TOO_LARGE" ]; then
+            echo "A file exceeds GitHub's 100 MiB regular Git limit: $TOO_LARGE" >&2
+            exit 1
+          fi
+
+      - name: Replace workspace tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf ghidra_12.1.4_PUBLIC
+          cp -a "$RUNNER_TEMP/ghidra-extract/ghidra_12.1.4_PUBLIC" ./
+
+      - name: Commit materialized Ghidra
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A ghidra_12.1.4_PUBLIC
+          if git diff --cached --quiet; then
+            echo 'Ghidra tree is already current.'
+            exit 0
+          fi
+          git commit -m 'Materialize Ghidra 12.1.4 workspace'
+          git push origin HEAD:main
