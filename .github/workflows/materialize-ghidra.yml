@@ -85,3 +85,5 @@ jobs:
           fi
           git commit -m 'Materialize Ghidra 12.1.4 workspace'
           git push origin HEAD:main
+
+# trigger: 2026-10-07
