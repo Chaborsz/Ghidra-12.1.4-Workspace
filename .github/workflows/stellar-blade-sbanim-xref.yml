@@ -1,0 +1,113 @@
+name: Stellar Blade SBAnim Xref
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/stellar-blade-sbanim-xref.yml'
+      - 'ghidra_scripts/SBAnimXref.java'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Prepare Stellar Blade target
+        id: target
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p target report work
+          TARGET='target/SB-Win64-Shipping.exe'
+
+          if [[ ! -f "$TARGET" ]]; then
+            shopt -s nullglob
+            parts=(target/SB-Win64-Shipping.exe.part-*)
+            if (( ${#parts[@]} > 0 )); then
+              cat "${parts[@]}" > "$TARGET"
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            ASSET_URL=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq '[.[].assets[] | select(.name=="Stellar Blade.7z")][0].url // empty' 2>/dev/null || true)
+            if [[ -n "$ASSET_URL" ]]; then
+              gh api -H 'Accept: application/octet-stream' "$ASSET_URL" > work/StellarBlade.7z
+              sudo apt-get update -qq
+              sudo apt-get install -y -qq p7zip-full
+              7z e -y work/StellarBlade.7z -otarget -r SB-Win64-Shipping.exe >/dev/null
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            echo 'TARGET_MISSING: add release asset Stellar Blade.7z or target/SB-Win64-Shipping.exe.part-* chunks.' | tee report/STATUS.txt
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          SIZE=$(stat -c%s "$TARGET")
+          SHA=$(sha256sum "$TARGET" | awk '{print toupper($1)}')
+          {
+            echo "SIZE=$SIZE"
+            echo "SHA256=$SHA"
+          } | tee report/TARGET_IDENTITY.txt
+          test "$SIZE" = '332844544'
+          test "$SHA" = 'DB65F309D7833175D91691ED889B383CF2C9F05F95EDDC40B95908352CA6D5A5'
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+
+      - name: Validate materialized Ghidra
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -x ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+          test -d ghidra_12.1.4_PUBLIC/Ghidra
+          java -version
+
+      - name: Run headless xref analysis
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/project report
+          ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            work/project SBAnim \
+            -import target/SB-Win64-Shipping.exe \
+            -analysisTimeoutPerFile 1800 \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript SBAnimXref.java "$GITHUB_WORKSPACE/report/SBAnimXref_report.txt" \
+            -deleteProject \
+            > report/ghidra-headless.log 2>&1
+          test -s report/SBAnimXref_report.txt
+
+      - name: Final status
+        if: always()
+        shell: bash
+        run: |
+          if [[ "${{ steps.target.outputs.ready }}" == 'true' && -s report/SBAnimXref_report.txt ]]; then
+            echo 'GHIDRA_ANALYSIS_COMPLETE' > report/STATUS.txt
+          elif [[ ! -f report/STATUS.txt ]]; then
+            echo 'GHIDRA_ANALYSIS_FAILED_OR_INCOMPLETE' > report/STATUS.txt
+          fi
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: stellar-blade-sbanim-xref
+          path: report/
+          retention-days: 30
