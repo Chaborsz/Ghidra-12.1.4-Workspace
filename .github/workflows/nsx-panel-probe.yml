@@ -1,0 +1,41 @@
+name: NS XPanel Version Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nsx-panel-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Query known panel update endpoints
+        shell: bash
+        run: |
+          set -u
+          mkdir -p report
+          for url in \
+            'http://64.235.45.180:3090/' \
+            'http://64.235.45.180:3090/version' \
+            'http://64.235.45.180:3090/update' \
+            'http://64.235.45.180:3090/latest'; do
+            echo "===== $url =====" | tee -a report/summary.txt
+            curl -m 12 -sS -L -D - "$url" -o report/body.tmp | head -n 30 | tee -a report/summary.txt || true
+            if [[ -s report/body.tmp ]]; then
+              head -c 2048 report/body.tmp | strings | head -n 40 | tee -a report/summary.txt || true
+            fi
+          done
+
+      - name: Upload probe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsx-panel-probe
+          path: report/
+          retention-days: 1
