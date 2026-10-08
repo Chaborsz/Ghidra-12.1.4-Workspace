@@ -1,0 +1,417 @@
+name: Build Lily R2 CustomAnim Probe v10
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/build-lily-r2-customanim-probe-v10.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PROBE_ROOT: ${{ runner.temp }}/LilyCombat_R2_CustomAnimProbe_v10
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build diagnostic probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="$PROBE_ROOT"
+          MOD="$ROOT/Mods/LilyCombat_R2_CustomAnimProbe"
+          mkdir -p "$MOD/Scripts"
+          : > "$MOD/enabled.txt"
+
+          cat > "$MOD/Scripts/main.lua" <<'LUA'
+          local TAG = "[LilyR2CustomAnimV10]"
+
+          local LILY_SEQ_PATH = "/Game/Art/Character/NPC/CH_NPC_01/Animation/Lily_walk.Lily_walk"
+          local EVE_SEQ_PATH  = "/Game/Art/Character/PC/CH_P_EVE_01/Animation/Additive/CH_P_EVE_09_AccIdle.CH_P_EVE_09_AccIdle"
+          local NONE = FName("None")
+
+          local last_lily = nil
+
+          local function log(msg)
+              print(string.format("%s %s\n", TAG, tostring(msg)))
+          end
+
+          local function valid(o)
+              if o == nil then return false end
+              local ok, result = pcall(function() return o:IsValid() end)
+              return ok and result
+          end
+
+          local function full_name(o)
+              if not valid(o) then return "<invalid>" end
+              local ok, value = pcall(function() return o:GetFullName() end)
+              return ok and tostring(value) or "<name-error>"
+          end
+
+          local function object_path(o)
+              local s = full_name(o)
+              local p = s:match("%s(.+)$")
+              return p or s
+          end
+
+          local function unwrap_param(p)
+              if p == nil then return nil end
+              local ok, value = pcall(function() return p:get() end)
+              if ok then return value end
+              return p
+          end
+
+          local function get_player()
+              local ok_req, UEHelpers = pcall(require, "UEHelpers")
+              if ok_req and UEHelpers ~= nil then
+                  local ok_pc, pc = pcall(function() return UEHelpers:GetPlayerController() end)
+                  if ok_pc and valid(pc) then
+                      local ok_pawn, pawn = pcall(function() return pc.Pawn end)
+                      if ok_pawn and valid(pawn) then return pawn end
+                  end
+              end
+              local eve = FindFirstOf("CH_P_EVE_01_Blueprint_C")
+              if valid(eve) then return eve end
+              return nil
+          end
+
+          local function actor_location(actor)
+              if not valid(actor) then return nil end
+              local ok, loc = pcall(function() return actor:K2_GetActorLocation() end)
+              return ok and loc or nil
+          end
+
+          local function dist2_xy(a, b)
+              if a == nil or b == nil then return math.huge end
+              local dx = a.X - b.X
+              local dy = a.Y - b.Y
+              return dx * dx + dy * dy
+          end
+
+          local function select_lily()
+              local all = FindAllOf("CH_NPC_01_Blueprint_C")
+              if all == nil then return nil end
+              local eve = get_player()
+              local eloc = actor_location(eve)
+              local best, best_d2 = nil, math.huge
+              for _, obj in pairs(all) do
+                  if valid(obj) then
+                      local d2 = dist2_xy(actor_location(obj), eloc)
+                      if best == nil or d2 < best_d2 then
+                          best, best_d2 = obj, d2
+                      end
+                  end
+              end
+              if valid(best) then last_lily = best end
+              return best
+          end
+
+          local function current_lily()
+              if valid(last_lily) then return last_lily end
+              return select_lily()
+          end
+
+          local function find_anim_instance(class_name, actor)
+              if not valid(actor) then return nil end
+              local target = object_path(actor)
+              local all = FindAllOf(class_name)
+              if all == nil then return nil end
+              local fallback = nil
+              for _, ai in pairs(all) do
+                  if valid(ai) then
+                      if fallback == nil then fallback = ai end
+                      local n = full_name(ai)
+                      if n:find(target, 1, true) ~= nil then return ai end
+                  end
+              end
+              return fallback
+          end
+
+          local function load_asset(path)
+              local ok_find, found = pcall(function() return StaticFindObject(path) end)
+              if ok_find and valid(found) then return found end
+              local ok_load, loaded = pcall(function() return LoadAsset(path) end)
+              if ok_load and valid(loaded) then return loaded end
+              log("ASSET_LOAD_FAILED path=" .. path .. " err=" .. tostring(loaded))
+              return nil
+          end
+
+          local function alpha_snapshot(label, actor)
+              if not valid(actor) then
+                  log("ALPHA[" .. label .. "]=NO_ACTOR")
+                  return
+              end
+              local ok0, a0 = pcall(function() return actor:GetCurrentCustomAnimAlpha(0) end)
+              local oka, aa = pcall(function() return actor:GetCurrentCustomAnimAddtiveAlpha() end)
+              local okm, am = pcall(function() return actor:GetCurrentCustomAnimByMeshSlotAlpha(0) end)
+              log(string.format("ALPHA[%s] custom0=%s additive=%s body=%s",
+                  label,
+                  ok0 and tostring(a0) or "ERR",
+                  oka and tostring(aa) or "ERR",
+                  okm and tostring(am) or "ERR"))
+          end
+
+          local function array_summary(arr)
+              if arr == nil then return "nil" end
+              local okn, n = pcall(function() return arr:GetArrayNum() end)
+              local okm, m = pcall(function() return arr:GetArrayMax() end)
+              if not okn then return "ERR_NUM" end
+              local elems = {}
+              if n > 0 then
+                  pcall(function()
+                      arr:ForEach(function(index, elem)
+                          if #elems >= 4 then return end
+                          local okv, value = pcall(function() return elem:get() end)
+                          if okv then
+                              table.insert(elems, tostring(index) .. ":" .. tostring(value))
+                          else
+                              table.insert(elems, tostring(index) .. ":<get-error>")
+                          end
+                      end)
+                  end)
+              end
+              return string.format("num=%d max=%s elems=[%s]", n, okm and tostring(m) or "ERR", table.concat(elems, ","))
+          end
+
+          local function node_snapshot(owner_label, ai)
+              if not valid(ai) then
+                  log("NODES[" .. owner_label .. "]=NO_ANIMINSTANCE")
+                  return
+              end
+
+              log("ANIMINSTANCE[" .. owner_label .. "]=" .. full_name(ai))
+              local cls = ai:GetClass()
+              local seen = {}
+              local count = 0
+
+              while valid(cls) do
+                  local ok_each, err_each = pcall(function()
+                      cls:ForEachProperty(function(prop)
+                          local ok_is, is_struct = pcall(function() return prop:IsA(PropertyTypes.StructProperty) end)
+                          if not ok_is or not is_struct then return end
+
+                          local ok_st, st = pcall(function() return prop:GetStruct() end)
+                          if not ok_st or not valid(st) then return end
+                          local st_name = full_name(st)
+                          if st_name:find("SequenceBlendedPlayer", 1, true) == nil then return end
+
+                          local ok_pn, pn = pcall(function() return prop:GetFName():ToString() end)
+                          local prop_name = ok_pn and tostring(pn) or "<prop-name-error>"
+                          if seen[prop_name] then return end
+                          seen[prop_name] = true
+                          count = count + 1
+
+                          local ok_node, node = pcall(function() return ai[prop_name] end)
+                          if not ok_node or node == nil then
+                              log(string.format("NODE[%s][%02d] prop=%s struct=%s VALUE_ERROR=%s",
+                                  owner_label, count, prop_name, st_name, tostring(node)))
+                              return
+                          end
+
+                          local ok_ps, ps = pcall(function() return node.PlaySequences end)
+                          local ok_sub, sub = pcall(function() return node.PlaySubSequences end)
+                          log(string.format("NODE[%s][%02d] prop=%s struct=%s PlaySequences={%s} PlaySubSequences={%s}",
+                              owner_label,
+                              count,
+                              prop_name,
+                              st_name,
+                              ok_ps and array_summary(ps) or "ACCESS_ERR",
+                              ok_sub and array_summary(sub) or "ACCESS_ERR"))
+                      end)
+                  end)
+                  if not ok_each then
+                      log("NODE_ENUM_ERROR[" .. owner_label .. "]=" .. tostring(err_each))
+                  end
+                  local ok_super, super = pcall(function() return cls:GetSuperStruct() end)
+                  if not ok_super then break end
+                  cls = super
+              end
+
+              log(string.format("NODE_COUNT[%s]=%d", owner_label, count))
+          end
+
+          local function snapshot(label)
+              local lily = current_lily()
+              local eve = get_player()
+              log("SNAPSHOT_BEGIN label=" .. label)
+              log("ACTOR[LILY]=" .. full_name(lily))
+              log("ACTOR[EVE]=" .. full_name(eve))
+              alpha_snapshot(label .. "/LILY", lily)
+              alpha_snapshot(label .. "/EVE", eve)
+              node_snapshot("LILY/" .. label, find_anim_instance("CH_NPC_01_AnimBP_C", lily))
+              node_snapshot("EVE/" .. label, find_anim_instance("CH_P_EVE_01_AnimBP_New_C", eve))
+              log("SNAPSHOT_END label=" .. label)
+          end
+
+          local function guid_text(g)
+              if g == nil then return "nil" end
+              local ok, s = pcall(function()
+                  return string.format("%08X-%08X-%08X-%08X", g.A, g.B, g.C, g.D)
+              end)
+              return ok and s or tostring(g)
+          end
+
+          local function schedule_snapshots(prefix)
+              snapshot(prefix .. "/immediate")
+              ExecuteWithDelay(100, function() snapshot(prefix .. "/+100ms") end)
+              ExecuteWithDelay(500, function() snapshot(prefix .. "/+500ms") end)
+              ExecuteWithDelay(1500, function() snapshot(prefix .. "/+1500ms") end)
+          end
+
+          local function call_sequence(actor, seq)
+              return actor:ActorPlayCustomAnimSequence(
+                  seq, NONE,
+                  0.0, -1.0, 1.0,
+                  0.30, 0.30,
+                  false, 100.0, false
+              )
+          end
+
+          local function call_slot0(actor, seq)
+              return actor:ActorPlayCustomAnimSequenceMeshSlot(
+                  0, seq, NONE,
+                  0.0, -1.0, 1.0,
+                  0.30, 0.30,
+                  false, 100.0, false
+              )
+          end
+
+          local function run_case(label, actor, seq_path, slot_mode)
+              if not valid(actor) then
+                  log("CASE[" .. label .. "]=NO_ACTOR")
+                  return
+              end
+              local seq = load_asset(seq_path)
+              if not valid(seq) then
+                  log("CASE[" .. label .. "]=NO_SEQUENCE")
+                  return
+              end
+
+              snapshot(label .. "/baseline")
+              log("CASE_BEGIN label=" .. label .. " actor=" .. full_name(actor) .. " seq=" .. full_name(seq))
+              local ok, result = pcall(function()
+                  if slot_mode then return call_slot0(actor, seq) end
+                  return call_sequence(actor, seq)
+              end)
+              if ok then
+                  log("CASE_CALL_OK label=" .. label .. " guid=" .. guid_text(result))
+              else
+                  log("CASE_CALL_ERROR label=" .. label .. " error=" .. tostring(result))
+              end
+              schedule_snapshots(label)
+          end
+
+          local function receiver_text(context)
+              local obj = unwrap_param(context)
+              return full_name(obj)
+          end
+
+          local function install_hook(path, short)
+              local ok, pre_id, post_id = pcall(function()
+                  return RegisterHook(path,
+                      function(context, ...)
+                          log("HOOK[" .. short .. "][PRE] receiver=" .. receiver_text(context) .. " argc=" .. tostring(select("#", ...)))
+                      end,
+                      function(context, ...)
+                          log("HOOK[" .. short .. "][POST] receiver=" .. receiver_text(context) .. " argc=" .. tostring(select("#", ...)))
+                      end)
+              end)
+              if ok then
+                  log("HOOK_INSTALL[" .. short .. "]=OK pre=" .. tostring(pre_id) .. " post=" .. tostring(post_id))
+              else
+                  log("HOOK_INSTALL[" .. short .. "]=ERROR " .. tostring(pre_id))
+              end
+          end
+
+          local function run_game_thread(fn)
+              ExecuteInGameThread(function()
+                  local ok, err = pcall(fn)
+                  if not ok then log("GAME_THREAD_ERROR=" .. tostring(err)) end
+              end)
+          end
+
+          install_hook("/Script/SB.SBShowActorInterface:ActorPlayCustomAnimSequence", "SEQ")
+          install_hook("/Script/SB.SBShowActorInterface:ActorPlayCustomAnimSequenceMeshSlot", "SEQ_SLOT")
+          install_hook("/Script/SB.SBShowActorInterface:ActorPlayCustomAnimName", "NAME")
+          install_hook("/Script/SB.SBShowActorInterface:ActorPlayCustomAnimNameMeshSlot", "NAME_SLOT")
+
+          RegisterKeyBind(Key.F6, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() snapshot("MANUAL_BASELINE") end)
+          end)
+
+          RegisterKeyBind(Key.F7, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() run_case("LILY_SEQ", current_lily(), LILY_SEQ_PATH, false) end)
+          end)
+
+          RegisterKeyBind(Key.F8, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() run_case("LILY_SLOT0", current_lily(), LILY_SEQ_PATH, true) end)
+          end)
+
+          RegisterKeyBind(Key.F9, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() run_case("EVE_SEQ", get_player(), EVE_SEQ_PATH, false) end)
+          end)
+
+          RegisterKeyBind(Key.F10, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() run_case("EVE_SLOT0", get_player(), EVE_SEQ_PATH, true) end)
+          end)
+
+          RegisterKeyBind(Key.F11, {ModifierKey.CONTROL}, function()
+              run_game_thread(function() snapshot("MANUAL_AFTER") end)
+          end)
+
+          log("LOADED V10 - receiver + SequenceBlendedPlayer queue probe")
+          log("CTRL+F6 baseline | F7 Lily sequence | F8 Lily slot0 | F9 Eve sequence | F10 Eve slot0 | F11 snapshot")
+          log("Contract: tag=None start=0 end=-1 rate=1 blend=0.30/0.30 loop=false priority=100 clear=false")
+          LUA
+
+          cat > "$ROOT/README.txt" <<'TXT'
+          Lily Combat R2 — CustomAnim Probe v10
+
+          Diagnostic-only. FIX10 is not modified.
+
+          Install:
+            Extract this ZIP into the UE4SS root.
+            It creates Mods/LilyCombat_R2_CustomAnimProbe and uses enabled.txt.
+
+          Controls:
+            Ctrl+F6   Baseline snapshot only
+            Ctrl+F7   Lily ActorPlayCustomAnimSequence
+            Ctrl+F8   Lily ActorPlayCustomAnimSequenceMeshSlot(0)
+            Ctrl+F9   Eve ActorPlayCustomAnimSequence
+            Ctrl+F10  Eve ActorPlayCustomAnimSequenceMeshSlot(0)
+            Ctrl+F11  Manual snapshot only
+
+          What v10 records:
+            - real hook receiver via Context:get()
+            - Lily/Eve CustomAnim alphas
+            - every reflected StructProperty whose struct name contains SequenceBlendedPlayer
+            - PlaySequences / PlaySubSequences counts before, immediately after, +100ms, +500ms, +1500ms
+
+          Interpretation:
+            queue unchanged       = rejected before AnimGraph node
+            Lily queue changes    = request reaches Lily node; alpha/evaluation is downstream issue
+            Eve-only queue change = Lily-specific gate or routing difference
+            receiver != caller    = dispatch/routing issue
+
+          Use in normal G03 gameplay with LilyCompanion/FIX10 already active.
+          TXT
+
+          (cd "$ROOT" && find . -type f ! -name MANIFEST_SHA256.txt -print0 | sort -z | xargs -0 sha256sum > MANIFEST_SHA256.txt)
+
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lua5.4
+          luac -p "$MOD/Scripts/main.lua"
+          test -s "$MOD/Scripts/main.lua"
+          find "$ROOT" -type f -printf '%P\n' | sort
+
+      - name: Upload install-ready probe
+        uses: actions/upload-artifact@v4
+        with:
+          name: LilyCombat_R2_CustomAnimProbe_v10
+          path: ${{ env.PROBE_ROOT }}/*
+          retention-days: 30
