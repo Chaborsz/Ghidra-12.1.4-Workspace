@@ -10,9 +10,6 @@ on:
 permissions:
   contents: read
 
-env:
-  PROBE_ROOT: ${{ runner.temp }}/LilyCombat_R2_CustomAnimProbe_v10
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +20,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ROOT="$PROBE_ROOT"
+          ROOT="$GITHUB_WORKSPACE/out/LilyCombat_R2_CustomAnimProbe_v10"
           MOD="$ROOT/Mods/LilyCombat_R2_CustomAnimProbe"
           mkdir -p "$MOD/Scripts"
           : > "$MOD/enabled.txt"
@@ -413,5 +410,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: LilyCombat_R2_CustomAnimProbe_v10
-          path: ${{ env.PROBE_ROOT }}/*
+          path: out/LilyCombat_R2_CustomAnimProbe_v10/*
           retention-days: 30
