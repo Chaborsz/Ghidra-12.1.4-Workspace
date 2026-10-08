@@ -1,0 +1,78 @@
+name: NSX Ninja Saga Public Login Probe
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nsx-ninjasaga-login-probe.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Probe public site without credentials
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p report
+          UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
+
+          curl -sS -L --compressed \
+            -A "$UA" \
+            -D report/home.headers \
+            -o report/home.html \
+            -w 'HTTP_FINAL=%{http_code}\nURL_FINAL=%{url_effective}\n' \
+            'https://ninjasaga.cc/' | tee report/status.txt
+
+          echo '===== RESPONSE HEADERS ====='
+          sed -n '1,160p' report/home.headers
+          echo '===== HTML META/FORMS/INPUTS ====='
+          grep -Eio '<(form|input|button|script|link)[^>]*>' report/home.html | head -n 500 || true
+          echo '===== LOGIN-RELATED LINES ====='
+          grep -Ein 'login|sign.?in|username|password|access_token|signature|hash_time|player_id|fetch\(|axios|/login|api/' report/home.html | head -n 500 || true
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, urllib.parse
+          html = Path('report/home.html').read_text('utf-8', errors='replace')
+          base='https://ninjasaga.cc/'
+          refs=[]
+          for pat in [r'<script[^>]+src=["\']([^"\']+)', r'<link[^>]+href=["\']([^"\']+)']:
+              refs += re.findall(pat, html, re.I)
+          urls=[]
+          for r in refs:
+              u=urllib.parse.urljoin(base,r)
+              if urllib.parse.urlparse(u).netloc.endswith('ninjasaga.cc') and u not in urls:
+                  urls.append(u)
+          Path('report/assets.txt').write_text('\n'.join(urls)+'\n', encoding='utf-8')
+          print('===== SAME-ORIGIN ASSETS =====')
+          for u in urls[:100]: print(u)
+          PY
+
+          mkdir -p report/assets
+          n=0
+          while IFS= read -r url; do
+            [[ -n "$url" ]] || continue
+            case "$url" in
+              *.js|*.js\?*)
+                n=$((n+1)); [[ $n -le 30 ]] || break
+                out="report/assets/asset_${n}.js"
+                curl -sS -L --compressed -A "$UA" "$url" -o "$out" || true
+                echo "===== ASSET $n $url ====="
+                grep -Ein 'login|username|password|player_id|access_token|signature|hash_time|/login|fetch\(|axios|XMLHttpRequest' "$out" | head -n 300 || true
+                ;;
+            esac
+          done < report/assets.txt
+
+      - name: Upload probe report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsx-ninjasaga-public-login-probe
+          path: report/
+          retention-days: 2
