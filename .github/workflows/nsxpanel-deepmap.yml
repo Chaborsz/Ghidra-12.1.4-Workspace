@@ -1,0 +1,193 @@
+name: NS XPanel Deep Map
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/nsxpanel-deepmap.yml'
+      - 'ghidra_scripts/NSXPanelDeepMap.java'
+      - 'target/NSXPanel_v1.4.2.exe.part-*'
+      - 'target/NSXPanel_v1.4.2.exe.b64.part-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Prepare NS XPanel target
+        id: target
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p target report work
+          TARGET='target/NSXPanel_v1.4.2.exe'
+
+          if [[ ! -f "$TARGET" ]]; then
+            shopt -s nullglob
+            parts=(target/NSXPanel_v1.4.2.exe.part-*)
+            if (( ${#parts[@]} > 0 )); then
+              cat "${parts[@]}" > "$TARGET"
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            shopt -s nullglob
+            b64parts=(target/NSXPanel_v1.4.2.exe.b64.part-*)
+            if (( ${#b64parts[@]} > 0 )); then
+              cat "${b64parts[@]}" | base64 -d > "$TARGET"
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            ASSET_URL=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq '[.[].assets[] | select(.name=="NSXPanel_v1.4.2.exe")][0].url // empty' 2>/dev/null || true)
+            if [[ -n "$ASSET_URL" ]]; then
+              gh api -H 'Accept: application/octet-stream' "$ASSET_URL" > "$TARGET"
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            ASSET_URL=$(gh api "repos/$GITHUB_REPOSITORY/releases" --jq '[.[].assets[] | select(.name=="NSXPanel_v1.4.2.7z")][0].url // empty' 2>/dev/null || true)
+            if [[ -n "$ASSET_URL" ]]; then
+              gh api -H 'Accept: application/octet-stream' "$ASSET_URL" > work/NSXPanel_v1.4.2.7z
+              sudo apt-get update -qq
+              sudo apt-get install -y -qq p7zip-full
+              7z e -y work/NSXPanel_v1.4.2.7z -otarget NSXPanel_v1.4.2.exe >/dev/null
+            fi
+          fi
+
+          if [[ ! -f "$TARGET" ]]; then
+            echo 'TARGET_MISSING: add release asset NSXPanel_v1.4.2.exe / .7z or temporary target parts.' | tee report/STATUS.txt
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          SIZE=$(stat -c%s "$TARGET")
+          SHA=$(sha256sum "$TARGET" | awk '{print tolower($1)}')
+          {
+            echo "SIZE=$SIZE"
+            echo "SHA256=$SHA"
+          } | tee report/TARGET_IDENTITY.txt
+
+          test "$SIZE" = '5473445'
+          test "$SHA" = '555055c2ce2d81610e7e3c40f6f2f6fc04e4e13efd8c9972b8267b3939e05f8d'
+
+          echo 'ready=true' >> "$GITHUB_OUTPUT"
+
+      - name: Extract embedded PE images
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, struct
+
+          src = Path('target/NSXPanel_v1.4.2.exe')
+          b = src.read_bytes()
+          hits = []
+          pos = 0
+          while True:
+              i = b.find(b'MZ', pos)
+              if i < 0:
+                  break
+              pos = i + 2
+              if i + 0x40 > len(b):
+                  continue
+              peoff = struct.unpack_from('<I', b, i + 0x3c)[0]
+              p = i + peoff
+              if p + 0x18 > len(b) or b[p:p+4] != b'PE\0\0':
+                  continue
+              machine = struct.unpack_from('<H', b, p + 4)[0]
+              magic = struct.unpack_from('<H', b, p + 24)[0]
+              hits.append((i, machine, magic))
+
+          with open('report/PE_CANDIDATES.txt','w',encoding='utf-8') as f:
+              for off,machine,magic in hits:
+                  f.write(f'OFFSET=0x{off:X} MACHINE=0x{machine:04X} OPTIONAL_MAGIC=0x{magic:04X}\n')
+
+          assert hits, 'No PE images found'
+          inner = [h for h in hits if h[0] != 0 and h[1] == 0x8664]
+          assert inner, 'No embedded x64 PE found'
+          off = inner[0][0]
+          tail = b[off:]
+          out = Path('target/NSXPanel_inner_x64.exe')
+          out.write_bytes(tail)
+          sha = hashlib.sha256(tail).hexdigest()
+          with open('report/INNER_IDENTITY.txt','w',encoding='utf-8') as f:
+              f.write(f'OFFSET=0x{off:X}\nSIZE={len(tail)}\nSHA256={sha}\n')
+          assert off == 0x21C8C, hex(off)
+          assert sha == '2da88d9489c80344f24a38ea5282e9c2380dc6722205c9402815c6f8d95fbd80', sha
+          PY
+
+      - name: Validate materialized Ghidra
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -x ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+          test -d ghidra_12.1.4_PUBLIC/Ghidra
+          java -version
+
+      - name: Analyze wrapper PE
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/wrapper
+          ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            work/wrapper NSXWrapper \
+            -import target/NSXPanel_v1.4.2.exe \
+            -analysisTimeoutPerFile 1200 \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript NSXPanelDeepMap.java "$GITHUB_WORKSPACE/report/NSX_WRAPPER_GHIDRA.txt" \
+            -deleteProject \
+            > report/ghidra-wrapper.log 2>&1
+
+      - name: Analyze embedded x64 panel
+        if: steps.target.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p work/inner
+          ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            work/inner NSXInner \
+            -import target/NSXPanel_inner_x64.exe \
+            -analysisTimeoutPerFile 1800 \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript NSXPanelDeepMap.java "$GITHUB_WORKSPACE/report/NSX_INNER_GHIDRA.txt" \
+            -deleteProject \
+            > report/ghidra-inner.log 2>&1
+
+      - name: Final status
+        if: always()
+        shell: bash
+        run: |
+          if [[ "${{ steps.target.outputs.ready }}" == 'true' && -s report/NSX_INNER_GHIDRA.txt ]]; then
+            echo 'GHIDRA_ANALYSIS_COMPLETE' > report/STATUS.txt
+          elif [[ ! -f report/STATUS.txt ]]; then
+            echo 'GHIDRA_ANALYSIS_FAILED_OR_INCOMPLETE' > report/STATUS.txt
+          fi
+
+      - name: Upload report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nsxpanel-deepmap
+          path: report/
+          retention-days: 7
