@@ -15,43 +15,45 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Inspect public endpoint structure
+      - name: Trace public login submit handler
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p report
           UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
-          curl -sS -L --compressed -A "$UA" -D report/home.headers -o report/home.html 'https://ninjasaga.cc/'
+          curl -sS -L --compressed -A "$UA" -o report/home.html 'https://ninjasaga.cc/'
           python3 - <<'PY'
           from pathlib import Path
-          import re
+          import html, re
           raw=Path('report/home.html').read_text('utf-8',errors='replace')
-          print('===== LOGIN FORM TAG =====')
-          m=re.search(r'<form[^>]+id=["\']login-form["\'][^>]*>',raw,re.I)
-          print(m.group(0) if m else 'NOT_FOUND')
-          print('===== FETCH ENDPOINTS =====')
+          scripts=re.findall(r'<script([^>]*)>(.*?)</script>',raw,re.I|re.S)
+          print('SCRIPT_BLOCKS',len(scripts))
+          out=[]
+          for i,(attrs,body) in enumerate(scripts):
+              body=html.unescape(body)
+              low=body.lower()
+              for needle in ['login-form','show-login','formdata','xmlhttprequest','api','request']:
+                  p=low.find(needle)
+                  if p<0: continue
+                  a=max(0,p-1800); b=min(len(body),p+5000)
+                  sn=re.sub(r'\s+',' ',body[a:b]).strip()
+                  row=f'===== SCRIPT {i} NEEDLE={needle} POS={p} =====\n{sn}\n'
+                  out.append(row)
+                  print(row)
+          text='\n'.join(out)
+          Path('report/handler_contexts.txt').write_text(text,encoding='utf-8')
+
+          print('===== INLINE STRING LITERALS THAT LOOK LIKE ROUTES =====')
           seen=[]
-          patterns=[
-            r'fetch\s*\(\s*(["\'])(.*?)\1',
-            r'url\s*:\s*(["\'])(.*?)\1',
-            r'endpoint\s*[:=]\s*(["\'])(.*?)\1'
-          ]
-          for pat in patterns:
-            for x in re.finditer(pat,raw,re.I|re.S):
-              v=x.group(2)
-              if v not in seen:
-                seen.append(v); print(v)
-          print('===== LOGIN STRING CONTEXTS =====')
-          low=raw.lower()
-          pos=0; n=0
-          while n<40:
-            p=low.find('/login',pos)
-            if p<0: break
-            a=max(0,p-500); b=min(len(raw),p+1200)
-            print(re.sub(r'\s+',' ',raw[a:b]))
-            print('---')
-            pos=p+6; n+=1
-          Path('report/endpoints.txt').write_text('\n'.join(seen)+'\n',encoding='utf-8')
+          for attrs,body in scripts:
+              if 'src=' in attrs.lower(): continue
+              body=html.unescape(body)
+              for m in re.finditer(r'(["\'])([^"\']{1,160})\1',body):
+                  v=m.group(2)
+                  lv=v.lower()
+                  if ('/' in v or 'api' in lv or 'login' in lv or 'auth' in lv) and v not in seen:
+                      seen.append(v)
+                      print(v)
           PY
 
       - name: Upload probe report
