@@ -1,0 +1,109 @@
+name: CoreKeeper Burst Rizin Probe
+
+on:
+  push:
+    paths:
+      - '.github/workflows/corekeeper-burst-rizin.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Download DepotDownloader
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/dd"
+          curl -fL --retry 4 --retry-delay 2 \
+            'https://github.com/SteamRE/DepotDownloader/releases/download/DepotDownloader_3.4.0/DepotDownloader-linux-x64.zip' \
+            -o "$RUNNER_TEMP/dd.zip"
+          unzip -q "$RUNNER_TEMP/dd.zip" -d "$RUNNER_TEMP/dd"
+          chmod +x "$RUNNER_TEMP/dd/DepotDownloader"
+
+      - name: Fetch only exact Windows Burst DLL
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/ck"
+          printf '%s\n' 'CoreKeeperServer_Data/Plugins/x86_64/lib_burst_generated.dll' > "$RUNNER_TEMP/files.txt"
+          "$RUNNER_TEMP/dd/DepotDownloader" \
+            -app 1963720 \
+            -depot 1963721 \
+            -manifest 1805980667806468302 \
+            -filelist "$RUNNER_TEMP/files.txt" \
+            -dir "$RUNNER_TEMP/ck"
+          DLL="$RUNNER_TEMP/ck/CoreKeeperServer_Data/Plugins/x86_64/lib_burst_generated.dll"
+          test -f "$DLL"
+          SIZE="$(stat -c '%s' "$DLL")"
+          SHA="$(sha256sum "$DLL" | awk '{print $1}')"
+          echo "BURST_SIZE=$SIZE"
+          echo "BURST_SHA256=$SHA"
+          echo "EXPECTED_SIZE=70073856"
+          echo "EXPECTED_SHA256=66a36216861559558d513b476a73d99cb5b8bfd3cd422fffd082c6421a1c9c74"
+          if [ "$SIZE" = '70073856' ] && [ "$SHA" = '66a36216861559558d513b476a73d99cb5b8bfd3cd422fffd082c6421a1c9c74' ]; then
+            echo 'BURST_EXACT_MATCH=TRUE'
+            echo 'BURST_EXACT_MATCH=TRUE' >> "$GITHUB_ENV"
+            echo "BURST_DLL=$DLL" >> "$GITHUB_ENV"
+          else
+            echo 'BURST_EXACT_MATCH=FALSE'
+            echo 'BURST_EXACT_MATCH=FALSE' >> "$GITHUB_ENV"
+          fi
+
+      - name: Download exact Rizin 0.9.1 static tool
+        if: env.BURST_EXACT_MATCH == 'TRUE'
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 4 --retry-delay 2 \
+            'https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz' \
+            -o "$RUNNER_TEMP/rizin.tar.xz"
+          echo '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  '"$RUNNER_TEMP/rizin.tar.xz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/rizin"
+          tar -xJf "$RUNNER_TEMP/rizin.tar.xz" -C "$RUNNER_TEMP/rizin"
+          RZ="$(find "$RUNNER_TEMP/rizin" -type f -name rizin -perm -111 -print -quit)"
+          test -n "$RZ"
+          echo "RIZIN_BIN=$RZ" >> "$GITHUB_ENV"
+          "$RZ" -v
+
+      - name: Rizin PE and export probe
+        if: env.BURST_EXACT_MATCH == 'TRUE'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== RIZIN INFO ==='
+          "$RIZIN_BIN" -q -c 'iI;q' "$BURST_DLL"
+          echo '=== RIZIN SECTIONS ==='
+          "$RIZIN_BIN" -q -c 'iS;q' "$BURST_DLL" | sed -n '1,120p'
+          echo '=== RIZIN EXPORTS (FIRST 220) ==='
+          "$RIZIN_BIN" -q -c 'iE;q' "$BURST_DLL" | sed -n '1,220p'
+          echo '=== BURST INITIALIZER EXPORTS ==='
+          "$RIZIN_BIN" -q -c 'iE~burst.initialize;q' "$BURST_DLL" | sed -n '1,220p'
+
+      - name: Rizin render-signature search
+        if: env.BURST_EXACT_MATCH == 'TRUE'
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo '=== ROUND INSTRUCTION HITS (EXECUTABLE MAPS, FIRST 120) ==='
+          "$RIZIN_BIN" -q -c 'e search.in=io.maps.x;/aa round;q' "$BURST_DLL" | tee "$RUNNER_TEMP/round_hits.txt" | sed -n '1,120p'
+          echo '=== 16.0f RAW HITS (FIRST 80) ==='
+          "$RIZIN_BIN" -q -c '/x 00008041;q' "$BURST_DLL" | sed -n '1,80p'
+          echo '=== 0.0625f RAW HITS (FIRST 80) ==='
+          "$RIZIN_BIN" -q -c '/x 0000803d;q' "$BURST_DLL" | sed -n '1,80p'
+          grep -oE '0x[0-9a-fA-F]+' "$RUNNER_TEMP/round_hits.txt" | awk '!seen[$0]++' | head -n 24 > "$RUNNER_TEMP/round_addrs.txt" || true
+          : > "$RUNNER_TEMP/round_cmds.rz"
+          while read -r a; do
+            [ -n "$a" ] || continue
+            printf 'echo === ROUND_CANDIDATE %s ===\ns %s\npd -8\npd 28\n' "$a" "$a" >> "$RUNNER_TEMP/round_cmds.rz"
+          done < "$RUNNER_TEMP/round_addrs.txt"
+          echo '=== ROUND CANDIDATE CONTEXTS ==='
+          "$RIZIN_BIN" -q -i "$RUNNER_TEMP/round_cmds.rz" -c 'q' "$BURST_DLL" | sed -n '1,1200p'
+
+      - name: Final marker
+        shell: bash
+        run: |
+          echo "FINAL_BURST_EXACT_MATCH=${BURST_EXACT_MATCH:-FALSE}"
