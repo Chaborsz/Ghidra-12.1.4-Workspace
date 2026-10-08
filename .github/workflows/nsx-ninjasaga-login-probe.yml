@@ -13,9 +13,14 @@ permissions:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
-      - name: Inspect public application login route
+      - name: Setup Node 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Download public application JS
         shell: bash
         run: |
           set -euo pipefail
@@ -23,28 +28,48 @@ jobs:
           UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
           curl -sS -L --compressed -A "$UA" -o report/app.js 'https://ninjasaga.cc/assets/js/app.js'
           echo "APP_JS_BYTES=$(stat -c%s report/app.js)"
+          sha256sum report/app.js | tee report/app.js.sha256
+
+      - name: Deobfuscate offline with webcrack
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --no-save webcrack@2.16.0 >/dev/null
+          npx webcrack report/app.js > report/app.deob.js
+          echo "DEOB_BYTES=$(stat -c%s report/app.deob.js)"
+
+      - name: Extract login contract
+        shell: bash
+        run: |
+          set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
           import re
-          js=Path('report/app.js').read_text('utf-8',errors='replace')
-          print('===== LOGIN FORM REFERENCES =====')
-          low=js.lower()
-          for needle in ['login-form','/login','login','formdata','fetch(','xmlhttprequest','player_id','access_token','signature','hash_time']:
-              pos=0; count=0
-              while count<12:
+          js=Path('report/app.deob.js').read_text('utf-8',errors='replace')
+          print('===== DEOBFUSCATED LOGIN CONTRACT =====')
+          needles=['handle_login','login-form','/login','player_id','access_token','signature','hash_time','username','password','XMLHttpRequest','fetch(']
+          chunks=[]
+          for needle in needles:
+              low=js.lower(); pos=0; count=0
+              while count<20:
                   p=low.find(needle.lower(),pos)
                   if p<0: break
-                  a=max(0,p-1000); b=min(len(js),p+3000)
+                  a=max(0,p-1800); b=min(len(js),p+7000)
+                  sn=js[a:b]
+                  chunks.append(f'===== {needle} @ {p} =====\n{sn}\n')
                   print(f'--- {needle} @ {p} ---')
-                  print(re.sub(r'\s+',' ',js[a:b]).strip())
+                  print(sn[:8800])
                   pos=p+len(needle); count+=1
-          print('===== FETCH / ROUTE STRING LITERALS =====')
+          Path('report/login_contract_contexts.txt').write_text('\n'.join(chunks),encoding='utf-8')
+
+          print('===== ROUTE / URL LITERALS =====')
           seen=[]
-          for m in re.finditer(r'(["\'])([^"\']{1,220})\1',js):
+          for m in re.finditer(r'(["\'])([^"\'\n]{1,260})\1',js):
               v=m.group(2); lv=v.lower()
               if (v.startswith('/') or v.startswith('http') or 'login' in lv or 'auth' in lv) and v not in seen:
-                  seen.append(v); print(v)
-          Path('report/routes.txt').write_text('\n'.join(seen)+'\n',encoding='utf-8')
+                  seen.append(v)
+          for v in seen[:1000]: print(v)
+          Path('report/deob_routes.txt').write_text('\n'.join(seen)+'\n',encoding='utf-8')
           PY
 
       - name: Upload probe report
