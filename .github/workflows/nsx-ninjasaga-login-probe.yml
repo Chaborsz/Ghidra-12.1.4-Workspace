@@ -15,45 +15,36 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Trace public login submit handler
+      - name: Inspect public application login route
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p report
           UA='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36'
-          curl -sS -L --compressed -A "$UA" -o report/home.html 'https://ninjasaga.cc/'
+          curl -sS -L --compressed -A "$UA" -o report/app.js 'https://ninjasaga.cc/assets/js/app.js'
+          echo "APP_JS_BYTES=$(stat -c%s report/app.js)"
           python3 - <<'PY'
           from pathlib import Path
-          import html, re
-          raw=Path('report/home.html').read_text('utf-8',errors='replace')
-          scripts=re.findall(r'<script([^>]*)>(.*?)</script>',raw,re.I|re.S)
-          print('SCRIPT_BLOCKS',len(scripts))
-          out=[]
-          for i,(attrs,body) in enumerate(scripts):
-              body=html.unescape(body)
-              low=body.lower()
-              for needle in ['login-form','show-login','formdata','xmlhttprequest','api','request']:
-                  p=low.find(needle)
-                  if p<0: continue
-                  a=max(0,p-1800); b=min(len(body),p+5000)
-                  sn=re.sub(r'\s+',' ',body[a:b]).strip()
-                  row=f'===== SCRIPT {i} NEEDLE={needle} POS={p} =====\n{sn}\n'
-                  out.append(row)
-                  print(row)
-          text='\n'.join(out)
-          Path('report/handler_contexts.txt').write_text(text,encoding='utf-8')
-
-          print('===== INLINE STRING LITERALS THAT LOOK LIKE ROUTES =====')
+          import re
+          js=Path('report/app.js').read_text('utf-8',errors='replace')
+          print('===== LOGIN FORM REFERENCES =====')
+          low=js.lower()
+          for needle in ['login-form','/login','login','formdata','fetch(','xmlhttprequest','player_id','access_token','signature','hash_time']:
+              pos=0; count=0
+              while count<12:
+                  p=low.find(needle.lower(),pos)
+                  if p<0: break
+                  a=max(0,p-1000); b=min(len(js),p+3000)
+                  print(f'--- {needle} @ {p} ---')
+                  print(re.sub(r'\s+',' ',js[a:b]).strip())
+                  pos=p+len(needle); count+=1
+          print('===== FETCH / ROUTE STRING LITERALS =====')
           seen=[]
-          for attrs,body in scripts:
-              if 'src=' in attrs.lower(): continue
-              body=html.unescape(body)
-              for m in re.finditer(r'(["\'])([^"\']{1,160})\1',body):
-                  v=m.group(2)
-                  lv=v.lower()
-                  if ('/' in v or 'api' in lv or 'login' in lv or 'auth' in lv) and v not in seen:
-                      seen.append(v)
-                      print(v)
+          for m in re.finditer(r'(["\'])([^"\']{1,220})\1',js):
+              v=m.group(2); lv=v.lower()
+              if (v.startswith('/') or v.startswith('http') or 'login' in lv or 'auth' in lv) and v not in seen:
+                  seen.append(v); print(v)
+          Path('report/routes.txt').write_text('\n'.join(seen)+'\n',encoding='utf-8')
           PY
 
       - name: Upload probe report
