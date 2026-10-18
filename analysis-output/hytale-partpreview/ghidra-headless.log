@@ -1,0 +1,240 @@
+openjdk version "21.0.12.1" 2026-08-18 LTS
+OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode)
+INFO  Using log config file: jar:file:/home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (593 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Starting cache cleanup: /var/tmp/runner-ghidra/fscache2 (FileCacheMaintenanceDaemon)  
+INFO  Finished cache cleanup, estimated storage used: 0 (FileCacheMaintenanceDaemon)  
+INFO  Headless startup complete (1921 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/runner/work/_temp/ghidra-scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /home/runner/work/_temp/ghidra-project/HytalePreview (HeadlessAnalyzer)  
+INFO  Creating project: /home/runner/work/_temp/ghidra-project/HytalePreview (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /home/runner/work/_temp/ghidra-project/HytalePreview (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///home/runner/work/_temp/hytale-input/HytaleClient.exe (HeadlessAnalyzer)  
+WARN  390 NOP constructors found (SleighCompile)  
+WARN  Use -n switch to list each individually (SleighCompile)  
+WARN  ia.sinc:1029: Table 'pcRelSimm32_32' exports size 0 (SleighCompile)  
+WARN  ia.sinc:1028: Table 'pcRelSimm32' exports size 0 (SleighCompile)  
+WARN  745 unnecessary extensions/truncations were converted to copies (SleighCompile)  
+WARN  Use -u switch to list each individually (SleighCompile)  
+WARN  18 operations wrote to temporaries that were not read (SleighCompile)  
+WARN  Use -t switch to list each individually (SleighCompile)  
+WARN  ia.sinc:933: Unreferenced table: 'imm32_64' (SleighCompile)  
+INFO  Using Loader: Portable Executable (PE) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:64:default:windows (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  TLS callbacks at 142125040 (TLSDirectory)  
+INFO  Additional info:
+Loading file:///home/runner/work/_temp/hytale-input/HytaleClient.exe?MD5=a73add60f397d494955ec088fed77f3c...
+------------------------------------------------
+
+Searching 8 paths for library ADVAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-LOCALE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library BCRYPT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library CRYPT32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library DBGHELP.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library GDI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library IPHLPAPI.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library KERNEL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library NCRYPT.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library OLE32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library SECUR32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library USER32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VERSION.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library WS2_32.DLL...
+Library not found.
+------------------------------------------------
+
+Linking the External Programs of 'HytaleClient.exe' to imported libraries...
+  [DBGHELP.DLL] -> not found in project
+  [GDI32.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [BCRYPT.DLL] -> not found in project
+  [CRYPT32.DLL] -> not found in project
+  [IPHLPAPI.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [NCRYPT.DLL] -> not found in project
+  [OLE32.DLL] -> not found in project
+  [SECUR32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [VERSION.DLL] -> not found in project
+  [WS2_32.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-ENVIRONMENT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-FILESYSTEM-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-LOCALE-L1-1-0.DLL] -> not found in project
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file:///home/runner/work/_temp/hytale-input/HytaleClient.exe (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: failed to locate PDB file in configured locations (PdbUniversalAnalyzer)  
+INFO  Use a script to set the PDB file location. I.e.,
+    PdbAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb")); or
+    PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
+Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
+ This must be done using a pre-script (prior to analysis). (PdbUniversalAnalyzer)  
+INFO  Packed database cache: /var/tmp/runner-ghidra/packed-db-cache (PackedDatabaseCache)  
+ERROR Invalid PNG data at 142ae95b8 (PngDataType)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+WARN  Decompiling 14204a020, pcode error at 14204a0e0: Unable to resolve constructor at 14204a0e0 (DecompileCallback)  
+WARN  Decompiling 142049f40, pcode error at 142049f90: Unable to resolve constructor at 142049f90 (DecompileCallback)  
+WARN  More than 100 address segments have been created! (AddressMapDB)  
+INFO  Applied data type archive: windows_vs12_64 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    Apply Data Archives                        0.635 secs
+    Call Convention ID                         0.866 secs
+    Call-Fixup Installer                       0.996 secs
+    Create Address Tables                    336.495 secs
+    Create Address Tables - One Time        1902.319 secs
+    Create Function                            1.238 secs
+    Data Reference                           200.982 secs
+    Decompiler Switch Analysis                13.680 secs
+    Decompiler Switch Analysis - One Time     66.311 secs
+    Demangler Microsoft                        0.333 secs
+    Disassemble                                0.002 secs
+    Disassemble Entry Points                 110.120 secs
+    Embedded Media                             0.256 secs
+    External Entry References                  0.000 secs
+    Function ID                               34.311 secs
+    Function Start Search                      0.303 secs
+    Non-Returning Functions - Discovered     293.224 secs
+    Non-Returning Functions - Known            0.224 secs
+    PDB Universal                              0.011 secs
+    Reference                                262.686 secs
+    Scalar Operand References                 39.843 secs
+    Shared Return Calls                       13.622 secs
+    Subroutine References                     10.090 secs
+    Subroutine References - One Time           0.116 secs
+    Windows x86 PE Exception Handling          1.338 secs
+    Windows x86 PE RTTI Analyzer               0.899 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.021 secs
+    x86 Constant Reference Analyzer          306.968 secs
+-----------------------------------------------------
+     Total Time   3597 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+ERROR REPORT: Analysis timed out at 3600 seconds. Processing not completed for file: file:///home/runner/work/_temp/hytale-input/HytaleClient.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: TargetPreviewReport.java '/home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/reports/ghidra-targets.txt'  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/runner/work/_temp/ghidra-scripts/TargetPreviewReport.java (HeadlessAnalyzer)  
+INFO  ANALYZING changes made by post scripts: file:///home/runner/work/_temp/hytale-input/HytaleClient.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///home/runner/work/_temp/hytale-input/HytaleClient.exe (HeadlessAnalyzer)  
+INFO  /HytaleClient.exe: file created (runner) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /HytaleClient.exe (HytalePreview:/HytaleClient.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

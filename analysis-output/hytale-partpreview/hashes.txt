@@ -1,0 +1,5 @@
+Hytale reverse-engineering input hashes
+7c23fcfac81cfcec60a9312a40db8f2563a4eda4668a5ebc2bbc86fc9cadd268  HytaleClient.7z
+0406a4c3cfef099ef2dff318cb889726d9c9883a0c12007fdda0563e93a0f80e  /home/runner/work/_temp/hytale-input/HytaleClient.exe
+EXE_SIZE=72830816
+/home/runner/work/_temp/hytale-input/HytaleClient.exe: PE32+ executable (GUI) x86-64, for MS Windows, 6 sections
