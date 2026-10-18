@@ -1,0 +1,112 @@
+name: TEMP Hytale Fast Preview Scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/hytale-fast-preview-scan-temp.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch exact Hytale input using existing temporary route
+        shell: bash
+        run: |
+          set -euo pipefail
+          SRC='.github/workflows/hytale-preview-re-temp.yml'
+          URL="$(grep -oE "https://raw.githubusercontent.com/Chaborsz/Builds-GPT/tmp/hytale-preview-re/HytaleClient.7z\\?token=[A-Za-z0-9_=-]+" "$SRC" | head -n1)"
+          test -n "$URL"
+          curl -fL --retry 4 --retry-delay 2 "$URL" -o "$RUNNER_TEMP/HytaleClient.7z"
+          test "$(stat -c %s "$RUNNER_TEMP/HytaleClient.7z")" = '16029412'
+
+      - name: Install tools and extract
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends p7zip-full binutils python3-capstone
+          mkdir -p "$RUNNER_TEMP/hytale"
+          7z x -y "$RUNNER_TEMP/HytaleClient.7z" -o"$RUNNER_TEMP/hytale" >/dev/null
+          EXE="$(find "$RUNNER_TEMP/hytale" -type f -iname HytaleClient.exe -print -quit)"
+          test -n "$EXE"
+          test "$(stat -c %s "$EXE")" = '72830816'
+          echo "EXE=$EXE" >> "$GITHUB_ENV"
+
+      - name: Raw strings
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT='analysis-output/hytale-fast-preview'
+          rm -rf "$OUT" && mkdir -p "$OUT"
+          PAT='PartPreviewComponent|QueuePartPreview|PlayerPreviewComponent|PreviewComponent|PartPreview|PlayerPreview|AvatarPreview|Queue.*Preview|Preview|SimplifiedModel|FallbackPartIds?|VariantId|PartId'
+          strings -a -t x -n 4 "$EXE" | grep -Ei "$PAT" > "$OUT/strings-ascii.txt" || true
+          strings -a -t x -n 4 -e l "$EXE" | grep -Ei "$PAT" > "$OUT/strings-utf16le.txt" || true
+          objdump -h "$EXE" > "$OUT/objdump-sections.txt"
+
+      - name: Exact byte scan and RIP xrefs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import os, struct
+          from capstone import Cs, CS_ARCH_X86, CS_MODE_64
+          from capstone.x86 import X86_OP_MEM, X86_REG_RIP
+          exe=os.environ['EXE']; out='analysis-output/hytale-fast-preview'; data=open(exe,'rb').read()
+          pe=struct.unpack_from('<I',data,0x3c)[0]; nsec=struct.unpack_from('<H',data,pe+6)[0]; optsz=struct.unpack_from('<H',data,pe+20)[0]; opt=pe+24
+          assert data[pe:pe+4]==b'PE\0\0' and struct.unpack_from('<H',data,opt)[0]==0x20b
+          image_base=struct.unpack_from('<Q',data,opt+24)[0]; secbase=opt+optsz; sections=[]
+          for i in range(nsec):
+              o=secbase+i*40; name=data[o:o+8].split(b'\0',1)[0].decode('ascii','replace'); vsize,va,rawsz,raw=struct.unpack_from('<IIII',data,o+8); ch=struct.unpack_from('<I',data,o+36)[0]
+              sections.append((name,vsize,va,rawsz,raw,ch))
+          def off_to_va(off):
+              for name,vsize,va,rawsz,raw,ch in sections:
+                  if raw <= off < raw+rawsz: return image_base+va+(off-raw)
+          exact=['PartPreviewComponent','QueuePartPreview','PlayerPreviewComponent','PreviewComponent','PartPreview','PlayerPreview','AvatarPreview','SimplifiedModel','FallbackPartId','FallbackPartIds','VariantId','PartId']
+          hits=[]
+          for term in exact:
+              for enc,label in [('ascii','ASCII'),('utf-16le','UTF16LE')]:
+                  needle=term.encode(enc); start=0
+                  while True:
+                      off=data.find(needle,start)
+                      if off<0: break
+                      hits.append((term,label,off,off_to_va(off))); start=off+1
+          hits.sort(key=lambda x:(x[2],x[0],x[1]))
+          with open(f'{out}/exact-byte-hits.tsv','w',encoding='utf-8') as f:
+              f.write('term\tencoding\tfile_offset\tVA\n')
+              for term,label,off,va in hits: f.write(f'{term}\t{label}\t0x{off:x}\t{("0x%x"%va) if va else "UNMAPPED"}\n')
+          targets={va:(term,label,off) for term,label,off,va in hits if va and ('Preview' in term or term in ('SimplifiedModel','FallbackPartId','FallbackPartIds'))}
+          md=Cs(CS_ARCH_X86,CS_MODE_64); md.detail=True; refs=[]
+          for name,vsize,va,rawsz,raw,ch in sections:
+              if not (ch & 0x20000000): continue
+              for ins in md.disasm(data[raw:raw+rawsz],image_base+va):
+                  for op in ins.operands:
+                      if op.type==X86_OP_MEM and op.mem.base==X86_REG_RIP:
+                          dest=ins.address+ins.size+op.mem.disp
+                          if dest in targets:
+                              term,label,off=targets[dest]; refs.append((term,dest,ins.address,ins.mnemonic,ins.op_str,name))
+          with open(f'{out}/rip-xrefs.tsv','w',encoding='utf-8') as f:
+              f.write('term\ttarget_VA\txref_VA\tmnemonic\top_str\tsection\n')
+              for r in refs: f.write(f'{r[0]}\t0x{r[1]:x}\t0x{r[2]:x}\t{r[3]}\t{r[4]}\t{r[5]}\n')
+          with open(f'{out}/scan-summary.txt','w',encoding='utf-8') as f:
+              f.write(f'EXE_SIZE={len(data)}\nIMAGE_BASE=0x{image_base:x}\nEXACT_HITS={len(hits)}\nRIP_XREFS={len(refs)}\n')
+              for term in exact: f.write(f'{term}_HITS={sum(1 for h in hits if h[0]==term)}\n')
+          PY
+
+      - name: Commit reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add analysis-output/hytale-fast-preview
+          git commit -m 'TEMP publish Hytale fast preview scan'
+          git push origin HEAD:main
