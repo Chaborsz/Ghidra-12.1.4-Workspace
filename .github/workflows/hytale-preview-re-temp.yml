@@ -3,7 +3,6 @@ name: TEMP Hytale PartPreview Ghidra Rizin
 on:
   push:
     paths:
-      - 'HytaleClient.7z'
       - '.github/workflows/hytale-preview-re-temp.yml'
   workflow_dispatch:
 
@@ -18,12 +17,13 @@ jobs:
       - name: Checkout public Ghidra workspace
         uses: actions/checkout@v4
 
-      - name: Validate exact input
+      - name: Fetch exact temporary Hytale input
         shell: bash
         run: |
           set -euo pipefail
-          test -f HytaleClient.7z
-          ls -lh HytaleClient.7z
+          URL='https://raw.githubusercontent.com/Chaborsz/Builds-GPT/tmp/hytale-preview-re/HytaleClient.7z?token=A7AOYOQRRFUYWYXNICDSGRDK2TMVJAA'
+          curl -fL --retry 4 --retry-delay 2 "$URL" -o HytaleClient.7z
+          test "$(stat -c '%s' HytaleClient.7z)" = '16029412'
           sha256sum HytaleClient.7z
           test -x ghidra_12.1.4_PUBLIC/support/analyzeHeadless
 
@@ -238,8 +238,9 @@ jobs:
           if-no-files-found: warn
           retention-days: 3
 
-      - name: Remove extracted client and Rizin from runner
+      - name: Remove temporary input and analysis tools from runner
         if: always()
         shell: bash
         run: |
+          rm -f HytaleClient.7z
           rm -rf "$RUNNER_TEMP/hytale-input" "$RUNNER_TEMP/rizin" "$RUNNER_TEMP/ghidra-project" "$RUNNER_TEMP/ghidra-scripts"
