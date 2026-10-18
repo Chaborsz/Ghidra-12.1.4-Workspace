@@ -1,0 +1,245 @@
+name: TEMP Hytale PartPreview Ghidra Rizin
+
+on:
+  push:
+    paths:
+      - 'HytaleClient.7z'
+      - '.github/workflows/hytale-preview-re-temp.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - name: Checkout public Ghidra workspace
+        uses: actions/checkout@v4
+
+      - name: Validate exact input
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f HytaleClient.7z
+          ls -lh HytaleClient.7z
+          sha256sum HytaleClient.7z
+          test -x ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+
+      - name: Install minimal dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends p7zip-full jq xz-utils file
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Download and verify Rizin 0.9.1 static x86_64
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/rizin"
+          NAME='rizin-v0.9.1-static-x86_64.tar.xz'
+          URL='https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz'
+          SHA256='9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf'
+          curl -fL --retry 4 --retry-delay 2 "$URL" -o "$RUNNER_TEMP/$NAME"
+          echo "$SHA256  $RUNNER_TEMP/$NAME" | sha256sum -c -
+          tar -xJf "$RUNNER_TEMP/$NAME" -C "$RUNNER_TEMP/rizin"
+          RIZIN="$(find "$RUNNER_TEMP/rizin" -type f -name rizin -perm -111 -print -quit)"
+          RZBIN="$(find "$RUNNER_TEMP/rizin" -type f -name rz-bin -perm -111 -print -quit)"
+          test -n "$RIZIN" && test -n "$RZBIN"
+          echo "RIZIN=$RIZIN" >> "$GITHUB_ENV"
+          echo "RZBIN=$RZBIN" >> "$GITHUB_ENV"
+          "$RIZIN" -v | head -n 2
+
+      - name: Extract Hytale client and hash exact EXE
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/hytale-input" reports
+          7z x -y HytaleClient.7z -o"$RUNNER_TEMP/hytale-input" >/dev/null
+          EXE="$(find "$RUNNER_TEMP/hytale-input" -type f -iname 'HytaleClient.exe' -print -quit)"
+          test -n "$EXE"
+          echo "EXE=$EXE" >> "$GITHUB_ENV"
+          {
+            echo 'Hytale reverse-engineering input hashes'
+            sha256sum HytaleClient.7z
+            sha256sum "$EXE"
+            stat -c 'EXE_SIZE=%s' "$EXE"
+            file "$EXE"
+          } | tee reports/hashes.txt
+
+      - name: Rizin targeted string and xref analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$RZBIN" -I "$EXE" > reports/rizin-pe-info.txt 2>&1 || true
+          "$RZBIN" -zzj "$EXE" > reports/rizin-strings-all.json
+          jq -r '
+            .. | objects |
+            select((.string? // "") | test("PartPreviewComponent|QueuePartPreview|PlayerPreviewComponent|partId|onRendered|onFailed|Queue.*Preview"; "i")) |
+            [(.vaddr // .paddr // 0), (.paddr // 0), (.string // "")] | @tsv
+          ' reports/rizin-strings-all.json | sort -u > reports/rizin-target-strings.tsv || true
+          {
+            echo 'e scr.color=false'
+            echo 'e anal.hasnext=true'
+            echo 'aaa'
+            echo '?e === TARGET STRING SEARCH ==='
+            echo 'izz~PartPreviewComponent'
+            echo 'izz~QueuePartPreview'
+            echo 'izz~PlayerPreviewComponent'
+            echo 'izz~partId'
+            echo 'izz~onRendered'
+            echo 'izz~onFailed'
+            while IFS=$'\t' read -r va pa str; do
+              case "$va" in 0x*) ;; *) va="$(printf '0x%x' "$va" 2>/dev/null || true)" ;; esac
+              if [[ "$va" == 0x* ]]; then
+                echo "?e === XREFS $va :: ${str//;/_} ==="
+                echo "axt @ $va"
+                echo "axtj @ $va"
+              fi
+            done < reports/rizin-target-strings.tsv
+          } > reports/rizin-target.cmd
+          "$RIZIN" -2 -q -i reports/rizin-target.cmd "$EXE" > reports/rizin-targets.txt 2>&1 || true
+          rm -f reports/rizin-strings-all.json reports/rizin-target.cmd
+
+      - name: Build targeted Ghidra script
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/ghidra-scripts"
+          cat > "$RUNNER_TEMP/ghidra-scripts/TargetPreviewReport.java" <<'JAVA'
+          import ghidra.app.decompiler.DecompInterface;
+          import ghidra.app.decompiler.DecompileResults;
+          import ghidra.app.script.GhidraScript;
+          import ghidra.program.model.address.Address;
+          import ghidra.program.model.listing.Data;
+          import ghidra.program.model.listing.DataIterator;
+          import ghidra.program.model.listing.Function;
+          import ghidra.program.model.listing.FunctionManager;
+          import ghidra.program.model.symbol.Reference;
+          import ghidra.program.model.symbol.ReferenceIterator;
+          import java.io.File;
+          import java.io.PrintWriter;
+          import java.util.LinkedHashSet;
+          import java.util.Set;
+
+          public class TargetPreviewReport extends GhidraScript {
+              private static final String[] TARGETS = {
+                  "PartPreviewComponent", "QueuePartPreview", "PlayerPreviewComponent",
+                  "partId", "onRendered", "onFailed"
+              };
+              private boolean matches(String s) {
+                  if (s == null) return false;
+                  String l = s.toLowerCase();
+                  for (String t : TARGETS) if (l.contains(t.toLowerCase())) return true;
+                  return false;
+              }
+              @Override protected void run() throws Exception {
+                  String[] args = getScriptArgs();
+                  File output = new File(args[0]);
+                  output.getParentFile().mkdirs();
+                  PrintWriter out = new PrintWriter(output, "UTF-8");
+                  FunctionManager fm = currentProgram.getFunctionManager();
+                  Set<Function> funcs = new LinkedHashSet<>();
+                  out.println("PROGRAM=" + currentProgram.getName());
+                  out.println("IMAGE_BASE=" + currentProgram.getImageBase());
+                  out.println("LANGUAGE=" + currentProgram.getLanguageID());
+                  DataIterator it = currentProgram.getListing().getDefinedData(true);
+                  int hits = 0;
+                  while (it.hasNext()) {
+                      Data d = it.next();
+                      String text = null;
+                      Object value = d.getValue();
+                      if (value instanceof String) text = (String)value;
+                      if (text == null) text = d.getDefaultValueRepresentation();
+                      if (!matches(text)) continue;
+                      hits++;
+                      Address a = d.getAddress();
+                      out.println("STRING " + a + " :: " + text);
+                      ReferenceIterator refs = currentProgram.getReferenceManager().getReferencesTo(a);
+                      while (refs.hasNext()) {
+                          Reference r = refs.next();
+                          Address from = r.getFromAddress();
+                          Function f = fm.getFunctionContaining(from);
+                          out.println("  XREF " + from + " type=" + r.getReferenceType() + (f == null ? "" : " function=" + f.getName() + " entry=" + f.getEntryPoint()));
+                          if (f != null) funcs.add(f);
+                      }
+                  }
+                  out.println("STRING_HITS=" + hits);
+                  out.println("UNIQUE_XREF_FUNCTIONS=" + funcs.size());
+                  DecompInterface decomp = new DecompInterface();
+                  decomp.toggleCCode(true);
+                  decomp.toggleSyntaxTree(true);
+                  decomp.openProgram(currentProgram);
+                  int n = 0;
+                  for (Function f : funcs) {
+                      if (n++ >= 40) { out.println("DECOMPILE_LIMIT_REACHED=40"); break; }
+                      out.println("================================================================================");
+                      out.println("FUNCTION " + f.getName() + " entry=" + f.getEntryPoint());
+                      for (Function caller : f.getCallingFunctions(monitor)) out.println("CALLER " + caller.getName() + " entry=" + caller.getEntryPoint());
+                      for (Function callee : f.getCalledFunctions(monitor)) out.println("CALLEE " + callee.getName() + " entry=" + callee.getEntryPoint());
+                      DecompileResults res = decomp.decompileFunction(f, 90, monitor);
+                      if (res.decompileCompleted() && res.getDecompiledFunction() != null) out.println(res.getDecompiledFunction().getC());
+                      else out.println("DECOMPILE_FAILED: " + res.getErrorMessage());
+                  }
+                  decomp.dispose();
+                  out.close();
+              }
+          }
+          JAVA
+
+      - name: Ghidra 12.1.4 headless targeted decompilation
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/ghidra-project"
+          ABS_REPORT="$PWD/reports/ghidra-targets.txt"
+          ghidra_12.1.4_PUBLIC/support/analyzeHeadless "$RUNNER_TEMP/ghidra-project" HytalePreview \
+            -import "$EXE" \
+            -overwrite \
+            -scriptPath "$RUNNER_TEMP/ghidra-scripts" \
+            -postScript TargetPreviewReport.java "$ABS_REPORT" \
+            -analysisTimeoutPerFile 3600 \
+            -deleteProject \
+            > reports/ghidra-headless.log 2>&1
+          test -s reports/ghidra-targets.txt
+
+      - name: Build compact combined summary
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          {
+            echo '# Hytale PartPreview reverse-engineering reports'
+            echo
+            echo '## Input'
+            cat reports/hashes.txt 2>/dev/null || true
+            echo
+            echo '## Rizin target strings'
+            cat reports/rizin-target-strings.tsv 2>/dev/null || true
+            echo
+            echo '## Ghidra target overview'
+            grep -E '^(PROGRAM|IMAGE_BASE|LANGUAGE|STRING |  XREF |STRING_HITS|UNIQUE_XREF_FUNCTIONS|FUNCTION |CALLER |CALLEE )' reports/ghidra-targets.txt 2>/dev/null | head -n 500 || true
+          } > reports/analysis-summary.md
+
+      - name: Upload reports only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hytale-partpreview-ghidra-rizin-reports
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 3
+
+      - name: Remove extracted client and Rizin from runner
+        if: always()
+        shell: bash
+        run: |
+          rm -rf "$RUNNER_TEMP/hytale-input" "$RUNNER_TEMP/rizin" "$RUNNER_TEMP/ghidra-project" "$RUNNER_TEMP/ghidra-scripts"
