@@ -1,0 +1,45 @@
+name: Quick Ghidra APK2 save manager
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-apk2-quick-ghidra.yml'
+      - 'ghidra_scripts/APK2QuickSaveManager.java'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Download executable
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+      - name: Run targeted Ghidra without global auto-analysis
+        shell: bash
+        run: |
+          mkdir -p reports "$RUNNER_TEMP/project"
+          ./ghidra_12.1.4_PUBLIC/support/analyzeHeadless "$RUNNER_TEMP/project" APK2Quick \
+            -import "$GITHUB_WORKSPACE/APK2-Win64-Shipping.exe" \
+            -noanalysis \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript APK2QuickSaveManager.java \
+            -deleteProject \
+            > reports/headless.log 2>&1 || true
+          if [ -f /tmp/APK2_GHIDRA_QUICK_SAVE_MANAGER.txt ]; then cp /tmp/APK2_GHIDRA_QUICK_SAVE_MANAGER.txt reports/; fi
+          tail -n 100 reports/headless.log || true
+          cat reports/APK2_GHIDRA_QUICK_SAVE_MANAGER.txt 2>/dev/null | head -n 600 || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-ghidra-quick-save-manager
+          path: reports/
+          retention-days: 7
