@@ -1,0 +1,91 @@
+name: Trace APK2 save metadata xrefs with Rizin
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-apk2-rizin-target-xrefs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch inputs
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          curl -fL --retry 5 'https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz' -o rizin.tar.xz
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+          echo '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  rizin.tar.xz' | sha256sum -c -
+          mkdir rz && tar -xJf rizin.tar.xz -C rz
+          find rz -type f -name rizin -perm -111 -print -quit > rz_path.txt
+          python3 -m pip install --quiet pefile
+      - name: Resolve strings and pointer chains
+        shell: bash
+        run: |
+          mkdir reports
+          cat > trace.py <<'PY'
+          import pefile,struct
+          from pathlib import Path
+          data=Path('APK2-Win64-Shipping.exe').read_bytes(); pe=pefile.PE('APK2-Win64-Shipping.exe'); base=pe.OPTIONAL_HEADER.ImageBase
+          targets=['EncryptKey','DefaultData','UAPKSaveGameManager','UAPKGameSaveDataHandler','UAPKSaveGame','EAPKSaveLoadResult','OldVersion','NewVersion','Corrupt','OutOfLocalStorage']
+          def off2rva(off):
+              for s in pe.sections:
+                  if s.PointerToRawData <= off < s.PointerToRawData+s.SizeOfRawData:
+                      return s.VirtualAddress+(off-s.PointerToRawData)
+          def allfind(pat):
+              out=[]; p=0
+              while 1:
+                  p=data.find(pat,p)
+                  if p<0:return out
+                  out.append(p); p+=1
+          lines=[f'IMAGE_BASE=0x{base:x}']
+          vas=[]
+          for t in targets:
+              hits=allfind(t.encode())+allfind(t.encode('utf-16le'))
+              lines.append(f'\nTARGET {t} hits={len(hits)}')
+              for off in hits[:50]:
+                  rva=off2rva(off)
+                  if rva is None: continue
+                  va=base+rva; vas.append((t,va))
+                  lines.append(f' STRING off=0x{off:x} rva=0x{rva:x} va=0x{va:x}')
+                  frontier=[va]; seen=set()
+                  for depth in range(3):
+                      nxt=[]
+                      for v in frontier:
+                          if v in seen: continue
+                          seen.add(v)
+                          pats=[('VA64',struct.pack('<Q',v)),('RVA32',struct.pack('<I',(v-base)&0xffffffff))]
+                          for typ,pat in pats:
+                              for poff in allfind(pat)[:200]:
+                                  prva=off2rva(poff)
+                                  if prva is None: continue
+                                  pva=base+prva
+                                  lines.append(f'  PTR depth={depth+1} type={typ} off=0x{poff:x} va=0x{pva:x} -> 0x{v:x}')
+                                  nxt.append(pva); vas.append((t+f'_ptr{depth+1}',pva))
+                      frontier=nxt
+          Path('reports/pointer_chains.txt').write_text('\n'.join(lines))
+          uniq=[]; seen=set()
+          for n,v in vas:
+              if v not in seen: seen.add(v); uniq.append((n,v))
+          with open('reports/rizin_cmds.txt','w') as f:
+              f.write('aa\n')
+              for n,v in uniq[:800]:
+                  f.write(f'?e ===== {n} 0x{v:x} =====\n')
+                  f.write(f'axt @ 0x{v:x}\n')
+              f.write('q\n')
+          print('\n'.join(lines[:600]))
+          PY
+          python3 trace.py
+          RZ="$(cat rz_path.txt)"
+          "$RZ" -2 -q -i reports/rizin_cmds.txt APK2-Win64-Shipping.exe > reports/rizin_xrefs.txt || true
+          grep -E 'EncryptKey|DefaultData|UAPKSaveGameManager|UAPKGameSaveDataHandler|PTR depth' reports/pointer_chains.txt | head -n 1000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-rizin-target-xrefs
+          path: reports/
+          retention-days: 7
