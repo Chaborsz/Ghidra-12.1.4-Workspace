@@ -1,0 +1,92 @@
+name: Decode APK2 EncryptKey metadata
+
+on:
+  push:
+    paths:
+      - '.github/workflows/dump-apk2-encryptkey-metadata.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download exact executable
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+          python3 -m pip install --quiet pefile
+      - name: Decode neighborhoods
+        shell: bash
+        run: |
+          mkdir reports
+          cat > dump.py <<'PY'
+          import pefile,struct,string
+          from pathlib import Path
+          data=Path('APK2-Win64-Shipping.exe').read_bytes(); pe=pefile.PE('APK2-Win64-Shipping.exe')
+          base=pe.OPTIONAL_HEADER.ImageBase
+          def va2off(va):
+              r=va-base
+              for s in pe.sections:
+                  lo=s.VirtualAddress; hi=lo+max(s.Misc_VirtualSize,s.SizeOfRawData)
+                  if lo<=r<hi:
+                      return s.PointerToRawData+(r-lo)
+              return None
+          def cstr(va,limit=256):
+              o=va2off(va)
+              if o is None:return None
+              b=data[o:o+limit].split(b'\0',1)[0]
+              if len(b)<2:return None
+              if sum(32<=x<127 for x in b)/len(b)>.9:
+                  return b.decode('ascii','replace')
+              return None
+          def qword(va):
+              o=va2off(va)
+              if o is None or o+8>len(data):return None
+              return struct.unpack_from('<Q',data,o)[0]
+          def dword(va):
+              o=va2off(va)
+              if o is None or o+4>len(data):return None
+              return struct.unpack_from('<I',data,o)[0]
+          addrs=[0x14a1dead0,0x14a1dea78,0x14a1dee08,0x14b1edee0,0x14a1d45f8,0x14a1d45d0]
+          out=[]
+          for center in addrs:
+              out.append(f'\n===== CENTER 0x{center:x} off={va2off(center)} =====')
+              start=center-0x100
+              for va in range(start,center+0x181,8):
+                  q=qword(va)
+                  if q is None:continue
+                  s=cstr(q) if base<=q<base+0x100000000 else None
+                  mark='>>' if va==center else '  '
+                  suffix=f' -> {s!r}' if s else ''
+                  out.append(f'{mark} 0x{va:x}: q=0x{q:016x}  lo32=0x{q&0xffffffff:08x} hi32=0x{q>>32:08x}{suffix}')
+          # Interpret likely UECodeGen_Private property param structures around every pointer to EncryptKey.
+          nameva=0x14a1d45f8
+          out.append('\n===== CANDIDATE STRUCTS REFERENCING EncryptKey =====')
+          pat=struct.pack('<Q',nameva); pos=0
+          while True:
+              off=data.find(pat,pos)
+              if off<0:break
+              pos=off+1
+              rva=None
+              for s in pe.sections:
+                  if s.PointerToRawData<=off<s.PointerToRawData+s.SizeOfRawData:
+                      rva=s.VirtualAddress+(off-s.PointerToRawData);break
+              if rva is None:continue
+              va=base+rva
+              out.append(f'NAMEPTR at off=0x{off:x} va=0x{va:x}')
+              for delta in range(-0x40,0x81,4):
+                  v=dword(va+delta)
+                  if v is not None:
+                      out.append(f' dword {delta:+#x} = 0x{v:08x} ({v})')
+          Path('reports/encryptkey_metadata.txt').write_text('\n'.join(out))
+          print('\n'.join(out))
+          PY
+          python3 dump.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-encryptkey-metadata
+          path: reports/encryptkey_metadata.txt
+          retention-days: 7
