@@ -1,0 +1,56 @@
+name: Disassemble APK2 save manager with Capstone
+
+on:
+  push:
+    paths:
+      - '.github/workflows/disasm-apk2-save-manager-capstone.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  disasm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch executable and libraries
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+          python3 -m pip install --quiet pefile capstone
+      - name: Map and disassemble save manager cluster
+        shell: bash
+        run: |
+          mkdir reports
+          python3 - <<'PY'
+          import pefile
+          from pathlib import Path
+          from capstone import Cs,CS_ARCH_X86,CS_MODE_64
+          pe=pefile.PE('APK2-Win64-Shipping.exe'); data=Path('APK2-Win64-Shipping.exe').read_bytes(); base=pe.OPTIONAL_HEADER.ImageBase
+          md=Cs(CS_ARCH_X86,CS_MODE_64); md.detail=True
+          addrs=[0x1450ce860,0x1450ceb20,0x1450ceb50,0x1450cec30,0x1450cec60,0x1450ced10,0x1450ceea0,0x1450cedf0,0x1450cf290]
+          out=[]
+          for va in addrs:
+              rva=va-base
+              try: off=pe.get_offset_from_rva(rva)
+              except Exception as e:
+                  out.append(f'===== 0x{va:x} RVA 0x{rva:x} unmapped {e!r} =====');continue
+              sec=None
+              for s in pe.sections:
+                  if s.PointerToRawData<=off<s.PointerToRawData+s.SizeOfRawData:sec=s.Name.rstrip(b'\0').decode(errors='replace');break
+              out.append(f'\n===== VA 0x{va:x} RVA 0x{rva:x} OFF 0x{off:x} SEC {sec} =====')
+              blob=data[off:off+0x700]
+              n=0
+              for i in md.disasm(blob,va):
+                  out.append(f'0x{i.address:016x}  {i.bytes.hex():24} {i.mnemonic:9} {i.op_str}')
+                  n+=1
+                  if n>=260:break
+              if n==0:out.append('NO_INSTRUCTIONS')
+          Path('reports/capstone_save_manager.txt').write_text('\n'.join(out))
+          print('\n'.join(out))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-save-manager-capstone
+          path: reports/capstone_save_manager.txt
+          retention-days: 7
