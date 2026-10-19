@@ -1,0 +1,60 @@
+name: Disassemble APK2 save manager cluster
+
+on:
+  push:
+    paths:
+      - '.github/workflows/disasm-apk2-save-manager-rizin.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  disasm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Fetch EXE and Rizin
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          curl -fL --retry 5 'https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz' -o rizin.tar.xz
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+          echo '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  rizin.tar.xz' | sha256sum -c -
+          mkdir rz && tar -xJf rizin.tar.xz -C rz
+          find rz -type f -name rizin -perm -111 -print -quit > rz.txt
+      - name: Disassemble known save-manager addresses
+        shell: bash
+        run: |
+          mkdir reports
+          RZ="$(cat rz.txt)"
+          cat > cmds.rz <<'EOF'
+          e asm.lines=true
+          e asm.bytes=true
+          aa
+          ?e ===== 0x1450ce860 =====
+          pd 180 @ 0x1450ce860
+          ?e ===== 0x1450ceb20 =====
+          pd 180 @ 0x1450ceb20
+          ?e ===== 0x1450ceb50 =====
+          pd 180 @ 0x1450ceb50
+          ?e ===== 0x1450cec30 =====
+          pd 180 @ 0x1450cec30
+          ?e ===== 0x1450cec60 =====
+          pd 180 @ 0x1450cec60
+          ?e ===== 0x1450ced10 =====
+          pd 160 @ 0x1450ced10
+          ?e ===== xrefs to code cluster =====
+          axt @ 0x1450ce860
+          axt @ 0x1450ceb20
+          axt @ 0x1450ceb50
+          axt @ 0x1450cec30
+          axt @ 0x1450cec60
+          q
+          EOF
+          "$RZ" -2 -q -i cmds.rz APK2-Win64-Shipping.exe > reports/save_manager_disasm.txt || true
+          cat reports/save_manager_disasm.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-save-manager-rizin-disasm
+          path: reports/save_manager_disasm.txt
+          retention-days: 7
