@@ -1,0 +1,43 @@
+name: Analyze APK2 save manager with Ghidra
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-apk2-save-crypto-ghidra.yml'
+      - 'ghidra_scripts/APK2SaveCryptoTrace.java'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Download executable
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+      - name: Run Ghidra headless
+        run: |
+          mkdir -p reports "$RUNNER_TEMP/project"
+          ./ghidra_12.1.4_PUBLIC/support/analyzeHeadless "$RUNNER_TEMP/project" APK2Project \
+            -import "$GITHUB_WORKSPACE/APK2-Win64-Shipping.exe" \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript APK2SaveCryptoTrace.java \
+            -analysisTimeoutPerFile 1200 \
+            -deleteProject \
+            > reports/ghidra-headless.log 2>&1 || true
+          if [ -f /tmp/APK2_GHIDRA_SAVE_CRYPTO.txt ]; then cp /tmp/APK2_GHIDRA_SAVE_CRYPTO.txt reports/; fi
+          tail -n 100 reports/ghidra-headless.log || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-ghidra-save-crypto
+          path: reports/
+          retention-days: 7
