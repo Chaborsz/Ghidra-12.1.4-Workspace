@@ -1,0 +1,47 @@
+name: Analyze APK2 save manager with Rizin
+
+on:
+  push:
+    paths:
+      - '.github/workflows/analyze-apk2-save-crypto-rizin.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download executable
+        run: |
+          curl -fL --retry 5 'https://github.com/Chaborsz/Temporary/releases/download/apk2-mediafire-transfer-2026-10-18/APK2-Win64-Shipping.exe' -o APK2-Win64-Shipping.exe
+          echo 'ce3bc03574a9a3e76420c54ec8548a8a113175422a432c1f3f968baf54746940  APK2-Win64-Shipping.exe' | sha256sum -c -
+      - name: Download exact Rizin 0.9.1 static
+        run: |
+          curl -fL --retry 5 'https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz' -o rizin.tar.xz
+          echo '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf  rizin.tar.xz' | sha256sum -c -
+          mkdir rz && tar -xJf rizin.tar.xz -C rz
+          find rz -type f -name rizin -perm -111 -print -quit > rz_path.txt
+          find rz -type f -name rz-bin -perm -111 -print -quit > rzbin_path.txt
+          "$(cat rz_path.txt)" -v
+      - name: Run targeted Rizin pass
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir reports
+          RZ="$(cat rz_path.txt)"
+          RZBIN="$(cat rzbin_path.txt)"
+          "$RZBIN" -I APK2-Win64-Shipping.exe > reports/info.txt || true
+          "$RZBIN" -S APK2-Win64-Shipping.exe > reports/sections.txt || true
+          "$RZBIN" -zz APK2-Win64-Shipping.exe > reports/strings.txt || true
+          grep -Ei 'EncryptKey|DefaultData|UAPKSaveGameManager|UAPKGameSaveDataHandler|UAPKSaveGame|FAES|Decrypt|Encrypt|OldVersion|NewVersion|Corrupt|OutOfLocalStorage' reports/strings.txt > reports/targets.txt || true
+          "$RZ" -2 -q -c 'aa; izz~EncryptKey; izz~DefaultData; izz~UAPKSaveGameManager; izz~UAPKGameSaveDataHandler; izz~FAES; izz~Decrypt; izz~Encrypt; q' APK2-Win64-Shipping.exe > reports/rizin_analysis.txt || true
+          cat reports/targets.txt | head -n 1000
+      - uses: actions/upload-artifact@v4
+        with:
+          name: apk2-rizin-save-crypto
+          path: reports/
+          retention-days: 7
