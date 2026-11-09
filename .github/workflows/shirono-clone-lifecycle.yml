@@ -1,0 +1,42 @@
+name: Shirono clone singleton and lifecycle JSON audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-clone-lifecycle.yml
+      - experiments/shirono/inspect_clone_lifecycle.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract verified decrypted project
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-stage3
+          curl -fL --retry 5 --retry-delay 2 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/project.7z"
+          printf '%s  %s\n' 4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b "$RUNNER_TEMP/project.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/project.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 experiments/shirono/inspect_clone_lifecycle.py "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-stage3/clone_lifecycle.txt
+          wc -c audit-out/shirono-stage3/clone_lifecycle.txt
+      - name: Commit focused causal report
+        if: success()
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-stage3
+          git commit -m "Record native clone one-instance causal evidence"
+          git push origin HEAD:analysis/shirono-multiclone
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shirono-clone-lifecycle-stage3
+          path: audit-out/shirono-stage3/
+          retention-days: 30
