@@ -1,0 +1,91 @@
+name: ShironoYakata stage2 object rules and native entrypoints
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-targeted.yml
+      - experiments/shirono/**
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Extract pinned demo archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip install --disable-pip-version-check --break-system-packages pefile==2024.8.26
+          mkdir -p "$RUNNER_TEMP/shirono-input" audit-out/shirono-stage2
+          curl -fL --retry 5 --retry-delay 3 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/project_decrypted.7z"
+          printf '%s  %s\n' 4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b "$RUNNER_TEMP/project_decrypted.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/project_decrypted.7z" "-o$RUNNER_TEMP/shirono-input" -y >/dev/null
+          printf '%s  %s\n' d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154 "$RUNNER_TEMP/shirono-input/player.exe" | sha256sum -c -
+      - name: Isolate native clone object configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 experiments/shirono/audit_clone_behavior.py "$RUNNER_TEMP/shirono-input" audit-out/shirono-stage2 | tee audit-out/shirono-stage2/behavior_stdout.txt
+          python3 - <<'PY'
+          import pefile,json,hashlib
+          from pathlib import Path
+          p=Path('audit-out/shirono-stage2')
+          pe=pefile.PE(str(Path(__import__('os').environ['RUNNER_TEMP'])/'shirono-input/player.exe'))
+          imports=[]
+          for mod in pe.DIRECTORY_ENTRY_IMPORT:
+              imports.append({"dll":mod.dll.decode('utf8','replace'),"functions":[(i.name or b'#'+str(i.ordinal).encode()).decode('utf8','replace') for i in mod.imports]})
+          p.joinpath('pe_imports.json').write_text(json.dumps(imports,indent=2),encoding='utf8')
+          symbols=[]
+          for s in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+              name=(s.name or b'').decode('utf8','replace')
+              if any(x in name.lower() for x in ['objectcreate','scenelayer','instance','getobjectplayer','gamemanager','clone']):
+                  symbols.append({"va":hex(pe.OPTIONAL_HEADER.ImageBase+s.address),"name":name})
+          p.joinpath('pe_native_symbols.json').write_text(json.dumps(symbols,indent=2),encoding='utf8')
+          with p.joinpath('pe_import_summary.txt').open('w') as f:
+              for x in imports:
+                  print(x['dll'],str(x['functions'][:50]),file=f)
+              print('VERSION_IMPORT',[x for x in imports if x['dll'].upper()=='VERSION.DLL'],file=f)
+          print('PE_VERSION_DLL_IMPORT',[x for x in imports if x['dll'].upper()=='VERSION.DLL'])
+          print('PE_SYMBOL_MATCHES',len(symbols))
+          PY
+      - name: Ghidra targeted decompilation and callsite audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/shirono-ghidra" audit-out/shirono-stage2/ghidra
+          timeout 1200 ./ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            "$RUNNER_TEMP/shirono-ghidra" ShironoStage2 \
+            -import "$RUNNER_TEMP/shirono-input/player.exe" \
+            -scriptPath "$GITHUB_WORKSPACE/experiments/shirono" \
+            -postScript ShironoTargeted.java "$GITHUB_WORKSPACE/audit-out/shirono-stage2/ghidra" \
+            -analysisTimeoutPerFile 900 -deleteProject \
+            > audit-out/shirono-stage2/ghidra/run.log 2>&1
+          tail -20 audit-out/shirono-stage2/ghidra/run.log
+      - name: Save evidence to analysis branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          find audit-out/shirono-stage2 -type f -size +9M -print -exec sh -c 'head -c 5000000 "$1" > "$1.truncated"; mv "$1.truncated" "$1"' _ {} \;
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add audit-out/shirono-stage2
+          if ! git diff --cached --quiet; then
+            git commit -m 'Audit Shirono clone rules and native creation entrypoints'
+            git push origin HEAD:analysis/shirono-multiclone
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: shirono-stage2-native-clone-analysis
+          path: audit-out/shirono-stage2/
+          retention-days: 30
