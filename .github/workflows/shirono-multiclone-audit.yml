@@ -1,0 +1,131 @@
+name: ShironoYakata DEMO native multiclone audit
+
+on:
+  push:
+    branches:
+      - analysis/shirono-multiclone
+    paths:
+      - .github/workflows/shirono-multiclone-audit.yml
+      - tools/shirono/**
+      - ghidra_scripts/ShironoCloneAudit.java
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shirono-audit
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Checkout pinned Ghidra and Rizin workspace
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Configure Java 21 for Ghidra
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install 7zip and PE inventory helpers
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip install --disable-pip-version-check --break-system-packages pefile==2024.8.26 capstone==5.0.6
+
+      - name: Download and pin original demo release archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit-out/shirono
+          URL='https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z'
+          curl --fail --location --retry 5 --retry-delay 3 --connect-timeout 20 "$URL" -o "$RUNNER_TEMP/project_decrypted.7z"
+          printf '%s  %s\n' '4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b' "$RUNNER_TEMP/project_decrypted.7z" | sha256sum -c -
+          7z t "$RUNNER_TEMP/project_decrypted.7z" > audit-out/shirono/7z_integrity.txt
+          7z l "$RUNNER_TEMP/project_decrypted.7z" > audit-out/shirono/7z_listing.txt
+          mkdir -p "$RUNNER_TEMP/shirono-input"
+          7z x "$RUNNER_TEMP/project_decrypted.7z" "-o$RUNNER_TEMP/shirono-input" -y >/dev/null
+          echo "SHIRONO_ARCHIVE_SHA256_PASS"
+          find "$RUNNER_TEMP/shirono-input" -type f | head -80
+
+      - name: Audit project JSON and identify executable
+        id: inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/shirono/audit_project.py "$RUNNER_TEMP/shirono-input" "$GITHUB_WORKSPACE/audit-out/shirono" | tee audit-out/shirono/json_stdout.txt
+          EXE="$(find "$RUNNER_TEMP/shirono-input" -type f -iname '*.exe' -printf '%s %p\n' | sort -nr | head -1 | cut -d' ' -f2-)"
+          if [ -z "$EXE" ]; then
+            echo "No executable in archive; Ghidra/Rizin binary analysis not possible." | tee audit-out/shirono/exe_status.txt
+            echo "has_exe=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "$EXE" | tee audit-out/shirono/exe_status.txt
+            echo "exe_path=$EXE" >> "$GITHUB_ENV"
+            echo "has_exe=true" >> "$GITHUB_OUTPUT"
+            file "$EXE" | tee audit-out/shirono/exe_filetype.txt
+            sha256sum "$EXE" | tee audit-out/shirono/exe_sha256.txt
+          fi
+
+      - name: Run native Rizin 0.9.1 on PE
+        if: steps.inventory.outputs.has_exe == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit-out/shirono/rizin
+          ./tools/rizin/rizin -v | tee audit-out/shirono/rizin/version.txt
+          ./tools/rizin/rz-bin -I "$exe_path" > audit-out/shirono/rizin/pe_info.txt 2>&1 || true
+          ./tools/rizin/rz-bin -E "$exe_path" > audit-out/shirono/rizin/exports.txt 2>&1 || true
+          ./tools/rizin/rz-bin -i "$exe_path" > audit-out/shirono/rizin/imports.txt 2>&1 || true
+          ./tools/rizin/rz-bin -zz "$exe_path" > audit-out/shirono/rizin/strings.txt 2>&1 || true
+          timeout 360 ./tools/rizin/analyze.sh "$exe_path" "$GITHUB_WORKSPACE/audit-out/shirono/rizin" > audit-out/shirono/rizin/process.log 2>&1 || echo "RIZIN_ANALYZE_NONZERO" | tee -a audit-out/shirono/rizin/process.log
+          grep -iEn 'clon|clone|copy|replica|shadow|objectcreate|instance|player|分身|複製|コピー|残像' audit-out/shirono/rizin/exports.txt audit-out/shirono/rizin/strings.txt | head -250 > audit-out/shirono/rizin/clone_matches.txt || true
+          echo "SHIRONO_RIZIN_AUDIT_COMPLETE"
+
+      - name: Run Ghidra 12.1.4 headless and decompile candidate functions
+        if: steps.inventory.outputs.has_exe == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/shirono-ghidra" audit-out/shirono/ghidra
+          chmod +x ./ghidra_12.1.4_PUBLIC/support/analyzeHeadless
+          timeout 1200 ./ghidra_12.1.4_PUBLIC/support/analyzeHeadless \
+            "$RUNNER_TEMP/shirono-ghidra" ShironoPE \
+            -import "$exe_path" \
+            -scriptPath "$GITHUB_WORKSPACE/ghidra_scripts" \
+            -postScript ShironoCloneAudit.java "$GITHUB_WORKSPACE/audit-out/shirono/ghidra" \
+            -analysisTimeoutPerFile 900 \
+            -deleteProject > audit-out/shirono/ghidra/process.log 2>&1 || echo "GHIDRA_ANALYZE_NONZERO" | tee -a audit-out/shirono/ghidra/process.log
+          tail -70 audit-out/shirono/ghidra/process.log
+          echo "SHIRONO_GHIDRA_AUDIT_COMPLETE"
+
+      - name: Commit compact evidence and preserve downloadable artifact
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p audit-out/shirono
+          find audit-out/shirono -type f -size +5M -print -exec sh -c 'head -c 3000000 "$1" > "$1.trim"; mv "$1.trim" "$1"' _ {} \;
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono
+          if ! git diff --cached --quiet; then
+            git commit -m "Record pinned ShironoYakata DEMO clone path audit"
+            git push origin HEAD:analysis/shirono-multiclone
+          fi
+
+      - name: Publish audit artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shirono-demo-ghidra-rizin-evidence
+          path: audit-out/shirono/
+          retention-days: 30
+          if-no-files-found: warn
