@@ -1,0 +1,1427 @@
+PROGRAM player.exe ImageBase 00400000
+
+============ 00537bd0 execActionObjectCreateForScript ============
+int __cdecl execActionObjectCreateForScript(int param_1, int param_2, int param_3, int param_4)
+BYTES 55 8b ec 6a ff 68 ad 68 8a 00 64 a1 00 00 00 00 50 83 ec 44 53 56 57 a1 
+CALLER 00a4ee78 none 
+CALLER Entry Point none 
+CALLER 005f1f36 005f1e20 FUN_005f1e20
+TOTAL_XREFS 3
+
+/* public: static int __cdecl agtk::ObjectAction::execActionObjectCreateForScript(int,int,int,int)
+    */
+
+int __cdecl
+agtk::ObjectAction::execActionObjectCreateForScript(int param_1,int param_2,int param_3,int param_4)
+
+{
+  char cVar1;
+  GameManager *pGVar2;
+  Scene *pSVar3;
+  int iVar4;
+  int *piVar5;
+  __Dictionary *p_Var6;
+  ProjectData *this;
+  ObjectData *pOVar7;
+  Object *this_00;
+  int *piVar8;
+  PlayObjectData *pPVar9;
+  PlayData *pPVar10;
+  PlayVariableData *pPVar11;
+  uint uVar12;
+  ViewportLight *pVVar13;
+  ViewportLightObject *pVVar14;
+  __Array *this_01;
+  PrimitiveManager *this_02;
+  Rect *pRVar15;
+  PolygonShape *pPVar16;
+  undefined4 *puVar17;
+  PrimitiveNode *pPVar18;
+  code *pcVar19;
+  SceneLayer *this_03;
+  bool bVar20;
+  undefined4 uStack_8c;
+  Object *pOVar21;
+  SceneLayer *pSVar22;
+  Color4F local_54 [16];
+  Rect local_44 [16];
+  Scene local_34 [16];
+  float local_24;
+  float local_20;
+  int *local_18;
+  Scene *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+                    /* 0x137bd0  3049  ?execActionObjectCreateForScript@ObjectAction@agtk@@SAHHHHH@Z
+                        */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_008a68ad;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  pGVar2 = GameManager::getInstance();
+  pSVar3 = (Scene *)(**(code **)(*(int *)pGVar2 + 0x18))();
+  local_14 = pSVar3;
+  iVar4 = (**(code **)(*(int *)pSVar3 + 0x2b4))();
+  if (iVar4 == 0) {
+    this_03 = (SceneLayer *)0x0;
+  }
+  else {
+    iVar4 = param_4;
+    p_Var6 = (__Dictionary *)(**(code **)(*(int *)pSVar3 + 0x2b4))();
+    cocos2d::__Dictionary::objectForKey(p_Var6,iVar4);
+    this_03 = (SceneLayer *)__RTDynamicCast();
+  }
+  piVar5 = (int *)(**(code **)(*(int *)pSVar3 + 0x2fc))();
+  iVar4 = param_4;
+  p_Var6 = (__Dictionary *)(**(code **)(*piVar5 + 0xc))();
+  cocos2d::__Dictionary::objectForKey(p_Var6,iVar4);
+  local_18 = (int *)__RTDynamicCast();
+  local_24 = (float)param_2;
+  local_20 = (float)param_3;
+  local_8 = 0;
+  pGVar2 = GameManager::getInstance();
+  this = (ProjectData *)(**(code **)(*(int *)pGVar2 + 8))();
+  pOVar7 = data::ProjectData::getObjectData(this,param_1);
+  cVar1 = (**(code **)(*(int *)pOVar7 + 0x90))();
+  if (cVar1 == '\0') {
+    uStack_8c = 0xffffffff;
+    this_00 = (Object *)(*(code *)Object::create)(this_03,param_1);
+    SceneLayer::addCollisionDetaction(this_03,this_00);
+    *(int *)(this_03 + 0x2f0) = *(int *)(this_03 + 0x2f0) + 1;
+    (**(code **)(*(int *)this_00 + 0x2b8))();
+    piVar5 = (int *)(**(code **)(*(int *)this_00 + 0x2d4))();
+    piVar8 = (int *)(**(code **)(*(int *)this_00 + 0x2c4))();
+    iVar4 = (**(code **)(*piVar8 + 0x20))();
+    bVar20 = iVar4 == 99999999;
+    iVar4 = (**(code **)(*piVar5 + 0xc))();
+    iVar4 = Scene::getObjectInstanceId(local_14,iVar4,bVar20);
+    pPVar9 = (PlayObjectData *)(**(code **)(*(int *)this_00 + 0x34c))();
+    data::PlayObjectData::setInstanceId(pPVar9,iVar4);
+    piVar5 = (int *)(**(code **)(*(int *)this_00 + 0x2d4))();
+    iVar4 = (**(code **)(*piVar5 + 0xc))();
+    pGVar2 = GameManager::getInstance();
+    pPVar10 = (PlayData *)(**(code **)(*(int *)pGVar2 + 0x10))();
+    pPVar11 = data::PlayData::getVariableData(pPVar10,iVar4,0x14);
+    Scene::setObjectInstanceCount(local_14,iVar4,(int)*(double *)(pPVar11 + 0x28) + 1);
+    pGVar2 = GameManager::getInstance();
+    pPVar10 = (PlayData *)(**(code **)(*(int *)pGVar2 + 0x10))();
+    pPVar11 = data::PlayData::getVariableData(pPVar10,iVar4,0x14);
+    iVar4 = (int)*(double *)(pPVar11 + 0x28);
+    pPVar9 = (PlayObjectData *)(**(code **)(*(int *)this_00 + 0x34c))();
+    data::PlayObjectData::setInstanceCount(pPVar9,iVar4);
+    piVar5 = (int *)(**(code **)(*(int *)this_00 + 0x2d4))();
+    iVar4 = (**(code **)(*piVar5 + 0xc))();
+    pSVar3 = local_14;
+    Scene::updateObjectInstanceCount(local_14,iVar4);
+    (**(code **)(*(int *)this_00 + 0x3cc))();
+    piVar5 = (int *)(**(code **)(*(int *)pSVar3 + 0x2a4))();
+    iVar4 = (**(code **)(*piVar5 + 0x20))();
+    Object::setPhysicsBitMask(this_00,param_4,iVar4);
+    piVar5 = (int *)(**(code **)(*(int *)this_00 + 0x2d4))();
+    cVar1 = (**(code **)(*piVar5 + 0x3d8))();
+    pcVar19 = addObject_exref;
+    if (cVar1 != '\0') {
+      p_Var6 = (__Dictionary *)(**(code **)(*piVar5 + 0x3e0))();
+      uVar12 = cocos2d::__Dictionary::count(p_Var6);
+      pcVar19 = addObject_exref;
+      if (uVar12 != 0) {
+        pSVar22 = this_03;
+        pVVar13 = (ViewportLight *)(**(code **)(*(int *)pSVar3 + 0x2fc))();
+        pVVar14 = ViewportLightObject::create(this_00,pVVar13,pSVar22);
+        this_01 = (__Array *)(**(code **)(*local_18 + 0xc))();
+        pcVar19 = addObject_exref;
+        cocos2d::__Array::addObject(this_01,(Ref *)pVVar14);
+      }
+    }
+    (**(code **)(**(int **)(this_03 + 0x280) + 0x10c))();
+    (**(code **)(*(int *)this_03 + 0x2d4))();
+    (*pcVar19)();
+    pOVar21 = this_00;
+    (**(code **)(*(int *)this_03 + 0x2dc))();
+    (*pcVar19)();
+    SceneLayer::createPhysicsObjectWithObject(this_03,this_00);
+    if (DAT_00bbc5d4 == (int *)0x0) {
+      operator_new(0xbc);
+      local_8._0_1_ = 1;
+      DAT_00bbc5d4 = (int *)FUN_005bb2b0();
+      local_8 = (uint)local_8._1_3_ << 8;
+      (**(code **)(*DAT_00bbc5d4 + 4))();
+    }
+    cVar1 = (**(code **)(*DAT_00bbc5d4 + 0x78))();
+    if (cVar1 != '\0') {
+      this_02 = PrimitiveManager::getInstance();
+      Object::getRect(this_00);
+      local_8._0_1_ = 2;
+      pRVar15 = (Rect *)Scene::getRectCocos2dFromScene(local_44,local_34);
+      local_8._0_1_ = 3;
+      cocos2d::Rect::operator=((Rect *)local_34,pRVar15);
+      local_8._0_1_ = 2;
+      cocos2d::Rect::Rect((Rect *)&uStack_8c,(Rect *)local_34);
+      pPVar16 = PolygonShape::createRectangle();
+      uStack_8c = 0x537fab;
+      cocos2d::Color4F::Color4F((Color4F *)local_44,1.0,1.0,1.0,0.5);
+      uStack_8c = 0x537fd4;
+      puVar17 = (undefined4 *)cocos2d::Color4F::Color4F(local_54,1.0,1.0,1.0,1.0);
+      uStack_8c = puVar17[3];
+      pPVar18 = PrimitiveManager::createPolygon
+                          (this_02,0,0,*(undefined4 *)(pPVar16 + 0x28),
+                           *(undefined4 *)(pPVar16 + 0x40),*puVar17,puVar17[1],puVar17[2]);
+      PrimitiveManager::setTimer
+                (this_02,pPVar18,(double)CONCAT44(pOVar21,(int)((ulonglong)DAT_00a0e270 >> 0x20)));
+      (**(code **)(*(int *)this_00 + 0x10c))();
+      local_8 = (uint)local_8._1_3_ << 8;
+    }
+    pPVar9 = (PlayObjectData *)(**(code **)(*(int *)this_00 + 0x34c))();
+    pPVar11 = data::PlayObjectData::getVariableData(pPVar9,0x13);
+    ExceptionList = local_10;
+    return (int)*(double *)(pPVar11 + 0x28);
+  }
+  ExceptionList = local_10;
+  return -1;
+}
+
+
+
+============ 00537b00 execActionObjectCreate ============
+void __thiscall execActionObjectCreate(ObjectCommandData * param_1)
+BYTES 55 8b ec 83 e4 f8 83 ec 14 53 56 57 6a 00 68 04 4e ba 00 68 a8 4e ba 00 
+CALLER 00a4ee74 none 
+CALLER Entry Point none 
+CALLER 005363bd 00536280 updateOtherExecAction
+CALLER 004e25aa 004e2460 FUN_004e2460
+TOTAL_XREFS 4
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* public: void __thiscall agtk::ObjectAction::execActionObjectCreate(class
+   agtk::data::ObjectCommandData *) */
+
+void __thiscall
+agtk::ObjectAction::execActionObjectCreate(ObjectAction *this,ObjectCommandData *param_1)
+
+{
+  char cVar1;
+  Ref *pRVar2;
+  int iVar3;
+  int iVar4;
+  __Array *this_00;
+  float10 fVar5;
+  double dVar6;
+  
+                    /* 0x137b00  3048
+                       ?execActionObjectCreate@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+                        */
+  pRVar2 = (Ref *)__RTDynamicCast(param_1,0,&data::ObjectCommandData::RTTI_Type_Descriptor,
+                                  &data::ObjectCommandObjectCreateData::RTTI_Type_Descriptor,0);
+  iVar3 = rand();
+  dVar6 = ((double)iVar3 / _DAT_00a0e388) * DAT_00a0e2f8;
+  fVar5 = (float10)(**(code **)(*(int *)pRVar2 + 0x60))();
+  if (dVar6 <= (double)fVar5) {
+    iVar3 = (**(code **)(*(int *)pRVar2 + 0x28))();
+    if (-1 < iVar3) {
+      iVar3 = (**(code **)(*(int *)pRVar2 + 0x48))();
+      cVar1 = (**(code **)(*(int *)pRVar2 + 0x40))();
+      if (cVar1 != '\0') {
+        iVar4 = (**(code **)(*(int *)pRVar2 + 0x38))();
+        if ((iVar4 == 0) && (-1 < iVar3)) {
+          this_00 = (__Array *)(**(code **)(**(int **)(this + 0x48) + 0x508))();
+          cocos2d::__Array::addObject(this_00,pRVar2);
+          return;
+        }
+      }
+      Object::execActionObjectCreate(*(Object **)(this + 0x48),param_1);
+    }
+  }
+  return;
+}
+
+
+
+============ 005284a0 execActionObjectCreate ============
+void __thiscall execActionObjectCreate(ObjectCommandData * param_1)
+BYTES 55 8b ec 6a ff 68 fe 5d 8a 00 64 a1 00 00 00 00 50 81 ec 88 00 00 00 a1 
+CALLER 00a4ee70 none 
+CALLER Entry Point none 
+CALLER 00518ad2 005189f0 updateExecActionObjectCreate
+CALLER 00537bbb 00537b00 execActionObjectCreate
+TOTAL_XREFS 4
+
+/* protected: void __thiscall agtk::Object::execActionObjectCreate(class
+   agtk::data::ObjectCommandData *) */
+
+void __thiscall agtk::Object::execActionObjectCreate(Object *this,ObjectCommandData *param_1)
+
+{
+  double dVar1;
+  Scene *this_00;
+  undefined1 uVar2;
+  char cVar3;
+  bool bVar4;
+  int iVar5;
+  int *piVar6;
+  __Dictionary *p_Var7;
+  PlayObjectData *pPVar8;
+  PlayVariableData *pPVar9;
+  EnumType EVar10;
+  __Array *p_Var11;
+  GameManager *pGVar12;
+  ProjectData *this_01;
+  ObjectData *pOVar13;
+  undefined4 uVar14;
+  Object *this_02;
+  ObjectMovement *pOVar15;
+  Player *pPVar16;
+  int *piVar17;
+  int iVar18;
+  uint uVar19;
+  ViewportLight *pVVar20;
+  ViewportLightObject *pVVar21;
+  Vec2 *pVVar22;
+  Vec2 *this_03;
+  int *piVar23;
+  float fVar24;
+  SceneLayer *pSVar25;
+  int *local_60;
+  SceneLayer *local_48;
+  int *local_44;
+  undefined **local_40;
+  int **local_3c;
+  SceneLayer **local_38;
+  undefined ***local_1c;
+  uint local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1284a0  3047
+                       ?execActionObjectCreate@Object@agtk@@IAEXPAVObjectCommandData@data@2@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_008a5dfe;
+  local_10 = ExceptionList;
+  local_18 = DAT_00b91dd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_44 = (int *)__RTDynamicCast();
+  local_48 = *(SceneLayer **)(this + 0x2f0);
+  local_60 = (int *)0x0;
+  this_00 = *(Scene **)(local_48 + 0x290);
+  iVar5 = (**(code **)(*(int *)local_48 + 0x390))();
+  if (iVar5 == 0) {
+    iVar5 = (**(code **)(*(int *)this + 0x3c8))();
+    piVar6 = (int *)(**(code **)(*(int *)this_00 + 0x2fc))();
+    p_Var7 = (__Dictionary *)(**(code **)(*piVar6 + 0xc))();
+    cocos2d::__Dictionary::objectForKey(p_Var7,iVar5);
+    local_60 = (int *)__RTDynamicCast();
+  }
+  (**(code **)(*(int *)this + 0x2d4))();
+  local_3c = &local_44;
+  local_40 = std::
+             _Func_impl<<lambda_15302ed86e4a5aa9989e667ce1b6f5aa>,std::allocator<int>,bool,agtk::Object*,cocos2d::Vec2&>
+             ::vftable;
+  local_38 = &local_48;
+  local_1c = &local_40;
+  local_8._0_1_ = 0;
+  local_8._1_3_ = 0;
+  iVar5 = (**(code **)(*local_44 + 0x38))();
+  if (iVar5 == 0) {
+    p_Var11 = cocos2d::__Array::create();
+    cocos2d::__Array::addObject(p_Var11,(Ref *)this);
+  }
+  else {
+    if (iVar5 != 1) goto LAB_00528bb9;
+    pPVar8 = (PlayObjectData *)(**(code **)(*(int *)this + 0x34c))();
+    pPVar9 = data::PlayObjectData::getVariableData(pPVar8,0x13);
+    dVar1 = *(double *)(pPVar9 + 0x28);
+    EVar10 = (**(code **)(*(int *)local_48 + 0x390))();
+    p_Var11 = Scene::getObjectAllLocked(this_00,(int)dVar1,EVar10);
+  }
+  if (p_Var11 != (__Array *)0x0) {
+    iVar5 = **(int **)(p_Var11 + 0x1c);
+    if (0 < iVar5) {
+      piVar23 = (int *)(*(int **)(p_Var11 + 0x1c))[2];
+      piVar6 = piVar23 + iVar5 + -1;
+      for (; (piVar23 <= piVar6 && (*piVar23 != 0)); piVar23 = piVar23 + 1) {
+        __RTDynamicCast();
+        local_8._0_1_ = 1;
+        uVar2 = (undefined1)local_8;
+        local_8._0_1_ = 1;
+        if (local_1c == (undefined ***)0x0) {
+          local_8._0_1_ = uVar2;
+                    /* WARNING: Subroutine does not return */
+          std::_Xbad_function_call();
+        }
+        cVar3 = (*(code *)(*local_1c)[2])();
+        if (cVar3 != '\0') {
+          (**(code **)(*local_44 + 0x50))();
+          (**(code **)(*local_44 + 0x58))();
+          (**(code **)(*local_44 + 0x70))();
+          pGVar12 = GameManager::getInstance();
+          this_01 = (ProjectData *)(**(code **)(*(int *)pGVar12 + 8))();
+          iVar5 = (**(code **)(*local_44 + 0x28))();
+          pOVar13 = data::ProjectData::getObjectData(this_01,iVar5);
+          cVar3 = (**(code **)(*(int *)pOVar13 + 0x90))();
+          if (cVar3 == '\0') {
+            local_8._0_1_ = 3;
+            uVar14 = (**(code **)(*local_44 + 0x30))();
+            uVar14 = (**(code **)(*local_44 + 0x28))(uVar14);
+            local_8._0_1_ = 1;
+            this_02 = (Object *)(*(code *)create)(local_48,uVar14);
+            cVar3 = (**(code **)(*local_44 + 0x70))();
+            if (cVar3 != '\0') {
+              local_8._0_1_ = 4;
+              pOVar15 = (ObjectMovement *)(**(code **)(*(int *)this_02 + 0x2f4))();
+              local_8._0_1_ = 1;
+              ObjectMovement::setDirection(pOVar15);
+              bVar4 = isAutoGeneration(this);
+              if ((bVar4) &&
+                 (pPVar16 = (Player *)(**(code **)(*(int *)this + 0x2fc))(),
+                 pPVar16 != (Player *)0x0)) {
+                fVar24 = Player::getCenterRotation(pPVar16);
+                FUN_004ccb80();
+                local_8._0_1_ = 5;
+                directionCorrection(this);
+                bVar4 = isAutoGeneration(this_02);
+                if (bVar4) {
+                  local_8._0_1_ = 6;
+                  pOVar15 = (ObjectMovement *)(**(code **)(*(int *)this_02 + 0x2f4))();
+                  local_8._0_1_ = 5;
+                  ObjectMovement::setDirection(pOVar15);
+                  pPVar16 = (Player *)(**(code **)(*(int *)this_02 + 0x2fc))();
+                  if (pPVar16 != (Player *)0x0) {
+                    Player::setCenterRotation(pPVar16,fVar24);
+                  }
+                }
+                local_8._0_1_ = 1;
+              }
+            }
+            SceneLayer::addCollisionDetaction(local_48,this_02);
+            *(int *)(local_48 + 0x2f0) = *(int *)(local_48 + 0x2f0) + 1;
+            (**(code **)(*(int *)this_02 + 0x2b8))();
+            iVar5 = Scene::getObjectInstanceId(this_00,this_02);
+            pPVar8 = (PlayObjectData *)(**(code **)(*(int *)this_02 + 0x34c))();
+            data::PlayObjectData::setInstanceId(pPVar8,iVar5);
+            piVar17 = (int *)(**(code **)(*(int *)this_02 + 0x2d4))();
+            iVar5 = (**(code **)(*piVar17 + 0xc))();
+            iVar5 = Scene::incrementObjectInstanceCount(this_00,iVar5);
+            pPVar8 = (PlayObjectData *)(**(code **)(*(int *)this_02 + 0x34c))();
+            data::PlayObjectData::setInstanceCount(pPVar8,iVar5);
+            piVar17 = (int *)(**(code **)(*(int *)this_02 + 0x2d4))();
+            iVar5 = (**(code **)(*piVar17 + 0xc))();
+            Scene::updateObjectInstanceCount(this_00,iVar5);
+            iVar5 = *(int *)this_02;
+            (**(code **)(*(int *)this + 0x3c8))();
+            (**(code **)(iVar5 + 0x3cc))();
+            piVar17 = (int *)(**(code **)(*(int *)this_00 + 0x2a4))();
+            iVar5 = (**(code **)(*piVar17 + 0x20))();
+            iVar18 = (**(code **)(*(int *)this + 0x3c8))();
+            setPhysicsBitMask(this_02,iVar18,iVar5);
+            iVar5 = *(int *)this_02;
+            (**(code **)(*(int *)this + 0x5b8))();
+            (**(code **)(iVar5 + 0x5bc))();
+            piVar17 = (int *)(**(code **)(*(int *)this_02 + 0x2d4))();
+            if ((local_60 != (int *)0x0) &&
+               (cVar3 = (**(code **)(*piVar17 + 0x3d8))(), cVar3 != '\0')) {
+              p_Var7 = (__Dictionary *)(**(code **)(*piVar17 + 0x3e0))();
+              uVar19 = cocos2d::__Dictionary::count(p_Var7);
+              if (uVar19 != 0) {
+                pSVar25 = local_48;
+                pVVar20 = (ViewportLight *)(**(code **)(*(int *)this_00 + 0x2fc))();
+                pVVar21 = ViewportLightObject::create(this_02,pVVar20,pSVar25);
+                p_Var11 = (__Array *)(**(code **)(*local_60 + 0xc))();
+                cocos2d::__Array::addObject(p_Var11,(Ref *)pVVar21);
+              }
+            }
+            SceneLayer::addObject(local_48,this_02);
+            SceneLayer::createPhysicsObjectWithObject(local_48,this_02);
+            cVar3 = (**(code **)(*local_44 + 0x68))();
+            if (cVar3 != '\0') {
+              local_8 = CONCAT31(local_8._1_3_,7);
+              iVar5 = (**(code **)(*local_44 + 0x38))();
+              if (iVar5 == 0) {
+                cVar3 = (**(code **)(*local_44 + 0x40))();
+                if (cVar3 != '\0') {
+                  (**(code **)(*local_44 + 0x48))();
+                }
+                (**(code **)(*local_44 + 0x58))();
+                (**(code **)(*local_44 + 0x50))();
+              }
+              else if (iVar5 == 1) {
+                pVVar22 = (Vec2 *)(**(code **)(*(int *)this + 0x5c))();
+                this_03 = (Vec2 *)(**(code **)(*(int *)this_02 + 0x5c))();
+                cocos2d::Vec2::operator-(this_03,pVVar22);
+              }
+              iVar5 = getInstanceId(this);
+              pPVar8 = (PlayObjectData *)(**(code **)(*(int *)this_02 + 0x34c))();
+              data::PlayObjectData::setParentObjectInstanceId(pPVar8,iVar5);
+              addChildObject(this);
+              cVar3 = (**(code **)(*(int *)this + 0x560))();
+              if ((cVar3 != '\0') && (cVar3 = (**(code **)(*(int *)this + 0x580))(), cVar3 != '\0'))
+              {
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x560))();
+                (**(code **)(iVar5 + 0x564))();
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x568))();
+                (**(code **)(iVar5 + 0x56c))();
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x558))();
+                (**(code **)(iVar5 + 0x55c))();
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x570))();
+                (**(code **)(iVar5 + 0x574))();
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x578))();
+                (**(code **)(iVar5 + 0x57c))();
+                iVar5 = *(int *)this_02;
+                (**(code **)(*(int *)this + 0x580))();
+                (**(code **)(iVar5 + 0x584))();
+              }
+              local_8._0_1_ = 1;
+            }
+            cVar3 = (**(code **)(*local_44 + 0x78))();
+            if (cVar3 != '\0') {
+              bVar4 = (bool)(**(code **)(*local_44 + 0x78))();
+              addConnectObjectDispPriority(this,this_02,bVar4);
+            }
+            cVar3 = (**(code **)(*local_44 + 0x80))();
+            if (cVar3 != '\0') {
+              (**(code **)(*(int *)this_02 + 0x5c4))();
+            }
+          }
+        }
+        local_8._0_1_ = 0;
+      }
+    }
+  }
+LAB_00528bb9:
+  local_8 = 8;
+  if (local_1c != (undefined ***)0x0) {
+    (*(code *)(*local_1c)[4])();
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_18 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+============ 005189f0 updateExecActionObjectCreate ============
+void __thiscall updateExecActionObjectCreate(void)
+BYTES 55 8b ec 83 ec 0c 53 56 57 8b f9 8b 07 ff 90 08 05 00 00 8b d8 8b 53 1c 
+CALLER 00a564f0 none 
+CALLER Entry Point none 
+CALLER 00519861 00518b10 objectUpdateBefore
+CALLER 005230e6 00522f70 setup
+TOTAL_XREFS 4
+
+/* public: void __thiscall agtk::Object::updateExecActionObjectCreate(void) */
+
+void __thiscall agtk::Object::updateExecActionObjectCreate(Object *this)
+
+{
+  char cVar1;
+  __Array *this_00;
+  int iVar2;
+  ObjectCommandData *pOVar3;
+  int iVar4;
+  int *piVar5;
+  __Dictionary *this_01;
+  Ref *pRVar6;
+  undefined4 uVar7;
+  TypeDescriptor *pTVar8;
+  TypeDescriptor *pTVar9;
+  undefined4 uVar10;
+  
+                    /* 0x1189f0  10631  ?updateExecActionObjectCreate@Object@agtk@@QAEXXZ */
+  this_00 = (__Array *)(**(code **)(*(int *)this + 0x508))();
+  iVar4 = **(int **)(this_00 + 0x1c);
+  do {
+    if (iVar4 < 1) {
+      return;
+    }
+    iVar2 = (**(code **)(*(int *)this + 0x2fc))();
+    iVar4 = **(int **)(this_00 + 0x1c);
+    if (iVar4 < 1) {
+      return;
+    }
+    piVar5 = (int *)(*(int **)(this_00 + 0x1c))[2];
+    if (piVar5 + iVar4 + -1 < piVar5) {
+      return;
+    }
+    if (*piVar5 == 0) {
+      return;
+    }
+    pOVar3 = (ObjectCommandData *)
+             __RTDynamicCast(*piVar5,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                             &data::ObjectCommandObjectCreateData::RTTI_Type_Descriptor,0);
+    if (iVar2 != 0) {
+      iVar4 = (**(code **)(*(int *)pOVar3 + 0x48))();
+      if (-1 < iVar4) {
+        piVar5 = (int *)(**(code **)(**(int **)(iVar2 + 0x290) + 0x58))();
+        piVar5 = (int *)(**(code **)(*piVar5 + 0x18))();
+        if (piVar5 != (int *)0x0) {
+          this_01 = (__Dictionary *)(**(code **)(*piVar5 + 0x28))();
+          uVar10 = 0;
+          pTVar9 = &AnimationTimeline::RTTI_Type_Descriptor;
+          pTVar8 = &cocos2d::Ref::RTTI_Type_Descriptor;
+          uVar7 = 0;
+          pRVar6 = cocos2d::__Dictionary::objectForKey(this_01,iVar4);
+          piVar5 = (int *)__RTDynamicCast(pRVar6,uVar7,pTVar8,pTVar9,uVar10);
+          if ((piVar5 != (int *)0x0) && (cVar1 = (**(code **)(*piVar5 + 0x20))(), cVar1 != '\0'))
+          goto LAB_00518acf;
+        }
+      }
+      iVar4 = (**(code **)(*(int *)pOVar3 + 0x48))();
+      if (-1 < iVar4) {
+        return;
+      }
+    }
+LAB_00518acf:
+    execActionObjectCreate(this,pOVar3);
+    cocos2d::__Array::removeObject(this_00,(Ref *)pOVar3,true);
+    this_00 = (__Array *)(**(code **)(*(int *)this + 0x508))();
+    iVar4 = **(int **)(this_00 + 0x1c);
+  } while( true );
+}
+
+
+
+============ 00588e70 getObjectPlayer ============
+Object * __thiscall getObjectPlayer(void)
+BYTES 55 8b ec 8b 01 83 ec 08 53 56 57 ff 90 b4 02 00 00 85 c0 0f 84 14 01 00 
+CALLER 00a50e64 none 
+CALLER Entry Point none 
+CALLER 0058b94d 0058b660 updateCamera
+CALLER 005892ec 00589260 changeCamera
+CALLER 00589499 00589260 changeCamera
+TOTAL_XREFS 5
+
+/* private: class agtk::Object * __thiscall agtk::Scene::getObjectPlayer(void) */
+
+Object * __thiscall agtk::Scene::getObjectPlayer(Scene *this)
+
+{
+  char cVar1;
+  int iVar2;
+  int *piVar3;
+  int iVar4;
+  Object *pOVar5;
+  int iVar6;
+  int iVar7;
+  int *piVar8;
+  
+                    /* 0x188e70  5092  ?getObjectPlayer@Scene@agtk@@AAEPAVObject@2@XZ */
+  iVar2 = (**(code **)(*(int *)this + 0x2b4))();
+  if ((iVar2 != 0) && (iVar2 = *(int *)(iVar2 + 0x1c), iVar2 != 0)) {
+    iVar7 = *(int *)(iVar2 + 0x110);
+    while( true ) {
+      piVar3 = (int *)__RTDynamicCast(*(undefined4 *)(iVar2 + 0x104),0,
+                                      &cocos2d::Ref::RTTI_Type_Descriptor,
+                                      &SceneLayer::RTTI_Type_Descriptor,0);
+      iVar2 = (**(code **)(*piVar3 + 0x2d4))();
+      if ((iVar2 != 0) && (iVar2 = (**(code **)(*piVar3 + 0x2d4))(), 0 < **(int **)(iVar2 + 0x1c)))
+      {
+        iVar2 = (**(code **)(*piVar3 + 0x2d4))();
+        piVar8 = *(int **)(*(int *)(iVar2 + 0x1c) + 8);
+        iVar2 = (**(code **)(*piVar3 + 0x2d4))();
+        iVar2 = **(int **)(iVar2 + 0x1c);
+        iVar4 = (**(code **)(*piVar3 + 0x2d4))();
+        iVar4 = *(int *)(*(int *)(iVar4 + 0x1c) + 8);
+        for (; (piVar8 <= (int *)(iVar4 + -4 + iVar2 * 4) && (*piVar8 != 0)); piVar8 = piVar8 + 1) {
+          pOVar5 = (Object *)
+                   __RTDynamicCast(*piVar8,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                                   &Object::RTTI_Type_Descriptor,0);
+          piVar3 = (int *)(**(code **)(*(int *)pOVar5 + 0x2d4))();
+          iVar6 = (**(code **)(*piVar3 + 0x18))();
+          if ((iVar6 == 0) && (cVar1 = (**(code **)(*piVar3 + 0x28))(), cVar1 != '\0')) {
+            return pOVar5;
+          }
+        }
+      }
+      if (iVar7 == 0) break;
+      iVar2 = iVar7;
+      iVar7 = *(int *)(iVar7 + 0x110);
+    }
+  }
+  return (Object *)0x0;
+}
+
+
+
+============ 005d8af0 getTargetObjectByInstanceId ============
+Object * __thiscall getTargetObjectByInstanceId(int param_1)
+BYTES 55 8b ec 8b 01 53 56 57 ff 50 18 85 c0 74 66 6a 02 8b c8 e8 38 46 fb ff 
+CALLER 00a51d10 none 
+CALLER Entry Point none 
+CALLER 005d675f 005d6660 getSwitchVariableDataList
+CALLER 00518ff3 00518b10 objectUpdateBefore
+CALLER 004d5e36 004d5d40 getPlayVariableData
+CALLER 005d76df 005d73b0 getVariableValue
+CALLER 005cea29 005cc3a0 attachLoadData
+CALLER 005cea6a 005cc3a0 attachLoadData
+CALLER 005cec03 005cc3a0 attachLoadData
+CALLER 005cec32 005cc3a0 attachLoadData
+CALLER 005cedd1 005cc3a0 attachLoadData
+CALLER 005ceee6 005cc3a0 attachLoadData
+CALLER 005cf04e 005cc3a0 attachLoadData
+CALLER 005cf157 005cc3a0 attachLoadData
+CALLER 005ee783 005ee1b0 update
+TOTAL_XREFS 15
+
+/* public: class agtk::Object * __thiscall GameManager::getTargetObjectByInstanceId(int) */
+
+Object * __thiscall GameManager::getTargetObjectByInstanceId(GameManager *this,int param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  Scene *this_00;
+  __Array *p_Var3;
+  Object *pOVar4;
+  PlayObjectData *this_01;
+  PlayVariableData *pPVar5;
+  int *piVar6;
+  
+                    /* 0x1d8af0  6031
+                       ?getTargetObjectByInstanceId@GameManager@@QAEPAVObject@agtk@@H@Z */
+  this_00 = (Scene *)(**(code **)(*(int *)this + 0x18))();
+  if ((this_00 != (Scene *)0x0) &&
+     (p_Var3 = agtk::Scene::getObjectAll(this_00,2), p_Var3 != (__Array *)0x0)) {
+    iVar2 = **(int **)(p_Var3 + 0x1c);
+    if (0 < iVar2) {
+      piVar6 = (int *)(*(int **)(p_Var3 + 0x1c))[2];
+      piVar1 = piVar6 + iVar2 + -1;
+      for (; (piVar6 <= piVar1 && (*piVar6 != 0)); piVar6 = piVar6 + 1) {
+        pOVar4 = (Object *)
+                 __RTDynamicCast(*piVar6,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                                 &agtk::Object::RTTI_Type_Descriptor,0);
+        this_01 = (PlayObjectData *)(**(code **)(*(int *)pOVar4 + 0x34c))();
+        pPVar5 = agtk::data::PlayObjectData::getVariableData(this_01,0x13);
+        if ((int)*(double *)(pPVar5 + 0x28) == param_1) {
+          return pOVar4;
+        }
+      }
+    }
+  }
+  return (Object *)0x0;
+}
+
+
+
+============ 00520df0 getInstanceId ============
+int __thiscall getInstanceId(void)
+BYTES 51 8b 01 ff 90 4c 03 00 00 6a 13 8b c8 e8 4e 9b f4 ff f2 0f 2c 40 28 59 
+CALLER 00a504d4 none 
+CALLER Entry Point none 
+CALLER 0046b87a 0046b6e0 adjustVariableData
+CALLER 0046b883 0046b6e0 adjustVariableData
+CALLER 0046b8ce 0046b6e0 adjustVariableData
+CALLER 004b8c21 004b8ad0 isAutoScroll
+CALLER 0058c711 0058c510 checkChangeCamera
+CALLER 005c7dc5 005c5e70 saveData
+CALLER 005ca4d1 005c8780 FUN_005c8780
+CALLER 005ca563 005c8780 FUN_005c8780
+CALLER 005ca6a3 005c8780 FUN_005c8780
+CALLER 005ca72d 005c8780 FUN_005c8780
+CALLER 004b3bbf 004b3870 init
+CALLER 00528a62 005284a0 execActionObjectCreate
+CALLER 0054404c 00543eb0 checkInputCondition
+CALLER 005440db 00543eb0 checkInputCondition
+CALLER 00544132 00543eb0 checkInputCondition
+CALLER 005441b5 00543eb0 checkInputCondition
+CALLER 00544237 00543eb0 checkInputCondition
+CALLER 005442ac 00543eb0 checkInputCondition
+CALLER 00544337 00543eb0 checkInputCondition
+CALLER 005443b5 00543eb0 checkInputCondition
+CALLER 00544437 00543eb0 checkInputCondition
+CALLER 005444ac 00543eb0 checkInputCondition
+CALLER 0054453a 00543eb0 checkInputCondition
+CALLER 005445bf 00543eb0 checkInputCondition
+CALLER 00544638 00543eb0 checkInputCondition
+CALLER 005446b5 00543eb0 checkInputCondition
+CALLER 0054472a 00543eb0 checkInputCondition
+CALLER 005447b0 00543eb0 checkInputCondition
+CALLER 00544832 00543eb0 checkInputCondition
+CALLER 005448a7 00543eb0 checkInputCondition
+CALLER 00544932 00543eb0 checkInputCondition
+CALLER 005449b0 00543eb0 checkInputCondition
+CALLER 00544a32 00543eb0 checkInputCondition
+CALLER 00544aa7 00543eb0 checkInputCondition
+CALLER 00544b35 00543eb0 checkInputCondition
+CALLER 00544bba 00543eb0 checkInputCondition
+CALLER 00544c33 00543eb0 checkInputCondition
+CALLER 00544cb0 00543eb0 checkInputCondition
+CALLER 00544d25 00543eb0 checkInputCondition
+CALLER 00544dab 00543eb0 checkInputCondition
+CALLER 00544e2d 00543eb0 checkInputCondition
+CALLER 00544ea2 00543eb0 checkInputCondition
+CALLER 00544f2d 00543eb0 checkInputCondition
+CALLER 00544fab 00543eb0 checkInputCondition
+CALLER 0054502d 00543eb0 checkInputCondition
+CALLER 005450a2 00543eb0 checkInputCondition
+CALLER 00545130 00543eb0 checkInputCondition
+CALLER 005451b5 00543eb0 checkInputCondition
+CALLER 0054522a 00543eb0 checkInputCondition
+CALLER 005d6c05 005d69f0 calcSwichVariableChange
+CALLER 005d71f1 005d69f0 calcSwichVariableChange
+CALLER 00566740 005666c0 addTouchObject
+CALLER 00566796 005666c0 addTouchObject
+CALLER 005d74e5 005d73b0 getVariableValue
+CALLER 0053841f 005380c0 execActionObjectChange
+CALLER 0053e3e4 0053e1e0 execActionSwitchVariableChange
+CALLER 0053e860 0053e1e0 execActionSwitchVariableChange
+CALLER 005403b2 005402f0 execActionActionExec
+CALLER 005403f1 005402f0 execActionActionExec
+CALLER 005403fa 005402f0 execActionActionExec
+CALLER 005420cb 00541e10 execActionMenuShow
+CALLER 005420d4 00541e10 execActionMenuShow
+CALLER 00543176 00542e70 execActionSoundPositionRemember
+CALLER 0054962f 005494b0 checkLinkConditionLocked
+CALLER 0054a8be 0054a6f0 checkLinkConditionObjectActionChanged
+CALLER 005a661b 005a6480 checkSwitchVariableCondition
+CALLER 005a6848 005a6480 checkSwitchVariableCondition
+CALLER 005a6a4b 005a6480 checkSwitchVariableCondition
+CALLER 005a6cb5 005a6480 checkSwitchVariableCondition
+CALLER 005a73bf 005a7150 changeSwitchVariableAssign
+CALLER 005a75d5 005a7150 changeSwitchVariableAssign
+CALLER 005a7d74 005a7150 changeSwitchVariableAssign
+CALLER 005a7fb7 005a7150 changeSwitchVariableAssign
+CALLER 005d6ddb 005d69f0 calcSwichVariableChange
+CALLER 0053a1a9 00539fb0 execActionObjectPushPull
+CALLER 00566a65 005666c0 addTouchObject
+CALLER 00566a6f 005666c0 addTouchObject
+CALLER 00539149 00538f20 execActionObjectMove
+CALLER 00539758 00538f20 execActionObjectMove
+CALLER 0053f8c6 0053f6d0 execActionGameSpeedChange
+CALLER 0053fa45 0053f6d0 execActionGameSpeedChange
+CALLER 0053fad4 0053f6d0 execActionGameSpeedChange
+CALLER 005a7822 005a7150 changeSwitchVariableAssign
+CALLER 005a7969 005a7150 changeSwitchVariableAssign
+CALLER 004e1b85 004e1ab0 FUN_004e1ab0
+CALLER 0053eed5 0053ed20 FUN_0053ed20
+CALLER 0053f28a 0053ed20 FUN_0053ed20
+CALLER 0053f352 0053ed20 FUN_0053ed20
+TOTAL_XREFS 90
+
+/* public: int __thiscall agtk::Object::getInstanceId(void) */
+
+int __thiscall agtk::Object::getInstanceId(Object *this)
+
+{
+  PlayObjectData *this_00;
+  PlayVariableData *pPVar1;
+  
+                    /* 0x120df0  4480  ?getInstanceId@Object@agtk@@QAEHXZ */
+  this_00 = (PlayObjectData *)(**(code **)(*(int *)this + 0x34c))(this);
+  pPVar1 = data::PlayObjectData::getVariableData(this_00,0x13);
+  return (int)*(double *)(pPVar1 + 0x28);
+}
+
+
+
+============ 00520ed0 getPlayerId ============
+int __thiscall getPlayerId(void)
+BYTES 51 8b 01 ff 90 4c 03 00 00 6a 0d 8b c8 e8 6e 9a f4 ff f2 0f 2c 40 28 59 
+CALLER 00a511dc none 
+CALLER Entry Point none 
+TOTAL_XREFS 2
+
+/* public: int __thiscall agtk::Object::getPlayerId(void) */
+
+int __thiscall agtk::Object::getPlayerId(Object *this)
+
+{
+  PlayObjectData *this_00;
+  PlayVariableData *pPVar1;
+  
+                    /* 0x120ed0  5314  ?getPlayerId@Object@agtk@@QAEHXZ */
+  this_00 = (PlayObjectData *)(**(code **)(*(int *)this + 0x34c))(this);
+  pPVar1 = data::PlayObjectData::getVariableData(this_00,0xd);
+  return (int)*(double *)(pPVar1 + 0x28);
+}
+
+
+
+============ 00543df0 getTargetObjectInstanceId ============
+Object * __thiscall getTargetObjectInstanceId(int param_1, int param_2)
+BYTES 55 8b ec 51 8b 41 48 53 56 57 8b 88 f0 02 00 00 8b 45 0c 8b b1 90 02 00 
+CALLER 00a51d50 none 
+CALLER Entry Point none 
+CALLER 005388bb 005380c0 execActionObjectChange
+CALLER 0053e444 0053e1e0 execActionSwitchVariableChange
+CALLER 0053e6af 0053e1e0 execActionSwitchVariableChange
+CALLER 0053e8bc 0053e1e0 execActionSwitchVariableChange
+CALLER 0053eb60 0053e1e0 execActionSwitchVariableChange
+CALLER 00540435 005402f0 execActionActionExec
+CALLER 00540a6e 00540960 execActionTimer
+CALLER 00540b6a 00540960 execActionTimer
+CALLER 005431fd 00542e70 execActionSoundPositionRemember
+CALLER 005437e0 005436b0 execActionResourceSetChange
+CALLER 00549c16 00549a10 checkLinkConditionSwitchVariableChanged
+CALLER 00549d32 00549a10 checkLinkConditionSwitchVariableChanged
+CALLER 0054a07c 00549a10 checkLinkConditionSwitchVariableChanged
+CALLER 0054a1ae 00549a10 checkLinkConditionSwitchVariableChanged
+CALLER 0054a233 00549a10 checkLinkConditionSwitchVariableChanged
+CALLER 0053a209 00539fb0 execActionObjectPushPull
+CALLER 005391a9 00538f20 execActionObjectMove
+CALLER 005396ce 00538f20 execActionObjectMove
+CALLER 0053ee42 0053ed20 FUN_0053ed20
+CALLER 0053f019 0053ed20 FUN_0053ed20
+TOTAL_XREFS 22
+
+/* private: class agtk::Object * __thiscall agtk::ObjectAction::getTargetObjectInstanceId(int,int)
+    */
+
+Object * __thiscall
+agtk::ObjectAction::getTargetObjectInstanceId(ObjectAction *this,int param_1,int param_2)
+
+{
+  int *piVar1;
+  Scene *this_00;
+  int iVar2;
+  __Array *p_Var3;
+  Object *pOVar4;
+  PlayObjectData *this_01;
+  PlayVariableData *pPVar5;
+  int *piVar6;
+  
+                    /* 0x143df0  6047
+                       ?getTargetObjectInstanceId@ObjectAction@agtk@@AAEPAVObject@2@HH@Z */
+  this_00 = (Scene *)(*(int **)(*(int *)(this + 0x48) + 0x2f0))[0xa4];
+  if (param_2 < 0) {
+    param_2 = (**(code **)(**(int **)(*(int *)(this + 0x48) + 0x2f0) + 0x390))();
+  }
+  p_Var3 = Scene::getObjectAll(this_00,param_2);
+  if (p_Var3 != (__Array *)0x0) {
+    iVar2 = **(int **)(p_Var3 + 0x1c);
+    if (0 < iVar2) {
+      piVar6 = (int *)(*(int **)(p_Var3 + 0x1c))[2];
+      piVar1 = piVar6 + iVar2 + -1;
+      for (; (piVar6 <= piVar1 && (*piVar6 != 0)); piVar6 = piVar6 + 1) {
+        pOVar4 = (Object *)
+                 __RTDynamicCast(*piVar6,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                                 &Object::RTTI_Type_Descriptor,0);
+        this_01 = (PlayObjectData *)(**(code **)(*(int *)pOVar4 + 0x34c))();
+        pPVar5 = data::PlayObjectData::getVariableData(this_01,0x13);
+        if ((int)*(double *)(pPVar5 + 0x28) == param_1) {
+          return pOVar4;
+        }
+      }
+    }
+  }
+  return (Object *)0x0;
+}
+
+
+
+============ 0046af40 setInstanceId ============
+void __thiscall setInstanceId(int param_1)
+BYTES 55 8b ec 83 e4 f8 51 8b 01 56 6a 00 68 14 2a ba 00 68 90 54 ba 00 6a 00 
+CALLER 00a54650 none 
+CALLER Entry Point none 
+CALLER 0052889e 005284a0 execActionObjectCreate
+CALLER 00517bc1 00517b20 initialize
+CALLER 00522a3c 005228b0 initWithSceneDataAndScenePartObjectData
+CALLER 0052d73a 0052d400 init
+CALLER 0052dc01 0052da10 init2
+CALLER 00537d92 00537bd0 execActionObjectCreateForScript
+CALLER 00538444 005380c0 execActionObjectChange
+CALLER 0053b50e 0053b300 execActionLayerMove
+CALLER 0057d519 0057d3f0 reappearObject
+CALLER 0057d564 0057d3f0 reappearObject
+CALLER 005803ff 0057fdc0 addOtherSceneObject
+CALLER 005b5aa4 005b58e0 start
+CALLER 005a5c19 005a5590 update
+CALLER 004a4379 004a41c0 FUN_004a41c0
+TOTAL_XREFS 16
+
+/* public: void __thiscall agtk::data::PlayObjectData::setInstanceId(int) */
+
+void __thiscall agtk::data::PlayObjectData::setInstanceId(PlayObjectData *this,int param_1)
+
+{
+  __Dictionary *this_00;
+  Ref *pRVar1;
+  int *piVar2;
+  undefined4 unaff_ESI;
+  int iVar3;
+  
+                    /* 0x6af40  8671  ?setInstanceId@PlayObjectData@data@agtk@@QAEXH@Z */
+  iVar3 = 0x13;
+  this_00 = (__Dictionary *)
+            (**(code **)(*(int *)this + 0x24))
+                      (0x13,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                       &PlayVariableData::RTTI_Type_Descriptor,0);
+  pRVar1 = cocos2d::__Dictionary::objectForKey(this_00,iVar3);
+  piVar2 = (int *)__RTDynamicCast(pRVar1);
+  (**(code **)(*piVar2 + 0x1c))();
+  (**(code **)(*piVar2 + 0x20))(0);
+  if ((char)piVar2[8] == '\0') {
+    *(undefined8 *)(piVar2 + 0xc) = *(undefined8 *)(piVar2 + 10);
+    *(double *)(piVar2 + 10) = (double)param_1;
+    iVar3 = (**(code **)(*piVar2 + 0x14))();
+    if (iVar3 == 1) {
+      *(undefined1 *)(piVar2 + 0x10) = 1;
+      *(double *)(piVar2 + 0xe) = (double)param_1;
+    }
+    iVar3 = (**(code **)(*piVar2 + 0xc))();
+    if ((iVar3 == 0x12) && ((Object *)piVar2[0x18] != (Object *)0x0)) {
+      Object::updateFixedFrame((Object *)piVar2[0x18],(int)*(double *)(piVar2 + 10));
+    }
+    if ((char)piVar2[0x19] == '\0') {
+      *(double *)(piVar2 + 0x1a) = (double)param_1;
+    }
+    *(undefined1 *)(piVar2 + 0x19) = 1;
+  }
+  (**(code **)(*piVar2 + 0x20))(unaff_ESI);
+  return;
+}
+
+
+
+============ 0046b370 setInstanceCount ============
+int __thiscall setInstanceCount(int param_1)
+BYTES 55 8b ec 83 e4 f8 83 ec 0c 56 8b f1 83 7e 1c 00 76 1a e8 19 9a 15 00 8b 
+CALLER 00a5464c none 
+CALLER Entry Point none 
+CALLER 005288c9 005284a0 execActionObjectCreate
+CALLER 0058e660 0058e620 setObjectInstanceCount
+CALLER 0058e7ea 0058e770 updateObjectInstanceCount
+CALLER 00517c26 00517b20 initialize
+CALLER 0052d766 0052d400 init
+CALLER 0052dc2c 0052da10 init2
+CALLER 00537df8 00537bd0 execActionObjectCreateForScript
+CALLER 0057d5d3 0057d3f0 reappearObject
+CALLER 005421e4 00541e10 execActionMenuShow
+CALLER 0058045d 0057fdc0 addOtherSceneObject
+CALLER 0058060d 0057fdc0 addOtherSceneObject
+CALLER 00588a0b 00588000 init
+CALLER 00588abc 00588000 init
+CALLER 005b5acf 005b58e0 start
+CALLER 0058e73b 0058e6d0 decrementObjectInstanceCount
+CALLER 005a5c45 005a5590 update
+CALLER 005d08c7 005cfee0 FUN_005cfee0
+TOTAL_XREFS 19
+
+/* public: int __thiscall agtk::data::PlayObjectData::setInstanceCount(int) */
+
+int __thiscall agtk::data::PlayObjectData::setInstanceCount(PlayObjectData *this,int param_1)
+
+{
+  GameManager *pGVar1;
+  PlayData *this_00;
+  PlayVariableData *pPVar2;
+  __Dictionary *this_01;
+  Ref *pRVar3;
+  int iVar4;
+  undefined4 unaff_ESI;
+  undefined8 uVar5;
+  undefined4 uStack_14;
+  
+                    /* 0x6b370  8670  ?setInstanceCount@PlayObjectData@data@agtk@@QAEHH@Z */
+  if (*(int *)(this + 0x1c) == 0) {
+    iVar4 = 0x14;
+    this_01 = (__Dictionary *)
+              (**(code **)(*(int *)this + 0x24))
+                        (0x14,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                         &PlayVariableData::RTTI_Type_Descriptor,0);
+    pRVar3 = cocos2d::__Dictionary::objectForKey(this_01,iVar4);
+    pPVar2 = (PlayVariableData *)__RTDynamicCast(pRVar3);
+  }
+  else {
+    pGVar1 = GameManager::getInstance();
+    this_00 = (PlayData *)(**(code **)(*(int *)pGVar1 + 0x10))();
+    pPVar2 = PlayData::getVariableData(this_00,*(int *)(this + 0x1c),0x14);
+  }
+  (**(code **)(*(int *)pPVar2 + 0x1c))();
+  (**(code **)(*(int *)pPVar2 + 0x20))(0);
+  uVar5 = *(undefined8 *)(pPVar2 + 0x28);
+  if (pPVar2[0x20] == (PlayVariableData)0x0) {
+    *(undefined8 *)(pPVar2 + 0x30) = uVar5;
+    *(double *)(pPVar2 + 0x28) = (double)param_1;
+    iVar4 = (**(code **)(*(int *)pPVar2 + 0x14))();
+    if (iVar4 == 1) {
+      pPVar2[0x40] = (PlayVariableData)0x1;
+      *(double *)(pPVar2 + 0x38) = (double)param_1;
+    }
+    iVar4 = (**(code **)(*(int *)pPVar2 + 0xc))();
+    if ((iVar4 == 0x12) && (*(Object **)(pPVar2 + 0x60) != (Object *)0x0)) {
+      Object::updateFixedFrame(*(Object **)(pPVar2 + 0x60),(int)*(double *)(pPVar2 + 0x28));
+    }
+    if (pPVar2[100] == (PlayVariableData)0x0) {
+      *(double *)(pPVar2 + 0x68) = (double)param_1;
+    }
+    uVar5 = *(undefined8 *)(pPVar2 + 0x30);
+    pPVar2[100] = (PlayVariableData)0x1;
+  }
+  uStack_14 = (undefined4)uVar5;
+  (**(code **)(*(int *)pPVar2 + 0x20))(unaff_ESI);
+  return (int)(double)CONCAT44(uStack_14,unaff_ESI);
+}
+
+
+
+============ 0046b470 getInstanceCount ============
+int __thiscall getInstanceCount(void)
+BYTES 55 8b ec 83 e4 f8 51 56 8b f1 83 7e 1c 00 76 22 e8 1b 99 15 00 8b c8 8b 
+CALLER 00a504d0 none 
+CALLER Entry Point none 
+TOTAL_XREFS 2
+
+/* public: int __thiscall agtk::data::PlayObjectData::getInstanceCount(void) */
+
+int __thiscall agtk::data::PlayObjectData::getInstanceCount(PlayObjectData *this)
+
+{
+  GameManager *pGVar1;
+  PlayData *this_00;
+  PlayVariableData *pPVar2;
+  __Dictionary *this_01;
+  Ref *pRVar3;
+  int iVar4;
+  
+                    /* 0x6b470  4479  ?getInstanceCount@PlayObjectData@data@agtk@@QAEHXZ */
+  if (*(int *)(this + 0x1c) != 0) {
+    pGVar1 = GameManager::getInstance();
+    this_00 = (PlayData *)(**(code **)(*(int *)pGVar1 + 0x10))();
+    pPVar2 = PlayData::getVariableData(this_00,*(int *)(this + 0x1c),0x14);
+    return (int)*(double *)(pPVar2 + 0x28);
+  }
+  iVar4 = 0x14;
+  this_01 = (__Dictionary *)
+            (**(code **)(*(int *)this + 0x24))
+                      (0x14,0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                       &PlayVariableData::RTTI_Type_Descriptor,0);
+  pRVar3 = cocos2d::__Dictionary::objectForKey(this_01,iVar4);
+  iVar4 = __RTDynamicCast(pRVar3);
+  return (int)*(double *)(iVar4 + 0x28);
+}
+
+
+
+============ 00522d80 createPlayer ============
+Player * __thiscall createPlayer(AnimationData * param_1)
+BYTES 55 8b ec 6a ff 68 18 9e 89 00 64 a1 00 00 00 00 50 83 ec 20 a1 d4 1d b9 
+CALLER 00a4ec04 none 
+CALLER Entry Point none 
+CALLER 00521a34 00521570 init
+CALLER 005232c6 00522f70 setup
+TOTAL_XREFS 4
+
+/* protected: class agtk::Player * __thiscall agtk::Object::createPlayer(class
+   agtk::data::AnimationData *) */
+
+Player * __thiscall agtk::Object::createPlayer(Object *this,AnimationData *param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  Player *pPVar3;
+  uint local_30 [4];
+  undefined4 local_20;
+  uint local_1c;
+  uint local_18;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x122d80  2892
+                       ?createPlayer@Object@agtk@@IAEPAVPlayer@2@PAVAnimationData@data@2@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00899e18;
+  local_10 = ExceptionList;
+  local_18 = DAT_00b91dd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  iVar1 = (**(code **)(*(int *)this + 0x2fc))(local_18);
+  if (iVar1 != 0) {
+    iVar1 = *(int *)this;
+    uVar2 = (**(code **)(iVar1 + 0x2fc))(1);
+    (**(code **)(iVar1 + 0x13c))(uVar2);
+  }
+  pPVar3 = Player::create(param_1);
+  local_1c = 0xf;
+  local_20 = 0;
+  local_30[0] = local_30[0] & 0xffffff00;
+  FUN_004423b0("player",6);
+  local_8 = 0;
+  (**(code **)(*(int *)this + 0x100))(pPVar3,0,local_30);
+  local_8 = 0xffffffff;
+  if (0xf < local_1c) {
+    FUN_00442c10(local_30[0],local_1c + 1,1);
+  }
+  local_1c = 0xf;
+  local_20 = 0;
+  local_30[0] = local_30[0] & 0xffffff00;
+  (**(code **)(*(int *)this + 0x300))(pPVar3);
+  ExceptionList = local_10;
+  pPVar3 = (Player *)__security_check_cookie(local_18 ^ (uint)&stack0xfffffffc);
+  return pPVar3;
+}
+
+
+
+============ 005c4da0 getInstance ============
+GameManager * __cdecl getInstance(void)
+BYTES 55 8b ec 6a ff 68 51 e1 8a 00 64 a1 00 00 00 00 50 83 ec 70 a1 d4 1d b9 
+CALLER 00a504b0 none 
+CALLER Entry Point none 
+CALLER 00535a2b 00535a00 FUN_00535a00
+CALLER 00437b8c 00437b60 FUN_00437b60
+CALLER 00589aa3 00589a70 end
+CALLER 00589af1 00589a70 end
+CALLER 00589c3b 00589a70 end
+CALLER 00589cb8 00589a70 end
+CALLER 0058a463 00589a70 end
+CALLER 0057d1a6 0057cdc0 removeObject
+CALLER 00517f61 00517cc0 finalize
+CALLER 005181da 00517cc0 finalize
+CALLER 0046a96d 0046a950 getVariableData
+CALLER 00587abb 00587a90 isDisplay
+CALLER 005e48d2 005e48c0 removeImage
+CALLER 005e4994 005e48c0 removeImage
+CALLER 005f44b2 005f44a0 removeMovie
+CALLER 005f458e 005f44a0 removeMovie
+CALLER 00448e0c 00448de0 getMainFontSetting
+CALLER 0044bead 0044be70 getText
+CALLER 0046a32e 0046a1c0 setup
+CALLER 0046aa8a 0046a9c0 getVariableDataByName
+CALLER 0046ab38 0046aac0 takeOverVariableList
+CALLER 0046ab8d 0046aac0 takeOverVariableList
+CALLER 0046b382 0046b370 setInstanceCount
+CALLER 0046b480 0046b470 getInstanceCount
+CALLER 0046b728 0046b6e0 adjustVariableData
+CALLER 005da163 005d9bd0 tr
+CALLER 004773da 00477060 getExpandedText
+CALLER 00477504 00477060 getExpandedText
+CALLER 0047754c 00477060 getExpandedText
+CALLER 0049ecfb 0049e8a0 init
+CALLER 0049fa6b 0049fa60 updateCurSceneLinkDataList
+CALLER 005eff03 005efd80 FUN_005efd80
+CALLER 004f16cc 004f15a0 FUN_004f15a0
+CALLER 004f17a8 004f15a0 FUN_004f15a0
+CALLER 005f01ce 005f01a0 FUN_005f01a0
+CALLER 005f01dc 005f01a0 FUN_005f01a0
+CALLER 0049ee02 0049edf0 checkSceneLinkCondition
+CALLER 0049fc85 0049fc50 calcMoveEffect
+CALLER 0049fcf7 0049fc50 calcMoveEffect
+CALLER 004a5922 004a5270 RenderSceneToFadeSprite
+CALLER 004a5c9c 004a5270 RenderSceneToFadeSprite
+CALLER 004a29ca 004a29c0 FUN_004a29c0
+CALLER 004f63f3 004f62b0 update
+CALLER 004f6127 004f6020 start
+CALLER 005710e7 00570e90 innerUpdateRenderer
+CALLER 0058ee65 0058ee50 getPositionCocos2dFromScene
+CALLER 005b20fe 005b20e0 playBgm
+CALLER 005b21d4 005b2170 playBgm
+CALLER 005b268e 005b2670 playSe
+CALLER 005b2774 005b2710 playSe
+CALLER 005b3c5f 005b3c50 getVariableVolume
+CALLER 005b4a84 005b4a50 preloadBgm
+CALLER 004a5d4c 004a5d10 calcLoadDataEffect
+CALLER 004a5da8 004a5d10 calcLoadDataEffect
+CALLER 004a6189 004a6160 FUN_004a6160
+CALLER 004a61ab 004a6160 FUN_004a6160
+CALLER 004a6af9 004a6ad0 FUN_004a6ad0
+CALLER 004a6b1b 004a6ad0 FUN_004a6ad0
+CALLER 004a6f2a 004a6ef0 update
+CALLER 004a6fa8 004a6ef0 update
+CALLER 004a70c6 004a6ef0 update
+CALLER 004a70d9 004a6ef0 update
+CALLER 004a75a3 004a6ef0 update
+CALLER 004b52cf 004b5250 setTargetObject
+CALLER 004b5591 004b5510 setTargetPosition
+CALLER 004b582f 004b57d0 setTargetFixedPosition
+CALLER 004b8b20 004b8ad0 isAutoScroll
+CALLER 004b8bad 004b8ad0 isAutoScroll
+CALLER 0058c522 0058c510 checkChangeCamera
+CALLER 0058c68b 0058c510 checkChangeCamera
+CALLER 0058ee0e 0058ee00 getPositionCocos2dFromScene
+CALLER 005da9a8 005da3f0 visitScene
+CALLER 005e4422 005e4380 update
+CALLER 005ece01 005ecdf0 isTriggered
+CALLER 004a7601 004a7600 getScene
+CALLER 004a8c47 004a8bc0 init
+CALLER 004a8e21 004a8dd0 changeImage
+CALLER 005b2cae 005b2c90 playVoice
+CALLER 005b2d91 005b2d30 playVoice
+CALLER 004ae7e0 004ae6d0 attachScene
+CALLER 004ae856 004ae6d0 attachScene
+CALLER 0056f853 0056f820 createShader
+CALLER 0057037a 00570370 createRenderTexture
+CALLER 005714d3 005714a0 createShader
+CALLER 00571e26 00571df0 createWithMenuShader
+CALLER 00568625 005684c0 addShader
+CALLER 00572c8b 00572c70 createRenderTexture
+CALLER 00572d64 00572d50 createWithMenuRenderTexture
+CALLER 0057bb83 0057bb50 createShader
+CALLER 0055c39f 0055c200 convertToWorldSpaceTimelineVertex4
+CALLER 005247d1 00524790 calcDispDirection
+CALLER 004b0a3e 004b09e0 initial
+CALLER 004b13ae 004b1360 innerStart
+CALLER 004b1ced 004b1c90 innerStart
+CALLER 004b38aa 004b3870 init
+CALLER 00521628 00521570 init
+CALLER 005223b5 00521570 init
+CALLER 0052406b 00524060 getAnimDirectionId
+TOTAL_XREFS 766
+
+/* public: static class GameManager * __cdecl GameManager::getInstance(void) */
+
+GameManager * __cdecl GameManager::getInstance(void)
+
+{
+  uint uVar1;
+  GameManager *pGVar2;
+  GameManager *pGVar3;
+  __Array *p_Var4;
+  Timer *pTVar5;
+  int iVar6;
+  FileUtils *pFVar7;
+  undefined4 ****ppppuVar8;
+  GameManager *pGVar9;
+  undefined4 extraout_ECX;
+  undefined8 in_XMM0_Qa;
+  undefined8 uVar10;
+  undefined4 in_stack_ffffff68;
+  undefined4 uVar11;
+  undefined4 uVar12;
+  undefined1 local_78 [4];
+  undefined4 local_74;
+  uint local_60;
+  uint local_5c [4];
+  undefined4 local_4c;
+  uint local_48;
+  undefined4 ***local_44 [4];
+  uint local_34;
+  uint local_30;
+  undefined4 ***local_2c [4];
+  uint local_1c;
+  uint local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x1c4da0  4471  ?getInstance@GameManager@@SAPAV1@XZ */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_008ae151;
+  local_10 = ExceptionList;
+  local_14 = DAT_00b91dd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (_gameManager == (GameManager *)0x0) {
+    uVar11 = 0x5c4de1;
+    pGVar3 = operator_new(0x150);
+    local_8 = 0;
+    _gameManager = (GameManager *)GameManager(pGVar3);
+    local_8 = 0xffffffff;
+    uVar12 = 0x5c4e07;
+    cocos2d::Director::getInstance();
+    FUN_005df810(in_stack_ffffff68,uVar11,uVar12);
+    _time64((__time64_t *)0x0);
+    FUN_00881450();
+    *(undefined8 *)(_gameManager + 0x18) = in_XMM0_Qa;
+    iVar6 = *(int *)_gameManager;
+    p_Var4 = cocos2d::__Array::create();
+    (**(code **)(iVar6 + 0xac))(p_Var4);
+    iVar6 = *(int *)_gameManager;
+    p_Var4 = cocos2d::__Array::create();
+    (**(code **)(iVar6 + 0xb4))(p_Var4);
+    iVar6 = *(int *)_gameManager;
+    p_Var4 = cocos2d::__Array::create();
+    (**(code **)(iVar6 + 0xbc))(p_Var4);
+    iVar6 = *(int *)_gameManager;
+    p_Var4 = cocos2d::__Array::create();
+    (**(code **)(iVar6 + 0xc4))(p_Var4);
+    iVar6 = *(int *)_gameManager;
+    p_Var4 = cocos2d::__Array::create();
+    (**(code **)(iVar6 + 0x11c))(p_Var4);
+    iVar6 = *(int *)_gameManager;
+    pTVar5 = agtk::Timer::create();
+    (**(code **)(iVar6 + 0xf4))(pTVar5);
+    iVar6 = (**(code **)(*(int *)_gameManager + 0xf0))();
+    uVar10 = _Xtime_get_ticks();
+    *(undefined8 *)(iVar6 + 0x20) = uVar10;
+    *(undefined4 *)(iVar6 + 0x18) = 1;
+    iVar6 = *(int *)_gameManager;
+    pTVar5 = agtk::Timer::create();
+    (**(code **)(iVar6 + 0x5c))(pTVar5);
+    pFVar7 = cocos2d::FileUtils::getInstance();
+    (**(code **)(*(int *)pFVar7 + 0x4c))(local_44);
+    local_8 = 1;
+    pFVar7 = cocos2d::FileUtils::getInstance();
+    (**(code **)(*(int *)pFVar7 + 0x54))(local_2c);
+    local_8._0_1_ = 2;
+    uVar1 = local_1c - 1;
+    if (local_1c < uVar1) {
+                    /* WARNING: Subroutine does not return */
+      std::_Xout_of_range("invalid string position");
+    }
+    ppppuVar8 = local_2c;
+    if (0xf < local_18) {
+      ppppuVar8 = (undefined4 ****)local_2c[0];
+    }
+    local_78[0] = 0x2f;
+    local_1c = uVar1;
+    *(undefined1 *)((int)ppppuVar8 + uVar1) = 0;
+    iVar6 = FUN_0043b580(local_78,0xffffffff,1);
+    FUN_0044ee40(0,iVar6 + 1,&PTR_009e28e0,0);
+    FUN_005dd7e0(extraout_ECX);
+    uVar1 = local_34 - 1;
+    if (local_34 < uVar1) {
+                    /* WARNING: Subroutine does not return */
+      std::_Xout_of_range("invalid string position");
+    }
+    ppppuVar8 = local_44;
+    if (0xf < local_30) {
+      ppppuVar8 = (undefined4 ****)local_44[0];
+    }
+    local_78[0] = 0x2f;
+    local_34 = uVar1;
+    *(undefined1 *)((int)ppppuVar8 + uVar1) = 0;
+    iVar6 = FUN_0043b580(local_78,0xffffffff,1);
+    FUN_0044ee40(iVar6,local_34 - iVar6,&DAT_009e2c1c,1);
+    uVar11 = FUN_0044e4c0(local_2c);
+    local_8 = CONCAT31(local_8._1_3_,3);
+    pGVar9 = (GameManager *)FUN_0043d1e0(local_5c,uVar11,"save/");
+    pGVar2 = _gameManager;
+    pGVar3 = _gameManager + 0x28;
+    if (pGVar3 != pGVar9) {
+      if (0xf < *(uint *)(_gameManager + 0x3c)) {
+        FUN_00442c10(*(undefined4 *)pGVar3,*(uint *)(_gameManager + 0x3c) + 1,1);
+      }
+      *(undefined4 *)(pGVar2 + 0x3c) = 0xf;
+      *(undefined4 *)(pGVar2 + 0x38) = 0;
+      if (0xf < *(uint *)(pGVar2 + 0x3c)) {
+        pGVar3 = *(GameManager **)pGVar3;
+      }
+      *pGVar3 = (GameManager)0x0;
+      FUN_00442230(pGVar9);
+    }
+    if (0xf < local_48) {
+      FUN_00442c10(local_5c[0],local_48 + 1,1);
+    }
+    local_8 = CONCAT31(local_8._1_3_,2);
+    local_48 = 0xf;
+    local_4c = 0;
+    local_5c[0] = local_5c[0] & 0xffffff00;
+    if (0xf < local_60) {
+      FUN_00442c10(local_74,local_60 + 1,1);
+    }
+    FUN_005f7a90("_gameManager: 0x%x",_gameManager);
+    if (0xf < local_18) {
+      FUN_00442c10(local_2c[0],local_18 + 1,1);
+    }
+    local_18 = 0xf;
+    local_1c = 0;
+    local_2c[0] = (undefined4 ***)((uint)local_2c[0] & 0xffffff00);
+    if (0xf < local_30) {
+      FUN_00442c10(local_44[0],local_30 + 1,1);
+    }
+  }
+  ExceptionList = local_10;
+  pGVar3 = (GameManager *)__security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return pGVar3;
+}
+
+
+FUNCTIONS_WRITTEN 14

@@ -1,0 +1,3682 @@
+[
+  {
+    "va": "0x5c4780",
+    "name": "??0GameManager@@AAE@XZ"
+  },
+  {
+    "va": "0x4370b0",
+    "name": "??0GameManager@@QAE@ABV0@@Z"
+  },
+  {
+    "va": "0x40a590",
+    "name": "??0ObjectCommandObjectCreateData@data@agtk@@AAE@XZ"
+  },
+  {
+    "va": "0x40a790",
+    "name": "??0ObjectCommandObjectCreateData@data@agtk@@QAE@ABV012@@Z"
+  },
+  {
+    "va": "0x575e10",
+    "name": "??0SceneLayer@agtk@@AAE@XZ"
+  },
+  {
+    "va": "0x5aef40",
+    "name": "??0ViewportLightSceneLayer@agtk@@AAE@XZ"
+  },
+  {
+    "va": "0x4347f0",
+    "name": "??0ViewportLightSceneLayer@agtk@@QAE@ABV01@@Z"
+  },
+  {
+    "va": "0x5c4a70",
+    "name": "??1GameManager@@UAE@XZ"
+  },
+  {
+    "va": "0x409c00",
+    "name": "??1ObjectCommandObjectCreateData@data@agtk@@EAE@XZ"
+  },
+  {
+    "va": "0x575f90",
+    "name": "??1SceneLayer@agtk@@EAE@XZ"
+  },
+  {
+    "va": "0x5aef80",
+    "name": "??1ViewportLightSceneLayer@agtk@@EAE@XZ"
+  },
+  {
+    "va": "0x40a820",
+    "name": "??4ObjectCommandObjectCreateData@data@agtk@@QAEAAV012@ABV012@@Z"
+  },
+  {
+    "va": "0x434830",
+    "name": "??4ViewportLightSceneLayer@agtk@@QAEAAV01@ABV01@@Z"
+  },
+  {
+    "va": "0x9da808",
+    "name": "??_7GameManager@@6B@"
+  },
+  {
+    "va": "0x9e0378",
+    "name": "??_7ObjectCommandObjectCreateData@data@agtk@@6B@"
+  },
+  {
+    "va": "0x9fba4c",
+    "name": "??_7SceneLayer@agtk@@6B@"
+  },
+  {
+    "va": "0x9db11c",
+    "name": "??_7ViewportLightSceneLayer@agtk@@6B@"
+  },
+  {
+    "va": "0x9dc4b0",
+    "name": "?USE_SCENE_SETTING_BGM@GameManager@@2HB"
+  },
+  {
+    "va": "0x5807c0",
+    "name": "?_addChild@SceneLayer@agtk@@AAEXPAVNode@cocos2d@@HABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+  },
+  {
+    "va": "0x5807b0",
+    "name": "?_addChild@SceneLayer@agtk@@AAEXPAVNode@cocos2d@@HH@Z"
+  },
+  {
+    "va": "0x518560",
+    "name": "?_create@Object@agtk@@SAPAV12@PAVSceneLayer@2@HHVVec2@cocos2d@@1MHHHH@Z"
+  },
+  {
+    "va": "0x518670",
+    "name": "?_createWithSceneDataAndScenePartObjectData@Object@agtk@@SAPAV12@PAVSceneLayer@2@PAVScenePartObjectData@data@2@H@Z"
+  },
+  {
+    "va": "0xbbc5ec",
+    "name": "?_gameManager@GameManager@@0PAV1@A"
+  },
+  {
+    "va": "0xbbf72c",
+    "name": "?_translationMap@GameManager@@1V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@ULocaleText@GameManager@@V?$allocator@ULocaleText@GameManager@@@std@@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@ULocaleText@GameManager@@V?$allocator@ULocaleText@GameManager@@@std@@@2@@std@@@2@@2@U?$less"
+  },
+  {
+    "va": "0x5d81b0",
+    "name": "?actionLog@GameManager@@SAX_NPBDZZ"
+  },
+  {
+    "va": "0x426a00",
+    "name": "?addChild@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@@Z"
+  },
+  {
+    "va": "0x426a30",
+    "name": "?addChild@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@H@Z"
+  },
+  {
+    "va": "0x5806d0",
+    "name": "?addChild@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@HABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+  },
+  {
+    "va": "0x580690",
+    "name": "?addChild@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@HH@Z"
+  },
+  {
+    "va": "0x57ca00",
+    "name": "?addCollisionDetaction@SceneLayer@agtk@@QAEXPAVObject@2@@Z"
+  },
+  {
+    "va": "0x57c9a0",
+    "name": "?addCollisionDetection@SceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x57cb80",
+    "name": "?addObject@SceneLayer@agtk@@QAEXPAVObject@2@@Z"
+  },
+  {
+    "va": "0x57fdc0",
+    "name": "?addOtherSceneObject@SceneLayer@agtk@@QAEPAVObject@2@PAV32@VVec2@cocos2d@@0@Z"
+  },
+  {
+    "va": "0x57d1e0",
+    "name": "?appearObject@SceneLayer@agtk@@AAEXPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x5d8d90",
+    "name": "?assignSwitchData@GameManager@@QAEXW4EnumSwitchAssignValue@SwitchVariableAssignData@data@agtk@@PAVPlaySwitchData@45@@Z"
+  },
+  {
+    "va": "0x5d8de0",
+    "name": "?assignVariableData@GameManager@@QAEXW4EnumVariavleAssignValue@SwitchVariableAssignData@data@agtk@@PAVPlayVariableData@45@N@Z"
+  },
+  {
+    "va": "0x5cc3a0",
+    "name": "?attachLoadData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5d7980",
+    "name": "?calcMoveBgmEffect@GameManager@@QAEXMW4EnumBgmChangeType@data@agtk@@_NABV?$vector@UBgmInfo@GameManager@@V?$allocator@UBgmInfo@GameManager@@@std@@@std@@1@Z"
+  },
+  {
+    "va": "0x5d7730",
+    "name": "?calcObjectActionProgram@GameManager@@QAEXPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5d69f0",
+    "name": "?calcSwichVariableChange@GameManager@@QAEXPAV__Array@cocos2d@@W4EnumPlaceType@1@HHH@Z"
+  },
+  {
+    "va": "0x5874a0",
+    "name": "?callbackDetectionWallCollision@SceneLayer@agtk@@AAEXPAVCollisionNode@@0@Z"
+  },
+  {
+    "va": "0x5c5880",
+    "name": "?changeCanvas@GameManager@@QAEXH_N@Z"
+  },
+  {
+    "va": "0x5c58e0",
+    "name": "?changeCanvas@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x57da20",
+    "name": "?checkCommandReappearObject@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x5865a0",
+    "name": "?checkConnectToRope@SceneLayer@agtk@@AAEPAVNode@cocos2d@@PAV34@HHPAVVec2@4@1PAV__Array@4@PA_N@Z"
+  },
+  {
+    "va": "0x5866f0",
+    "name": "?checkIgnoreRopeCollision@SceneLayer@agtk@@AAEXPAV__Array@cocos2d@@0@Z"
+  },
+  {
+    "va": "0x57d960",
+    "name": "?checkNotReappearObject@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x57de10",
+    "name": "?checkObjectAppearCondition@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x57e180",
+    "name": "?checkObjectDisappearCondition@SceneLayer@agtk@@AAE_NPAVObject@2@@Z"
+  },
+  {
+    "va": "0x57e320",
+    "name": "?checkObjectReappearCondition@SceneLayer@agtk@@AAE_NPAVObjectReappearData@data@2@@Z"
+  },
+  {
+    "va": "0x57e140",
+    "name": "?checkObjectTakeoverStatesAsScene@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x5d99c0",
+    "name": "?checkPassSlope@GameManager@@AAE_NPAVSlope@agtk@@VVec2@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5d9ad0",
+    "name": "?checkPassTile@GameManager@@AAE_NPAVPhysicsShapeEdgeSegment@cocos2d@@VVec2@3@@Z"
+  },
+  {
+    "va": "0x5d8c80",
+    "name": "?checkPortalTouched@GameManager@@QAE_NPAVObject@agtk@@@Z"
+  },
+  {
+    "va": "0x5cc360",
+    "name": "?checkRequestCopy@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5cc320",
+    "name": "?checkRequestDelete@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5cc2e0",
+    "name": "?checkRequestLoad@GameManager@@QAE_NXZ"
+  },
+  {
+    "va": "0x5cc2a0",
+    "name": "?checkRequestSave@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5c5ae0",
+    "name": "?checkRequestVariableAndSwitch@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x57dba0",
+    "name": "?checkSceneChangeReappearObject@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x57e160",
+    "name": "?checkStartPointObjectTakeoverStatesAsScene@SceneLayer@agtk@@AAE_NPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x5d67a0",
+    "name": "?checkSwitchCondition@GameManager@@QAE_NW4EnumSwitchValueType@SwitchVariableConditionData@data@agtk@@_NW4EnumState@PlaySwitchData@45@@Z"
+  },
+  {
+    "va": "0x5d67f0",
+    "name": "?checkVariableCondition@GameManager@@QAE_NW4EnumCompareValueType@SwitchVariableConditionData@data@agtk@@NW4EnumCompareOperator@345@NHHH@Z"
+  },
+  {
+    "va": "0x5d6570",
+    "name": "?clearAllLoadResources@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x436ee0",
+    "name": "?clearBgm@GameManager@@IAEXABUBgmInfo@1@AAV?$vector@UBgmInfo@GameManager@@V?$allocator@UBgmInfo@GameManager@@@std@@@std@@@Z"
+  },
+  {
+    "va": "0x5d6540",
+    "name": "?clearLoadResources@GameManager@@QAEXH@Z"
+  },
+  {
+    "va": "0x5d5c00",
+    "name": "?clearLoadResources@GameManager@@QAEXPAVSceneData@data@agtk@@@Z"
+  },
+  {
+    "va": "0x436e80",
+    "name": "?clearLoadedBgm@GameManager@@QAEXABUBgmInfo@1@@Z"
+  },
+  {
+    "va": "0x436ea0",
+    "name": "?clearRegisteringBgm@GameManager@@QAEXABUBgmInfo@1@@Z"
+  },
+  {
+    "va": "0x436ec0",
+    "name": "?clearRegisteringStopBgm@GameManager@@QAEXABUBgmInfo@1@@Z"
+  },
+  {
+    "va": "0x662d90",
+    "name": "?clone@ActionCamera@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662d90",
+    "name": "?clone@ActionCamera@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662da0",
+    "name": "?clone@ActionCamera@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662d90",
+    "name": "?clone@ActionCamera@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662dc0",
+    "name": "?clone@ActionFloat@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662dc0",
+    "name": "?clone@ActionFloat@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662dd0",
+    "name": "?clone@ActionFloat@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662dc0",
+    "name": "?clone@ActionFloat@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x441f60",
+    "name": "?clone@ActionInterval@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x441f60",
+    "name": "?clone@ActionInterval@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x441f60",
+    "name": "?clone@ActionInterval@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x7c0a50",
+    "name": "?clone@ActionTimeline@timeline@cocostudio@@QBEPAVAction@cocos2d@@XZ"
+  },
+  {
+    "va": "0x7c0a60",
+    "name": "?clone@ActionTimeline@timeline@cocostudio@@QBEPAVClonable@cocos2d@@XZ"
+  },
+  {
+    "va": "0x80fed0",
+    "name": "?clone@Animate3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x80fed0",
+    "name": "?clone@Animate3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x80fee0",
+    "name": "?clone@Animate3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x80fed0",
+    "name": "?clone@Animate3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662df0",
+    "name": "?clone@Animate@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662df0",
+    "name": "?clone@Animate@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662e00",
+    "name": "?clone@Animate@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662df0",
+    "name": "?clone@Animate@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662e20",
+    "name": "?clone@Animation@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662e40",
+    "name": "?clone@AnimationFrame@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f600",
+    "name": "?clone@BezierBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f600",
+    "name": "?clone@BezierBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f610",
+    "name": "?clone@BezierBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f600",
+    "name": "?clone@BezierBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f630",
+    "name": "?clone@BezierTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f630",
+    "name": "?clone@BezierTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f630",
+    "name": "?clone@BezierTo@cocos2d@@QBEPAVBezierBy@2@XZ"
+  },
+  {
+    "va": "0x60f640",
+    "name": "?clone@BezierTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f630",
+    "name": "?clone@BezierTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662e60",
+    "name": "?clone@Blink@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662e60",
+    "name": "?clone@Blink@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662e70",
+    "name": "?clone@Blink@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662e60",
+    "name": "?clone@Blink@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662e90",
+    "name": "?clone@CallFunc@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662e90",
+    "name": "?clone@CallFunc@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x662ea0",
+    "name": "?clone@CallFunc@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662e90",
+    "name": "?clone@CallFunc@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f660",
+    "name": "?clone@CallFuncN@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f660",
+    "name": "?clone@CallFuncN@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x60f660",
+    "name": "?clone@CallFuncN@cocos2d@@QBEPAVCallFunc@2@XZ"
+  },
+  {
+    "va": "0x60f670",
+    "name": "?clone@CallFuncN@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f660",
+    "name": "?clone@CallFuncN@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f6b0",
+    "name": "?clone@CardinalSplineBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f6b0",
+    "name": "?clone@CardinalSplineBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f6b0",
+    "name": "?clone@CardinalSplineBy@cocos2d@@QBEPAVCardinalSplineTo@2@XZ"
+  },
+  {
+    "va": "0x60f690",
+    "name": "?clone@CardinalSplineBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f6b0",
+    "name": "?clone@CardinalSplineBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f6c0",
+    "name": "?clone@CardinalSplineTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f6c0",
+    "name": "?clone@CardinalSplineTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f6d0",
+    "name": "?clone@CardinalSplineTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f6c0",
+    "name": "?clone@CardinalSplineTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f6f0",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f6f0",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f6f0",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVCardinalSplineBy@2@XZ"
+  },
+  {
+    "va": "0x60f6f0",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVCardinalSplineTo@2@XZ"
+  },
+  {
+    "va": "0x60f700",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f6f0",
+    "name": "?clone@CatmullRomBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f720",
+    "name": "?clone@CatmullRomTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f720",
+    "name": "?clone@CatmullRomTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f720",
+    "name": "?clone@CatmullRomTo@cocos2d@@QBEPAVCardinalSplineTo@2@XZ"
+  },
+  {
+    "va": "0x60f730",
+    "name": "?clone@CatmullRomTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f720",
+    "name": "?clone@CatmullRomTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662ec0",
+    "name": "?clone@DelayTime@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662ec0",
+    "name": "?clone@DelayTime@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662ed0",
+    "name": "?clone@DelayTime@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662ec0",
+    "name": "?clone@DelayTime@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f750",
+    "name": "?clone@EaseBackIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f750",
+    "name": "?clone@EaseBackIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f760",
+    "name": "?clone@EaseBackIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f750",
+    "name": "?clone@EaseBackIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f7a0",
+    "name": "?clone@EaseBackInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f7a0",
+    "name": "?clone@EaseBackInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f780",
+    "name": "?clone@EaseBackInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f7a0",
+    "name": "?clone@EaseBackInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f7b0",
+    "name": "?clone@EaseBackOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f7b0",
+    "name": "?clone@EaseBackOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f7c0",
+    "name": "?clone@EaseBackOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f7b0",
+    "name": "?clone@EaseBackOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f7e0",
+    "name": "?clone@EaseBezierAction@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f7e0",
+    "name": "?clone@EaseBezierAction@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f7f0",
+    "name": "?clone@EaseBezierAction@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f7e0",
+    "name": "?clone@EaseBezierAction@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f810",
+    "name": "?clone@EaseBounceIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f810",
+    "name": "?clone@EaseBounceIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f820",
+    "name": "?clone@EaseBounceIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f810",
+    "name": "?clone@EaseBounceIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f860",
+    "name": "?clone@EaseBounceInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f860",
+    "name": "?clone@EaseBounceInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f840",
+    "name": "?clone@EaseBounceInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f860",
+    "name": "?clone@EaseBounceInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f890",
+    "name": "?clone@EaseBounceOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f890",
+    "name": "?clone@EaseBounceOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f870",
+    "name": "?clone@EaseBounceOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f890",
+    "name": "?clone@EaseBounceOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f8a0",
+    "name": "?clone@EaseCircleActionIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f8a0",
+    "name": "?clone@EaseCircleActionIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f8b0",
+    "name": "?clone@EaseCircleActionIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f8a0",
+    "name": "?clone@EaseCircleActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f8d0",
+    "name": "?clone@EaseCircleActionInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f8d0",
+    "name": "?clone@EaseCircleActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f8e0",
+    "name": "?clone@EaseCircleActionInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f8d0",
+    "name": "?clone@EaseCircleActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f900",
+    "name": "?clone@EaseCircleActionOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f900",
+    "name": "?clone@EaseCircleActionOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f910",
+    "name": "?clone@EaseCircleActionOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f900",
+    "name": "?clone@EaseCircleActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f930",
+    "name": "?clone@EaseCubicActionIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f930",
+    "name": "?clone@EaseCubicActionIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f940",
+    "name": "?clone@EaseCubicActionIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f930",
+    "name": "?clone@EaseCubicActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f980",
+    "name": "?clone@EaseCubicActionInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f980",
+    "name": "?clone@EaseCubicActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f960",
+    "name": "?clone@EaseCubicActionInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f980",
+    "name": "?clone@EaseCubicActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f9b0",
+    "name": "?clone@EaseCubicActionOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f9b0",
+    "name": "?clone@EaseCubicActionOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f990",
+    "name": "?clone@EaseCubicActionOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f9b0",
+    "name": "?clone@EaseCubicActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f9e0",
+    "name": "?clone@EaseElasticIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f9e0",
+    "name": "?clone@EaseElasticIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60f9c0",
+    "name": "?clone@EaseElasticIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f9e0",
+    "name": "?clone@EaseElasticIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60f9f0",
+    "name": "?clone@EaseElasticInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60f9f0",
+    "name": "?clone@EaseElasticInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fa00",
+    "name": "?clone@EaseElasticInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60f9f0",
+    "name": "?clone@EaseElasticInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fa20",
+    "name": "?clone@EaseElasticOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fa20",
+    "name": "?clone@EaseElasticOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fa30",
+    "name": "?clone@EaseElasticOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fa20",
+    "name": "?clone@EaseElasticOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fa70",
+    "name": "?clone@EaseExponentialIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fa70",
+    "name": "?clone@EaseExponentialIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fa50",
+    "name": "?clone@EaseExponentialIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fa70",
+    "name": "?clone@EaseExponentialIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fa80",
+    "name": "?clone@EaseExponentialInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fa80",
+    "name": "?clone@EaseExponentialInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fa90",
+    "name": "?clone@EaseExponentialInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fa80",
+    "name": "?clone@EaseExponentialInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fab0",
+    "name": "?clone@EaseExponentialOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fab0",
+    "name": "?clone@EaseExponentialOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fac0",
+    "name": "?clone@EaseExponentialOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fab0",
+    "name": "?clone@EaseExponentialOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fae0",
+    "name": "?clone@EaseIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fae0",
+    "name": "?clone@EaseIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60faf0",
+    "name": "?clone@EaseIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fae0",
+    "name": "?clone@EaseIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fb30",
+    "name": "?clone@EaseInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fb30",
+    "name": "?clone@EaseInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fb10",
+    "name": "?clone@EaseInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fb30",
+    "name": "?clone@EaseInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fb40",
+    "name": "?clone@EaseOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fb40",
+    "name": "?clone@EaseOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fb50",
+    "name": "?clone@EaseOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fb40",
+    "name": "?clone@EaseOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fb70",
+    "name": "?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fb70",
+    "name": "?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fb80",
+    "name": "?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fb70",
+    "name": "?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fbc0",
+    "name": "?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fbc0",
+    "name": "?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fba0",
+    "name": "?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fbc0",
+    "name": "?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fbd0",
+    "name": "?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fbd0",
+    "name": "?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fbe0",
+    "name": "?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fbd0",
+    "name": "?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fc00",
+    "name": "?clone@EaseQuarticActionIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fc00",
+    "name": "?clone@EaseQuarticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fc10",
+    "name": "?clone@EaseQuarticActionIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fc00",
+    "name": "?clone@EaseQuarticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fc30",
+    "name": "?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fc30",
+    "name": "?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fc40",
+    "name": "?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fc30",
+    "name": "?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fc80",
+    "name": "?clone@EaseQuarticActionOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fc80",
+    "name": "?clone@EaseQuarticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fc60",
+    "name": "?clone@EaseQuarticActionOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fc80",
+    "name": "?clone@EaseQuarticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fc90",
+    "name": "?clone@EaseQuinticActionIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fc90",
+    "name": "?clone@EaseQuinticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fca0",
+    "name": "?clone@EaseQuinticActionIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fc90",
+    "name": "?clone@EaseQuinticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fcc0",
+    "name": "?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fcc0",
+    "name": "?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fcd0",
+    "name": "?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fcc0",
+    "name": "?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fcf0",
+    "name": "?clone@EaseQuinticActionOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fcf0",
+    "name": "?clone@EaseQuinticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fd00",
+    "name": "?clone@EaseQuinticActionOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fcf0",
+    "name": "?clone@EaseQuinticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fd40",
+    "name": "?clone@EaseSineIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fd40",
+    "name": "?clone@EaseSineIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fd20",
+    "name": "?clone@EaseSineIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fd40",
+    "name": "?clone@EaseSineIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fd70",
+    "name": "?clone@EaseSineInOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fd70",
+    "name": "?clone@EaseSineInOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fd50",
+    "name": "?clone@EaseSineInOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fd70",
+    "name": "?clone@EaseSineInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fd80",
+    "name": "?clone@EaseSineOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fd80",
+    "name": "?clone@EaseSineOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fd90",
+    "name": "?clone@EaseSineOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fd80",
+    "name": "?clone@EaseSineOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662ef0",
+    "name": "?clone@FadeIn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662ef0",
+    "name": "?clone@FadeIn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662f00",
+    "name": "?clone@FadeIn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662ef0",
+    "name": "?clone@FadeIn@cocos2d@@QBEPAVFadeTo@2@XZ"
+  },
+  {
+    "va": "0x662ef0",
+    "name": "?clone@FadeIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662f20",
+    "name": "?clone@FadeOut@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662f20",
+    "name": "?clone@FadeOut@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662f30",
+    "name": "?clone@FadeOut@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662f20",
+    "name": "?clone@FadeOut@cocos2d@@QBEPAVFadeTo@2@XZ"
+  },
+  {
+    "va": "0x662f20",
+    "name": "?clone@FadeOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662f50",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x662f70",
+    "name": "?clone@FadeOutBLTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662f80",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVFadeOutUpTiles@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x662fa0",
+    "name": "?clone@FadeOutDownTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x662fd0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662fd0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662fb0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662fd0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662fd0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x662fd0",
+    "name": "?clone@FadeOutTRTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x662ff0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x662fe0",
+    "name": "?clone@FadeOutUpTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663010",
+    "name": "?clone@FadeTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663010",
+    "name": "?clone@FadeTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663020",
+    "name": "?clone@FadeTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663010",
+    "name": "?clone@FadeTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663060",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663060",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663040",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663060",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663060",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663060",
+    "name": "?clone@FlipX3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663090",
+    "name": "?clone@FlipX@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663090",
+    "name": "?clone@FlipX@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x663070",
+    "name": "?clone@FlipX@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663090",
+    "name": "?clone@FlipX@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6630a0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVFlipX3D@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6630c0",
+    "name": "?clone@FlipY3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x6630f0",
+    "name": "?clone@FlipY@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6630f0",
+    "name": "?clone@FlipY@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x6630d0",
+    "name": "?clone@FlipY@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6630f0",
+    "name": "?clone@FlipY@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663100",
+    "name": "?clone@Follow@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663110",
+    "name": "?clone@Follow@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663150",
+    "name": "?clone@Hide@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663150",
+    "name": "?clone@Hide@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x663130",
+    "name": "?clone@Hide@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663150",
+    "name": "?clone@Hide@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x441f50",
+    "name": "?clone@IfCallFunc@agtk@@QBEPAVAction@cocos2d@@XZ"
+  },
+  {
+    "va": "0x441f50",
+    "name": "?clone@IfCallFunc@agtk@@QBEPAVActionInstant@cocos2d@@XZ"
+  },
+  {
+    "va": "0x441f40",
+    "name": "?clone@IfCallFunc@agtk@@QBEPAVClonable@cocos2d@@XZ"
+  },
+  {
+    "va": "0x441f50",
+    "name": "?clone@IfCallFunc@agtk@@QBEPAVFiniteTimeAction@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4c9eb0",
+    "name": "?clone@IfCallFunc@agtk@@UBEPAV12@XZ"
+  },
+  {
+    "va": "0x663180",
+    "name": "?clone@JumpBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663180",
+    "name": "?clone@JumpBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663160",
+    "name": "?clone@JumpBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663180",
+    "name": "?clone@JumpBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6631b0",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6631b0",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663190",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6631b0",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6631b0",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x6631b0",
+    "name": "?clone@JumpTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6631c0",
+    "name": "?clone@JumpTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6631c0",
+    "name": "?clone@JumpTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6631d0",
+    "name": "?clone@JumpTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6631c0",
+    "name": "?clone@JumpTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6631c0",
+    "name": "?clone@JumpTo@cocos2d@@QBEPAVJumpBy@2@XZ"
+  },
+  {
+    "va": "0x6631f0",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6631f0",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663200",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6631f0",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6631f0",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6631f0",
+    "name": "?clone@Lens3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663220",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663220",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663230",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663220",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663220",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663220",
+    "name": "?clone@Liquid@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663250",
+    "name": "?clone@MoveBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663250",
+    "name": "?clone@MoveBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663260",
+    "name": "?clone@MoveBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663250",
+    "name": "?clone@MoveBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6632a0",
+    "name": "?clone@MoveTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6632a0",
+    "name": "?clone@MoveTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663280",
+    "name": "?clone@MoveTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6632a0",
+    "name": "?clone@MoveTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6632a0",
+    "name": "?clone@MoveTo@cocos2d@@QBEPAVMoveBy@2@XZ"
+  },
+  {
+    "va": "0x6632b0",
+    "name": "?clone@OrbitCamera@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6632b0",
+    "name": "?clone@OrbitCamera@cocos2d@@QBEPAVActionCamera@2@XZ"
+  },
+  {
+    "va": "0x6632b0",
+    "name": "?clone@OrbitCamera@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6632c0",
+    "name": "?clone@OrbitCamera@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6632b0",
+    "name": "?clone@OrbitCamera@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663300",
+    "name": "?clone@Place@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663300",
+    "name": "?clone@Place@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x6632e0",
+    "name": "?clone@Place@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663300",
+    "name": "?clone@Place@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663310",
+    "name": "?clone@ProgressFromTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663310",
+    "name": "?clone@ProgressFromTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663320",
+    "name": "?clone@ProgressFromTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663310",
+    "name": "?clone@ProgressFromTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663360",
+    "name": "?clone@ProgressTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663360",
+    "name": "?clone@ProgressTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663340",
+    "name": "?clone@ProgressTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663360",
+    "name": "?clone@ProgressTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663370",
+    "name": "?clone@RemoveSelf@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663370",
+    "name": "?clone@RemoveSelf@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x663380",
+    "name": "?clone@RemoveSelf@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663370",
+    "name": "?clone@RemoveSelf@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fdd0",
+    "name": "?clone@Repeat@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fdd0",
+    "name": "?clone@Repeat@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fdb0",
+    "name": "?clone@Repeat@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fdd0",
+    "name": "?clone@Repeat@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fde0",
+    "name": "?clone@RepeatForever@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fde0",
+    "name": "?clone@RepeatForever@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fdf0",
+    "name": "?clone@RepeatForever@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fde0",
+    "name": "?clone@RepeatForever@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6633a0",
+    "name": "?clone@ReuseGrid@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6633a0",
+    "name": "?clone@ReuseGrid@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x6633b0",
+    "name": "?clone@ReuseGrid@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6633a0",
+    "name": "?clone@ReuseGrid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6633d0",
+    "name": "?clone@ReverseTime@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6633d0",
+    "name": "?clone@ReverseTime@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6633e0",
+    "name": "?clone@ReverseTime@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6633d0",
+    "name": "?clone@ReverseTime@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663420",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663420",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663400",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663420",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663420",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663420",
+    "name": "?clone@Ripple3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663450",
+    "name": "?clone@RotateBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663450",
+    "name": "?clone@RotateBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663430",
+    "name": "?clone@RotateBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663450",
+    "name": "?clone@RotateBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663460",
+    "name": "?clone@RotateTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663460",
+    "name": "?clone@RotateTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663470",
+    "name": "?clone@RotateTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663460",
+    "name": "?clone@RotateTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663490",
+    "name": "?clone@ScaleBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663490",
+    "name": "?clone@ScaleBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6634a0",
+    "name": "?clone@ScaleBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663490",
+    "name": "?clone@ScaleBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663490",
+    "name": "?clone@ScaleBy@cocos2d@@QBEPAVScaleTo@2@XZ"
+  },
+  {
+    "va": "0x6634c0",
+    "name": "?clone@ScaleTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6634c0",
+    "name": "?clone@ScaleTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6634d0",
+    "name": "?clone@ScaleTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6634c0",
+    "name": "?clone@ScaleTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x4ca3a0",
+    "name": "?clone@Sequence@agtk@@QBEPAVAction@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4ca3a0",
+    "name": "?clone@Sequence@agtk@@QBEPAVActionInterval@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4cdae0",
+    "name": "?clone@Sequence@agtk@@QBEPAVClonable@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4ca3a0",
+    "name": "?clone@Sequence@agtk@@QBEPAVFiniteTimeAction@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4ca3a0",
+    "name": "?clone@Sequence@agtk@@UBEPAV12@XZ"
+  },
+  {
+    "va": "0x60fe10",
+    "name": "?clone@Sequence@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fe10",
+    "name": "?clone@Sequence@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fe20",
+    "name": "?clone@Sequence@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fe10",
+    "name": "?clone@Sequence@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663510",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663510",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6634f0",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663510",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663510",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663510",
+    "name": "?clone@Shaky3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663540",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663540",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663520",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663540",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663540",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663540",
+    "name": "?clone@ShakyTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663570",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663570",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663550",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663570",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663570",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663570",
+    "name": "?clone@ShatteredTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663580",
+    "name": "?clone@Show@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663580",
+    "name": "?clone@Show@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x663590",
+    "name": "?clone@Show@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663580",
+    "name": "?clone@Show@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6635d0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6635d0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6635b0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6635d0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6635d0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x6635d0",
+    "name": "?clone@ShuffleTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6635e0",
+    "name": "?clone@SkewBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6635e0",
+    "name": "?clone@SkewBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6635f0",
+    "name": "?clone@SkewBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6635e0",
+    "name": "?clone@SkewBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6635e0",
+    "name": "?clone@SkewBy@cocos2d@@QBEPAVSkewTo@2@XZ"
+  },
+  {
+    "va": "0x663610",
+    "name": "?clone@SkewTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663610",
+    "name": "?clone@SkewTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663620",
+    "name": "?clone@SkewTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663610",
+    "name": "?clone@SkewTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fe40",
+    "name": "?clone@Spawn@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fe40",
+    "name": "?clone@Spawn@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x60fe50",
+    "name": "?clone@Spawn@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x60fe40",
+    "name": "?clone@Spawn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x60fe70",
+    "name": "?clone@Speed@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x60fe80",
+    "name": "?clone@Speed@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663640",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663640",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663650",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663640",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663640",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663640",
+    "name": "?clone@SplitCols@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663690",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663690",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663670",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663690",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663690",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663690",
+    "name": "?clone@SplitRows@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6636a0",
+    "name": "?clone@SpriteFrame@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6636c0",
+    "name": "?clone@StopGrid@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6636c0",
+    "name": "?clone@StopGrid@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x6636d0",
+    "name": "?clone@StopGrid@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6636c0",
+    "name": "?clone@StopGrid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663710",
+    "name": "?clone@TargetedAction@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663710",
+    "name": "?clone@TargetedAction@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6636f0",
+    "name": "?clone@TargetedAction@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663710",
+    "name": "?clone@TargetedAction@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663720",
+    "name": "?clone@TintBy@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663720",
+    "name": "?clone@TintBy@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663730",
+    "name": "?clone@TintBy@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663720",
+    "name": "?clone@TintBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663750",
+    "name": "?clone@TintTo@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663750",
+    "name": "?clone@TintTo@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663760",
+    "name": "?clone@TintTo@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663750",
+    "name": "?clone@TintTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6637a0",
+    "name": "?clone@ToggleVisibility@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6637a0",
+    "name": "?clone@ToggleVisibility@cocos2d@@QBEPAVActionInstant@2@XZ"
+  },
+  {
+    "va": "0x663780",
+    "name": "?clone@ToggleVisibility@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6637a0",
+    "name": "?clone@ToggleVisibility@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6637d0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6637d0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6637b0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6637d0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6637d0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x6637d0",
+    "name": "?clone@TurnOffTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6637e0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x6637e0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x6637f0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x6637e0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x6637e0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x6637e0",
+    "name": "?clone@Twirl@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663830",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663830",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663810",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663830",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663830",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663830",
+    "name": "?clone@Waves3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663860",
+    "name": "?clone@Waves@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663860",
+    "name": "?clone@Waves@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663840",
+    "name": "?clone@Waves@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663860",
+    "name": "?clone@Waves@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663860",
+    "name": "?clone@Waves@cocos2d@@QBEPAVGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x663860",
+    "name": "?clone@Waves@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663890",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVAction@2@XZ"
+  },
+  {
+    "va": "0x663890",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ"
+  },
+  {
+    "va": "0x663870",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x663890",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ"
+  },
+  {
+    "va": "0x663890",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVGridAction@2@XZ"
+  },
+  {
+    "va": "0x663890",
+    "name": "?clone@WavesTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ"
+  },
+  {
+    "va": "0x5f9410",
+    "name": "?clone@__Bool@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x5f9470",
+    "name": "?clone@__Double@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x5f9450",
+    "name": "?clone@__Float@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x5f9430",
+    "name": "?clone@__Integer@cocos2d@@QBEPAVClonable@2@XZ"
+  },
+  {
+    "va": "0x5dbe60",
+    "name": "?compileObjectScripts@GameManager@@QAEXPAVObjectData@data@agtk@@@Z"
+  },
+  {
+    "va": "0x5dccc0",
+    "name": "?compileSceneObjectScripts@GameManager@@QAEXHPAVScenePartObjectData@data@agtk@@@Z"
+  },
+  {
+    "va": "0x5af200",
+    "name": "?containsVisibleViewportLight@ViewportLightSceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x5af180",
+    "name": "?containsVisibleViewportLightSwitch@ViewportLightSceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x5cb4b0",
+    "name": "?copyData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0xb92e30",
+    "name": "?create@Object@agtk@@2P6APAV12@PAVSceneLayer@2@HHVVec2@cocos2d@@1MHHHH@ZA"
+  },
+  {
+    "va": "0x40a5d0",
+    "name": "?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z"
+  },
+  {
+    "va": "0x40a690",
+    "name": "?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@PAX0@Z"
+  },
+  {
+    "va": "0x576270",
+    "name": "?create@SceneLayer@agtk@@SAPAV12@PAVScene@2@PAVSceneData@data@2@H_N2H@Z"
+  },
+  {
+    "va": "0x5a4e80",
+    "name": "?create@Tile@agtk@@SAPAV12@PAV1data@2@PAVTexture2D@cocos2d@@PAVSceneLayer@2@VSize@5@@Z"
+  },
+  {
+    "va": "0x42a740",
+    "name": "?create@TileMap@agtk@@SAPAV12@PAV__Array@cocos2d@@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x42a5c0",
+    "name": "?create@Tileset@agtk@@SAPAV12@PAVTilesetData@data@2@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5ae990",
+    "name": "?create@ViewportLightObject@agtk@@SAPAV12@PAVObject@2@PAVViewportLight@2@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x434730",
+    "name": "?create@ViewportLightSceneLayer@agtk@@SAPAV12@PAVSceneLayer@2@PAVViewportLight@2@@Z"
+  },
+  {
+    "va": "0x5c5a50",
+    "name": "?createAndGetSaveDir@GameManager@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+  },
+  {
+    "va": "0x583d70",
+    "name": "?createAxisJoint@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x5c5640",
+    "name": "?createCanvas@GameManager@@QAEPAVScene@cocos2d@@H_N@Z"
+  },
+  {
+    "va": "0x584a60",
+    "name": "?createExplode@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x567be0",
+    "name": "?createForSceneLayer@RenderTextureCtrl@agtk@@SAPAV12@PAVSceneLayer@2@VSize@cocos2d@@H@Z"
+  },
+  {
+    "va": "0x454690",
+    "name": "?createForScript@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@XZ"
+  },
+  {
+    "va": "0x584eb0",
+    "name": "?createForce@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x585300",
+    "name": "?createGroupCollisionDetections@SceneLayer@agtk@@AAEX_N@Z"
+  },
+  {
+    "va": "0x585ad0",
+    "name": "?createGroupRoughWallCollisionDetections@SceneLayer@agtk@@AAEXXZ"
+  },
+  {
+    "va": "0x585fb0",
+    "name": "?createGroupWallCollisionDetections@SceneLayer@agtk@@AAEXXZ"
+  },
+  {
+    "va": "0x5c5930",
+    "name": "?createLoadingScene@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x576320",
+    "name": "?createMenu@SceneLayer@agtk@@SAPAV12@PAVScene@2@PAVSceneData@data@2@HVSize@cocos2d@@_N@Z"
+  },
+  {
+    "va": "0x580be0",
+    "name": "?createPhysicsJointPin@SceneLayer@agtk@@AAEXPAVConnectTarget@12@0@Z"
+  },
+  {
+    "va": "0x5807d0",
+    "name": "?createPhysicsObject@SceneLayer@agtk@@AAEXPAVSceneData@data@2@@Z"
+  },
+  {
+    "va": "0x580f60",
+    "name": "?createPhysicsObjectWithObject@SceneLayer@agtk@@QAEXPAVObject@2@@Z"
+  },
+  {
+    "va": "0x5814f0",
+    "name": "?createPinJoint@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@AAV?$list@UPinnedPhysicsInfo@SceneLayer@agtk@@V?$allocator@UPinnedPhysicsInfo@SceneLayer@agtk@@@std@@@std@@@Z"
+  },
+  {
+    "va": "0x5183f0",
+    "name": "?createReappearData@Object@agtk@@SAPAV12@PAVSceneLayer@2@PAVObjectReappearData@data@2@@Z"
+  },
+  {
+    "va": "0x5873b0",
+    "name": "?createReappearObject@SceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x5763e0",
+    "name": "?createRenderTexture@SceneLayer@agtk@@AAE_N_NH@Z"
+  },
+  {
+    "va": "0x5af260",
+    "name": "?createRenderTexture@ViewportLightSceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x581e70",
+    "name": "?createRopeJoint@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x518720",
+    "name": "?createScenePartObjectData@Object@agtk@@SAPAV12@PAVSceneLayer@2@HHVVec2@cocos2d@@1MHHHHPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x57e510",
+    "name": "?createSceneSprite@SceneLayer@agtk@@QAEXHHVVec2@cocos2d@@M@Z"
+  },
+  {
+    "va": "0x57bb50",
+    "name": "?createShader@SceneLayer@agtk@@QAEXPAVLayer@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5af370",
+    "name": "?createShader@ViewportLightSceneLayer@agtk@@QAEXPAVLayer@cocos2d@@@Z"
+  },
+  {
+    "va": "0x582f20",
+    "name": "?createSpringJoint@SceneLayer@agtk@@AAEXPAVPhysicsPartData@data@2@PAVSceneData@42@HPAV__Array@cocos2d@@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x586220",
+    "name": "?createStaticPhysicNode@SceneLayer@agtk@@AAEPAVNode@cocos2d@@VVec2@4@_N@Z"
+  },
+  {
+    "va": "0x57d6e0",
+    "name": "?createTakeoverStatesObject@SceneLayer@agtk@@AAEPAVObject@2@PAVObjectTakeoverStatesData@2@PAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0xb92e2c",
+    "name": "?createWithSceneDataAndScenePartObjectData@Object@agtk@@2P6APAV12@PAVSceneLayer@2@PAVScenePartObjectData@data@2@H@ZA"
+  },
+  {
+    "va": "0x5d8760",
+    "name": "?debugLog@GameManager@@SAXPBDZZ"
+  },
+  {
+    "va": "0x58e6d0",
+    "name": "?decrementObjectInstanceCount@Scene@agtk@@QAEHH@Z"
+  },
+  {
+    "va": "0x5cb680",
+    "name": "?deleteData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x402600",
+    "name": "?deserialize@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x57b610",
+    "name": "?earlyUpdate@SceneLayer@agtk@@QAEXM@Z"
+  },
+  {
+    "va": "0x5872e0",
+    "name": "?enableObjectByAction@SceneLayer@agtk@@QAEXH@Z"
+  },
+  {
+    "va": "0x5783b0",
+    "name": "?end@SceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x5284a0",
+    "name": "?execActionObjectCreate@Object@agtk@@IAEXPAVObjectCommandData@data@2@@Z"
+  },
+  {
+    "va": "0x537b00",
+    "name": "?execActionObjectCreate@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z"
+  },
+  {
+    "va": "0x537bd0",
+    "name": "?execActionObjectCreateForScript@ObjectAction@agtk@@SAHHHHH@Z"
+  },
+  {
+    "va": "0x5dbdb0",
+    "name": "?finalPlugins@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x58e5c0",
+    "name": "?forceUpdateObjectInstanceId@Scene@agtk@@QAEXH_N@Z"
+  },
+  {
+    "va": "0x402fd0",
+    "name": "?getActionId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x4367c0",
+    "name": "?getActiveFlg@SceneLayer@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x429150",
+    "name": "?getAdditiveParticleBacksideNode@SceneLayer@agtk@@UBEPAVNode@cocos2d@@XZ"
+  },
+  {
+    "va": "0x429100",
+    "name": "?getAdditiveParticleNode@SceneLayer@agtk@@UBEPAVNode@cocos2d@@XZ"
+  },
+  {
+    "va": "0x403340",
+    "name": "?getAdjustX@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x4039e0",
+    "name": "?getAdjustY@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x437060",
+    "name": "?getAirResistance@GameManager@@UBEMXZ"
+  },
+  {
+    "va": "0x437090",
+    "name": "?getAlivePhysicsObj@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x4315b0",
+    "name": "?getAlphaValue@SceneLayer@agtk@@UBEPAVTimerFloat@2@XZ"
+  },
+  {
+    "va": "0x41f770",
+    "name": "?getAppName@GameManager@@UBEPAV__String@cocos2d@@XZ"
+  },
+  {
+    "va": "0x41ba20",
+    "name": "?getAppVersion@GameManager@@UBEPAV__String@cocos2d@@XZ"
+  },
+  {
+    "va": "0x431d30",
+    "name": "?getAttackerObjectInstanceIdList@Object@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4366f0",
+    "name": "?getBlendAdditive@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x4367a0",
+    "name": "?getBlendAdditiveFlag@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x406980",
+    "name": "?getChildObject@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x57fc70",
+    "name": "?getCollisionLoopCourseList@SceneLayer@agtk@@QAEPAV__Array@cocos2d@@VVec2@4@0@Z"
+  },
+  {
+    "va": "0x57fa90",
+    "name": "?getCollisionSlopeList@SceneLayer@agtk@@QAEPAV?$MtVector@PAVSlope@agtk@@@2@VVec2@cocos2d@@00@Z"
+  },
+  {
+    "va": "0x57f650",
+    "name": "?getCollisionTile2List@SceneLayer@agtk@@QAE?AV?$vector@PAVTile@agtk@@V?$allocator@PAVTile@agtk@@@std@@@std@@AAUVertex4@2@@Z"
+  },
+  {
+    "va": "0x57f2c0",
+    "name": "?getCollisionTileList@SceneLayer@agtk@@QAE?AV?$vector@PAVTile@agtk@@V?$allocator@PAVTile@agtk@@@std@@@std@@AAUVertex4@2@@Z"
+  },
+  {
+    "va": "0x57e6e0",
+    "name": "?getCollisionTileList@SceneLayer@agtk@@QAE?AV?$vector@PAVTile@agtk@@V?$allocator@PAVTile@agtk@@@std@@@std@@VVec2@cocos2d@@00@Z"
+  },
+  {
+    "va": "0x57ea40",
+    "name": "?getCollisionTileOverlapList@SceneLayer@agtk@@QAE?AV?$vector@PAVTile@agtk@@V?$allocator@PAVTile@agtk@@@std@@@std@@VVec2@cocos2d@@0@Z"
+  },
+  {
+    "va": "0x57ee70",
+    "name": "?getCollisionTileOverlapMaskList@SceneLayer@agtk@@QAE?AV?$vector@PAVTile@agtk@@V?$allocator@PAVTile@agtk@@@std@@@std@@VVec2@cocos2d@@0@Z"
+  },
+  {
+    "va": "0x405690",
+    "name": "?getCommandReappearObjectList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x436560",
+    "name": "?getCommonCollisionDetection@SceneLayer@agtk@@UBEPAVCollisionDetaction@@XZ"
+  },
+  {
+    "va": "0x403200",
+    "name": "?getConnectId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x586330",
+    "name": "?getConnectedPhysicsPartsFromList@SceneLayer@agtk@@AAEPAVPhysicsBase@2@PAV__Array@cocos2d@@H@Z"
+  },
+  {
+    "va": "0x5863a0",
+    "name": "?getConnectedTarget@SceneLayer@agtk@@AAEPAVNode@cocos2d@@HHPAV__Array@4@PA_N@Z"
+  },
+  {
+    "va": "0x587960",
+    "name": "?getCountChildrenRecursively@SceneLayer@agtk@@QAEHPAVNode@cocos2d@@@Z"
+  },
+  {
+    "va": "0x426b50",
+    "name": "?getCreateObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x403020",
+    "name": "?getCreatePosition@ObjectCommandObjectCreateData@data@agtk@@UBE?AW4EnumCreatePosition@123@XZ"
+  },
+  {
+    "va": "0x408390",
+    "name": "?getCurrentLayer@GameManager@@UBEPAVLayer@cocos2d@@XZ"
+  },
+  {
+    "va": "0x402be0",
+    "name": "?getCurrentScene@GameManager@@UBEPAVScene@agtk@@XZ"
+  },
+  {
+    "va": "0x406af0",
+    "name": "?getCurrentTime@GameManager@@UBENXZ"
+  },
+  {
+    "va": "0x441f60",
+    "name": "?getCurrentTm@GameManager@@QAEPAUtm@@XZ"
+  },
+  {
+    "va": "0x426bf0",
+    "name": "?getDeleteObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x436670",
+    "name": "?getDetectWallCollisionFunc@SceneLayer@agtk@@UBEPBV?$function@$$A6AXPAVCollisionNode@@@Z@std@@XZ"
+  },
+  {
+    "va": "0x436d80",
+    "name": "?getEditorLocale@GameManager@@UBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+  },
+  {
+    "va": "0x5c31d0",
+    "name": "?getEffectArray@EffectManager@@QAEPAV__Array@cocos2d@@PAVSceneLayer@agtk@@@Z"
+  },
+  {
+    "va": "0x437010",
+    "name": "?getEncryptSaveFile@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x432390",
+    "name": "?getExecActionObjectCreateList@Object@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x5c59c0",
+    "name": "?getFilePath@GameManager@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+  },
+  {
+    "va": "0x408ce0",
+    "name": "?getFrame@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x436fe0",
+    "name": "?getFrameRate@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x40a770",
+    "name": "?getGridMagnet@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x585f40",
+    "name": "?getGroupCollisionDetection@SceneLayer@agtk@@QBEPAVCollisionDetaction@@H@Z"
+  },
+  {
+    "va": "0x429340",
+    "name": "?getGroupCollisionDetections@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x585f80",
+    "name": "?getGroupRoughWallCollisionDetection@SceneLayer@agtk@@QBEPAVCollisionDetaction@@H@Z"
+  },
+  {
+    "va": "0x4365b0",
+    "name": "?getGroupRoughWallCollisionDetections@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x5861f0",
+    "name": "?getGroupWallCollisionDetection@SceneLayer@agtk@@QBEPAVCollisionDetaction@@H@Z"
+  },
+  {
+    "va": "0x436600",
+    "name": "?getGroupWallCollisionDetections@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x41baf0",
+    "name": "?getIgnoreCreatePlayerList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x436890",
+    "name": "?getInitChildrenCount@SceneLayer@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x57dc60",
+    "name": "?getInitiallyPlacedScenePartObjectDataForReappearData@SceneLayer@agtk@@AAEPAVScenePartObjectData@data@2@PAVObjectReappearData@42@@Z"
+  },
+  {
+    "va": "0x5b0fd0",
+    "name": "?getInstance@AudioManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5b5bb0",
+    "name": "?getInstance@BulletManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5c2960",
+    "name": "?getInstance@EffectManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5c36d0",
+    "name": "?getInstance@FontManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5c4da0",
+    "name": "?getInstance@GameManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5e2b70",
+    "name": "?getInstance@GuiManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5e42d0",
+    "name": "?getInstance@ImageManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5ec650",
+    "name": "?getInstance@InputManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5f3ef0",
+    "name": "?getInstance@MovieManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5f49a0",
+    "name": "?getInstance@ParticleManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x5f6720",
+    "name": "?getInstance@PrimitiveManager@@SAPAV1@XZ"
+  },
+  {
+    "va": "0x404890",
+    "name": "?getInstanceConfigurable@ObjectCommandData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x46b470",
+    "name": "?getInstanceCount@PlayObjectData@data@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x520df0",
+    "name": "?getInstanceId@Object@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x46b010",
+    "name": "?getInstanceId@PlayObjectData@data@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x408910",
+    "name": "?getIsBgmFadeOut@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x421f80",
+    "name": "?getIsPortalMoving@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x421fa0",
+    "name": "?getIsSceneMoving@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x436870",
+    "name": "?getIsShaderColorDarkMask@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x4367e0",
+    "name": "?getIsVisible@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x441f60",
+    "name": "?getLastLoginTm@GameManager@@QAEPAUtm@@XZ"
+  },
+  {
+    "va": "0x426ab0",
+    "name": "?getLayerData@SceneLayer@agtk@@UBEPAVLayerData@data@2@XZ"
+  },
+  {
+    "va": "0x4292a0",
+    "name": "?getLayerId@SceneLayer@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x407c70",
+    "name": "?getLoadBit@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x407d10",
+    "name": "?getLoadEffectDuration300@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x407cc0",
+    "name": "?getLoadEffectType@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x40e2e0",
+    "name": "?getLoadSceneId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x436e70",
+    "name": "?getLoadedBgm@GameManager@@QAEAAV?$vector@UBgmInfo@GameManager@@V?$allocator@UBgmInfo@GameManager@@@std@@@std@@XZ"
+  },
+  {
+    "va": "0x4069c0",
+    "name": "?getLoadingScene@GameManager@@UBEPAVScene@agtk@@XZ"
+  },
+  {
+    "va": "0x40ae90",
+    "name": "?getLoadingTimer@GameManager@@UBEPAVTimer@agtk@@XZ"
+  },
+  {
+    "va": "0x429250",
+    "name": "?getLoopCourseList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x40a750",
+    "name": "?getLowerPriority@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x58d0b0",
+    "name": "?getMenuLayer@Scene@agtk@@QAEPAVSceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x4368b0",
+    "name": "?getMenuWorkMargin@SceneLayer@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x40b3c0",
+    "name": "?getMoveToLayerId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x426a60",
+    "name": "?getMoveToSceneLayerId@Portal@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x41afc0",
+    "name": "?getNeedPortalMove@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x41afe0",
+    "name": "?getNeedSceneChange@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x41afa0",
+    "name": "?getNeedTerminateScene@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x408630",
+    "name": "?getNextSceneId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x405670",
+    "name": "?getNotReappearObjectList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x54bc90",
+    "name": "?getObjCommandListByInstanceConfigurable@ObjectAction@agtk@@AAEPAV__Dictionary@cocos2d@@PAV34@0@Z"
+  },
+  {
+    "va": "0x54bbb0",
+    "name": "?getObjCommandListByInstanceConfigurable@ObjectAction@agtk@@CAPAV__Dictionary@cocos2d@@PAV34@0PAVObject@2@@Z"
+  },
+  {
+    "va": "0x58d380",
+    "name": "?getObjectAll@Scene@agtk@@QAEPAV__Array@cocos2d@@HW4EnumType@SceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x58dda0",
+    "name": "?getObjectAll@Scene@agtk@@QAEPAV__Array@cocos2d@@VRect@4@W4EnumType@SceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x58d140",
+    "name": "?getObjectAll@Scene@agtk@@QAEPAV__Array@cocos2d@@W4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x58e320",
+    "name": "?getObjectAllFront@Scene@agtk@@QAE?AV?$RefPtr@V__Array@cocos2d@@@cocos2d@@W4EnumType@SceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x58e1d0",
+    "name": "?getObjectAllLocked@Scene@agtk@@QAEPAV__Array@cocos2d@@HW4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x58d240",
+    "name": "?getObjectAllNrArray@Scene@agtk@@QAEPAVNrArray@2@W4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x58dff0",
+    "name": "?getObjectAllObjGroup@Scene@agtk@@QAEPAV__Array@cocos2d@@W4EnumObjGroup@ObjectData@data@2@_NW4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x586b60",
+    "name": "?getObjectAnchorAndPos@SceneLayer@agtk@@AAEXPAVObject@2@PAVVec2@cocos2d@@1@Z"
+  },
+  {
+    "va": "0x4290b0",
+    "name": "?getObjectFrontNode@SceneLayer@agtk@@UBEPAVNode@cocos2d@@XZ"
+  },
+  {
+    "va": "0x402f80",
+    "name": "?getObjectId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x436540",
+    "name": "?getObjectId@SceneLayer@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x58d500",
+    "name": "?getObjectInstance@Scene@agtk@@QAEPAVObject@2@HHW4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x58d660",
+    "name": "?getObjectInstanceByName@Scene@agtk@@QAEPAVObject@2@HPBD@Z"
+  },
+  {
+    "va": "0x58e5f0",
+    "name": "?getObjectInstanceCount@Scene@agtk@@QAEHH@Z"
+  },
+  {
+    "va": "0x58e4d0",
+    "name": "?getObjectInstanceId@Scene@agtk@@QAEHH_N@Z"
+  },
+  {
+    "va": "0x58e550",
+    "name": "?getObjectInstanceId@Scene@agtk@@QAEHPAVObject@2@@Z"
+  },
+  {
+    "va": "0x58e5a0",
+    "name": "?getObjectInstanceId@Scene@agtk@@QAEH_N@Z"
+  },
+  {
+    "va": "0x426b00",
+    "name": "?getObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x588e70",
+    "name": "?getObjectPlayer@Scene@agtk@@AAEPAVObject@2@XZ"
+  },
+  {
+    "va": "0x428e60",
+    "name": "?getObjectSetNode@SceneLayer@agtk@@UBEPAVchangeRunningNode@12@XZ"
+  },
+  {
+    "va": "0x57df90",
+    "name": "?getObjectTakeoverStatesAsScene@SceneLayer@agtk@@AAEPAVObjectTakeoverStatesData@2@PAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x46bc60",
+    "name": "?getParentObjectInstanceId@PlayObjectData@data@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x58d8b0",
+    "name": "?getPhysicObjectAll@Scene@agtk@@QAE?AV?$vector@PAVNode@cocos2d@@V?$allocator@PAVNode@cocos2d@@@std@@@std@@HHHW4EnumType@SceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5d8ee0",
+    "name": "?getPhysicsIterations@GameManager@@QAEHXZ"
+  },
+  {
+    "va": "0x42aff0",
+    "name": "?getPhysicsObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x437050",
+    "name": "?getPhysicsWorld@GameManager@@UBEPAVPhysicsWorld@cocos2d@@XZ"
+  },
+  {
+    "va": "0x405ae0",
+    "name": "?getPlayData@GameManager@@UBEPAVPlayData@data@agtk@@XZ"
+  },
+  {
+    "va": "0x407e20",
+    "name": "?getPortalData@GameManager@@UBEPAVMoveSettingData@data@agtk@@XZ"
+  },
+  {
+    "va": "0x428f00",
+    "name": "?getPortalObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x40e260",
+    "name": "?getPortalTouchedPlayerList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x436800",
+    "name": "?getPositionValue@SceneLayer@agtk@@UBEPAVTimerVec2@2@XZ"
+  },
+  {
+    "va": "0x41f750",
+    "name": "?getPreMoveBgmId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x40e360",
+    "name": "?getPreMoveBgmLoopFlag@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x436f50",
+    "name": "?getPreloadBgmEnd@GameManager@@UBE?AV?$list@HV?$allocator@H@std@@@std@@XZ"
+  },
+  {
+    "va": "0x408610",
+    "name": "?getPrevSceneId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x405430",
+    "name": "?getProbability@ObjectCommandObjectCreateData@data@agtk@@UBENXZ"
+  },
+  {
+    "va": "0x4066e0",
+    "name": "?getProjectData@GameManager@@UBEPAVProjectData@data@agtk@@XZ"
+  },
+  {
+    "va": "0x408990",
+    "name": "?getProjectFilePath@GameManager@@UBEPAV__String@cocos2d@@XZ"
+  },
+  {
+    "va": "0x437030",
+    "name": "?getProjectFolderSave@GameManager@@UBE_NXZ"
+  },
+  {
+    "va": "0x5d2960",
+    "name": "?getProjectPathFromProjectFile@GameManager@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABV23@@Z"
+  },
+  {
+    "va": "0x436850",
+    "name": "?getRemoveSelfFlag@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x436750",
+    "name": "?getRemoveShaderList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x42bbe0",
+    "name": "?getRenderTexture@SceneLayer@agtk@@UBEPAVRenderTextureCtrl@2@XZ"
+  },
+  {
+    "va": "0x403900",
+    "name": "?getRenderTexture@ViewportLightSceneLayer@agtk@@UBEPAVRenderTexture@cocos2d@@XZ"
+  },
+  {
+    "va": "0x5cc210",
+    "name": "?getSaveConfigPath@GameManager@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ"
+  },
+  {
+    "va": "0x5cbb40",
+    "name": "?getSaveDataFile@GameManager@@QBE_NAAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@@Z"
+  },
+  {
+    "va": "0x5cb910",
+    "name": "?getSaveFilePath@GameManager@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+  },
+  {
+    "va": "0x426a60",
+    "name": "?getScene@SceneLayer@agtk@@QAEPAVScene@2@XZ"
+  },
+  {
+    "va": "0x40b400",
+    "name": "?getSceneChangeReappearObjectList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x4292f0",
+    "name": "?getSceneData@SceneLayer@agtk@@UBEPAVSceneData@data@2@XZ"
+  },
+  {
+    "va": "0x40e280",
+    "name": "?getSceneEndTakeoverStatesObjectList@GameManager@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x5cbca0",
+    "name": "?getSceneIdFromSaveDataFile@GameManager@@QBEHXZ"
+  },
+  {
+    "va": "0x436540",
+    "name": "?getSceneLayer@Object@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x535c50",
+    "name": "?getSceneLayer@ObjectAction@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x4fa330",
+    "name": "?getSceneLayer@ObjectTemplateMove@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x58d020",
+    "name": "?getSceneLayer@Scene@agtk@@QAEPAVSceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x428f90",
+    "name": "?getSceneLayer@Tile@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x402bf0",
+    "name": "?getSceneLayer@ViewportLightSceneLayer@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x58d070",
+    "name": "?getSceneLayerFront@Scene@agtk@@QAEPAVSceneLayer@2@XZ"
+  },
+  {
+    "va": "0x403900",
+    "name": "?getSceneLayerId@ObjectReappearData@data@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x403630",
+    "name": "?getSceneLayerId@ObjectTakeoverStatesData@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x42b3e0",
+    "name": "?getSceneLayerId@Particle@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x429150",
+    "name": "?getSceneLayerId@ParticleGroup@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x4290b0",
+    "name": "?getSceneLayerId@Portal@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x429100",
+    "name": "?getSceneLayerList@Scene@agtk@@UBEPAV__Dictionary@cocos2d@@XZ"
+  },
+  {
+    "va": "0x403020",
+    "name": "?getSceneLayerRenderTexture@ParticleManager@@UBEPAVRenderTexture@cocos2d@@XZ"
+  },
+  {
+    "va": "0x51c800",
+    "name": "?getSceneLayerScrollDiff@Object@agtk@@SA?AVVec2@cocos2d@@PAVSceneLayer@2@0@Z"
+  },
+  {
+    "va": "0x42bbc0",
+    "name": "?getSceneSpriteList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x57c5d0",
+    "name": "?getShader@SceneLayer@agtk@@QAEPAVShader@2@W4ShaderKind@32@@Z"
+  },
+  {
+    "va": "0x429200",
+    "name": "?getSlopeList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x57e090",
+    "name": "?getStartPointObjectTakeoverStatesAsScene@SceneLayer@agtk@@AAEPAVObjectTakeoverStatesData@2@PAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x437000",
+    "name": "?getStateLoadResouces@GameManager@@QAE?AW4EnumStateLoadResources@1@XZ"
+  },
+  {
+    "va": "0x407d60",
+    "name": "?getStateLoading@GameManager@@UBE?AW4EnumStateLoading@1@XZ"
+  },
+  {
+    "va": "0x5d72a0",
+    "name": "?getSwitchValue@GameManager@@QAEHHHH@Z"
+  },
+  {
+    "va": "0x5d6660",
+    "name": "?getSwitchVariableDataList@GameManager@@QAEXHHH_NPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5d8af0",
+    "name": "?getTargetObjectByInstanceId@GameManager@@QAEPAVObject@agtk@@H@Z"
+  },
+  {
+    "va": "0x543df0",
+    "name": "?getTargetObjectInstanceId@ObjectAction@agtk@@AAEPAVObject@2@HH@Z"
+  },
+  {
+    "va": "0x5d8b80",
+    "name": "?getTargetObjectListByObjectId@GameManager@@QAEPAV__Array@cocos2d@@H@Z"
+  },
+  {
+    "va": "0x5d8c30",
+    "name": "?getTargetObjectLocked@GameManager@@QAEPAV__Array@cocos2d@@PAVObject@agtk@@H@Z"
+  },
+  {
+    "va": "0x428e10",
+    "name": "?getTileMapList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x428dc0",
+    "name": "?getTileMapNode@SceneLayer@agtk@@UBEPAVNode@cocos2d@@XZ"
+  },
+  {
+    "va": "0x408970",
+    "name": "?getTimer@GameManager@@UBEPAVTimer@agtk@@XZ"
+  },
+  {
+    "va": "0x58dbe0",
+    "name": "?getTopPrioritySceneLayer@Scene@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x40b3a0",
+    "name": "?getTransitionPortalId@GameManager@@UBEHXZ"
+  },
+  {
+    "va": "0x431560",
+    "name": "?getType@SceneLayer@agtk@@UBE?AW4EnumType@12@XZ"
+  },
+  {
+    "va": "0x426ba0",
+    "name": "?getUncreateObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x403970",
+    "name": "?getUseConnect@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x4069a0",
+    "name": "?getUseRotation@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x5d73b0",
+    "name": "?getVariableValue@GameManager@@QAE_NHHHAANPAVObject@agtk@@@Z"
+  },
+  {
+    "va": "0x5af740",
+    "name": "?getViewportLightObject@ViewportLightSceneLayer@agtk@@QAEPAVViewportLightObject@2@PAVObject@2@@Z"
+  },
+  {
+    "va": "0x403630",
+    "name": "?getViewportLightObjectList@ViewportLightSceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ"
+  },
+  {
+    "va": "0x5afa80",
+    "name": "?getViewportLightSceneLayer@ViewportLight@agtk@@QAEPAVViewportLightSceneLayer@2@H@Z"
+  },
+  {
+    "va": "0x403630",
+    "name": "?getViewportLightSceneLayerList@ViewportLight@agtk@@UBEPAV__Dictionary@cocos2d@@XZ"
+  },
+  {
+    "va": "0x436690",
+    "name": "?getWallCollisionInit@SceneLayer@agtk@@UBE_NXZ"
+  },
+  {
+    "va": "0x436650",
+    "name": "?getWallCollisionObject@SceneLayer@agtk@@UBEPAVObject@2@XZ"
+  },
+  {
+    "va": "0x402f80",
+    "name": "?getsceneLayerId@PortalTouchedData@agtk@@UBEHXZ"
+  },
+  {
+    "va": "0x58e670",
+    "name": "?incrementObjectInstanceCount@Scene@agtk@@QAEHH@Z"
+  },
+  {
+    "va": "0x521570",
+    "name": "?init@Object@agtk@@MAE_NPAVSceneLayer@2@HHVVec2@cocos2d@@1MHHHH@Z"
+  },
+  {
+    "va": "0x454900",
+    "name": "?init@ObjectCommandObjectCreateData@data@agtk@@AAE_NPAX0@Z"
+  },
+  {
+    "va": "0x454710",
+    "name": "?init@ObjectCommandObjectCreateData@data@agtk@@EAE_NABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z"
+  },
+  {
+    "va": "0x5764c0",
+    "name": "?init@SceneLayer@agtk@@EAE_NPAVScene@2@PAVSceneData@data@2@H_N2H@Z"
+  },
+  {
+    "va": "0x5a4f40",
+    "name": "?init@Tile@agtk@@MAE_NPAV1data@2@PAVTexture2D@cocos2d@@PAVSceneLayer@2@VSize@5@@Z"
+  },
+  {
+    "va": "0x5a9df0",
+    "name": "?init@TileMap@agtk@@EAE_NPAV__Array@cocos2d@@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5a9860",
+    "name": "?init@Tileset@agtk@@EAE_NPAVTilesetData@data@2@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5aea50",
+    "name": "?init@ViewportLightObject@agtk@@EAE_NPAVObject@2@PAVViewportLight@2@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5af000",
+    "name": "?init@ViewportLightSceneLayer@agtk@@EAE_NPAVSceneLayer@2@PAVViewportLight@2@@Z"
+  },
+  {
+    "va": "0x576860",
+    "name": "?initChildren@SceneLayer@agtk@@AAEXXZ"
+  },
+  {
+    "va": "0x567ec0",
+    "name": "?initForSceneLayer@RenderTextureCtrl@agtk@@AAE_NPAVSceneLayer@2@VSize@cocos2d@@H@Z"
+  },
+  {
+    "va": "0x5766d0",
+    "name": "?initMenu@SceneLayer@agtk@@EAE_NPAVScene@2@PAVSceneData@data@2@HVSize@cocos2d@@_N@Z"
+  },
+  {
+    "va": "0x576db0",
+    "name": "?initObject@SceneLayer@agtk@@AAE_NPAVSceneData@data@2@H_N1H@Z"
+  },
+  {
+    "va": "0x577340",
+    "name": "?initObjectList@SceneLayer@agtk@@AAE_NPAVSceneData@data@2@HH_N1H@Z"
+  },
+  {
+    "va": "0x5daf10",
+    "name": "?initPlugins@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x576910",
+    "name": "?initTileMapList@SceneLayer@agtk@@AAE_NPAVSceneData@data@2@PAVLayerData@42@_NPAVSize@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5228b0",
+    "name": "?initWithSceneDataAndScenePartObjectData@Object@agtk@@MAE_NPAVSceneLayer@2@PAVScenePartObjectData@data@2@H@Z"
+  },
+  {
+    "va": "0x517b20",
+    "name": "?initialize@Object@agtk@@QAEXPAVScene@2@PAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x57ccb0",
+    "name": "?insertObject@SceneLayer@agtk@@QAEXPAVObject@2@0@Z"
+  },
+  {
+    "va": "0x587a20",
+    "name": "?isChildrenCountOver@SceneLayer@agtk@@QAE_NPAVNode@cocos2d@@AAH@Z"
+  },
+  {
+    "va": "0x587a90",
+    "name": "?isDisplay@SceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x57c8a0",
+    "name": "?isExist@SceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x5cc140",
+    "name": "?isExistConfigData@GameManager@@QBE_NXZ"
+  },
+  {
+    "va": "0x5cb760",
+    "name": "?isExistsSaveData@GameManager@@QAE_NXZ"
+  },
+  {
+    "va": "0x586f80",
+    "name": "?isFadeout@SceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x57a2c0",
+    "name": "?isMenuObjectStop@SceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x436d60",
+    "name": "?isSceneChanging@GameManager@@QAE_NXZ"
+  },
+  {
+    "va": "0x586fa0",
+    "name": "?isSlideout@SceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x5af100",
+    "name": "?isSwitch@ViewportLightSceneLayer@agtk@@QAE_NXZ"
+  },
+  {
+    "va": "0x586cb0",
+    "name": "?jointTwoConnectTarget@SceneLayer@agtk@@AAEXPAVConnectTarget@12@0@Z"
+  },
+  {
+    "va": "0x57b670",
+    "name": "?lateUpdate@SceneLayer@agtk@@QAEXM@Z"
+  },
+  {
+    "va": "0x5d4220",
+    "name": "?loadAndStartProjectData@GameManager@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+  },
+  {
+    "va": "0x5d4300",
+    "name": "?loadAndStartScene@GameManager@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z"
+  },
+  {
+    "va": "0x5cbfa0",
+    "name": "?loadConfig@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5cb2d0",
+    "name": "?loadData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5d29e0",
+    "name": "?loadJsonFile@GameManager@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+  },
+  {
+    "va": "0x5d2c20",
+    "name": "?loadProjectData@GameManager@@QAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+  },
+  {
+    "va": "0x5d5bd0",
+    "name": "?loadResources@GameManager@@QAEXH@Z"
+  },
+  {
+    "va": "0x5d4b30",
+    "name": "?loadResources@GameManager@@QAEXPAVSceneData@data@agtk@@@Z"
+  },
+  {
+    "va": "0x57b7a0",
+    "name": "?loopHorizontal@SceneLayer@agtk@@QAEX_N@Z"
+  },
+  {
+    "va": "0x57b730",
+    "name": "?loopVertical@SceneLayer@agtk@@QAEX_N@Z"
+  },
+  {
+    "va": "0xbbc5f0",
+    "name": "?mLogNumber@GameManager@@0HA"
+  },
+  {
+    "va": "0x578430",
+    "name": "?objectUpdateWallCollisionThread@SceneLayer@agtk@@CAXPAUThreadInfo@ThreadManager@@@Z"
+  },
+  {
+    "va": "0x5d91b0",
+    "name": "?onContactBeginCallback@GameManager@@AAE_NAAVPhysicsContact@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5d98a0",
+    "name": "?onContactPreSolveCallback@GameManager@@AAE_NAAVPhysicsContact@cocos2d@@AAVPhysicsContactPreSolve@3@@Z"
+  },
+  {
+    "va": "0x5d98b0",
+    "name": "?onContactSeparateCallback@GameManager@@AAEXAAVPhysicsContact@cocos2d@@@Z"
+  },
+  {
+    "va": "0x5d4560",
+    "name": "?preloadSceneData@GameManager@@QAEXPAVSceneData@data@agtk@@@Z"
+  },
+  {
+    "va": "0x57d950",
+    "name": "?publishObjectId@SceneLayer@agtk@@QAEHXZ"
+  },
+  {
+    "va": "0x5c50f0",
+    "name": "?purge@GameManager@@SAXXZ"
+  },
+  {
+    "va": "0x57d3f0",
+    "name": "?reappearObject@SceneLayer@agtk@@AAEXPAVObjectReappearData@data@2@@Z"
+  },
+  {
+    "va": "0x587170",
+    "name": "?reappearObjectByAction@SceneLayer@agtk@@QAEXH@Z"
+  },
+  {
+    "va": "0x586e10",
+    "name": "?registDrawListForPhysicsPartsWithObjectByDrawPriority@SceneLayer@agtk@@AAEXPAVObject@2@PAVPhysicsBase@2@@Z"
+  },
+  {
+    "va": "0x580710",
+    "name": "?removeChild@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@_N@Z"
+  },
+  {
+    "va": "0x580730",
+    "name": "?removeChildByName@SceneLayer@agtk@@UAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z"
+  },
+  {
+    "va": "0x580720",
+    "name": "?removeChildByTag@SceneLayer@agtk@@UAEXH_N@Z"
+  },
+  {
+    "va": "0x57dae0",
+    "name": "?removeCommandReappearObject@SceneLayer@agtk@@AAEXPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x5c54e0",
+    "name": "?removeCommandReappearObjectList@GameManager@@QAEX_N@Z"
+  },
+  {
+    "va": "0x5c5970",
+    "name": "?removeLoadingScene@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x57cdc0",
+    "name": "?removeObject@SceneLayer@agtk@@QAEXPAVObject@2@_NI1@Z"
+  },
+  {
+    "va": "0x5af6c0",
+    "name": "?removeObject@ViewportLightSceneLayer@agtk@@QAEXPAVObject@2@@Z"
+  },
+  {
+    "va": "0x580740",
+    "name": "?removeRenderTexture@SceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x5af340",
+    "name": "?removeRenderTexture@ViewportLightSceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x57dd30",
+    "name": "?removeSceneChangeReappearObject@SceneLayer@agtk@@AAEXPAVScenePartObjectData@data@2@@Z"
+  },
+  {
+    "va": "0x57e5a0",
+    "name": "?removeSceneSprite@SceneLayer@agtk@@QAEXM@Z"
+  },
+  {
+    "va": "0x57c650",
+    "name": "?removeShader@SceneLayer@agtk@@QAEXW4ShaderKind@Shader@2@M@Z"
+  },
+  {
+    "va": "0x5af400",
+    "name": "?removeShader@ViewportLightSceneLayer@agtk@@QAEXXZ"
+  },
+  {
+    "va": "0x5aed40",
+    "name": "?removeSprite@ViewportLightObject@agtk@@QAEXPAVSceneLayer@2@@Z"
+  },
+  {
+    "va": "0x5d28b0",
+    "name": "?removeTakeoverStatesObject@GameManager@@QAEXHH@Z"
+  },
+  {
+    "va": "0x5c55e0",
+    "name": "?restartCanvas@GameManager@@QAEX_N@Z"
+  },
+  {
+    "va": "0x5d3780",
+    "name": "?restartProjectData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5d42e0",
+    "name": "?restartScene@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x586c30",
+    "name": "?rotateAnchor@SceneLayer@agtk@@AAE?AVVec2@cocos2d@@V34@M@Z"
+  },
+  {
+    "va": "0x5cada0",
+    "name": "?save@GameManager@@QBE_NAAV?$GenericDocument@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@VCrtAllocator@2@@rapidjson@@H@Z"
+  },
+  {
+    "va": "0x5cbd70",
+    "name": "?saveConfig@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x5c5e70",
+    "name": "?saveData@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x402600",
+    "name": "?serialize@GameManager@@QAEXXZ"
+  },
+  {
+    "va": "0x403950",
+    "name": "?setActionId@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z"
+  },
+  {
+    "va": "0x4367d0",
+    "name": "?setActiveFlg@SceneLayer@agtk@@UAEXH@Z"
+  },
+  {
+    "va": "0x429160",
+    "name": "?setAdditiveParticleBacksideNode@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@@Z"
+  },
+  {
+    "va": "0x429110",
+    "name": "?setAdditiveParticleNode@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@@Z"
+  },
+  {
+    "va": "0x4039d0",
+    "name": "?setAdjustX@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z"
+  },
+  {
+    "va": "0x4039f0",
+    "name": "?setAdjustY@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z"
+  },
+  {
+    "va": "0x437070",
+    "name": "?setAirResistance@GameManager@@UAEXM@Z"
+  },
+  {
+    "va": "0x4370a0",
+    "name": "?setAlivePhysicsObj@GameManager@@UAEX_N@Z"
+  },
+  {
+    "va": "0x5c3250",
+    "name": "?setAlpha@EffectManager@@QAEXPAVSceneLayer@agtk@@M@Z"
+  },
+  {
+    "va": "0x4315c0",
+    "name": "?setAlphaValue@SceneLayer@agtk@@UAEXPAVTimerFloat@2@@Z"
+  },
+  {
+    "va": "0x424c70",
+    "name": "?setAppName@GameManager@@UAEXPAV__String@cocos2d@@@Z"
+  },
+  {
+    "va": "0x424cb0",
+    "name": "?setAppVersion@GameManager@@UAEXPAV__String@cocos2d@@@Z"
+  },
+  {
+    "va": "0x431d40",
+    "name": "?setAttackerObjectInstanceIdList@Object@agtk@@UAEXPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x436700",
+    "name": "?setBlendAdditive@SceneLayer@agtk@@UAEX_N@Z"
+  },
+  {
+    "va": "0x4367b0",
+    "name": "?setBlendAdditiveFlag@SceneLayer@agtk@@UAEX_N@Z"
+  },
+  {
+    "va": "0x57c810",
+    "name": "?setBlendAdditiveRenderTextureSprite@SceneLayer@agtk@@AAEXXZ"
+  },
+  {
+    "va": "0x406990",
+    "name": "?setChildObject@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z"
+  },
+  {
+    "va": "0x4209a0",
+    "name": "?setCommandReappearObjectList@GameManager@@UAEXPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x436570",
+    "name": "?setCommonCollisionDetection@SceneLayer@agtk@@UAEXPAVCollisionDetaction@@@Z"
+  },
+  {
+    "va": "0x406950",
+    "name": "?setConnectId@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z"
+  },
+  {
+    "va": "0x518550",
+    "name": "?setCreate@Object@agtk@@SAXP6APAV12@PAVSceneLayer@2@HHVVec2@cocos2d@@1MHHHH@Z@Z"
+  },
+  {
+    "va": "0x426b60",
+    "name": "?setCreateObjectList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x403960",
+    "name": "?setCreatePosition@ObjectCommandObjectCreateData@data@agtk@@UAEXW4EnumCreatePosition@123@@Z"
+  },
+  {
+    "va": "0x518660",
+    "name": "?setCreateWithSceneDataAndScenePartObjectData@Object@agtk@@SAXP6APAV12@PAVSceneLayer@2@PAVScenePartObjectData@data@2@H@Z@Z"
+  },
+  {
+    "va": "0x418640",
+    "name": "?setCurrentLayer@GameManager@@UAEXPAVLayer@cocos2d@@@Z"
+  },
+  {
+    "va": "0x4185c0",
+    "name": "?setCurrentScene@GameManager@@UAEXPAVScene@agtk@@@Z"
+  },
+  {
+    "va": "0x406b00",
+    "name": "?setCurrentTime@GameManager@@UAEXN@Z"
+  },
+  {
+    "va": "0x5c54c0",
+    "name": "?setCursorVisible@GameManager@@QAEX_N@Z"
+  },
+  {
+    "va": "0x426c00",
+    "name": "?setDeleteObjectList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z"
+  },
+  {
+    "va": "0x436680",
+    "name": "?setDetectWallCollisionFunc@SceneLayer@agtk@@UAEXPBV?$function@$$A6AXPAVCollisionNode@@@Z@std@@@Z"
+  },
+  {
+    "va": "0x436dc0",
+    "name": "?setEditorLocale@GameManager@@UAEXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z"
+  },
+  {
+    "va": "0x437020",
+    "name": "?setEncryptSaveFile@GameManager@@UAEX_N@Z"
+  }
+]
