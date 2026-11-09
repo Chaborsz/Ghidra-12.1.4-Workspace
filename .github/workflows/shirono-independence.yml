@@ -1,0 +1,36 @@
+name: Shirono clone independence detailed read-only JSON analysis
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-independence.yml
+      - experiments/shirono/inspect_independence.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run independent-clone project analysis
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-independence
+          curl -fL --retry 4 --retry-delay 2 https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z -o "$RUNNER_TEMP/project.7z"
+          printf '%s  %s\n' 4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b "$RUNNER_TEMP/project.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/project.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 experiments/shirono/inspect_independence.py "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-independence/rules.json
+      - name: Preserve report
+        if: success()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-independence/rules.json
+          git commit -m "Document native clone independent behavior constraints"
+          git push origin HEAD:analysis/shirono-multiclone
