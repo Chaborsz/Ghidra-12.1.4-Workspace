@@ -1,0 +1,61 @@
+name: Shirono x86 vtable safety check for sequential clone
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-vtable-verify.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact DEMO PE vtable getter/setter and native object-create positions
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/x"
+          curl -fsSL --retry 4 https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z -o "$RUNNER_TEMP/project.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/project.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/project.7z" "-o$RUNNER_TEMP/x" -y >/dev/null
+          python3 - "$RUNNER_TEMP/x/player.exe" <<'PY'
+          import hashlib,struct,sys
+          b=open(sys.argv[1],"rb").read()
+          assert hashlib.sha256(b).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          pe=struct.unpack_from("<I",b,0x3c)[0]
+          assert b[pe:pe+4]==b"PE\x00\x00"
+          nsec=struct.unpack_from("<H",b,pe+6)[0]
+          optsize=struct.unpack_from("<H",b,pe+20)[0]
+          imgbase=struct.unpack_from("<I",b,pe+24+28)[0]
+          assert imgbase==0x400000
+          base=pe+24+optsize
+          sections=[]
+          for i in range(nsec):
+            o=base+i*40
+            name=b[o:o+8].rstrip(b"\0").decode()
+            vsize,va,rsize,rptr=struct.unpack_from("<IIII",b,o+8)
+            sections.append((name,va,max(vsize,rsize),rptr))
+          def get(va,n):
+            rva=va-imgbase
+            for name,start,size,ptr in sections:
+              if start<=rva<start+size:
+                return b[ptr+rva-start:ptr+rva-start+n]
+            raise ValueError(hex(va))
+          def u32(va):return struct.unpack("<I",get(va,4))[0]
+          vt=0x009e0378
+          for i in range(0x28,0x78,4):
+            p=u32(vt+i)
+            print(f"VTABLE_POINTER offset=0x{i:02x} target=0x{p:08x} code={get(p,12).hex(' ')}")
+          assert u32(vt+0x28)==0x00402f80, "clone object ID getter mismatch"
+          assert u32(vt+0x40)==0x00403970, "useConnect getter mismatch"
+          assert u32(vt+0x50)==0x00403340, "adjustX getter mismatch"
+          assert u32(vt+0x54)==0x004039d0, "adjustX setter mismatch"
+          setter=u32(vt+0x44)
+          assert 0x00400000<=setter<0x009e0000
+          print(f"SAFETY_PASS useConnect getter=0x{u32(vt+0x40):08x} setter=0x{setter:08x}")
+          print("NOTE call setter with bool 1-byte x86 thiscall; restore after create")
+          PY
