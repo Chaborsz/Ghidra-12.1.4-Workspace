@@ -22,7 +22,7 @@ for oid in (1,19):
     for cmd in c:
       typ=cmd.get("commandType")
       if oid==19 or a.get("id") in (117,119,136,127,128) or any(
-          isinstance(c.get(x),dict) and c[x].get("objectId")==19
+          isinstance(cmd.get(x),dict) and cmd[x].get("objectId")==19
           for x in ("objectCreate","objectChange","objectMove")
       ):
         row(kind="CMD",owner=oid,action=a.get("id"),name=a.get("name"),command=cmd)
