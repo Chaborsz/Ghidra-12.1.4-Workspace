@@ -1,0 +1,94 @@
+name: Materialize verified Rizin 0.9.1 for offline use
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/materialize-rizin.yml'
+      - 'tools/rizin/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: materialize-rizin-main
+  cancel-in-progress: false
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download and verify official static Rizin
+        shell: bash
+        run: |
+          set -euo pipefail
+          URL='https://github.com/rizinorg/rizin/releases/download/v0.9.1/rizin-v0.9.1-static-x86_64.tar.xz'
+          ARCHIVE="$RUNNER_TEMP/rizin-v0.9.1-static-x86_64.tar.xz"
+          curl -fL --retry 5 --retry-delay 3 "$URL" -o "$ARCHIVE"
+          printf '%s  %s\n' '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf' "$ARCHIVE" | sha256sum -c -
+          echo "RIZIN_ARCHIVE=$ARCHIVE" >> "$GITHUB_ENV"
+
+      - name: Extract and run functional smoke tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/rizin-extracted"
+          tar -xJf "$RIZIN_ARCHIVE" -C "$RUNNER_TEMP/rizin-extracted"
+          RZ="$(find "$RUNNER_TEMP/rizin-extracted" \( -type f -o -type l \) -name rizin -print -quit)"
+          test -n "$RZ"
+          test -x "$RZ"
+          RZ_BIN="$(dirname "$RZ")/rz-bin"
+          test -x "$RZ_BIN"
+          "$RZ" -v
+          "$RZ_BIN" -I /bin/true
+          "$RZ" -2 -q -c 'aa; afl; q' /bin/true > "$RUNNER_TEMP/functions.txt"
+          test -s "$RUNNER_TEMP/functions.txt"
+
+      - name: Publish checksum-verified compressed parts (below GitHub 100 MiB limit)
+        shell: bash
+        run: |
+          set -euo pipefail
+          DEST='rizin_offline/v0.9.1-linux-x86_64'
+          mkdir -p "$DEST"
+          rm -f -- "$DEST"/archive.part*
+          split -b 75m -d -a 2 "$RIZIN_ARCHIVE" "$DEST/archive.part"
+          for part in "$DEST"/archive.part*; do
+            test -s "$part"
+            test "$(stat -c %s "$part")" -lt 100000000
+          done
+          cat "$DEST"/archive.part* | sha256sum | awk '{print $1}' | grep -Fx '9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf'
+          sha256sum "$DEST"/archive.part* > "$DEST/SHA256SUMS.parts"
+          printf '%s\n' 'source=https://github.com/rizinorg/rizin/releases/tag/v0.9.1' 'version=0.9.1' 'archive_sha256=9102249a9f0b6319c5334a2e5cf8d9cc3f2035e1d3def027c41f6a90f647e8cf' > "$DEST/PROVENANCE.txt"
+
+      - name: Test offline launcher and general analysis
+        shell: bash
+        env:
+          RIZIN_WORKSPACE_CACHE: ${{ runner.temp }}/rizin-cache
+        run: |
+          set -euo pipefail
+          ./tools/rizin/rizin -v
+          ./tools/rizin/rz-bin -I /bin/true
+          ./tools/rizin/analyze.sh /bin/true "$RUNNER_TEMP/rizin-reports"
+          test -s "$RUNNER_TEMP/rizin-reports/functions.txt"
+          test -s "$RUNNER_TEMP/rizin-reports/info.txt"
+          test -s "$RUNNER_TEMP/rizin-reports/sha256.txt"
+
+      - name: Commit verified offline bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A rizin_offline/v0.9.1-linux-x86_64
+          if git diff --cached --quiet; then
+            echo 'Pinned Rizin offline bundle is already current.'
+            exit 0
+          fi
+          git commit -m 'Bundle verified Rizin 0.9.1 static Linux release'
+          git push origin HEAD:main
