@@ -1,0 +1,6 @@
+file_types [('.json', 1), ('.exe', 1)]
+project_decrypted.json size 48712812
+player.exe size 8628736
+HASH player.exe d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154
+HASH project_decrypted.json 197f001d7d0d8d4b685a3f9f7a720c5c51055240e8f16cfd1d65062ed0578d57
+EXE_COUNT 1 JSON_COUNT 1

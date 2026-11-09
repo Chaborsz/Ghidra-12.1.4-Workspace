@@ -1,0 +1,11 @@
+[Sections]
+     paddr     size      vaddr    vsize align perm name   type flags                                
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+[32m0x00000400[0m [33m0x4ba000[0m [32m0x00401000[0m [33m0x4ba000[0m [33m  0x0[0m [36m-r-x [0m[31m.text  [0m[1;91m     [0m[36mCNT_CODE[0m
+[32m0x004ba400[0m [33m0x2bde00[0m [32m0x008bb000[0m [33m0x2be000[0m [33m  0x0[0m [36m-r-- [0m[31m.rdata [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA[0m
+[32m0x00778200[0m [33m 0x3de00[0m [32m0x00b79000[0m [33m 0x47000[0m [33m  0x0[0m [36m-rw- [0m[31m.data  [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA[0m
+[32m0x007b6000[0m [33m   0x200[0m [32m0x00bc0000[0m [33m  0x1000[0m [33m  0x0[0m [36m-rw- [0m[31m.tls   [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA[0m
+[32m0x007b6200[0m [33m   0x200[0m [32m0x00bc1000[0m [33m  0x1000[0m [33m  0x0[0m [36m-r-- [0m[31m.gfids [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA[0m
+[32m0x007b6400[0m [33m  0x4a00[0m [32m0x00bc2000[0m [33m  0x5000[0m [33m  0x0[0m [36m-r-- [0m[31m.rsrc  [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA[0m
+[32m0x007bae00[0m [33m 0x7fc00[0m [32m0x00bc7000[0m [33m 0x80000[0m [33m  0x0[0m [36m-r-- [0m[31m.reloc [0m[1;91m     [0m[36mCNT_INITIALIZED_DATA,MEM_DISCARDABLE[0m
+

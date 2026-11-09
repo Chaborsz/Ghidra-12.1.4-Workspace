@@ -1,0 +1,22 @@
+
+7-Zip 26.00 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-02-12
+ 64-bit locale=C.UTF-8 Threads:4 OPEN_MAX:65536, ASM
+
+Scanning the drive for archives:
+1 file, 1724252 bytes (1684 KiB)
+
+Testing archive: /home/runner/work/_temp/project_decrypted.7z
+--
+Path = /home/runner/work/_temp/project_decrypted.7z
+Type = 7z
+Physical Size = 1724252
+Headers Size = 218
+Method = LZMA2:48m BCJ
+Solid = -
+Blocks = 2
+
+Everything is Ok
+
+Files: 2
+Size:       57341548
+Compressed: 1724252

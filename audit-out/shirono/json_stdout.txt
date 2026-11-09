@@ -1,0 +1,2 @@
+AUDIT_COMPLETE EXE 1 JSON 1
+JSON_SUMMARY project_decrypted.json hits 650 keys ['version', 'gameIcon', 'gameIconSrcFilename', 'gameType', 'playerCount', 'tileWidth', 'tileHeight', 'screenWidth', 'screenHeight', 'loadingSceneId', 'logoSizeId', 'disableLogo']

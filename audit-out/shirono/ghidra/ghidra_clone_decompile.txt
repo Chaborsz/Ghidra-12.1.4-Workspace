@@ -1,0 +1,1192 @@
+
+=========== 00401000 libvlc_media_player_stop ===========
+
+void libvlc_media_player_stop(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401000. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_stop();
+  return;
+}
+
+
+
+=========== 00401008 libvlc_media_player_release ===========
+
+void libvlc_media_player_release(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401008. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_release();
+  return;
+}
+
+
+
+=========== 00401028 libvlc_media_player_new_from_media ===========
+
+void libvlc_media_player_new_from_media(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401028. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_new_from_media();
+  return;
+}
+
+
+
+=========== 00401050 libvlc_media_player_event_manager ===========
+
+void libvlc_media_player_event_manager(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401050. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_event_manager();
+  return;
+}
+
+
+
+=========== 00401060 libvlc_media_player_play ===========
+
+void libvlc_media_player_play(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401060. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_play();
+  return;
+}
+
+
+
+=========== 00401068 libvlc_media_player_set_pause ===========
+
+void libvlc_media_player_set_pause(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401068. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_set_pause();
+  return;
+}
+
+
+
+=========== 00401070 libvlc_media_player_get_state ===========
+
+void libvlc_media_player_get_state(void)
+
+{
+                    /* WARNING: Could not recover jumptable at 0x00401070. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  libvlc_media_player_get_state();
+  return;
+}
+
+
+
+=========== 00408bc0 getAnimationData ===========
+
+/* public: class agtk::data::AnimationData * __thiscall
+   agtk::BasePlayer::getAnimationData(void)const  */
+
+AnimationData * __thiscall agtk::BasePlayer::getAnimationData(BasePlayer *this)
+
+{
+                    /* 0x8bc0  3197
+                       ?getAnimationData@BasePlayer@agtk@@QBEPAVAnimationData@data@2@XZ
+                       0x8bc0  4187  ?getGimmickTargetObjectGroupBit@TileData@data@agtk@@UBEHXZ
+                       0x8bc0  4600
+                       ?getLayerList@SceneData@data@agtk@@UBEPAV__Dictionary@cocos2d@@XZ
+                       0x8bc0  5615  ?getRightTurnKeyId@ObjectData@data@agtk@@UBEHXZ
+                       0x8bc0  6188  ?getTopMostCamera@Camera@agtk@@UBEPAV1cocos2d@@XZ */
+  return *(AnimationData **)(this + 0xe8);
+}
+
+
+
+=========== 00408c00 getAnimationMotionList ===========
+
+/* public: virtual class cocos2d::__Dictionary * __thiscall
+   agtk::BasePlayer::getAnimationMotionList(void)const  */
+
+__Dictionary * __thiscall agtk::BasePlayer::getAnimationMotionList(BasePlayer *this)
+
+{
+                    /* 0x8c00  3215
+                       ?getAnimationMotionList@BasePlayer@agtk@@UBEPAV__Dictionary@cocos2d@@XZ
+                       0x8c00  3447  ?getChangeTileX@TileData@data@agtk@@UBEHXZ
+                       0x8c00  4803  ?getMoveSideBit@ObjectMovement@agtk@@UBEIXZ
+                       0x8c00  5720
+                       ?getScenePartPhysicsList@SceneData@data@agtk@@UBEPAV__Dictionary@cocos2d@@XZ
+                        */
+  return *(__Dictionary **)(this + 0xf0);
+}
+
+
+
+=========== 0040a590 ObjectCommandObjectCreateData ===========
+
+/* private: __thiscall
+   agtk::data::ObjectCommandObjectCreateData::ObjectCommandObjectCreateData(void) */
+
+ObjectCommandObjectCreateData * __thiscall
+agtk::data::ObjectCommandObjectCreateData::ObjectCommandObjectCreateData
+          (ObjectCommandObjectCreateData *this)
+
+{
+                    /* 0xa590  321  ??0ObjectCommandObjectCreateData@data@agtk@@AAE@XZ */
+  cocos2d::Ref::Ref((Ref *)this);
+  *(undefined4 *)(this + 0x18) = 0;
+  *(undefined4 *)(this + 0x1c) = 0x3b;
+  this[0x20] = (ObjectCommandObjectCreateData)0x0;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x28) = 0xffffffff;
+  return this;
+}
+
+
+
+=========== 0040a5d0 create ===========
+
+/* public: static class agtk::data::ObjectCommandObjectCreateData * __cdecl
+   agtk::data::ObjectCommandObjectCreateData::create(class rapidjson::GenericValue<struct
+   rapidjson::UTF8<char>,class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator> > const
+   &) */
+
+ObjectCommandObjectCreateData * __cdecl
+agtk::data::ObjectCommandObjectCreateData::create
+          (GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_>
+           *param_1)
+
+{
+  char cVar1;
+  Ref *this;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0xa5d0  2653
+                       ?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+                        */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00897f22;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this = (Ref *)FUN_008809b7(0x50,&DAT_00bba9d4,DAT_00b91dd4 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  if (this == (Ref *)0x0) {
+    this = (Ref *)0x0;
+  }
+  else {
+    cocos2d::Ref::Ref(this);
+    *(undefined4 *)(this + 0x18) = 0;
+    *(undefined4 *)(this + 0x1c) = 0x3b;
+    this[0x20] = (Ref)0x0;
+    *(undefined ***)this = vftable;
+    *(undefined4 *)(this + 0x28) = 0xffffffff;
+  }
+  local_8 = 0xffffffff;
+  if (this != (Ref *)0x0) {
+    cVar1 = (**(code **)(*(int *)this + 4))(param_1);
+    if (cVar1 != '\0') {
+      cocos2d::Ref::autorelease(this);
+      ExceptionList = local_10;
+      return (ObjectCommandObjectCreateData *)this;
+    }
+    (*(code *)**(undefined4 **)this)(1);
+  }
+  ExceptionList = local_10;
+  return (ObjectCommandObjectCreateData *)0x0;
+}
+
+
+
+=========== 0040a690 create ===========
+
+/* public: static class agtk::data::ObjectCommandObjectCreateData * __cdecl
+   agtk::data::ObjectCommandObjectCreateData::create(void *,void *) */
+
+ObjectCommandObjectCreateData * __cdecl
+agtk::data::ObjectCommandObjectCreateData::create(void *param_1,void *param_2)
+
+{
+  bool bVar1;
+  Ref *this;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0xa690  2654
+                       ?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@PAX0@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00897f22;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this = (Ref *)FUN_008809b7(0x50,&DAT_00bba9d4,DAT_00b91dd4 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  if (this == (Ref *)0x0) {
+    this = (Ref *)0x0;
+  }
+  else {
+    cocos2d::Ref::Ref(this);
+    *(undefined4 *)(this + 0x18) = 0;
+    *(undefined4 *)(this + 0x1c) = 0x3b;
+    this[0x20] = (Ref)0x0;
+    *(undefined ***)this = vftable;
+    *(undefined4 *)(this + 0x28) = 0xffffffff;
+  }
+  local_8 = 0xffffffff;
+  if (this != (Ref *)0x0) {
+    bVar1 = init((ObjectCommandObjectCreateData *)this,param_1,param_2);
+    if (bVar1) {
+      cocos2d::Ref::autorelease(this);
+      ExceptionList = local_10;
+      return (ObjectCommandObjectCreateData *)this;
+    }
+    (*(code *)**(undefined4 **)this)(1);
+  }
+  ExceptionList = local_10;
+  return (ObjectCommandObjectCreateData *)0x0;
+}
+
+
+
+=========== 0040a750 getLowerPriority ===========
+
+/* public: virtual bool __thiscall
+   agtk::data::ObjectCommandObjectCreateData::getLowerPriority(void)const  */
+
+bool __thiscall
+agtk::data::ObjectCommandObjectCreateData::getLowerPriority(ObjectCommandObjectCreateData *this)
+
+{
+                    /* 0xa750  4698
+                       ?getLowerPriority@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+                       0xa750  6008
+                       ?getTakeOverParentChild@ObjectCommandObjectChangeData@data@agtk@@UBE_NXZ */
+  return (bool)this[0x4a];
+}
+
+
+
+=========== 0040a760 setLowerPriority ===========
+
+/* public: virtual void __thiscall agtk::data::ObjectCommandObjectCreateData::setLowerPriority(bool)
+    */
+
+void __thiscall
+agtk::data::ObjectCommandObjectCreateData::setLowerPriority
+          (ObjectCommandObjectCreateData *this,bool param_1)
+
+{
+                    /* 0xa760  8865
+                       ?setLowerPriority@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+                       0xa760  9954
+                       ?setTakeOverParentChild@ObjectCommandObjectChangeData@data@agtk@@UAEX_N@Z */
+  this[0x4a] = (ObjectCommandObjectCreateData)param_1;
+  return;
+}
+
+
+
+=========== 0040a770 getGridMagnet ===========
+
+/* public: virtual bool __thiscall
+   agtk::data::ObjectCommandObjectCreateData::getGridMagnet(void)const  */
+
+bool __thiscall
+agtk::data::ObjectCommandObjectCreateData::getGridMagnet(ObjectCommandObjectCreateData *this)
+
+{
+                    /* 0xa770  4208  ?getGridMagnet@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+                        */
+  return (bool)this[0x4b];
+}
+
+
+
+=========== 0040a780 setGridMagnet ===========
+
+/* public: virtual void __thiscall agtk::data::ObjectCommandObjectCreateData::setGridMagnet(bool) */
+
+void __thiscall
+agtk::data::ObjectCommandObjectCreateData::setGridMagnet
+          (ObjectCommandObjectCreateData *this,bool param_1)
+
+{
+                    /* 0xa780  8438
+                       ?setGridMagnet@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z */
+  this[0x4b] = (ObjectCommandObjectCreateData)param_1;
+  return;
+}
+
+
+
+=========== 0040a790 ObjectCommandObjectCreateData ===========
+
+/* public: __thiscall agtk::data::ObjectCommandObjectCreateData::ObjectCommandObjectCreateData(class
+   agtk::data::ObjectCommandObjectCreateData const &) */
+
+ObjectCommandObjectCreateData * __thiscall
+agtk::data::ObjectCommandObjectCreateData::ObjectCommandObjectCreateData
+          (ObjectCommandObjectCreateData *this,ObjectCommandObjectCreateData *param_1)
+
+{
+                    /* 0xa790  322  ??0ObjectCommandObjectCreateData@data@agtk@@QAE@ABV012@@Z */
+  cocos2d::Ref::Ref((Ref *)this,(Ref *)param_1);
+  *(undefined ***)this = ObjectCommandData::vftable;
+  *(undefined4 *)(this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  this[0x20] = param_1[0x20];
+  this[0x21] = param_1[0x21];
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  *(undefined4 *)(this + 0x28) = *(undefined4 *)(param_1 + 0x28);
+  *(undefined4 *)(this + 0x2c) = *(undefined4 *)(param_1 + 0x2c);
+  this[0x30] = param_1[0x30];
+  *(undefined4 *)(this + 0x34) = *(undefined4 *)(param_1 + 0x34);
+  *(undefined4 *)(this + 0x38) = *(undefined4 *)(param_1 + 0x38);
+  *(undefined4 *)(this + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
+  *(undefined8 *)(this + 0x40) = *(undefined8 *)(param_1 + 0x40);
+  this[0x48] = param_1[0x48];
+  this[0x49] = param_1[0x49];
+  this[0x4a] = param_1[0x4a];
+  this[0x4b] = param_1[0x4b];
+  return this;
+}
+
+
+
+=========== 0040a820 operator= ===========
+
+/* public: class agtk::data::ObjectCommandObjectCreateData & __thiscall
+   agtk::data::ObjectCommandObjectCreateData::operator=(class
+   agtk::data::ObjectCommandObjectCreateData const &) */
+
+ObjectCommandObjectCreateData * __thiscall
+agtk::data::ObjectCommandObjectCreateData::operator=
+          (ObjectCommandObjectCreateData *this,ObjectCommandObjectCreateData *param_1)
+
+{
+                    /* 0xa820  1130  ??4ObjectCommandObjectCreateData@data@agtk@@QAEAAV012@ABV012@@Z
+                        */
+  *(undefined4 *)(this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)(this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)(this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)(this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  this[0x14] = param_1[0x14];
+  *(undefined4 *)(this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  this[0x20] = param_1[0x20];
+  this[0x21] = param_1[0x21];
+  *(undefined4 *)(this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  *(undefined4 *)(this + 0x28) = *(undefined4 *)(param_1 + 0x28);
+  *(undefined4 *)(this + 0x2c) = *(undefined4 *)(param_1 + 0x2c);
+  this[0x30] = param_1[0x30];
+  *(undefined4 *)(this + 0x34) = *(undefined4 *)(param_1 + 0x34);
+  *(undefined4 *)(this + 0x38) = *(undefined4 *)(param_1 + 0x38);
+  *(undefined4 *)(this + 0x3c) = *(undefined4 *)(param_1 + 0x3c);
+  *(undefined8 *)(this + 0x40) = *(undefined8 *)(param_1 + 0x40);
+  this[0x48] = param_1[0x48];
+  this[0x49] = param_1[0x49];
+  this[0x4a] = param_1[0x4a];
+  this[0x4b] = param_1[0x4b];
+  return this;
+}
+
+
+
+=========== 0041baf0 getIgnoreCreatePlayerList ===========
+
+/* public: virtual class cocos2d::__Array * __thiscall
+   GameManager::getIgnoreCreatePlayerList(void)const  */
+
+__Array * __thiscall GameManager::getIgnoreCreatePlayerList(GameManager *this)
+
+{
+                    /* 0x1baf0  4345
+                       ?getIgnoreCreatePlayerList@GameManager@@UBEPAV__Array@cocos2d@@XZ
+                       0x1baf0  5608  ?getRightMoveKeyId@ObjectData@data@agtk@@UBEHXZ */
+  return *(__Array **)(this + 0xd8);
+}
+
+
+
+=========== 004214d0 setCurrentAnimationMotion ===========
+
+/* public: virtual void __thiscall agtk::BasePlayer::setCurrentAnimationMotion(class
+   agtk::AnimationMotion *) */
+
+void __thiscall
+agtk::BasePlayer::setCurrentAnimationMotion(BasePlayer *this,AnimationMotion *param_1)
+
+{
+                    /* 0x214d0  7952
+                       ?setCurrentAnimationMotion@BasePlayer@agtk@@UAEXPAVAnimationMotion@2@@Z
+                       0x214d0  7985  ?setDebugMoveAreaSprite@Camera@agtk@@UAEXPAVSprite@cocos2d@@@Z
+                       0x214d0  9702
+                       ?setScenePartObjectList@SceneData@data@agtk@@UAEXPAV__Dictionary@cocos2d@@@Z
+                        */
+  if (*(AnimationMotion **)(this + 0xec) != param_1) {
+    if (param_1 != (AnimationMotion *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0xec) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0xec));
+    }
+    *(AnimationMotion **)(this + 0xec) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00421510 setAnimationMotionList ===========
+
+/* public: virtual void __thiscall agtk::BasePlayer::setAnimationMotionList(class
+   cocos2d::__Dictionary *) */
+
+void __thiscall agtk::BasePlayer::setAnimationMotionList(BasePlayer *this,__Dictionary *param_1)
+
+{
+                    /* 0x21510  7556
+                       ?setAnimationMotionList@BasePlayer@agtk@@UAEXPAV__Dictionary@cocos2d@@@Z
+                       0x21510  9704
+                       ?setScenePartPhysicsList@SceneData@data@agtk@@UAEXPAV__Dictionary@cocos2d@@@Z
+                        */
+  if (*(__Dictionary **)(this + 0xf0) != param_1) {
+    if (param_1 != (__Dictionary *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0xf0) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0xf0));
+    }
+    *(__Dictionary **)(this + 0xf0) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00422040 getPostMoveOnlyTransportPlayersTouching ===========
+
+/* public: virtual bool __thiscall
+   agtk::data::MoveSettingData::getPostMoveOnlyTransportPlayersTouching(void)const  */
+
+bool __thiscall
+agtk::data::MoveSettingData::getPostMoveOnlyTransportPlayersTouching(MoveSettingData *this)
+
+{
+                    /* 0x22040  5390
+                       ?getPostMoveOnlyTransportPlayersTouching@MoveSettingData@data@agtk@@UBE_NXZ
+                        */
+  return (bool)this[0x9c];
+}
+
+
+
+=========== 00422050 setPostMoveOnlyTransportPlayersTouching ===========
+
+/* public: virtual void __thiscall
+   agtk::data::MoveSettingData::setPostMoveOnlyTransportPlayersTouching(bool) */
+
+void __thiscall
+agtk::data::MoveSettingData::setPostMoveOnlyTransportPlayersTouching
+          (MoveSettingData *this,bool param_1)
+
+{
+                    /* 0x22050  9425
+                       ?setPostMoveOnlyTransportPlayersTouching@MoveSettingData@data@agtk@@UAEX_N@Z
+                        */
+  this[0x9c] = (MoveSettingData)param_1;
+  return;
+}
+
+
+
+=========== 00422060 getPostMoveShowPlayersInTouchedOrder ===========
+
+/* public: virtual bool __thiscall
+   agtk::data::MoveSettingData::getPostMoveShowPlayersInTouchedOrder(void)const  */
+
+bool __thiscall
+agtk::data::MoveSettingData::getPostMoveShowPlayersInTouchedOrder(MoveSettingData *this)
+
+{
+                    /* 0x22060  5394
+                       ?getPostMoveShowPlayersInTouchedOrder@MoveSettingData@data@agtk@@UBE_NXZ */
+  return (bool)this[0x9d];
+}
+
+
+
+=========== 00422070 setPostMoveShowPlayersInTouchedOrder ===========
+
+/* public: virtual void __thiscall
+   agtk::data::MoveSettingData::setPostMoveShowPlayersInTouchedOrder(bool) */
+
+void __thiscall
+agtk::data::MoveSettingData::setPostMoveShowPlayersInTouchedOrder
+          (MoveSettingData *this,bool param_1)
+
+{
+                    /* 0x22070  9429
+                       ?setPostMoveShowPlayersInTouchedOrder@MoveSettingData@data@agtk@@UAEX_N@Z */
+  this[0x9d] = (MoveSettingData)param_1;
+  return;
+}
+
+
+
+=========== 00424620 create ===========
+
+/* public: static class agtk::data::PlayerCharacterData * __cdecl
+   agtk::data::PlayerCharacterData::create(class rapidjson::GenericValue<struct
+   rapidjson::UTF8<char>,class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator> > const
+   &) */
+
+PlayerCharacterData * __cdecl
+agtk::data::PlayerCharacterData::create
+          (GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_>
+           *param_1)
+
+{
+  char cVar1;
+  Ref *this;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x24620  2781
+                       ?create@PlayerCharacterData@data@agtk@@SAPAV123@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+                        */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00897f22;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this = (Ref *)FUN_008809b7(0x28,&DAT_00bba9d4,DAT_00b91dd4 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  if (this == (Ref *)0x0) {
+    this = (Ref *)0x0;
+  }
+  else {
+    cocos2d::Ref::Ref(this);
+    *(undefined ***)this = vftable;
+    *(undefined4 *)(this + 0x18) = 0;
+    *(undefined4 *)(this + 0x1c) = 0;
+    *(undefined4 *)(this + 0x20) = 0;
+    *(undefined4 *)(this + 0x24) = 0;
+  }
+  local_8 = 0xffffffff;
+  if (this != (Ref *)0x0) {
+    cVar1 = (**(code **)(*(int *)this + 4))(param_1);
+    if (cVar1 != '\0') {
+      cocos2d::Ref::autorelease(this);
+      ExceptionList = local_10;
+      return (PlayerCharacterData *)this;
+    }
+    (*(code *)**(undefined4 **)this)(1);
+  }
+  ExceptionList = local_10;
+  return (PlayerCharacterData *)0x0;
+}
+
+
+
+=========== 004246e0 PlayerCharacterData ===========
+
+/* public: __thiscall agtk::data::PlayerCharacterData::PlayerCharacterData(class
+   agtk::data::PlayerCharacterData const &) */
+
+PlayerCharacterData * __thiscall
+agtk::data::PlayerCharacterData::PlayerCharacterData
+          (PlayerCharacterData *this,PlayerCharacterData *param_1)
+
+{
+                    /* 0x246e0  500  ??0PlayerCharacterData@data@agtk@@QAE@ABV012@@Z */
+  cocos2d::Ref::Ref((Ref *)this,(Ref *)param_1);
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)(this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)(this + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  *(undefined4 *)(this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  return this;
+}
+
+
+
+=========== 00424d30 setPlayerCharacterData ===========
+
+/* public: virtual void __thiscall agtk::data::ProjectData::setPlayerCharacterData(class
+   agtk::data::PlayerCharacterData *) */
+
+void __thiscall
+agtk::data::ProjectData::setPlayerCharacterData(ProjectData *this,PlayerCharacterData *param_1)
+
+{
+                    /* 0x24d30  9362
+                       ?setPlayerCharacterData@ProjectData@data@agtk@@UAEXPAVPlayerCharacterData@23@@Z
+                        */
+  if (*(PlayerCharacterData **)(this + 0xc4) != param_1) {
+    if (param_1 != (PlayerCharacterData *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0xc4) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0xc4));
+    }
+    *(PlayerCharacterData **)(this + 0xc4) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00426b60 setCreateObjectList ===========
+
+/* public: virtual void __thiscall agtk::SceneLayer::setCreateObjectList(class cocos2d::__Array *)
+    */
+
+void __thiscall agtk::SceneLayer::setCreateObjectList(SceneLayer *this,__Array *param_1)
+
+{
+                    /* 0x26b60  7939
+                       ?setCreateObjectList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x26b60  8345
+                       ?setFollowerPhysicsBody@PhysicsBase@agtk@@UAEXPAVPhysicsBody@cocos2d@@@Z
+                       0x26b60  8426  ?setGravity@Scene@agtk@@UAEXPAVSceneGravity@2@@Z
+                       0x26b60  8903
+                       ?setMessageWindowNode@ActionCommandMessageTextUi@agtk@@UAEXPAVMessageWindowNode@2@@Z
+                       0x26b60  9157  ?setObjectMovement@Object@agtk@@UAEXPAVObjectMovement@2@@Z
+                       0x26b60  9560
+                       ?setRemoveShaderList@SceneTopMost@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x26b60  9565  ?setRenderTexture@Player@agtk@@UAEXPAVRenderTextureCtrl@2@@Z
+                       0x26b60  9566
+                       ?setRenderTexture@SceneBackground@agtk@@UAEXPAVRenderTextureCtrl@2@@Z
+                       0x26b60  10022
+                       ?setTextGui@ActionCommandScrollMessageTextUi@agtk@@UAEXPAVTextGui@2@@Z
+                       0x26b60  10082  ?setTimerFlipY@BaseLayer@agtk@@UAEXPAVTimerFlip@2@@Z */
+  if (*(__Array **)(this + 0x29c) != param_1) {
+    if (param_1 != (__Array *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0x29c) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0x29c));
+    }
+    *(__Array **)(this + 0x29c) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00427df0 setOriginOffset ===========
+
+/* public: void __thiscall agtk::BasePlayer::setOriginOffset(float,float) */
+
+void __thiscall agtk::BasePlayer::setOriginOffset(BasePlayer *this,float param_1,float param_2)
+
+{
+                    /* 0x27df0  9234  ?setOriginOffset@BasePlayer@agtk@@QAEXMM@Z */
+  (**(code **)(*(int *)this + 0x30))(param_1,param_2,this);
+  return;
+}
+
+
+
+=========== 00427e20 getOriginOffset ===========
+
+/* public: virtual class cocos2d::Vec2 __thiscall agtk::BasePlayer::getOriginOffset(void)const  */
+
+void __thiscall agtk::BasePlayer::getOriginOffset(BasePlayer *this)
+
+{
+  undefined4 uVar1;
+  undefined4 *in_stack_00000004;
+  
+                    /* 0x27e20  5173  ?getOriginOffset@BasePlayer@agtk@@UBE?AVVec2@cocos2d@@XZ */
+  uVar1 = *(undefined4 *)(this + 0xf8);
+  *in_stack_00000004 = *(undefined4 *)(this + 0xf4);
+  in_stack_00000004[1] = uVar1;
+  return;
+}
+
+
+
+=========== 00427e50 setOriginOffset ===========
+
+/* public: virtual void __thiscall agtk::BasePlayer::setOriginOffset(class cocos2d::Vec2) */
+
+void __thiscall
+agtk::BasePlayer::setOriginOffset(BasePlayer *this,undefined4 param_2,undefined4 param_3)
+
+{
+                    /* 0x27e50  9235  ?setOriginOffset@BasePlayer@agtk@@UAEXVVec2@cocos2d@@@Z */
+  *(undefined4 *)(this + 0xf4) = param_2;
+  *(undefined4 *)(this + 0xf8) = param_3;
+  return;
+}
+
+
+
+=========== 00427e70 getHasRotation ===========
+
+/* public: virtual bool __thiscall agtk::BasePlayer::getHasRotation(void)const  */
+
+bool __thiscall agtk::BasePlayer::getHasRotation(BasePlayer *this)
+
+{
+                    /* 0x27e70  4228  ?getHasRotation@BasePlayer@agtk@@UBE_NXZ */
+  return (bool)this[0xfc];
+}
+
+
+
+=========== 00427e80 setHasRotation ===========
+
+/* public: virtual void __thiscall agtk::BasePlayer::setHasRotation(bool) */
+
+void __thiscall agtk::BasePlayer::setHasRotation(BasePlayer *this,bool param_1)
+
+{
+                    /* 0x27e80  8450  ?setHasRotation@BasePlayer@agtk@@UAEX_N@Z */
+  this[0xfc] = (BasePlayer)param_1;
+  return;
+}
+
+
+
+=========== 00427e90 setObjectNode ===========
+
+/* public: void __thiscall agtk::BasePlayer::setObjectNode(class cocos2d::Node *) */
+
+void __thiscall agtk::BasePlayer::setObjectNode(BasePlayer *this,Node *param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+                    /* 0x27e90  9159  ?setObjectNode@BasePlayer@agtk@@QAEXPAVNode@cocos2d@@@Z */
+  *(Node **)(this + 0x10c) = param_1;
+  if ((*(int *)(this + 0xf0) != 0) && (iVar1 = *(int *)(*(int *)(this + 0xf0) + 0x1c), iVar1 != 0))
+  {
+    iVar2 = *(int *)(iVar1 + 0x110);
+    while( true ) {
+      iVar1 = __RTDynamicCast(*(undefined4 *)(iVar1 + 0x104),0,&cocos2d::Ref::RTTI_Type_Descriptor,
+                              &AnimationMotion::RTTI_Type_Descriptor,0);
+      *(Node **)(iVar1 + 0x1dc) = param_1;
+      if (iVar2 == 0) break;
+      iVar1 = iVar2;
+      iVar2 = *(int *)(iVar2 + 0x110);
+    }
+  }
+  return;
+}
+
+
+
+=========== 00427f00 BasePlayer ===========
+
+/* public: __thiscall agtk::BasePlayer::BasePlayer(class agtk::BasePlayer const &) */
+
+BasePlayer * __thiscall agtk::BasePlayer::BasePlayer(BasePlayer *this,BasePlayer *param_1)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x27f00  36  ??0BasePlayer@agtk@@QAE@ABV01@@Z */
+  puStack_c = &LAB_00898401;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00b91dd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  *(undefined ***)this = vftable;
+  *(undefined4 *)(this + 0x2c) = 0;
+  local_8 = 0;
+  if (*(undefined4 **)(param_1 + 0x2c) != (undefined4 *)0x0) {
+    uVar2 = (**(code **)**(undefined4 **)(param_1 + 0x2c))(this + 8,uVar1);
+    *(undefined4 *)(this + 0x2c) = uVar2;
+  }
+  *(undefined4 *)(this + 0x54) = 0;
+  local_8._0_1_ = 2;
+  local_8._1_3_ = 0;
+  if (*(undefined4 **)(param_1 + 0x54) != (undefined4 *)0x0) {
+    uVar2 = (**(code **)**(undefined4 **)(param_1 + 0x54))(this + 0x30);
+    *(undefined4 *)(this + 0x54) = uVar2;
+  }
+  *(undefined4 *)(this + 0x7c) = 0;
+  local_8._0_1_ = 4;
+  if (*(undefined4 **)(param_1 + 0x7c) != (undefined4 *)0x0) {
+    uVar2 = (**(code **)**(undefined4 **)(param_1 + 0x7c))(this + 0x58);
+    *(undefined4 *)(this + 0x7c) = uVar2;
+  }
+  *(undefined4 *)(this + 0xa4) = 0;
+  local_8 = CONCAT31(local_8._1_3_,6);
+  if (*(undefined4 **)(param_1 + 0xa4) != (undefined4 *)0x0) {
+    uVar2 = (**(code **)**(undefined4 **)(param_1 + 0xa4))(this + 0x80);
+    *(undefined4 *)(this + 0xa4) = uVar2;
+  }
+  *(undefined4 *)(this + 0xa8) = *(undefined4 *)(param_1 + 0xa8);
+  *(undefined4 *)(this + 0xac) = *(undefined4 *)(param_1 + 0xac);
+  *(undefined4 *)(this + 0xb0) = *(undefined4 *)(param_1 + 0xb0);
+  *(undefined4 *)(this + 0xb4) = *(undefined4 *)(param_1 + 0xb4);
+  *(undefined4 *)(this + 0xb8) = *(undefined4 *)(param_1 + 0xb8);
+  *(undefined4 *)(this + 0xbc) = *(undefined4 *)(param_1 + 0xbc);
+  *(undefined4 *)(this + 0xc0) = *(undefined4 *)(param_1 + 0xc0);
+  *(undefined4 *)(this + 0xc4) = *(undefined4 *)(param_1 + 0xc4);
+  *(undefined4 *)(this + 200) = *(undefined4 *)(param_1 + 200);
+  *(undefined4 *)(this + 0xcc) = *(undefined4 *)(param_1 + 0xcc);
+  *(undefined4 *)(this + 0xd0) = *(undefined4 *)(param_1 + 0xd0);
+  *(undefined4 *)(this + 0xd4) = *(undefined4 *)(param_1 + 0xd4);
+  *(undefined4 *)(this + 0xd8) = *(undefined4 *)(param_1 + 0xd8);
+  *(undefined4 *)(this + 0xdc) = *(undefined4 *)(param_1 + 0xdc);
+  *(undefined4 *)(this + 0xe0) = *(undefined4 *)(param_1 + 0xe0);
+  *(undefined4 *)(this + 0xe4) = *(undefined4 *)(param_1 + 0xe4);
+  *(undefined4 *)(this + 0xe8) = *(undefined4 *)(param_1 + 0xe8);
+  *(undefined4 *)(this + 0xec) = *(undefined4 *)(param_1 + 0xec);
+  *(undefined4 *)(this + 0xf0) = *(undefined4 *)(param_1 + 0xf0);
+  *(undefined4 *)(this + 0xf4) = *(undefined4 *)(param_1 + 0xf4);
+  *(undefined4 *)(this + 0xf8) = *(undefined4 *)(param_1 + 0xf8);
+  this[0xfc] = param_1[0xfc];
+  *(undefined4 *)(this + 0x100) = *(undefined4 *)(param_1 + 0x100);
+  *(undefined4 *)(this + 0x104) = *(undefined4 *)(param_1 + 0x104);
+  *(undefined4 *)(this + 0x108) = *(undefined4 *)(param_1 + 0x108);
+  *(undefined4 *)(this + 0x10c) = *(undefined4 *)(param_1 + 0x10c);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== 00428120 operator= ===========
+
+/* public: class agtk::BasePlayer & __thiscall agtk::BasePlayer::operator=(class agtk::BasePlayer
+   const &) */
+
+BasePlayer * __thiscall agtk::BasePlayer::operator=(BasePlayer *this,BasePlayer *param_1)
+
+{
+  BasePlayer *pBVar1;
+  int local_3c [9];
+  int *local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x28120  990  ??4BasePlayer@agtk@@QAEAAV01@ABV01@@Z */
+  puStack_c = &LAB_0089845c;
+  local_10 = ExceptionList;
+  local_14 = DAT_00b91dd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_18 = (int *)0x0;
+  local_8 = 0;
+  if (*(undefined4 **)(param_1 + 0x2c) != (undefined4 *)0x0) {
+    local_18 = (int *)(**(code **)**(undefined4 **)(param_1 + 0x2c))(local_3c,local_14);
+  }
+  FUN_0043b8f0(this + 8);
+  local_8 = 1;
+  if (local_18 != (int *)0x0) {
+    (**(code **)(*local_18 + 0x10))(local_18 != local_3c);
+  }
+  local_18 = (int *)0x0;
+  local_8 = 2;
+  if (*(undefined4 **)(param_1 + 0x54) != (undefined4 *)0x0) {
+    local_18 = (int *)(**(code **)**(undefined4 **)(param_1 + 0x54))(local_3c);
+  }
+  FUN_0043b8f0(this + 0x30);
+  local_8 = 3;
+  if (local_18 != (int *)0x0) {
+    (**(code **)(*local_18 + 0x10))(local_18 != local_3c);
+  }
+  local_18 = (int *)0x0;
+  local_8 = 4;
+  if (*(undefined4 **)(param_1 + 0x7c) != (undefined4 *)0x0) {
+    local_18 = (int *)(**(code **)**(undefined4 **)(param_1 + 0x7c))(local_3c);
+  }
+  FUN_0043b8f0(this + 0x58);
+  local_8 = 5;
+  if (local_18 != (int *)0x0) {
+    (**(code **)(*local_18 + 0x10))(local_18 != local_3c);
+  }
+  local_18 = (int *)0x0;
+  local_8 = 6;
+  if (*(undefined4 **)(param_1 + 0xa4) != (undefined4 *)0x0) {
+    local_18 = (int *)(**(code **)**(undefined4 **)(param_1 + 0xa4))(local_3c);
+  }
+  FUN_0043b8f0(this + 0x80);
+  local_8 = 7;
+  if (local_18 != (int *)0x0) {
+    (**(code **)(*local_18 + 0x10))(local_18 != local_3c);
+  }
+  *(undefined4 *)(this + 0xa8) = *(undefined4 *)(param_1 + 0xa8);
+  *(undefined4 *)(this + 0xac) = *(undefined4 *)(param_1 + 0xac);
+  *(undefined4 *)(this + 0xb0) = *(undefined4 *)(param_1 + 0xb0);
+  *(undefined4 *)(this + 0xb4) = *(undefined4 *)(param_1 + 0xb4);
+  *(undefined4 *)(this + 0xb8) = *(undefined4 *)(param_1 + 0xb8);
+  *(undefined4 *)(this + 0xbc) = *(undefined4 *)(param_1 + 0xbc);
+  *(undefined4 *)(this + 0xc0) = *(undefined4 *)(param_1 + 0xc0);
+  *(undefined4 *)(this + 0xc4) = *(undefined4 *)(param_1 + 0xc4);
+  *(undefined4 *)(this + 200) = *(undefined4 *)(param_1 + 200);
+  *(undefined4 *)(this + 0xcc) = *(undefined4 *)(param_1 + 0xcc);
+  *(undefined4 *)(this + 0xd0) = *(undefined4 *)(param_1 + 0xd0);
+  *(undefined4 *)(this + 0xd4) = *(undefined4 *)(param_1 + 0xd4);
+  *(undefined4 *)(this + 0xd8) = *(undefined4 *)(param_1 + 0xd8);
+  *(undefined4 *)(this + 0xdc) = *(undefined4 *)(param_1 + 0xdc);
+  *(undefined4 *)(this + 0xe0) = *(undefined4 *)(param_1 + 0xe0);
+  *(undefined4 *)(this + 0xe4) = *(undefined4 *)(param_1 + 0xe4);
+  *(undefined4 *)(this + 0xe8) = *(undefined4 *)(param_1 + 0xe8);
+  *(undefined4 *)(this + 0xec) = *(undefined4 *)(param_1 + 0xec);
+  *(undefined4 *)(this + 0xf0) = *(undefined4 *)(param_1 + 0xf0);
+  *(undefined4 *)(this + 0xf4) = *(undefined4 *)(param_1 + 0xf4);
+  *(undefined4 *)(this + 0xf8) = *(undefined4 *)(param_1 + 0xf8);
+  this[0xfc] = param_1[0xfc];
+  *(undefined4 *)(this + 0x100) = *(undefined4 *)(param_1 + 0x100);
+  *(undefined4 *)(this + 0x104) = *(undefined4 *)(param_1 + 0x104);
+  *(undefined4 *)(this + 0x108) = *(undefined4 *)(param_1 + 0x108);
+  *(undefined4 *)(this + 0x10c) = *(undefined4 *)(param_1 + 0x10c);
+  ExceptionList = local_10;
+  pBVar1 = (BasePlayer *)__security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return pBVar1;
+}
+
+
+
+=========== 00428dc0 getAnimationData ===========
+
+/* public: virtual class agtk::data::AnimationData * __thiscall
+   agtk::Player::getAnimationData(void)const  */
+
+AnimationData * __thiscall agtk::Player::getAnimationData(Player *this)
+
+{
+                    /* 0x28dc0  3198  ?getAnimationData@Player@agtk@@UBEPAVAnimationData@data@2@XZ
+                       0x28dc0  3404
+                       ?getCameraData@CameraObject@agtk@@UBEPAVOthersCameraData@data@2@XZ
+                       0x28dc0  3585
+                       ?getConnectObjectDispPriorityList@Object@agtk@@UBEPAV__Array@cocos2d@@XZ
+                       0x28dc0  4102  ?getFontData@TextLineNode@agtk@@UBEPAVFontData@data@2@XZ
+                       0x28dc0  4318  ?getId@OthersCourse@agtk@@UBEHXZ
+                       0x28dc0  4320  ?getId@ParticleGroup@agtk@@UBEHXZ
+                       0x28dc0  4326  ?getId@Portal@agtk@@UBEHXZ
+                       0x28dc0  5307  ?getPlayer@EffectAnimation@agtk@@UBEPAVPlayer@2@XZ
+                       0x28dc0  5563
+                       ?getRenderTextureList@RenderTextureCtrl@agtk@@UBEPAV__Array@cocos2d@@XZ
+                       0x28dc0  5725  ?getScenePartsId@PhysicsBase@agtk@@UBEHXZ
+                       0x28dc0  6111  ?getTileMapNode@SceneLayer@agtk@@UBEPAVNode@cocos2d@@XZ
+                       0x28dc0  6112  ?getTileMapWidth@TileMap@agtk@@UBEHXZ
+                       0x28dc0  6428  ?getWaitDuration300@Scene@agtk@@UBEHXZ */
+  return *(AnimationData **)(this + 0x278);
+}
+
+
+
+=========== 00428dd0 setAnimationData ===========
+
+/* public: virtual void __thiscall agtk::Player::setAnimationData(class agtk::data::AnimationData *)
+    */
+
+void __thiscall agtk::Player::setAnimationData(Player *this,AnimationData *param_1)
+
+{
+                    /* 0x28dd0  7550  ?setAnimationData@Player@agtk@@UAEXPAVAnimationData@data@2@@Z
+                       0x28dd0  7718
+                       ?setCameraData@CameraObject@agtk@@UAEXPAVOthersCameraData@data@2@@Z
+                       0x28dd0  7879
+                       ?setConnectObjectDispPriorityList@Object@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x28dd0  8347  ?setFontData@TextLineNode@agtk@@UAEXPAVFontData@data@2@@Z
+                       0x28dd0  9359  ?setPlayer@EffectAnimation@agtk@@UAEXPAVPlayer@2@@Z
+                       0x28dd0  9572
+                       ?setRenderTextureList@RenderTextureCtrl@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x28dd0  10042  ?setTileMapNode@SceneLayer@agtk@@UAEXPAVNode@cocos2d@@@Z */
+  if (*(AnimationData **)(this + 0x278) != param_1) {
+    if (param_1 != (AnimationData *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0x278) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0x278));
+    }
+    *(AnimationData **)(this + 0x278) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00428e10 getCenterNode ===========
+
+/* public: virtual class agtk::Player::CenterNode * __thiscall
+   agtk::Player::getCenterNode(void)const  */
+
+CenterNode * __thiscall agtk::Player::getCenterNode(Player *this)
+
+{
+                    /* 0x28e10  3427  ?getCenterNode@Player@agtk@@UBEPAVCenterNode@12@XZ
+                       0x28e10  3648
+                       ?getCoursePointList@OthersCourse@agtk@@UBEPAV__Array@cocos2d@@XZ
+                       0x28e10  4286  ?getId@CameraObject@agtk@@UBEHXZ
+                       0x28e10  4297  ?getId@Object@agtk@@UBEIXZ
+                       0x28e10  4570  ?getLayer@Scene@agtk@@UBEPAVLayer@cocos2d@@XZ
+                       0x28e10  4598  ?getLayerList@ParticleGroup@agtk@@UBEPAV__Array@cocos2d@@XZ
+                       0x28e10  5214  ?getParentScenePartId@PhysicsBase@agtk@@UBEHXZ
+                       0x28e10  5309  ?getPlayer@ObjectSceneLoop@agtk@@UBEPAVPlayer@2@XZ
+                       0x28e10  5344  ?getPortalType@Portal@agtk@@UBEHXZ
+                       0x28e10  5679  ?getSceneData@SceneBackground@agtk@@UBEPAVSceneData@data@2@XZ
+                       0x28e10  5683  ?getSceneData@SceneTopMost@agtk@@UBEPAVSceneData@data@2@XZ
+                       0x28e10  5799
+                       ?getShaderList@RenderTextureCtrl@agtk@@UBEPAV__Array@cocos2d@@XZ
+                       0x28e10  6025  ?getTargetObject@Gui@agtk@@QAEPAVObject@2@XZ
+                       0x28e10  6109  ?getTileMapHeiht@TileMap@agtk@@UBEHXZ
+                       0x28e10  6110  ?getTileMapList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ */
+  return *(CenterNode **)(this + 0x27c);
+}
+
+
+
+=========== 00428e20 setCenterNode ===========
+
+/* public: virtual void __thiscall agtk::Player::setCenterNode(class agtk::Player::CenterNode *) */
+
+void __thiscall agtk::Player::setCenterNode(Player *this,CenterNode *param_1)
+
+{
+                    /* 0x28e20  7739  ?setCenterNode@Player@agtk@@UAEXPAVCenterNode@12@@Z
+                       0x28e20  7932
+                       ?setCoursePointList@OthersCourse@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x28e20  8751  ?setLayer@Scene@agtk@@UAEXPAVLayer@cocos2d@@@Z
+                       0x28e20  8778  ?setLayerList@ParticleGroup@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x28e20  9361  ?setPlayer@ObjectSceneLoop@agtk@@UAEXPAVPlayer@2@@Z
+                       0x28e20  9676  ?setSceneData@SceneBackground@agtk@@UAEXPAVSceneData@data@2@@Z
+                       0x28e20  9680  ?setSceneData@SceneTopMost@agtk@@UAEXPAVSceneData@data@2@@Z
+                       0x28e20  9773
+                       ?setShaderList@RenderTextureCtrl@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                       0x28e20  10041  ?setTileMapList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z
+                        */
+  if (*(CenterNode **)(this + 0x27c) != param_1) {
+    if (param_1 != (CenterNode *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0x27c) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0x27c));
+    }
+    *(CenterNode **)(this + 0x27c) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00428fa0 setImageId ===========
+
+/* public: virtual void __thiscall agtk::PlayerSprite::setImageId(int) */
+
+void __thiscall agtk::PlayerSprite::setImageId(PlayerSprite *this,int param_1)
+
+{
+                    /* 0x28fa0  8593  ?setImageId@PlayerSprite@agtk@@UAEXH@Z
+                       0x28fa0  8595  ?setImageId@SceneSprite@agtk@@UAEXH@Z
+                       0x28fa0  8763  ?setLayerId@Subtile@agtk@@UAEXH@Z */
+  *(int *)(this + 0x468) = param_1;
+  return;
+}
+
+
+
+=========== 00428fb0 getOpacityTimer ===========
+
+/* public: virtual class agtk::PlayerSprite::OpacityTimer * __thiscall
+   agtk::PlayerSprite::getOpacityTimer(void)const  */
+
+OpacityTimer * __thiscall agtk::PlayerSprite::getOpacityTimer(PlayerSprite *this)
+
+{
+                    /* 0x28fb0  5163  ?getOpacityTimer@PlayerSprite@agtk@@UBEPAVOpacityTimer@12@XZ
+                       0x28fb0  5164  ?getOpacityTimer@SceneSprite@agtk@@UBEPAVOpacityTimer@12@XZ
+                       0x28fb0  5911  ?getState@VideoSprite@agtk@@UBE?AW4EnumState@12@XZ
+                       0x28fb0  6129  ?getTilesetId@Subtile@agtk@@UBEHXZ
+                       0x28fb0  6383
+                       ?getViewportLight@ViewportLightSprite@agtk@@UBEPAVViewportLight@2@XZ
+                       0x28fb0  6555  ?getsceneId@Tile@agtk@@UBEHXZ */
+  return *(OpacityTimer **)(this + 0x46c);
+}
+
+
+
+=========== 00428fc0 setOpacityTimer ===========
+
+/* public: virtual void __thiscall agtk::PlayerSprite::setOpacityTimer(class
+   agtk::PlayerSprite::OpacityTimer *) */
+
+void __thiscall agtk::PlayerSprite::setOpacityTimer(PlayerSprite *this,OpacityTimer *param_1)
+
+{
+                    /* 0x28fc0  9226  ?setOpacityTimer@PlayerSprite@agtk@@UAEXPAVOpacityTimer@12@@Z
+                       0x28fc0  9227  ?setOpacityTimer@SceneSprite@agtk@@UAEXPAVOpacityTimer@12@@Z
+                        */
+  if (*(OpacityTimer **)(this + 0x46c) != param_1) {
+    if (param_1 != (OpacityTimer *)0x0) {
+      cocos2d::Ref::retain((Ref *)param_1);
+    }
+    if (*(Ref **)(this + 0x46c) != (Ref *)0x0) {
+      cocos2d::Ref::release(*(Ref **)(this + 0x46c));
+    }
+    *(OpacityTimer **)(this + 0x46c) = param_1;
+  }
+  return;
+}
+
+
+
+=========== 00429000 create ===========
+
+/* public: static class agtk::Player * __cdecl agtk::Player::create(class agtk::data::AnimationData
+   *) */
+
+Player * __cdecl agtk::Player::create(AnimationData *param_1)
+
+{
+  char cVar1;
+  Player *this;
+  Ref *this_00;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+                    /* 0x29000  2780  ?create@Player@agtk@@SAPAV12@PAVAnimationData@data@2@@Z */
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00897f22;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this = (Player *)FUN_008809b7(0x478,&DAT_00bba9d4,DAT_00b91dd4 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  if (this == (Player *)0x0) {
+    this_00 = (Ref *)0x0;
+  }
+  else {
+    this_00 = (Ref *)Player(this);
+  }
+  local_8 = 0xffffffff;
+  if (this_00 != (Ref *)0x0) {
+    cVar1 = (**(code **)(*(int *)this_00 + 0x294))(param_1);
+    if (cVar1 != '\0') {
+      cocos2d::Ref::autorelease(this_00);
+      ExceptionList = local_10;
+      return (Player *)this_00;
+    }
+    (*(code *)**(undefined4 **)this_00)(1);
+  }
+  ExceptionList = local_10;
+  return (Player *)0x0;
+}
+
+
+
+DECOMPILED 45 OF 742

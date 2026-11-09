@@ -1,0 +1,238 @@
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode)
+INFO  Using log config file: jar:file:/home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml (LoggingInitialization)  
+INFO  Using log file: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/application.log (LoggingInitialization)  
+INFO  Loading user preferences: /home/runner/.config/ghidra/ghidra_12.1.4_PUBLIC/preferences (Preferences)  
+INFO  Searching for classes... (ClassSearcher)  
+INFO  Class search complete (504 ms) (ClassSearcher)  
+INFO  Initializing SSL Context (DefaultSSLContextInitializer)  
+INFO  Initializing Random Number Generator... (SecureRandomFactory)  
+INFO  Random Number Generator initialization complete: NativePRNGNonBlocking (SecureRandomFactory)  
+INFO  Trust manager disabled, cacerts have not been set (DefaultTrustManagerFactory)  
+INFO  Starting cache cleanup: /var/tmp/runner-ghidra/fscache2 (FileCacheMaintenanceDaemon)  
+INFO  Finished cache cleanup, estimated storage used: 0 (FileCacheMaintenanceDaemon)  
+INFO  Headless startup complete (3997 ms) (AnalyzeHeadless)  
+INFO  Class searcher loaded 59 extension points (20 false positives) (ClassSearcher)  
+INFO  HEADLESS Script Paths:
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts (HeadlessAnalyzer)  
+INFO  HEADLESS: execution starts (HeadlessAnalyzer)  
+INFO  Creating temporary project: /home/runner/work/_temp/shirono-ghidra/ShironoPE (HeadlessAnalyzer)  
+INFO  Creating project: /home/runner/work/_temp/shirono-ghidra/ShironoPE (DefaultProject)  
+INFO  REPORT: Processing input files:  (HeadlessAnalyzer)  
+INFO       project: /home/runner/work/_temp/shirono-ghidra/ShironoPE (HeadlessAnalyzer)  
+INFO  IMPORTING: file:///home/runner/work/_temp/shirono-input/player.exe (HeadlessAnalyzer)  
+INFO  Using Loader: Portable Executable (PE) (ProgramLoader)  
+INFO  Using Language/Compiler: x86:LE:32:default:windows (ProgramLoader)  
+INFO  Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib64] (ProgramLoader)  
+INFO  TLS callbacks at 8c20cc (TLSDirectory)  
+INFO  Additional info:
+Loading file:///home/runner/work/_temp/shirono-input/player.exe?MD5=595c8d1277f19d01be7e56c7d6311bd2...
+------------------------------------------------
+
+Searching 8 paths for library ADVAPI32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-CONVERT-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-HEAP-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-LOCALE-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-MATH-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STDIO-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-STRING-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-TIME-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library API-MS-WIN-CRT-UTILITY-L1-1-0.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library DBGHELP.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library GLEW32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library KERNEL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library LIBCOCOS2D.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library LIBVLC.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MOZJS-33.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library MSVCP140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library OPENGL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library SHELL32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library USER32.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VCRUNTIME140.DLL...
+Library not found.
+------------------------------------------------
+
+Searching 8 paths for library VERSION.DLL...
+Library not found.
+------------------------------------------------
+
+Linking the External Programs of 'player.exe' to imported libraries...
+  [OPENGL32.DLL] -> not found in project
+  [GLEW32.DLL] -> not found in project
+  [KERNEL32.DLL] -> not found in project
+  [USER32.DLL] -> not found in project
+  [ADVAPI32.DLL] -> not found in project
+  [SHELL32.DLL] -> not found in project
+  [MOZJS-33.DLL] -> not found in project
+  [LIBVLC.DLL] -> not found in project
+  [VERSION.DLL] -> not found in project
+  [DBGHELP.DLL] -> not found in project
+  [LIBCOCOS2D.DLL] -> not found in project
+  [MSVCP140.DLL] -> not found in project
+  [VCRUNTIME140.DLL] -> not found in project
+  [API-MS-WIN-CRT-HEAP-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-RUNTIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-CONVERT-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STRING-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-UTILITY-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-STDIO-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-TIME-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-MATH-L1-1-0.DLL] -> not found in project
+  [API-MS-WIN-CRT-LOCALE-L1-1-0.DLL] -> not found in project
+------------------------------------------------
+
+ (ProgramLoader)  
+INFO  IMPORTING: Loaded 0 additional files (HeadlessAnalyzer)  
+INFO  ANALYZING all memory and code: file:///home/runner/work/_temp/shirono-input/player.exe (HeadlessAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___raise_securityfailure' specified in file: /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+WARN  Ignoring leading '_' chars on no-return name '___report_rangecheckfailure' specified in file: /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_12.1.4_PUBLIC/Ghidra/Features/Base/data/PEFunctionsThatDoNotReturn (NoReturnFunctionAnalyzer)  
+INFO  Skipping PDB processing: failed to locate PDB file in configured locations (PdbUniversalAnalyzer)  
+INFO  Use a script to set the PDB file location. I.e.,
+    PdbAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb")); or
+    PdbUniversalAnalyzer.setPdbFileOption(currentProgram, new File("/path/to/pdb/file.pdb"));
+Or set the symbol server search configuration using:    PdbPlugin.saveSymbolServerServiceConfig(...);
+ This must be done using a pre-script (prior to analysis). (PdbUniversalAnalyzer)  
+INFO  Packed database cache: /var/tmp/runner-ghidra/packed-db-cache (PackedDatabaseCache)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+INFO  hit non-returning function, restarting decompiler switch analyzer later (DecompilerSwitchAnalyzer)  
+WARN  Decompiling 0048dc40, pcode error at eb3e0048: Could not follow disassembly flow into non-existing memory at eb3e0048 (DecompileCallback)  
+INFO  Unprocessed TypeDescriptor: void (TypeDescriptorModel)  
+INFO  Unprocessed TypeDescriptor: void (TypeDescriptorModel)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+WARN  WARNING! Repairing body of function at 0048ee90 (ClearFlowAndRepairCmd)  
+INFO  Applied data type archive: windows_vs12_32 (ApplyDataArchiveAnalyzer)  
+INFO  -----------------------------------------------------
+    ASCII Strings                              0.886 secs
+    Apply Data Archives                        0.298 secs
+    Call Convention ID                         0.232 secs
+    Call-Fixup Installer                       0.665 secs
+    Create Address Tables                      1.422 secs
+    Create Address Tables - One Time           1.301 secs
+    Create Function                            2.109 secs
+    Data Reference                             1.787 secs
+    Decompiler Switch Analysis                 6.885 secs
+    Decompiler Switch Analysis - One Time     12.144 secs
+    Demangler Microsoft                        1.902 secs
+    Disassemble                                6.323 secs
+    Disassemble Entry Points                   5.749 secs
+    Disassemble Entry Points - One Time        0.018 secs
+    Embedded Media                             0.043 secs
+    External Entry References                  0.056 secs
+    Function ID                                4.979 secs
+    Function Start Pre Search                  0.033 secs
+    Function Start Search                      1.881 secs
+    Function Start Search After Code           0.292 secs
+    Function Start Search After Data           0.910 secs
+    Non-Returning Functions - Discovered       3.494 secs
+    Non-Returning Functions - Known            0.022 secs
+    PDB Universal                              0.009 secs
+    Reference                                  1.762 secs
+    Scalar Operand References                  5.883 secs
+    Shared Return Calls                        1.376 secs
+    Stack                                     22.226 secs
+    Subroutine References                      0.990 secs
+    Subroutine References - One Time           0.526 secs
+    Windows x86 PE Exception Handling          3.349 secs
+    Windows x86 PE RTTI Analyzer               5.961 secs
+    Windows x86 Thread Environment Block (TEB) Analyzer     0.011 secs
+    WindowsResourceReference                   2.538 secs
+    X86 Function Callee Purge                  0.973 secs
+    x86 Constant Reference Analyzer           22.883 secs
+-----------------------------------------------------
+     Total Time   121 secs
+-----------------------------------------------------
+ (AutoAnalysisManager)  
+INFO  REPORT: Analysis succeeded for file: file:///home/runner/work/_temp/shirono-input/player.exe (HeadlessAnalyzer)  
+INFO  REPORT: Execute script: ShironoCloneAudit.java '/home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/audit-out/shirono/ghidra'  (HeadlessAnalyzer)  
+INFO  SCRIPT: /home/runner/work/Ghidra-12.1.4-Workspace/Ghidra-12.1.4-Workspace/ghidra_scripts/ShironoCloneAudit.java (HeadlessAnalyzer)  
+INFO  ShironoCloneAudit.java> SHIRONO_GHIDRA_AUDIT_DONE functions=28137 candidates=742 (GhidraScript)  
+INFO  ANALYZING changes made by post scripts: file:///home/runner/work/_temp/shirono-input/player.exe (HeadlessAnalyzer)  
+INFO  REPORT: Post-analysis succeeded for file: file:///home/runner/work/_temp/shirono-input/player.exe (HeadlessAnalyzer)  
+INFO  /player.exe: file created (runner) (LocalFileSystem)  
+INFO  REPORT: Save succeeded for: /player.exe (ShironoPE:/player.exe) (HeadlessAnalyzer)  
+INFO  REPORT: Import succeeded (HeadlessAnalyzer)  

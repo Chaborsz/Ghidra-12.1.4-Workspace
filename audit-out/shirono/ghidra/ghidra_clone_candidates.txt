@@ -1,0 +1,2356 @@
+PROGRAM player.exe
+LANGUAGE x86:LE:32:default
+FN 00401000 libvlc_media_player_stop undefined libvlc_media_player_stop(void)
+FN 00401008 libvlc_media_player_release undefined libvlc_media_player_release(void)
+FN 00401028 libvlc_media_player_new_from_media undefined libvlc_media_player_new_from_media(void)
+FN 00401050 libvlc_media_player_event_manager undefined libvlc_media_player_event_manager(void)
+FN 00401060 libvlc_media_player_play undefined libvlc_media_player_play(void)
+FN 00401068 libvlc_media_player_set_pause undefined libvlc_media_player_set_pause(void)
+FN 00401070 libvlc_media_player_get_state undefined libvlc_media_player_get_state(void)
+FN 00408bc0 getAnimationData AnimationData * __thiscall getAnimationData(BasePlayer * this)
+FN 00408c00 getAnimationMotionList __Dictionary * __thiscall getAnimationMotionList(BasePlayer * this)
+FN 0040a590 ObjectCommandObjectCreateData undefined __thiscall ObjectCommandObjectCreateData(ObjectCommandObjectCreateData * this)
+FN 0040a5d0 create ObjectCommandObjectCreateData * __cdecl create(GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_> * param_1)
+FN 0040a690 create ObjectCommandObjectCreateData * __cdecl create(void * param_1, void * param_2)
+FN 0040a750 getLowerPriority bool __thiscall getLowerPriority(ObjectCommandObjectCreateData * this)
+FN 0040a760 setLowerPriority void __thiscall setLowerPriority(ObjectCommandObjectCreateData * this, bool param_1)
+FN 0040a770 getGridMagnet bool __thiscall getGridMagnet(ObjectCommandObjectCreateData * this)
+FN 0040a780 setGridMagnet void __thiscall setGridMagnet(ObjectCommandObjectCreateData * this, bool param_1)
+FN 0040a790 ObjectCommandObjectCreateData undefined __thiscall ObjectCommandObjectCreateData(ObjectCommandObjectCreateData * this, ObjectCommandObjectCreateData * param_1)
+FN 0040a820 operator= ObjectCommandObjectCreateData * __thiscall operator=(ObjectCommandObjectCreateData * this, ObjectCommandObjectCreateData * param_1)
+FN 0041baf0 getIgnoreCreatePlayerList __Array * __thiscall getIgnoreCreatePlayerList(GameManager * this)
+FN 004214d0 setCurrentAnimationMotion void __thiscall setCurrentAnimationMotion(BasePlayer * this, AnimationMotion * param_1)
+FN 00421510 setAnimationMotionList void __thiscall setAnimationMotionList(BasePlayer * this, __Dictionary * param_1)
+FN 00422040 getPostMoveOnlyTransportPlayersTouching bool __thiscall getPostMoveOnlyTransportPlayersTouching(MoveSettingData * this)
+FN 00422050 setPostMoveOnlyTransportPlayersTouching void __thiscall setPostMoveOnlyTransportPlayersTouching(MoveSettingData * this, bool param_1)
+FN 00422060 getPostMoveShowPlayersInTouchedOrder bool __thiscall getPostMoveShowPlayersInTouchedOrder(MoveSettingData * this)
+FN 00422070 setPostMoveShowPlayersInTouchedOrder void __thiscall setPostMoveShowPlayersInTouchedOrder(MoveSettingData * this, bool param_1)
+FN 00424620 create PlayerCharacterData * __cdecl create(GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_> * param_1)
+FN 004246e0 PlayerCharacterData undefined __thiscall PlayerCharacterData(PlayerCharacterData * this, PlayerCharacterData * param_1)
+FN 00424d30 setPlayerCharacterData void __thiscall setPlayerCharacterData(ProjectData * this, PlayerCharacterData * param_1)
+FN 00426b60 setCreateObjectList void __thiscall setCreateObjectList(SceneLayer * this, __Array * param_1)
+FN 00427df0 setOriginOffset void __thiscall setOriginOffset(BasePlayer * this, float param_1, float param_2)
+FN 00427e20 getOriginOffset Vec2 __thiscall getOriginOffset(BasePlayer * this)
+FN 00427e50 setOriginOffset void __thiscall setOriginOffset(BasePlayer * this, Vec2 param_1)
+FN 00427e70 getHasRotation bool __thiscall getHasRotation(BasePlayer * this)
+FN 00427e80 setHasRotation void __thiscall setHasRotation(BasePlayer * this, bool param_1)
+FN 00427e90 setObjectNode void __thiscall setObjectNode(BasePlayer * this, Node * param_1)
+FN 00427f00 BasePlayer undefined __thiscall BasePlayer(BasePlayer * this, BasePlayer * param_1)
+FN 00428120 operator= BasePlayer * __thiscall operator=(BasePlayer * this, BasePlayer * param_1)
+FN 00428dc0 getAnimationData AnimationData * __thiscall getAnimationData(Player * this)
+FN 00428dd0 setAnimationData void __thiscall setAnimationData(Player * this, AnimationData * param_1)
+FN 00428e10 getCenterNode CenterNode * __thiscall getCenterNode(Player * this)
+FN 00428e20 setCenterNode void __thiscall setCenterNode(Player * this, CenterNode * param_1)
+FN 00428fa0 setImageId void __thiscall setImageId(PlayerSprite * this, int param_1)
+FN 00428fb0 getOpacityTimer OpacityTimer * __thiscall getOpacityTimer(PlayerSprite * this)
+FN 00428fc0 setOpacityTimer void __thiscall setOpacityTimer(PlayerSprite * this, OpacityTimer * param_1)
+FN 00429000 create Player * __cdecl create(AnimationData * param_1)
+FN 004290b0 getAutoGenerationNode Node * __thiscall getAutoGenerationNode(Player * this)
+FN 004290c0 setAutoGenerationNode void __thiscall setAutoGenerationNode(Player * this, Node * param_1)
+FN 004291b0 getRealPosition Vec2 __thiscall getRealPosition(Player * this)
+FN 004291e0 setRealPosition void __thiscall setRealPosition(Player * this, Vec2 param_1)
+FN 00429250 getAnimeTimelineWallList __Array * __thiscall getAnimeTimelineWallList(Player * this)
+FN 00429260 setAnimeTimelineWallList void __thiscall setAnimeTimelineWallList(Player * this, __Array * param_1)
+FN 004292a0 getAnimeTimelineHitList __Array * __thiscall getAnimeTimelineHitList(Player * this)
+FN 004292b0 setAnimeTimelineHitList void __thiscall setAnimeTimelineHitList(Player * this, __Array * param_1)
+FN 004292f0 getAnimeTimelineAttackList __Array * __thiscall getAnimeTimelineAttackList(Player * this)
+FN 00429300 setAnimeTimelineAttackList void __thiscall setAnimeTimelineAttackList(Player * this, __Array * param_1)
+FN 00429340 getAnimeTimelineConnectList __Array * __thiscall getAnimeTimelineConnectList(Player * this)
+FN 00429350 setAnimeTimelineConnectList void __thiscall setAnimeTimelineConnectList(Player * this, __Array * param_1)
+FN 00429390 getWallVertListCache vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> __thiscall getWallVertListCache(Player * this)
+FN 004293c0 setWallVertListCache void __thiscall setWallVertListCache(Player * this, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> param_1)
+FN 00429430 getHitVertListCache vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> __thiscall getHitVertListCache(Player * this)
+FN 00429460 setHitVertListCache void __thiscall setHitVertListCache(Player * this, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> param_1)
+FN 004294d0 getAttackVertListCache vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> __thiscall getAttackVertListCache(Player * this)
+FN 00429500 setAttackVertListCache void __thiscall setAttackVertListCache(Player * this, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> param_1)
+FN 00429570 getConnectVertListCache vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> __thiscall getConnectVertListCache(Player * this)
+FN 004295a0 setConnectVertListCache void __thiscall setConnectVertListCache(Player * this, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> param_1)
+FN 00429610 getWallVertRectCache Rect __thiscall getWallVertRectCache(Player * this)
+FN 00429640 setWallVertRectCache void __thiscall setWallVertRectCache(Player * this, Rect param_1)
+FN 00429690 getHitVertRectCache Rect __thiscall getHitVertRectCache(Player * this)
+FN 004296c0 setHitVertRectCache void __thiscall setHitVertRectCache(Player * this, Rect param_1)
+FN 00429710 getAttackVertRectCache Rect __thiscall getAttackVertRectCache(Player * this)
+FN 00429740 setAttackVertRectCache void __thiscall setAttackVertRectCache(Player * this, Rect param_1)
+FN 00429790 getConnectVertRectCache Rect __thiscall getConnectVertRectCache(Player * this)
+FN 004297c0 setConnectVertRectCache void __thiscall setConnectVertRectCache(Player * this, Rect param_1)
+FN 00429810 getWallAreaAttackFlag bool __thiscall getWallAreaAttackFlag(Player * this)
+FN 00429820 setWallAreaAttackFlag void __thiscall setWallAreaAttackFlag(Player * this, bool param_1)
+FN 00429830 getRenderTextureSize Size __thiscall getRenderTextureSize(Player * this)
+FN 00429850 setRenderTextureSize void __thiscall setRenderTextureSize(Player * this, Size param_1)
+FN 00429870 getClippingPreAdjustNode Node * __thiscall getClippingPreAdjustNode(Player * this)
+FN 00429880 setClippingPreAdjustNode void __thiscall setClippingPreAdjustNode(Player * this, Node * param_1)
+FN 004298c0 getClippingPostAdjustNode Node * __thiscall getClippingPostAdjustNode(Player * this)
+FN 004298d0 setClippingPostAdjustNode void __thiscall setClippingPostAdjustNode(Player * this, Node * param_1)
+FN 00429910 getClippingRectangleNode ClippingRectangleNode * __thiscall getClippingRectangleNode(Player * this)
+FN 00429920 setClippingRectangleNode void __thiscall setClippingRectangleNode(Player * this, ClippingRectangleNode * param_1)
+FN 00429960 getPlayerScale Vec2 __thiscall getPlayerScale(Player * this)
+FN 00429990 setPlayerScale void __thiscall setPlayerScale(Player * this, Vec2 param_1)
+FN 004299b0 getCenterRotationOld float __thiscall getCenterRotationOld(Player * this)
+FN 004299c0 setCenterRotationOld void __thiscall setCenterRotationOld(Player * this, float param_1)
+FN 004299e0 getCenterPosition Vec2 __thiscall getCenterPosition(Player * this)
+FN 00429a10 setCenterPosition void __thiscall setCenterPosition(Player * this, Vec2 param_1)
+FN 00429a30 getStockShaderInfoFlag bool __thiscall getStockShaderInfoFlag(Player * this)
+FN 00429a40 setStockShaderInfoFlag void __thiscall setStockShaderInfoFlag(Player * this, bool param_1)
+FN 00429a60 setStockShaderInfoList void __thiscall setStockShaderInfoList(Player * this, __Array * param_1)
+FN 00430c00 getInnerRotation float __thiscall getInnerRotation(BasePlayer * this)
+FN 00431d30 getAttackerObjectInstanceIdList __Array * __thiscall getAttackerObjectInstanceIdList(Object * this)
+FN 00431d40 setAttackerObjectInstanceIdList void __thiscall setAttackerObjectInstanceIdList(Object * this, __Array * param_1)
+FN 00432390 getExecActionObjectCreateList __Array * __thiscall getExecActionObjectCreateList(Object * this)
+FN 004323a0 setExecActionObjectCreateList void __thiscall setExecActionObjectCreateList(Object * this, __Array * param_1)
+FN 00432d20 getPlayerVisible bool __thiscall getPlayerVisible(Object * this)
+FN 00432d30 setPlayerVisible void __thiscall setPlayerVisible(Object * this, bool param_1)
+FN 004369f0 getRequestSwitchCopyFile bool __thiscall getRequestSwitchCopyFile(Scene * this)
+FN 00436a00 setRequestSwitchCopyFile void __thiscall setRequestSwitchCopyFile(Scene * this, bool param_1)
+FN 00436e30 setIgnoreCreatePlayerList void __thiscall setIgnoreCreatePlayerList(GameManager * this, __Array * param_1)
+FN 00441f40 clone Clonable * __thiscall clone(IfCallFunc * this)
+FN 00441f50 clone Action * __thiscall clone(IfCallFunc * this)
+FN 00441f60 clone Action * __thiscall clone(ActionInterval * this)
+FN 00454690 createForScript ObjectCommandObjectCreateData * __cdecl createForScript(void)
+FN 00454710 init bool __thiscall init(ObjectCommandObjectCreateData * this, GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_> * param_1)
+FN 00454900 init bool __thiscall init(ObjectCommandObjectCreateData * this, void * param_1, void * param_2)
+FN 00466990 isGroupPlayer bool __thiscall isGroupPlayer(ObjectData * this)
+FN 0046af40 setInstanceId void __thiscall setInstanceId(PlayObjectData * this, int param_1)
+FN 0046b010 getInstanceId int __thiscall getInstanceId(PlayObjectData * this)
+FN 0046b0f0 setPlayerId void __thiscall setPlayerId(PlayObjectData * this, int param_1)
+FN 0046b180 getPlayerId int __thiscall getPlayerId(PlayObjectData * this)
+FN 0046b370 setInstanceCount int __thiscall setInstanceCount(PlayObjectData * this, int param_1)
+FN 0046b470 getInstanceCount int __thiscall getInstanceCount(PlayObjectData * this)
+FN 0046bb90 setParentObjectInstanceId void __thiscall setParentObjectInstanceId(PlayObjectData * this, int param_1)
+FN 0046bc60 getParentObjectInstanceId int __thiscall getParentObjectInstanceId(PlayObjectData * this)
+FN 004712d0 copy void __thiscall copy(InputMapping * this, InputMapping * param_1)
+FN 00471670 copy void __thiscall copy(OperationKey * this, OperationKey * param_1)
+FN 004724c0 copy void __thiscall copy(InputMappingData * this, InputMappingData * param_1)
+FN 00472740 PlayerCharacterData undefined __thiscall PlayerCharacterData(PlayerCharacterData * this)
+FN 00472780 ~PlayerCharacterData void __thiscall ~PlayerCharacterData(PlayerCharacterData * this)
+FN 00472810 init bool __thiscall init(PlayerCharacterData * this, GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_> * param_1)
+FN 00472970 getPlayerCharacterLine __Array * __thiscall getPlayerCharacterLine(PlayerCharacterData * this, int param_1)
+FN 00472ad0 getPlayerCharacterList __Array * __thiscall getPlayerCharacterList(PlayerCharacterData * this, int param_1)
+FN 004bb300 copy void __thiscall copy(PolygonShape * this, Vec2 * * param_1, Vec2 * param_2)
+FN 004c9eb0 clone IfCallFunc * __thiscall clone(IfCallFunc * this)
+FN 004ca3a0 clone Action * __thiscall clone(Sequence * this)
+FN 004cdae0 clone Clonable * __thiscall clone(Sequence * this)
+FN 004d8870 createObject void __thiscall createObject(ActionCommandMessageTextUi * this, bool param_1)
+FN 004da300 createObject void __thiscall createObject(ActionCommandScrollMessageTextUi * this, bool param_1)
+FN 005189f0 updateExecActionObjectCreate void __thiscall updateExecActionObjectCreate(Object * this)
+FN 0051edc0 updateInputPlayer void __thiscall updateInputPlayer(Object * this)
+FN 0051ee40 updateInputPlayerMoveTankCar int __thiscall updateInputPlayerMoveTankCar(Object * this)
+FN 0051f270 updateInputPlayerMoveNormal int __thiscall updateInputPlayerMoveNormal(Object * this)
+FN 0051f8c0 updateInputPlayerDirection void __thiscall updateInputPlayerDirection(Object * this)
+FN 00520df0 getInstanceId int __thiscall getInstanceId(Object * this)
+FN 00520ed0 getPlayerId int __thiscall getPlayerId(Object * this)
+FN 00522d80 createPlayer Player * __thiscall createPlayer(Object * this, AnimationData * param_1)
+FN 005284a0 execActionObjectCreate void __thiscall execActionObjectCreate(Object * this, ObjectCommandData * param_1)
+FN 005369d0 execActionObjectLock bool __thiscall execActionObjectLock(ObjectAction * this, ObjectCommandData * param_1)
+FN 00537b00 execActionObjectCreate void __thiscall execActionObjectCreate(ObjectAction * this, ObjectCommandData * param_1)
+FN 00537bd0 execActionObjectCreateForScript int __cdecl execActionObjectCreateForScript(int param_1, int param_2, int param_3, int param_4)
+FN 005380c0 execActionObjectChange void __thiscall execActionObjectChange(ObjectAction * this, ObjectCommandData * param_1)
+FN 00538f20 execActionObjectMove void __thiscall execActionObjectMove(ObjectAction * this, ObjectCommandData * param_1)
+FN 00539fb0 execActionObjectPushPull bool __thiscall execActionObjectPushPull(ObjectAction * this, ObjectCommandData * param_1)
+FN 0053bad0 execActionObjectFilterEffect void __thiscall execActionObjectFilterEffect(ObjectAction * this, ObjectCommandData * param_1)
+FN 0053beb0 execActionObjectFilterEffect void __thiscall execActionObjectFilterEffect(ObjectAction * this)
+FN 0053bed0 execActionObjectFilterEffectRemove void __thiscall execActionObjectFilterEffectRemove(ObjectAction * this, ObjectCommandData * param_1)
+FN 00543440 execActionObjectUnlock void __thiscall execActionObjectUnlock(ObjectAction * this, ObjectCommandData * param_1)
+FN 00543df0 getTargetObjectInstanceId Object * __thiscall getTargetObjectInstanceId(ObjectAction * this, int param_1, int param_2)
+FN 0054bbb0 getObjCommandListByInstanceConfigurable __Dictionary * __cdecl getObjCommandListByInstanceConfigurable(__Dictionary * param_1, __Dictionary * param_2, Object * param_3)
+FN 0054bc90 getObjCommandListByInstanceConfigurable __Dictionary * __thiscall getObjCommandListByInstanceConfigurable(ObjectAction * this, __Dictionary * param_1, __Dictionary * param_2)
+FN 005580a0 PlayerSprite undefined __thiscall PlayerSprite(PlayerSprite * this)
+FN 005580e0 ~PlayerSprite void __thiscall ~PlayerSprite(PlayerSprite * this)
+FN 00558150 create PlayerSprite * __cdecl create(int param_1, int param_2, float param_3)
+FN 00558230 init bool __thiscall init(PlayerSprite * this, int param_1, int param_2, float param_3)
+FN 005583a0 update void __thiscall update(PlayerSprite * this, float param_1)
+FN 005583e0 Player undefined __thiscall Player(Player * this)
+FN 005586c0 ~Player void __thiscall ~Player(Player * this)
+FN 00558a00 init bool __thiscall init(Player * this, AnimationData * param_1)
+FN 00558c00 createBasePlayer void __thiscall createBasePlayer(Player * this, ResourceInfoData * param_1, int param_2)
+FN 00559120 removeBasePlayer void __thiscall removeBasePlayer(Player * this)
+FN 005592a0 update void __thiscall update(Player * this, float param_1)
+FN 00559870 calcAnchorPoint Vec2 __thiscall calcAnchorPoint(Player * this, Size * param_1)
+FN 005599b0 play void __thiscall play(Player * this, int param_1, int param_2, bool param_3, bool param_4)
+FN 00559c90 continuePlayCurrentAnime void __thiscall continuePlayCurrentAnime(Player * this)
+FN 00559ca0 stopAnimeContinuePlaying void __thiscall stopAnimeContinuePlaying(Player * this)
+FN 00559cd0 addPosition Vec2 __thiscall addPosition(Player * this, Vec2 param_1)
+FN 00559d60 setPosition void __thiscall setPosition(Player * this, Vec2 * param_1, bool param_2)
+FN 00559d90 setPosition void __thiscall setPosition(Player * this, float param_1, float param_2, bool param_3)
+FN 00559ed0 getPosition Vec2 * __thiscall getPosition(Player * this)
+FN 00559ee0 setRotation void __thiscall setRotation(Player * this, float param_1)
+FN 00559f40 addRotation float __thiscall addRotation(Player * this, float param_1)
+FN 00559f80 getRotation float __thiscall getRotation(Player * this)
+FN 00559fa0 setCenterRotation void __thiscall setCenterRotation(Player * this, float param_1)
+FN 0055a120 getCenterRotation float __thiscall getCenterRotation(Player * this)
+FN 0055a230 setScale void __thiscall setScale(Player * this, float param_1, float param_2)
+FN 0055a3f0 getScaleX float __thiscall getScaleX(Player * this)
+FN 0055a410 getScaleY float __thiscall getScaleY(Player * this)
+FN 0055a430 getAutoGenerationRotation float __thiscall getAutoGenerationRotation(Player * this)
+FN 0055a450 isAutoGeneration bool __thiscall isAutoGeneration(Player * this)
+FN 0055a490 isFlipY bool __thiscall isFlipY(Player * this)
+FN 0055a4d0 getDispPosition Vec2 __thiscall getDispPosition(Player * this)
+FN 0055a500 getCenterNodePosition Vec2 __thiscall getCenterNodePosition(Player * this)
+FN 0055a5d0 getCenterNodePosition2 Vec2 __thiscall getCenterNodePosition2(Player * this)
+FN 0055a690 getCenterOffset Vec2 __thiscall getCenterOffset(Player * this)
+FN 0055a760 getCenterPositionForSpriteStudio Vec2 __thiscall getCenterPositionForSpriteStudio(Player * this)
+FN 0055a9f0 setShader Shader * __thiscall setShader(Player * this, ShaderKind param_1, float param_2, float param_3)
+FN 0055aa30 setShader Shader * __thiscall setShader(Player * this, ShaderKind param_1, float param_2, float param_3, float param_4)
+FN 0055ab70 setShader Shader * __thiscall setShader(Player * this, ShaderKind param_1, ShaderValue * param_2)
+FN 0055ac90 setShader Shader * __thiscall setShader(Player * this, ShaderKind param_1, GenericValue<rapidjson::UTF8<char>,rapidjson::MemoryPoolAllocator<rapidjson::CrtAllocator>_> * param_2)
+FN 0055aec0 removeShader void __thiscall removeShader(Player * this, ShaderKind param_1, float param_2)
+FN 0055b030 removeAllShader void __thiscall removeAllShader(Player * this)
+FN 0055b090 getShader Shader * __thiscall getShader(Player * this, ShaderKind param_1)
+FN 0055b0c0 createRenderTexture void __thiscall createRenderTexture(Player * this)
+FN 0055b250 setExecActionSprite void __thiscall setExecActionSprite(Player * this, int param_1, int param_2, float param_3)
+FN 0055b300 removeExecActionSprite void __thiscall removeExecActionSprite(Player * this, float param_1)
+FN 0055b390 compareResourceInfo bool __thiscall compareResourceInfo(Player * this, int param_1, int param_2)
+FN 0055b430 getResourceInfoId int __thiscall getResourceInfoId(Player * this, int param_1, int param_2)
+FN 0055b490 getCurrentResourceInfoId int __thiscall getCurrentResourceInfoId(Player * this)
+FN 0055b4d0 getCurrentActionNo int __thiscall getCurrentActionNo(Player * this)
+FN 0055b500 getCurrentDirectionNo int __thiscall getCurrentDirectionNo(Player * this)
+FN 0055b530 getCurrentDirectionData DirectionData * __thiscall getCurrentDirectionData(Player * this)
+FN 0055b550 convertToLayerSpaceTimelineVertex4 bool __thiscall convertToLayerSpaceTimelineVertex4(Player * this, int param_1, Vertex4 * param_2, EnumCollidedBit param_3, int param_4)
+FN 0055b5d0 getTimelineBackside bool __thiscall getTimelineBackside(Player * this, int param_1)
+FN 0055b630 getTimelineValid bool __thiscall getTimelineValid(Player * this, int param_1)
+FN 0055b690 convertToLayerSpaceTimelineRect void __thiscall convertToLayerSpaceTimelineRect(Player * this, int param_1, Rect * param_2)
+FN 0055b700 convertToLayerSpaceTimelineVertex4List void __thiscall convertToLayerSpaceTimelineVertex4List(Player * this, EnumTimelineType param_1, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> * param_2, EnumCollidedBit param_3, int param_4)
+FN 0055b900 convertToLayerSpaceTimelineRectList void __thiscall convertToLayerSpaceTimelineRectList(Player * this, EnumTimelineType param_1, vector<cocos2d::Rect,std::allocator<cocos2d::Rect>_> * param_2)
+FN 0055b9d0 getTimelineVertListCache void __thiscall getTimelineVertListCache(Player * this, EnumTimelineType param_1, vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> * param_2, EnumCollidedBit param_3, int param_4)
+FN 0055bad0 updateTimelineVertListCache void __thiscall updateTimelineVertListCache(Player * this, EnumTimelineType param_1, bool param_2, EnumCollidedBit param_3, int param_4)
+FN 0055bc20 VertListCacheClear void __thiscall VertListCacheClear(Player * this, EnumTimelineType param_1)
+FN 0055bcd0 isUpdateTimelineVertListCache bool __thiscall isUpdateTimelineVertListCache(Player * this, EnumTimelineType param_1)
+FN 0055bd00 lock void __thiscall lock(Player * this)
+FN 0055bd40 unlock void __thiscall unlock(Player * this)
+FN 0055bd60 updateTransformCache void __thiscall updateTransformCache(Player * this)
+FN 0055bf70 convertToLayerSpacePosition Vec2 __thiscall convertToLayerSpacePosition(Player * this, Vec2 param_1, bool param_2)
+FN 0055c0c0 convertToLayerSpacePosition2 Vec2 __thiscall convertToLayerSpacePosition2(Player * this, Vec2 param_1, bool param_2)
+FN 0055c200 convertToWorldSpaceTimelineVertex4 bool __thiscall convertToWorldSpaceTimelineVertex4(Player * this, AnimationTimeline * param_1, Vertex4 * param_2, EnumCollidedBit param_3, int param_4)
+FN 0055c8c0 getNodeToParentTransform Mat4 * __thiscall getNodeToParentTransform(Player * this)
+FN 0055cf00 createAnimationTimelineList void __thiscall createAnimationTimelineList(Player * this)
+FN 0055d000 getTimelinePosition Vec2 __thiscall getTimelinePosition(Player * this, Rect param_1, Size param_2)
+FN 0055d150 getTimelineRectVertex4 Vertex4 __thiscall getTimelineRectVertex4(Player * this, Rect param_1, Size param_2)
+FN 0055d450 getTimelineRectCenterVertex4 Vertex4 __thiscall getTimelineRectCenterVertex4(Player * this, Rect param_1, Size param_2, Vec2 param_3)
+FN 0055d7a0 getTimelineCountMax int __thiscall getTimelineCountMax(Player * this, EnumTimelineType param_1)
+FN 0055d840 getAnimeTimelineList __Array * __thiscall getAnimeTimelineList(Player * this, EnumTimelineType param_1)
+FN 0055d8a0 getTimelineVertList vector<agtk::Vertex4,std::allocator<agtk::Vertex4>_> * __thiscall getTimelineVertList(Player * this, EnumTimelineType param_1)
+FN 0055d900 getTimelineRectList Rect * __thiscall getTimelineRectList(Player * this, EnumTimelineType param_1)
+FN 0055d960 visit void __thiscall visit(Player * this, Renderer * param_1, Mat4 * param_2, uint param_3)
+FN 0055dda0 setResourceSetId void __thiscall setResourceSetId(Player * this, int param_1)
+FN 0055e920 BasePlayer undefined __thiscall BasePlayer(BasePlayer * this)
+FN 0055ebb0 ~BasePlayer void __thiscall ~BasePlayer(BasePlayer * this)
+FN 0055ed60 setFixedFrameNo void __thiscall setFixedFrameNo(BasePlayer * this, int param_1, bool param_2)
+FN 0055ee00 getFixedFrameNo int __thiscall getFixedFrameNo(BasePlayer * this)
+FN 0055ee20 setFixedFrame void __thiscall setFixedFrame(BasePlayer * this, int param_1, bool param_2)
+FN 0055eef0 getFixedFrame int __thiscall getFixedFrame(BasePlayer * this)
+FN 0055ef10 setOffset void __thiscall setOffset(BasePlayer * this, Vec2 * param_1)
+FN 0055ef40 setOffset void __thiscall setOffset(BasePlayer * this, float param_1, float param_2)
+FN 0055f000 getOffset Vec2 * __thiscall getOffset(BasePlayer * this)
+FN 0055f010 setOrigin void __thiscall setOrigin(BasePlayer * this, Vec2 * param_1)
+FN 0055f040 setOrigin void __thiscall setOrigin(BasePlayer * this, float param_1, float param_2)
+FN 0055f100 getCenter Vec2 * __thiscall getCenter(BasePlayer * this)
+FN 0055f110 setCenter void __thiscall setCenter(BasePlayer * this, Vec2 * param_1)
+FN 0055f140 setCenter void __thiscall setCenter(BasePlayer * this, float param_1, float param_2)
+FN 0055f200 getOrigin Vec2 * __thiscall getOrigin(BasePlayer * this)
+FN 0055f210 setInnerScale void __thiscall setInnerScale(BasePlayer * this, Vec2 * param_1)
+FN 0055f240 setInnerScale void __thiscall setInnerScale(BasePlayer * this, float param_1, float param_2)
+FN 0055f2e0 getInnerScale Vec2 * __thiscall getInnerScale(BasePlayer * this)
+FN 0055f2f0 setInnerRotation void __thiscall setInnerRotation(BasePlayer * this, float param_1)
+FN 0055f330 getRealPosition Vec2 __thiscall getRealPosition(BasePlayer * this)
+FN 0055f390 updateRealPosition void __thiscall updateRealPosition(BasePlayer * this)
+FN 0055f410 getRealScale Vec2 __thiscall getRealScale(BasePlayer * this)
+FN 0055f450 updateRealScale void __thiscall updateRealScale(BasePlayer * this)
+FN 0055f4d0 getRealRotation float __thiscall getRealRotation(BasePlayer * this)
+FN 0055f4e0 updateRealRotation void __thiscall updateRealRotation(BasePlayer * this)
+FN 0055f520 isNowPlaying bool __thiscall isNowPlaying(BasePlayer * this, int param_1, int param_2)
+FN 0055f580 setAnimationData void __thiscall setAnimationData(BasePlayer * this, AnimationData * param_1)
+FN 00561170 setPosition void __thiscall setPosition(ImagePlayer * this, Vec2 * param_1)
+FN 005611a0 setPosition void __thiscall setPosition(ImagePlayer * this, float param_1, float param_2)
+FN 00561250 getPosition Vec2 * __thiscall getPosition(ImagePlayer * this)
+FN 00561260 getPosition void __thiscall getPosition(ImagePlayer * this, float * param_1, float * param_2)
+FN 00561280 setScale void __thiscall setScale(ImagePlayer * this, Vec2 * param_1)
+FN 005612b0 setScale void __thiscall setScale(ImagePlayer * this, float param_1, float param_2)
+FN 00561360 getScaleX float __thiscall getScaleX(ImagePlayer * this)
+FN 00561370 getScaleY float __thiscall getScaleY(ImagePlayer * this)
+FN 00561380 setRotation void __thiscall setRotation(ImagePlayer * this, float param_1)
+FN 005613d0 getRotation float __thiscall getRotation(ImagePlayer * this)
+FN 00561d70 ImagePlayer undefined __thiscall ImagePlayer(ImagePlayer * this)
+FN 00561e10 ~ImagePlayer void __thiscall ~ImagePlayer(ImagePlayer * this)
+FN 00561e40 setCreateWithAnimationData void __cdecl setCreateWithAnimationData(_func_ImagePlayer_ptr_AnimationData_ptr_ResourceInfoData_ptr_int * param_1)
+FN 00561e50 _createWithAnimationData ImagePlayer * __cdecl _createWithAnimationData(AnimationData * param_1, ResourceInfoData * param_2, int param_3)
+FN 00561f00 initWithAnimationData bool __thiscall initWithAnimationData(ImagePlayer * this, AnimationData * param_1, ResourceInfoData * param_2, int param_3)
+FN 00562040 update void __thiscall update(ImagePlayer * this, float param_1)
+FN 00562070 play void __thiscall play(ImagePlayer * this, int param_1, int param_2, float param_3, bool param_4, bool param_5)
+FN 00562330 setResourceSetId void __thiscall setResourceSetId(ImagePlayer * this, int param_1)
+FN 005703e0 createObjectCommandRenderTexture void __thiscall createObjectCommandRenderTexture(SceneBackground * this)
+FN 00572dd0 createObjectCommandRenderTexture void __thiscall createObjectCommandRenderTexture(SceneTopMost * this)
+FN 00572f90 createObjectCommandWithMenuRenderTexture void __thiscall createObjectCommandWithMenuRenderTexture(SceneTopMost * this)
+FN 00588e70 getObjectPlayer Object * __thiscall getObjectPlayer(Scene * this)
+FN 0058d500 getObjectInstance Object * __thiscall getObjectInstance(Scene * this, int param_1, int param_2, EnumType param_3)
+FN 0058d660 getObjectInstanceByName Object * __thiscall getObjectInstanceByName(Scene * this, int param_1, char * param_2)
+FN 0058e4d0 getObjectInstanceId int __thiscall getObjectInstanceId(Scene * this, int param_1, bool param_2)
+FN 0058e550 getObjectInstanceId int __thiscall getObjectInstanceId(Scene * this, Object * param_1)
+FN 0058e5a0 getObjectInstanceId int __thiscall getObjectInstanceId(Scene * this, bool param_1)
+FN 0058e5c0 forceUpdateObjectInstanceId void __thiscall forceUpdateObjectInstanceId(Scene * this, int param_1, bool param_2)
+FN 0058e5f0 getObjectInstanceCount int __thiscall getObjectInstanceCount(Scene * this, int param_1)
+FN 0058e620 setObjectInstanceCount int __thiscall setObjectInstanceCount(Scene * this, int param_1, int param_2)
+FN 0058e670 incrementObjectInstanceCount int __thiscall incrementObjectInstanceCount(Scene * this, int param_1)
+FN 0058e6d0 decrementObjectInstanceCount int __thiscall decrementObjectInstanceCount(Scene * this, int param_1)
+FN 0058e770 updateObjectInstanceCount void __thiscall updateObjectInstanceCount(Scene * this, int param_1)
+FN 005b0fd0 getInstance AudioManager * __cdecl getInstance(void)
+FN 005b5bb0 getInstance BulletManager * __cdecl getInstance(void)
+FN 005c2960 getInstance EffectManager * __cdecl getInstance(void)
+FN 005c36d0 getInstance FontManager * __cdecl getInstance(void)
+FN 005c4da0 getInstance GameManager * __cdecl getInstance(void)
+FN 005cb4b0 copyData void __thiscall copyData(GameManager * this)
+FN 005cc360 checkRequestCopy void __thiscall checkRequestCopy(GameManager * this)
+FN 005d8af0 getTargetObjectByInstanceId Object * __thiscall getTargetObjectByInstanceId(GameManager * this, int param_1)
+FN 005e2b70 getInstance GuiManager * __cdecl getInstance(void)
+FN 005e42d0 getInstance ImageManager * __cdecl getInstance(void)
+FN 005ec650 getInstance InputManager * __cdecl getInstance(void)
+FN 005f3ef0 getInstance MovieManager * __cdecl getInstance(void)
+FN 005f49a0 getInstance ParticleManager * __cdecl getInstance(void)
+FN 005f6720 getInstance PrimitiveManager * __cdecl getInstance(void)
+FN 005f9410 clone Clonable * __thiscall clone(__Bool * this)
+FN 005f9430 clone Clonable * __thiscall clone(__Integer * this)
+FN 005f9450 clone Clonable * __thiscall clone(__Float * this)
+FN 005f9470 clone Clonable * __thiscall clone(__Double * this)
+FN 005f9834 clone ActionInterval * __thiscall clone(ActionInterval * this)
+FN 0060f600 clone Action * __thiscall clone(BezierBy * this)
+FN 0060f610 clone Clonable * __thiscall clone(BezierBy * this)
+FN 0060f630 clone Action * __thiscall clone(BezierTo * this)
+FN 0060f640 clone Clonable * __thiscall clone(BezierTo * this)
+FN 0060f660 clone Action * __thiscall clone(CallFuncN * this)
+FN 0060f670 clone Clonable * __thiscall clone(CallFuncN * this)
+FN 0060f690 clone Clonable * __thiscall clone(CardinalSplineBy * this)
+FN 0060f6b0 clone Action * __thiscall clone(CardinalSplineBy * this)
+FN 0060f6c0 clone Action * __thiscall clone(CardinalSplineTo * this)
+FN 0060f6d0 clone Clonable * __thiscall clone(CardinalSplineTo * this)
+FN 0060f6f0 clone Action * __thiscall clone(CatmullRomBy * this)
+FN 0060f700 clone Clonable * __thiscall clone(CatmullRomBy * this)
+FN 0060f720 clone Action * __thiscall clone(CatmullRomTo * this)
+FN 0060f730 clone Clonable * __thiscall clone(CatmullRomTo * this)
+FN 0060f750 clone Action * __thiscall clone(EaseBackIn * this)
+FN 0060f760 clone Clonable * __thiscall clone(EaseBackIn * this)
+FN 0060f780 clone Clonable * __thiscall clone(EaseBackInOut * this)
+FN 0060f7a0 clone Action * __thiscall clone(EaseBackInOut * this)
+FN 0060f7b0 clone Action * __thiscall clone(EaseBackOut * this)
+FN 0060f7c0 clone Clonable * __thiscall clone(EaseBackOut * this)
+FN 0060f7e0 clone Action * __thiscall clone(EaseBezierAction * this)
+FN 0060f7f0 clone Clonable * __thiscall clone(EaseBezierAction * this)
+FN 0060f810 clone Action * __thiscall clone(EaseBounceIn * this)
+FN 0060f820 clone Clonable * __thiscall clone(EaseBounceIn * this)
+FN 0060f840 clone Clonable * __thiscall clone(EaseBounceInOut * this)
+FN 0060f860 clone Action * __thiscall clone(EaseBounceInOut * this)
+FN 0060f870 clone Clonable * __thiscall clone(EaseBounceOut * this)
+FN 0060f890 clone Action * __thiscall clone(EaseBounceOut * this)
+FN 0060f8a0 clone Action * __thiscall clone(EaseCircleActionIn * this)
+FN 0060f8b0 clone Clonable * __thiscall clone(EaseCircleActionIn * this)
+FN 0060f8d0 clone Action * __thiscall clone(EaseCircleActionInOut * this)
+FN 0060f8e0 clone Clonable * __thiscall clone(EaseCircleActionInOut * this)
+FN 0060f900 clone Action * __thiscall clone(EaseCircleActionOut * this)
+FN 0060f910 clone Clonable * __thiscall clone(EaseCircleActionOut * this)
+FN 0060f930 clone Action * __thiscall clone(EaseCubicActionIn * this)
+FN 0060f940 clone Clonable * __thiscall clone(EaseCubicActionIn * this)
+FN 0060f960 clone Clonable * __thiscall clone(EaseCubicActionInOut * this)
+FN 0060f980 clone Action * __thiscall clone(EaseCubicActionInOut * this)
+FN 0060f990 clone Clonable * __thiscall clone(EaseCubicActionOut * this)
+FN 0060f9b0 clone Action * __thiscall clone(EaseCubicActionOut * this)
+FN 0060f9c0 clone Clonable * __thiscall clone(EaseElasticIn * this)
+FN 0060f9e0 clone Action * __thiscall clone(EaseElasticIn * this)
+FN 0060f9f0 clone Action * __thiscall clone(EaseElasticInOut * this)
+FN 0060fa00 clone Clonable * __thiscall clone(EaseElasticInOut * this)
+FN 0060fa20 clone Action * __thiscall clone(EaseElasticOut * this)
+FN 0060fa30 clone Clonable * __thiscall clone(EaseElasticOut * this)
+FN 0060fa50 clone Clonable * __thiscall clone(EaseExponentialIn * this)
+FN 0060fa70 clone Action * __thiscall clone(EaseExponentialIn * this)
+FN 0060fa80 clone Action * __thiscall clone(EaseExponentialInOut * this)
+FN 0060fa90 clone Clonable * __thiscall clone(EaseExponentialInOut * this)
+FN 0060fab0 clone Action * __thiscall clone(EaseExponentialOut * this)
+FN 0060fac0 clone Clonable * __thiscall clone(EaseExponentialOut * this)
+FN 0060fae0 clone Action * __thiscall clone(EaseIn * this)
+FN 0060faf0 clone Clonable * __thiscall clone(EaseIn * this)
+FN 0060fb10 clone Clonable * __thiscall clone(EaseInOut * this)
+FN 0060fb30 clone Action * __thiscall clone(EaseInOut * this)
+FN 0060fb40 clone Action * __thiscall clone(EaseOut * this)
+FN 0060fb50 clone Clonable * __thiscall clone(EaseOut * this)
+FN 0060fb70 clone Action * __thiscall clone(EaseQuadraticActionIn * this)
+FN 0060fb80 clone Clonable * __thiscall clone(EaseQuadraticActionIn * this)
+FN 0060fba0 clone Clonable * __thiscall clone(EaseQuadraticActionInOut * this)
+FN 0060fbc0 clone Action * __thiscall clone(EaseQuadraticActionInOut * this)
+FN 0060fbd0 clone Action * __thiscall clone(EaseQuadraticActionOut * this)
+FN 0060fbe0 clone Clonable * __thiscall clone(EaseQuadraticActionOut * this)
+FN 0060fc00 clone Action * __thiscall clone(EaseQuarticActionIn * this)
+FN 0060fc10 clone Clonable * __thiscall clone(EaseQuarticActionIn * this)
+FN 0060fc30 clone Action * __thiscall clone(EaseQuarticActionInOut * this)
+FN 0060fc40 clone Clonable * __thiscall clone(EaseQuarticActionInOut * this)
+FN 0060fc60 clone Clonable * __thiscall clone(EaseQuarticActionOut * this)
+FN 0060fc80 clone Action * __thiscall clone(EaseQuarticActionOut * this)
+FN 0060fc90 clone Action * __thiscall clone(EaseQuinticActionIn * this)
+FN 0060fca0 clone Clonable * __thiscall clone(EaseQuinticActionIn * this)
+FN 0060fcc0 clone Action * __thiscall clone(EaseQuinticActionInOut * this)
+FN 0060fcd0 clone Clonable * __thiscall clone(EaseQuinticActionInOut * this)
+FN 0060fcf0 clone Action * __thiscall clone(EaseQuinticActionOut * this)
+FN 0060fd00 clone Clonable * __thiscall clone(EaseQuinticActionOut * this)
+FN 0060fd20 clone Clonable * __thiscall clone(EaseSineIn * this)
+FN 0060fd40 clone Action * __thiscall clone(EaseSineIn * this)
+FN 0060fd50 clone Clonable * __thiscall clone(EaseSineInOut * this)
+FN 0060fd70 clone Action * __thiscall clone(EaseSineInOut * this)
+FN 0060fd80 clone Action * __thiscall clone(EaseSineOut * this)
+FN 0060fd90 clone Clonable * __thiscall clone(EaseSineOut * this)
+FN 0060fdb0 clone Clonable * __thiscall clone(Repeat * this)
+FN 0060fdd0 clone Action * __thiscall clone(Repeat * this)
+FN 0060fde0 clone Action * __thiscall clone(RepeatForever * this)
+FN 0060fdf0 clone Clonable * __thiscall clone(RepeatForever * this)
+FN 0060fe10 clone Action * __thiscall clone(Sequence * this)
+FN 0060fe20 clone Clonable * __thiscall clone(Sequence * this)
+FN 0060fe40 clone Action * __thiscall clone(Spawn * this)
+FN 0060fe50 clone Clonable * __thiscall clone(Spawn * this)
+FN 0060fe70 clone Action * __thiscall clone(Speed * this)
+FN 0060fe80 clone Clonable * __thiscall clone(Speed * this)
+FN 00662d90 clone Action * __thiscall clone(ActionCamera * this)
+FN 00662da0 clone Clonable * __thiscall clone(ActionCamera * this)
+FN 00662dc0 clone Action * __thiscall clone(ActionFloat * this)
+FN 00662dd0 clone Clonable * __thiscall clone(ActionFloat * this)
+FN 00662df0 clone Action * __thiscall clone(Animate * this)
+FN 00662e00 clone Clonable * __thiscall clone(Animate * this)
+FN 00662e20 clone Clonable * __thiscall clone(Animation * this)
+FN 00662e40 clone Clonable * __thiscall clone(AnimationFrame * this)
+FN 00662e60 clone Action * __thiscall clone(Blink * this)
+FN 00662e70 clone Clonable * __thiscall clone(Blink * this)
+FN 00662e90 clone Action * __thiscall clone(CallFunc * this)
+FN 00662ea0 clone Clonable * __thiscall clone(CallFunc * this)
+FN 00662ec0 clone Action * __thiscall clone(DelayTime * this)
+FN 00662ed0 clone Clonable * __thiscall clone(DelayTime * this)
+FN 00662ef0 clone Action * __thiscall clone(FadeIn * this)
+FN 00662f00 clone Clonable * __thiscall clone(FadeIn * this)
+FN 00662f20 clone Action * __thiscall clone(FadeOut * this)
+FN 00662f30 clone Clonable * __thiscall clone(FadeOut * this)
+FN 00662f50 clone Clonable * __thiscall clone(FadeOutBLTiles * this)
+FN 00662f70 clone Action * __thiscall clone(FadeOutBLTiles * this)
+FN 00662f80 clone Clonable * __thiscall clone(FadeOutDownTiles * this)
+FN 00662fa0 clone Action * __thiscall clone(FadeOutDownTiles * this)
+FN 00662fb0 clone Clonable * __thiscall clone(FadeOutTRTiles * this)
+FN 00662fd0 clone Action * __thiscall clone(FadeOutTRTiles * this)
+FN 00662fe0 clone Action * __thiscall clone(FadeOutUpTiles * this)
+FN 00662ff0 clone Clonable * __thiscall clone(FadeOutUpTiles * this)
+FN 00663010 clone Action * __thiscall clone(FadeTo * this)
+FN 00663020 clone Clonable * __thiscall clone(FadeTo * this)
+FN 00663040 clone Clonable * __thiscall clone(FlipX3D * this)
+FN 00663060 clone Action * __thiscall clone(FlipX3D * this)
+FN 00663070 clone Clonable * __thiscall clone(FlipX * this)
+FN 00663090 clone Action * __thiscall clone(FlipX * this)
+FN 006630a0 clone Clonable * __thiscall clone(FlipY3D * this)
+FN 006630c0 clone Action * __thiscall clone(FlipY3D * this)
+FN 006630d0 clone Clonable * __thiscall clone(FlipY * this)
+FN 006630f0 clone Action * __thiscall clone(FlipY * this)
+FN 00663100 clone Action * __thiscall clone(Follow * this)
+FN 00663110 clone Clonable * __thiscall clone(Follow * this)
+FN 00663130 clone Clonable * __thiscall clone(Hide * this)
+FN 00663150 clone Action * __thiscall clone(Hide * this)
+FN 00663160 clone Clonable * __thiscall clone(JumpBy * this)
+FN 00663180 clone Action * __thiscall clone(JumpBy * this)
+FN 00663190 clone Clonable * __thiscall clone(JumpTiles3D * this)
+FN 006631b0 clone Action * __thiscall clone(JumpTiles3D * this)
+FN 006631c0 clone Action * __thiscall clone(JumpTo * this)
+FN 006631d0 clone Clonable * __thiscall clone(JumpTo * this)
+FN 006631f0 clone Action * __thiscall clone(Lens3D * this)
+FN 00663200 clone Clonable * __thiscall clone(Lens3D * this)
+FN 00663220 clone Action * __thiscall clone(Liquid * this)
+FN 00663230 clone Clonable * __thiscall clone(Liquid * this)
+FN 00663250 clone Action * __thiscall clone(MoveBy * this)
+FN 00663260 clone Clonable * __thiscall clone(MoveBy * this)
+FN 00663280 clone Clonable * __thiscall clone(MoveTo * this)
+FN 006632a0 clone Action * __thiscall clone(MoveTo * this)
+FN 006632b0 clone Action * __thiscall clone(OrbitCamera * this)
+FN 006632c0 clone Clonable * __thiscall clone(OrbitCamera * this)
+FN 006632e0 clone Clonable * __thiscall clone(Place * this)
+FN 00663300 clone Action * __thiscall clone(Place * this)
+FN 00663310 clone Action * __thiscall clone(ProgressFromTo * this)
+FN 00663320 clone Clonable * __thiscall clone(ProgressFromTo * this)
+FN 00663340 clone Clonable * __thiscall clone(ProgressTo * this)
+FN 00663360 clone Action * __thiscall clone(ProgressTo * this)
+FN 00663370 clone Action * __thiscall clone(RemoveSelf * this)
+FN 00663380 clone Clonable * __thiscall clone(RemoveSelf * this)
+FN 006633a0 clone Action * __thiscall clone(ReuseGrid * this)
+FN 006633b0 clone Clonable * __thiscall clone(ReuseGrid * this)
+FN 006633d0 clone Action * __thiscall clone(ReverseTime * this)
+FN 006633e0 clone Clonable * __thiscall clone(ReverseTime * this)
+FN 00663400 clone Clonable * __thiscall clone(Ripple3D * this)
+FN 00663420 clone Action * __thiscall clone(Ripple3D * this)
+FN 00663430 clone Clonable * __thiscall clone(RotateBy * this)
+FN 00663450 clone Action * __thiscall clone(RotateBy * this)
+FN 00663460 clone Action * __thiscall clone(RotateTo * this)
+FN 00663470 clone Clonable * __thiscall clone(RotateTo * this)
+FN 00663490 clone Action * __thiscall clone(ScaleBy * this)
+FN 006634a0 clone Clonable * __thiscall clone(ScaleBy * this)
+FN 006634c0 clone Action * __thiscall clone(ScaleTo * this)
+FN 006634d0 clone Clonable * __thiscall clone(ScaleTo * this)
+FN 006634f0 clone Clonable * __thiscall clone(Shaky3D * this)
+FN 00663510 clone Action * __thiscall clone(Shaky3D * this)
+FN 00663520 clone Clonable * __thiscall clone(ShakyTiles3D * this)
+FN 00663540 clone Action * __thiscall clone(ShakyTiles3D * this)
+FN 00663550 clone Clonable * __thiscall clone(ShatteredTiles3D * this)
+FN 00663570 clone Action * __thiscall clone(ShatteredTiles3D * this)
+FN 00663580 clone Action * __thiscall clone(Show * this)
+FN 00663590 clone Clonable * __thiscall clone(Show * this)
+FN 006635b0 clone Clonable * __thiscall clone(ShuffleTiles * this)
+FN 006635d0 clone Action * __thiscall clone(ShuffleTiles * this)
+FN 006635e0 clone Action * __thiscall clone(SkewBy * this)
+FN 006635f0 clone Clonable * __thiscall clone(SkewBy * this)
+FN 00663610 clone Action * __thiscall clone(SkewTo * this)
+FN 00663620 clone Clonable * __thiscall clone(SkewTo * this)
+FN 00663640 clone Action * __thiscall clone(SplitCols * this)
+FN 00663650 clone Clonable * __thiscall clone(SplitCols * this)
+FN 00663670 clone Clonable * __thiscall clone(SplitRows * this)
+FN 00663690 clone Action * __thiscall clone(SplitRows * this)
+FN 006636a0 clone Clonable * __thiscall clone(SpriteFrame * this)
+FN 006636c0 clone Action * __thiscall clone(StopGrid * this)
+FN 006636d0 clone Clonable * __thiscall clone(StopGrid * this)
+FN 006636f0 clone Clonable * __thiscall clone(TargetedAction * this)
+FN 00663710 clone Action * __thiscall clone(TargetedAction * this)
+FN 00663720 clone Action * __thiscall clone(TintBy * this)
+FN 00663730 clone Clonable * __thiscall clone(TintBy * this)
+FN 00663750 clone Action * __thiscall clone(TintTo * this)
+FN 00663760 clone Clonable * __thiscall clone(TintTo * this)
+FN 00663780 clone Clonable * __thiscall clone(ToggleVisibility * this)
+FN 006637a0 clone Action * __thiscall clone(ToggleVisibility * this)
+FN 006637b0 clone Clonable * __thiscall clone(TurnOffTiles * this)
+FN 006637d0 clone Action * __thiscall clone(TurnOffTiles * this)
+FN 006637e0 clone Action * __thiscall clone(Twirl * this)
+FN 006637f0 clone Clonable * __thiscall clone(Twirl * this)
+FN 00663810 clone Clonable * __thiscall clone(Waves3D * this)
+FN 00663830 clone Action * __thiscall clone(Waves3D * this)
+FN 00663840 clone Clonable * __thiscall clone(Waves * this)
+FN 00663860 clone Action * __thiscall clone(Waves * this)
+FN 00663870 clone Clonable * __thiscall clone(WavesTiles3D * this)
+FN 00663890 clone Action * __thiscall clone(WavesTiles3D * this)
+FN 007c0a50 clone Action * __thiscall clone(ActionTimeline * this)
+FN 007c0a60 clone Clonable * __thiscall clone(ActionTimeline * this)
+FN 0080fed0 clone Action * __thiscall clone(Animate3D * this)
+FN 0080fee0 clone Clonable * __thiscall clone(Animate3D * this)
+FN 00894fdc clone Speed * __thiscall clone(Speed * this)
+FN 00894fe2 clone Sequence * __thiscall clone(Sequence * this)
+FN 00894fe8 clone Repeat * __thiscall clone(Repeat * this)
+FN 00894fee clone RepeatForever * __thiscall clone(RepeatForever * this)
+FN 00894ff4 clone Spawn * __thiscall clone(Spawn * this)
+FN 00894ffa clone BezierBy * __thiscall clone(BezierBy * this)
+FN 00895000 clone BezierTo * __thiscall clone(BezierTo * this)
+FN 00895006 clone CardinalSplineTo * __thiscall clone(CardinalSplineTo * this)
+FN 0089500c clone CardinalSplineBy * __thiscall clone(CardinalSplineBy * this)
+FN 00895012 clone CatmullRomTo * __thiscall clone(CatmullRomTo * this)
+FN 00895018 clone CatmullRomBy * __thiscall clone(CatmullRomBy * this)
+FN 0089501e clone EaseExponentialIn * __thiscall clone(EaseExponentialIn * this)
+FN 00895024 clone EaseExponentialOut * __thiscall clone(EaseExponentialOut * this)
+FN 0089502a clone EaseExponentialInOut * __thiscall clone(EaseExponentialInOut * this)
+FN 00895030 clone EaseSineIn * __thiscall clone(EaseSineIn * this)
+FN 00895036 clone EaseSineOut * __thiscall clone(EaseSineOut * this)
+FN 0089503c clone EaseSineInOut * __thiscall clone(EaseSineInOut * this)
+FN 00895042 clone EaseBounceIn * __thiscall clone(EaseBounceIn * this)
+FN 00895048 clone EaseBounceOut * __thiscall clone(EaseBounceOut * this)
+FN 0089504e clone EaseBounceInOut * __thiscall clone(EaseBounceInOut * this)
+FN 00895054 clone EaseBackIn * __thiscall clone(EaseBackIn * this)
+FN 0089505a clone EaseBackOut * __thiscall clone(EaseBackOut * this)
+FN 00895060 clone EaseBackInOut * __thiscall clone(EaseBackInOut * this)
+FN 00895066 clone EaseQuadraticActionIn * __thiscall clone(EaseQuadraticActionIn * this)
+FN 0089506c clone EaseQuadraticActionOut * __thiscall clone(EaseQuadraticActionOut * this)
+FN 00895072 clone EaseQuadraticActionInOut * __thiscall clone(EaseQuadraticActionInOut * this)
+FN 00895078 clone EaseQuarticActionIn * __thiscall clone(EaseQuarticActionIn * this)
+FN 0089507e clone EaseQuarticActionOut * __thiscall clone(EaseQuarticActionOut * this)
+FN 00895084 clone EaseQuarticActionInOut * __thiscall clone(EaseQuarticActionInOut * this)
+FN 0089508a clone EaseQuinticActionIn * __thiscall clone(EaseQuinticActionIn * this)
+FN 00895090 clone EaseQuinticActionOut * __thiscall clone(EaseQuinticActionOut * this)
+FN 00895096 clone EaseQuinticActionInOut * __thiscall clone(EaseQuinticActionInOut * this)
+FN 0089509c clone EaseCircleActionIn * __thiscall clone(EaseCircleActionIn * this)
+FN 008950a2 clone EaseCircleActionOut * __thiscall clone(EaseCircleActionOut * this)
+FN 008950a8 clone EaseCircleActionInOut * __thiscall clone(EaseCircleActionInOut * this)
+FN 008950ae clone EaseCubicActionIn * __thiscall clone(EaseCubicActionIn * this)
+FN 008950b4 clone EaseCubicActionOut * __thiscall clone(EaseCubicActionOut * this)
+FN 008950ba clone EaseCubicActionInOut * __thiscall clone(EaseCubicActionInOut * this)
+FN 008950c0 clone EaseIn * __thiscall clone(EaseIn * this)
+FN 008950c6 clone EaseOut * __thiscall clone(EaseOut * this)
+FN 008950cc clone EaseInOut * __thiscall clone(EaseInOut * this)
+FN 008950d2 clone EaseElasticIn * __thiscall clone(EaseElasticIn * this)
+FN 008950d8 clone EaseElasticOut * __thiscall clone(EaseElasticOut * this)
+FN 008950de clone EaseElasticInOut * __thiscall clone(EaseElasticInOut * this)
+FN 008950e4 clone EaseBezierAction * __thiscall clone(EaseBezierAction * this)
+FN 008950ea clone CallFuncN * __thiscall clone(CallFuncN * this)
+FN 00895138 enableShadow void __thiscall enableShadow(Label * this, Color4B * param_1, Size * param_2, int param_3)
+FN 00895582 clone Follow * __thiscall clone(Follow * this)
+FN 00895588 clone SpriteFrame * __thiscall clone(SpriteFrame * this)
+FN 0089558e clone AnimationFrame * __thiscall clone(AnimationFrame * this)
+FN 00895594 clone Animation * __thiscall clone(Animation * this)
+FN 0089559a clone RotateTo * __thiscall clone(RotateTo * this)
+FN 008955a0 clone RotateBy * __thiscall clone(RotateBy * this)
+FN 008955a6 clone MoveBy * __thiscall clone(MoveBy * this)
+FN 008955ac clone MoveTo * __thiscall clone(MoveTo * this)
+FN 008955b2 clone SkewTo * __thiscall clone(SkewTo * this)
+FN 008955b8 clone SkewBy * __thiscall clone(SkewBy * this)
+FN 008955be clone JumpBy * __thiscall clone(JumpBy * this)
+FN 008955c4 clone JumpTo * __thiscall clone(JumpTo * this)
+FN 008955ca clone ScaleTo * __thiscall clone(ScaleTo * this)
+FN 008955d0 clone ScaleBy * __thiscall clone(ScaleBy * this)
+FN 008955d6 clone Blink * __thiscall clone(Blink * this)
+FN 008955dc clone FadeTo * __thiscall clone(FadeTo * this)
+FN 008955e2 clone FadeIn * __thiscall clone(FadeIn * this)
+FN 008955e8 clone FadeOut * __thiscall clone(FadeOut * this)
+FN 008955ee clone TintTo * __thiscall clone(TintTo * this)
+FN 008955f4 clone TintBy * __thiscall clone(TintBy * this)
+FN 008955fa clone DelayTime * __thiscall clone(DelayTime * this)
+FN 00895600 clone ReverseTime * __thiscall clone(ReverseTime * this)
+FN 00895606 clone Animate * __thiscall clone(Animate * this)
+FN 0089560c clone TargetedAction * __thiscall clone(TargetedAction * this)
+FN 00895612 clone ActionFloat * __thiscall clone(ActionFloat * this)
+FN 00895618 clone ActionCamera * __thiscall clone(ActionCamera * this)
+FN 0089561e clone OrbitCamera * __thiscall clone(OrbitCamera * this)
+FN 00895624 clone Show * __thiscall clone(Show * this)
+FN 0089562a clone Hide * __thiscall clone(Hide * this)
+FN 00895630 clone ToggleVisibility * __thiscall clone(ToggleVisibility * this)
+FN 00895636 clone RemoveSelf * __thiscall clone(RemoveSelf * this)
+FN 0089563c clone FlipX * __thiscall clone(FlipX * this)
+FN 00895642 clone FlipY * __thiscall clone(FlipY * this)
+FN 00895648 clone Place * __thiscall clone(Place * this)
+FN 0089564e clone CallFunc * __thiscall clone(CallFunc * this)
+FN 00895654 clone StopGrid * __thiscall clone(StopGrid * this)
+FN 0089565a clone ReuseGrid * __thiscall clone(ReuseGrid * this)
+FN 00895660 clone Waves3D * __thiscall clone(Waves3D * this)
+FN 00895666 clone FlipX3D * __thiscall clone(FlipX3D * this)
+FN 0089566c clone FlipY3D * __thiscall clone(FlipY3D * this)
+FN 00895672 clone Lens3D * __thiscall clone(Lens3D * this)
+FN 00895678 clone Ripple3D * __thiscall clone(Ripple3D * this)
+FN 0089567e clone Shaky3D * __thiscall clone(Shaky3D * this)
+FN 00895684 clone Liquid * __thiscall clone(Liquid * this)
+FN 0089568a clone Waves * __thiscall clone(Waves * this)
+FN 00895690 clone Twirl * __thiscall clone(Twirl * this)
+FN 00895696 clone ProgressTo * __thiscall clone(ProgressTo * this)
+FN 0089569c clone ProgressFromTo * __thiscall clone(ProgressFromTo * this)
+FN 008956a2 clone ShakyTiles3D * __thiscall clone(ShakyTiles3D * this)
+FN 008956a8 clone ShatteredTiles3D * __thiscall clone(ShatteredTiles3D * this)
+FN 008956ae clone ShuffleTiles * __thiscall clone(ShuffleTiles * this)
+FN 008956b4 clone FadeOutTRTiles * __thiscall clone(FadeOutTRTiles * this)
+FN 008956ba clone FadeOutBLTiles * __thiscall clone(FadeOutBLTiles * this)
+FN 008956c0 clone FadeOutUpTiles * __thiscall clone(FadeOutUpTiles * this)
+FN 008956c6 clone FadeOutDownTiles * __thiscall clone(FadeOutDownTiles * this)
+FN 008956cc clone TurnOffTiles * __thiscall clone(TurnOffTiles * this)
+FN 008956d2 clone WavesTiles3D * __thiscall clone(WavesTiles3D * this)
+FN 008956d8 clone JumpTiles3D * __thiscall clone(JumpTiles3D * this)
+FN 008956de clone SplitRows * __thiscall clone(SplitRows * this)
+FN 008956e4 clone SplitCols * __thiscall clone(SplitCols * this)
+FN 00895846 clone EventListenerAcceleration * __thiscall clone(EventListenerAcceleration * this)
+FN 0089584c clone EventListenerCustom * __thiscall clone(EventListenerCustom * this)
+FN 00895852 clone EventListenerFocus * __thiscall clone(EventListenerFocus * this)
+FN 00895858 clone EventListenerKeyboard * __thiscall clone(EventListenerKeyboard * this)
+FN 0089585e clone EventListenerMouse * __thiscall clone(EventListenerMouse * this)
+FN 00895864 clone EventListenerTouchAllAtOnce * __thiscall clone(EventListenerTouchAllAtOnce * this)
+FN 0089586a clone EventListenerTouchOneByOne * __thiscall clone(EventListenerTouchOneByOne * this)
+FN 008963dc copyClonedWidgetChildren void __thiscall copyClonedWidgetChildren(Layout * this, Widget * param_1)
+FN 008963e2 copyClonedWidgetChildren void __thiscall copyClonedWidgetChildren(ListView * this, Widget * param_1)
+FN 008963e8 copyClonedWidgetChildren void __thiscall copyClonedWidgetChildren(ScrollView * this, Widget * param_1)
+FN 008963ee copyClonedWidgetChildren void __thiscall copyClonedWidgetChildren(Widget * this, Widget * param_1)
+FN 008963f4 copyProperties void __thiscall copyProperties(LayoutParameter * this, LayoutParameter * param_1)
+FN 008963fa copyProperties void __thiscall copyProperties(LinearLayoutParameter * this, LayoutParameter * param_1)
+FN 00896400 copyProperties void __thiscall copyProperties(RelativeLayoutParameter * this, LayoutParameter * param_1)
+FN 00896406 copySpecialProperties void __thiscall copySpecialProperties(Button * this, Widget * param_1)
+FN 0089640c copySpecialProperties void __thiscall copySpecialProperties(CheckBox * this, Widget * param_1)
+FN 00896412 copySpecialProperties void __thiscall copySpecialProperties(ImageView * this, Widget * param_1)
+FN 00896418 copySpecialProperties void __thiscall copySpecialProperties(Layout * this, Widget * param_1)
+FN 0089641e copySpecialProperties void __thiscall copySpecialProperties(ListView * this, Widget * param_1)
+FN 00896424 copySpecialProperties void __thiscall copySpecialProperties(LoadingBar * this, Widget * param_1)
+FN 0089642a copySpecialProperties void __thiscall copySpecialProperties(PageView * this, Widget * param_1)
+FN 00896430 copySpecialProperties void __thiscall copySpecialProperties(RadioButton * this, Widget * param_1)
+FN 00896436 copySpecialProperties void __thiscall copySpecialProperties(RadioButtonGroup * this, Widget * param_1)
+FN 0089643c copySpecialProperties void __thiscall copySpecialProperties(ScrollView * this, Widget * param_1)
+FN 00896442 copySpecialProperties void __thiscall copySpecialProperties(Slider * this, Widget * param_1)
+FN 00896448 copySpecialProperties void __thiscall copySpecialProperties(Text * this, Widget * param_1)
+FN 0089644e copySpecialProperties void __thiscall copySpecialProperties(TextAtlas * this, Widget * param_1)
+FN 00896454 copySpecialProperties void __thiscall copySpecialProperties(TextBMFont * this, Widget * param_1)
+FN 0089645a copySpecialProperties void __thiscall copySpecialProperties(TextField * this, Widget * param_1)
+FN 00896460 copySpecialProperties void __thiscall copySpecialProperties(Widget * this, Widget * param_1)
+FN 00896466 createCloneInstance Widget * __thiscall createCloneInstance(Button * this)
+FN 0089646c createCloneInstance Widget * __thiscall createCloneInstance(CheckBox * this)
+FN 00896472 createCloneInstance Widget * __thiscall createCloneInstance(ImageView * this)
+FN 00896478 createCloneInstance Widget * __thiscall createCloneInstance(Layout * this)
+FN 0089647e createCloneInstance LayoutParameter * __thiscall createCloneInstance(LayoutParameter * this)
+FN 00896484 createCloneInstance LayoutParameter * __thiscall createCloneInstance(LinearLayoutParameter * this)
+FN 0089648a createCloneInstance Widget * __thiscall createCloneInstance(ListView * this)
+FN 00896490 createCloneInstance Widget * __thiscall createCloneInstance(LoadingBar * this)
+FN 00896496 createCloneInstance Widget * __thiscall createCloneInstance(PageView * this)
+FN 0089649c createCloneInstance Widget * __thiscall createCloneInstance(RadioButton * this)
+FN 008964a2 createCloneInstance Widget * __thiscall createCloneInstance(RadioButtonGroup * this)
+FN 008964a8 createCloneInstance LayoutParameter * __thiscall createCloneInstance(RelativeLayoutParameter * this)
+FN 008964ae createCloneInstance Widget * __thiscall createCloneInstance(ScrollView * this)
+FN 008964b4 createCloneInstance Widget * __thiscall createCloneInstance(Slider * this)
+FN 008964ba createCloneInstance Widget * __thiscall createCloneInstance(Text * this)
+FN 008964c0 createCloneInstance Widget * __thiscall createCloneInstance(TextAtlas * this)
+FN 008964c6 createCloneInstance Widget * __thiscall createCloneInstance(TextBMFont * this)
+FN 008964cc createCloneInstance Widget * __thiscall createCloneInstance(TextField * this)
+FN 008964d2 createCloneInstance Widget * __thiscall createCloneInstance(Widget * this)
+FN 00896c94 clone ActionTimeline * __thiscall clone(ActionTimeline * this)
+FN 00896d4e clone Frame * __thiscall clone(AlphaFrame * this)
+FN 00896d54 clone Frame * __thiscall clone(AnchorPointFrame * this)
+FN 00896d5a clone Frame * __thiscall clone(BlendFuncFrame * this)
+FN 00896d60 clone Frame * __thiscall clone(ColorFrame * this)
+FN 00896d66 clone Frame * __thiscall clone(EventFrame * this)
+FN 00896d6c clone Frame * __thiscall clone(InnerActionFrame * this)
+FN 00896d72 clone Frame * __thiscall clone(PositionFrame * this)
+FN 00896d78 clone Frame * __thiscall clone(RotationFrame * this)
+FN 00896d7e clone Frame * __thiscall clone(RotationSkewFrame * this)
+FN 00896d84 clone Frame * __thiscall clone(ScaleFrame * this)
+FN 00896d8a clone Frame * __thiscall clone(SkewFrame * this)
+FN 00896d90 clone Frame * __thiscall clone(TextureFrame * this)
+FN 00896d96 clone Timeline * __thiscall clone(Timeline * this)
+FN 00896d9c clone Frame * __thiscall clone(VisibleFrame * this)
+FN 00896da2 clone Frame * __thiscall clone(ZOrderFrame * this)
+FN 00896da8 cloneProperty void __thiscall cloneProperty(Frame * this, Frame * param_1)
+FN 00896dba copy void __thiscall copy(BaseData * this, BaseData * param_1)
+FN 00897576 clone EventListenerAssetsManagerEx * __thiscall clone(EventListenerAssetsManagerEx * this)
+FN 00897630 getShadow Sprite * __thiscall getShadow(ControlSaturationBrightnessPicker * this)
+FN 008979d8 clone Animate3D * __thiscall clone(Animate3D * this)
+FN 00897a98 clone PUParticleSystem3D * __thiscall clone(PUParticleSystem3D * this)
+FN 00897a9e copyAttributesTo void __thiscall copyAttributesTo(PUParticleSystem3D * this, PUParticleSystem3D * param_1)
+TOTAL_FUNCTIONS 28137
+DATA 008c2af8 shadowEnabled
+  XREF 00604226 00603d00 FUN_00603d00
+  XREF 0060424d 00603d00 FUN_00603d00
+  XREF 006017a1 006015f0 FUN_006015f0
+DATA 008c2b08 shadowOffsetX
+  XREF 00604327 00603d00 FUN_00603d00
+  XREF 0060437a 00603d00 FUN_00603d00
+  XREF 006017d3 006015f0 FUN_006015f0
+DATA 008c2b18 shadowOffsetY
+  XREF 00604349 00603d00 FUN_00603d00
+  XREF 006043dc 00603d00 FUN_00603d00
+  XREF 00601803 006015f0 FUN_006015f0
+DATA 008c2b28 shadowBlur
+  XREF 0060446e 00603d00 FUN_00603d00
+  XREF 00604491 00603d00 FUN_00603d00
+  XREF 00601833 006015f0 FUN_006015f0
+DATA 008c2b34 shadowOpacity
+  XREF 006044f5 00603d00 FUN_00603d00
+  XREF 00604518 00603d00 FUN_00603d00
+  XREF 00601863 006015f0 FUN_006015f0
+DATA 008c7430 getInstance
+  XREF 00620b72 006209c0 FUN_006209c0
+DATA 008e9e74 js_cocos2dx_Director_getInstance : wrong number of arguments
+  XREF 00679c73 00679c20 FUN_00679c20
+DATA 008eac28 js_cocos2dx_AsyncTaskPool_destroyInstance : wrong number of arguments
+  XREF 0066d733 0066d710 FUN_0066d710
+DATA 008eac70 js_cocos2dx_AsyncTaskPool_getInstance : wrong number of arguments
+  XREF 0066d7cf 0066d750 FUN_0066d750
+DATA 008eacc0 destroyInstance
+DATA 008eaee0 js_cocos2dx_Action_clone
+  XREF 006679f0 00667950 FUN_00667950
+DATA 008eaefc js_cocos2dx_Action_clone : Invalid Native Object
+  XREF 00667a06 00667950 FUN_00667950
+  XREF 00667a1e 00667950 FUN_00667950
+DATA 008eaf30 js_cocos2dx_Action_clone : wrong number of arguments: %d, was expecting %d
+  XREF 006679d4 00667950 FUN_00667950
+DATA 008eb85c clone
+DATA 008ee0a0 js_cocos2dx_GLProgramState_clone
+  XREF 0069b50d 0069b470 FUN_0069b470
+DATA 008ee0c4 js_cocos2dx_GLProgramState_clone : Invalid Native Object
+  XREF 0069b523 0069b470 FUN_0069b470
+  XREF 0069b53b 0069b470 FUN_0069b470
+DATA 008ee100 js_cocos2dx_GLProgramState_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0069b4f1 0069b470 FUN_0069b470
+DATA 008efb3c js_cocos2dx_SpriteFrame_clone
+  XREF 006fd4f0 006fd450 FUN_006fd450
+DATA 008efb5c js_cocos2dx_SpriteFrame_clone : Invalid Native Object
+  XREF 006fd506 006fd450 FUN_006fd450
+  XREF 006fd51e 006fd450 FUN_006fd450
+DATA 008efb98 js_cocos2dx_SpriteFrame_clone : wrong number of arguments: %d, was expecting %d
+  XREF 006fd4d4 006fd450 FUN_006fd450
+DATA 008f0894 js_cocos2dx_AnimationFrame_clone
+  XREF 0066a120 0066a080 FUN_0066a080
+DATA 008f08b8 js_cocos2dx_AnimationFrame_clone : Invalid Native Object
+  XREF 0066a136 0066a080 FUN_0066a080
+  XREF 0066a14e 0066a080 FUN_0066a080
+DATA 008f08f8 js_cocos2dx_AnimationFrame_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0066a104 0066a080 FUN_0066a080
+DATA 008f1138 js_cocos2dx_Animation_clone
+  XREF 0066b6a0 0066b600 FUN_0066b600
+DATA 008f1154 js_cocos2dx_Animation_clone : Invalid Native Object
+  XREF 0066b6b6 0066b600 FUN_0066b600
+  XREF 0066b6ce 0066b600 FUN_0066b600
+DATA 008f1188 js_cocos2dx_Animation_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0066b684 0066b600 FUN_0066b600
+DATA 008f6dd8 js_cocos2dx_Configuration_destroyInstance : wrong number of arguments
+  XREF 00676ec3 00676ea0 FUN_00676ea0
+DATA 008f6e38 js_cocos2dx_Configuration_getInstance : wrong number of arguments
+  XREF 006771a3 00677150 FUN_00677150
+DATA 008fabfc js_cocos2dx_FileUtils_getInstance : wrong number of arguments
+  XREF 00693ac4 00693a40 FUN_00693a40
+DATA 008fb258 js_cocos2dx_EventListener_clone
+  XREF 0068e57c 0068e4e0 FUN_0068e4e0
+DATA 008fb278 js_cocos2dx_EventListener_clone : Invalid Native Object
+  XREF 0068e592 0068e4e0 FUN_0068e4e0
+  XREF 0068e5aa 0068e4e0 FUN_0068e4e0
+DATA 008fb2b0 js_cocos2dx_EventListener_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0068e560 0068e4e0 FUN_0068e4e0
+DATA 0090b948 js_cocos2dx_Label_enableShadow
+  XREF 006b0d19 006b0c60 FUN_006b0c60
+  XREF 006b0dc9 006b0c60 FUN_006b0c60
+  XREF 006b0e97 006b0c60 FUN_006b0c60
+  XREF 006b0ee3 006b0c60 FUN_006b0c60
+DATA 0090b968 js_cocos2dx_Label_enableShadow : Invalid Native Object
+  XREF 006b0ef9 006b0c60 FUN_006b0c60
+  XREF 006b0f11 006b0c60 FUN_006b0c60
+DATA 0090b9a0 js_cocos2dx_Label_enableShadow : Error processing arguments
+  XREF 006b0d2f 006b0c60 FUN_006b0c60
+  XREF 006b0d48 006b0c60 FUN_006b0c60
+  XREF 006b0de5 006b0c60 FUN_006b0c60
+DATA 0090b9e0 js_cocos2dx_Label_enableShadow : wrong number of arguments: %d, was expecting %d
+  XREF 006b0ec3 006b0c60 FUN_006b0c60
+DATA 0090c42c js_cocos2dx_Label_getShadowOffset
+  XREF 006b2237 006b21c0 FUN_006b21c0
+DATA 0090c450 js_cocos2dx_Label_getShadowOffset : Invalid Native Object
+  XREF 006b224d 006b21c0 FUN_006b21c0
+  XREF 006b2265 006b21c0 FUN_006b21c0
+DATA 0090c490 js_cocos2dx_Label_getShadowOffset : wrong number of arguments: %d, was expecting %d
+  XREF 006b2219 006b21c0 FUN_006b21c0
+DATA 0090d2b4 js_cocos2dx_Label_getShadowBlurRadius
+  XREF 006b20b4 006b2020 FUN_006b2020
+DATA 0090d2dc js_cocos2dx_Label_getShadowBlurRadius : Invalid Native Object
+  XREF 006b20ca 006b2020 FUN_006b2020
+  XREF 006b20e2 006b2020 FUN_006b2020
+DATA 0090d320 js_cocos2dx_Label_getShadowBlurRadius : wrong number of arguments: %d, was expecting %d
+  XREF 006b2096 006b2020 FUN_006b2020
+DATA 0090db7c js_cocos2dx_Label_getShadowColor
+  XREF 006b2177 006b2100 FUN_006b2100
+DATA 0090dba0 js_cocos2dx_Label_getShadowColor : Invalid Native Object
+  XREF 006b218d 006b2100 FUN_006b2100
+  XREF 006b21a5 006b2100 FUN_006b2100
+DATA 0090dbe0 js_cocos2dx_Label_getShadowColor : wrong number of arguments: %d, was expecting %d
+  XREF 006b2159 006b2100 FUN_006b2100
+DATA 0090e038 js_cocos2dx_Label_isShadowEnabled
+  XREF 006b3474 006b3410 FUN_006b3410
+DATA 0090e05c js_cocos2dx_Label_isShadowEnabled : Invalid Native Object
+  XREF 006b348a 006b3410 FUN_006b3410
+  XREF 006b34a2 006b3410 FUN_006b3410
+DATA 0090e098 js_cocos2dx_Label_isShadowEnabled : wrong number of arguments: %d, was expecting %d
+  XREF 006b3458 006b3410 FUN_006b3410
+DATA 0090ef08 enableShadow
+DATA 0090efc0 getShadowOffset
+DATA 0090f0f0 getShadowBlurRadius
+DATA 0090f1c4 getShadowColor
+DATA 0090f21c isShadowEnabled
+DATA 00910174 js_cocos2dx_LabelTTF_enableShadow
+  XREF 006ace12 006accc0 FUN_006accc0
+  XREF 006ad060 006accc0 FUN_006accc0
+  XREF 006ad0b4 006accc0 FUN_006accc0
+DATA 00910198 js_cocos2dx_LabelTTF_enableShadow : Invalid Native Object
+  XREF 006ad0ca 006accc0 FUN_006accc0
+  XREF 006ad0e2 006accc0 FUN_006accc0
+DATA 009101d4 js_cocos2dx_LabelTTF_enableShadow : Error processing arguments
+  XREF 006ace2e 006accc0 FUN_006accc0
+  XREF 006ace47 006accc0 FUN_006accc0
+DATA 00910218 js_cocos2dx_LabelTTF_enableShadow : wrong number of arguments: %d, was expecting %d
+  XREF 006ad094 006accc0 FUN_006accc0
+DATA 00911640 js_cocos2dx_LabelTTF_disableShadow
+  XREF 006acaf9 006ac9c0 FUN_006ac9c0
+DATA 00911664 js_cocos2dx_LabelTTF_disableShadow : Invalid Native Object
+  XREF 006acb0f 006ac9c0 FUN_006ac9c0
+  XREF 006acb27 006ac9c0 FUN_006ac9c0
+DATA 009116a0 js_cocos2dx_LabelTTF_disableShadow : wrong number of arguments: %d, was expecting %d
+  XREF 006acada 006ac9c0 FUN_006ac9c0
+DATA 00911978 disableShadow
+DATA 00919ae0 js_cocos2dx_ParticleData_copyParticle
+  XREF 006d3f82 006d3f00 FUN_006d3f00
+  XREF 006d4012 006d3f00 FUN_006d3f00
+DATA 00919b08 js_cocos2dx_ParticleData_copyParticle : Invalid Native Object
+  XREF 006d4028 006d3f00 FUN_006d3f00
+  XREF 006d4040 006d3f00 FUN_006d3f00
+DATA 00919b48 js_cocos2dx_ParticleData_copyParticle : Error processing arguments
+  XREF 006d3f98 006d3f00 FUN_006d3f00
+  XREF 006d3fb1 006d3f00 FUN_006d3f00
+DATA 00919b90 js_cocos2dx_ParticleData_copyParticle : wrong number of arguments: %d, was expecting %d
+  XREF 006d3ff2 006d3f00 FUN_006d3f00
+DATA 00919c0c copyParticle
+DATA 009336b8 js_cocos2dx_GLProgramCache_destroyInstance : wrong number of arguments
+  XREF 0069a913 0069a8f0 FUN_0069a8f0
+DATA 00933718 js_cocos2dx_GLProgramCache_getInstance : wrong number of arguments
+  XREF 0069ab33 0069aae0 FUN_0069aae0
+DATA 00933f90 js_cocos2dx_Pass_clone
+  XREF 006dfb4d 006dfab0 FUN_006dfab0
+DATA 00933fa8 js_cocos2dx_Pass_clone : Invalid Native Object
+  XREF 006dfb63 006dfab0 FUN_006dfab0
+  XREF 006dfb7b 006dfab0 FUN_006dfab0
+DATA 00933fd8 js_cocos2dx_Pass_clone : wrong number of arguments: %d, was expecting %d
+  XREF 006dfb31 006dfab0 FUN_006dfab0
+DATA 009345d8 js_cocos2dx_Technique_clone
+  XREF 0070c09d 0070c000 FUN_0070c000
+DATA 009345f4 js_cocos2dx_Technique_clone : Invalid Native Object
+  XREF 0070c0b3 0070c000 FUN_0070c000
+  XREF 0070c0cb 0070c000 FUN_0070c000
+DATA 00934628 js_cocos2dx_Technique_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0070c081 0070c000 FUN_0070c000
+DATA 00934b7c js_cocos2dx_Material_clone
+  XREF 006bbd8c 006bbcf0 FUN_006bbcf0
+DATA 00934b98 js_cocos2dx_Material_clone : Invalid Native Object
+  XREF 006bbda2 006bbcf0 FUN_006bbcf0
+  XREF 006bbdba 006bbcf0 FUN_006bbcf0
+DATA 00934bd0 js_cocos2dx_Material_clone : wrong number of arguments: %d, was expecting %d
+  XREF 006bbd70 006bbcf0 FUN_006bbcf0
+DATA 00936e48 js_cocos2dx_Application_getInstance : wrong number of arguments
+  XREF 0066d3b4 0066d330 FUN_0066d330
+DATA 00937548 js_cocos2dx_AnimationCache_destroyInstance : wrong number of arguments
+  XREF 00669c13 00669bf0 FUN_00669bf0
+DATA 009375a8 js_cocos2dx_AnimationCache_getInstance : wrong number of arguments
+  XREF 00669e33 00669de0 FUN_00669de0
+DATA 00939e18 js_cocos2dx_SpriteFrameCache_destroyInstance : wrong number of arguments
+  XREF 006fc6e3 006fc6c0 FUN_006fc6c0
+DATA 00939e80 js_cocos2dx_SpriteFrameCache_getInstance : wrong number of arguments
+  XREF 006fc753 006fc700 FUN_006fc700
+DATA 00942e20 js_cocos2dx_SimpleAudioEngine_getInstance : wrong number of arguments
+  XREF 006f4164 006f40e0 FUN_006f40e0
+DATA 0094bec0 js_cocos2dx_ui_LayoutParameter_clone
+  XREF 0077ac5d 0077abc0 FUN_0077abc0
+DATA 0094bf0c js_cocos2dx_ui_LayoutParameter_clone : Invalid Native Object
+  XREF 0077ac70 0077abc0 FUN_0077abc0
+  XREF 0077ac88 0077abc0 FUN_0077abc0
+DATA 0094bf50 js_cocos2dx_ui_LayoutParameter_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0077ac41 0077abc0 FUN_0077abc0
+DATA 0094c080 js_cocos2dx_ui_LayoutParameter_createCloneInstance
+  XREF 0077b06c 0077afd0 FUN_0077afd0
+DATA 0094c0b8 js_cocos2dx_ui_LayoutParameter_createCloneInstance : Invalid Native Object
+  XREF 0077b07f 0077afd0 FUN_0077afd0
+  XREF 0077b097 0077afd0 FUN_0077afd0
+DATA 0094c108 js_cocos2dx_ui_LayoutParameter_createCloneInstance : wrong number of arguments: %d, was expecting %d
+  XREF 0077b050 0077afd0 FUN_0077afd0
+DATA 0094c170 js_cocos2dx_ui_LayoutParameter_copyProperties
+  XREF 0077ae66 0077add0 FUN_0077add0
+  XREF 0077aeb2 0077add0 FUN_0077add0
+  XREF 0077af16 0077add0 FUN_0077add0
+DATA 0094c1a0 js_cocos2dx_ui_LayoutParameter_copyProperties : Invalid Native Object
+  XREF 0077af29 0077add0 FUN_0077add0
+  XREF 0077af41 0077add0 FUN_0077add0
+DATA 0094c1e8 js_cocos2dx_ui_LayoutParameter_copyProperties : Error processing arguments
+  XREF 0077aec5 0077add0 FUN_0077add0
+  XREF 0077aedd 0077add0 FUN_0077add0
+DATA 0094c238 js_cocos2dx_ui_LayoutParameter_copyProperties : wrong number of arguments: %d, was expecting %d
+  XREF 0077aef7 0077add0 FUN_0077add0
+DATA 0094c30c createCloneInstance
+DATA 0094c320 copyProperties
+DATA 0094ef84 js_cocos2dx_ui_Widget_clone
+  XREF 007ab23d 007ab1a0 FUN_007ab1a0
+DATA 0094efa0 js_cocos2dx_ui_Widget_clone : Invalid Native Object
+  XREF 007ab253 007ab1a0 FUN_007ab1a0
+  XREF 007ab26b 007ab1a0 FUN_007ab1a0
+DATA 0094efd8 js_cocos2dx_ui_Widget_clone : wrong number of arguments: %d, was expecting %d
+  XREF 007ab221 007ab1a0 FUN_007ab1a0
+DATA 009587d8 js_cocos2dx_ui_Text_enableShadow
+  XREF 007a6480 007a63d0 FUN_007a63d0
+  XREF 007a6533 007a63d0 FUN_007a63d0
+  XREF 007a65db 007a63d0 FUN_007a63d0
+  XREF 007a6620 007a63d0 FUN_007a63d0
+DATA 009587fc js_cocos2dx_ui_Text_enableShadow : Invalid Native Object
+  XREF 007a6636 007a63d0 FUN_007a63d0
+  XREF 007a664e 007a63d0 FUN_007a63d0
+DATA 00958838 js_cocos2dx_ui_Text_enableShadow : Error processing arguments
+  XREF 007a649c 007a63d0 FUN_007a63d0
+  XREF 007a64b5 007a63d0 FUN_007a63d0
+DATA 00958878 js_cocos2dx_ui_Text_enableShadow : wrong number of arguments: %d, was expecting %d
+  XREF 007a6600 007a63d0 FUN_007a63d0
+DATA 00958ff4 js_cocos2dx_ui_Text_getShadowOffset
+  XREF 007a6f37 007a6ec0 FUN_007a6ec0
+DATA 00959018 js_cocos2dx_ui_Text_getShadowOffset : Invalid Native Object
+  XREF 007a6f4d 007a6ec0 FUN_007a6ec0
+  XREF 007a6f65 007a6ec0 FUN_007a6ec0
+DATA 00959058 js_cocos2dx_ui_Text_getShadowOffset : wrong number of arguments: %d, was expecting %d
+  XREF 007a6f19 007a6ec0 FUN_007a6ec0
+DATA 00959324 js_cocos2dx_ui_Text_getShadowBlurRadius
+  XREF 007a6db4 007a6d20 FUN_007a6d20
+DATA 00959350 js_cocos2dx_ui_Text_getShadowBlurRadius : Invalid Native Object
+  XREF 007a6dca 007a6d20 FUN_007a6d20
+  XREF 007a6de2 007a6d20 FUN_007a6d20
+DATA 00959390 js_cocos2dx_ui_Text_getShadowBlurRadius : wrong number of arguments: %d, was expecting %d
+  XREF 007a6d96 007a6d20 FUN_007a6d20
+DATA 00959b1c js_cocos2dx_ui_Text_isShadowEnabled
+  XREF 007a7724 007a76c0 FUN_007a76c0
+DATA 00959b40 js_cocos2dx_ui_Text_isShadowEnabled : Invalid Native Object
+  XREF 007a773a 007a76c0 FUN_007a76c0
+  XREF 007a7752 007a76c0 FUN_007a76c0
+DATA 00959b80 js_cocos2dx_ui_Text_isShadowEnabled : wrong number of arguments: %d, was expecting %d
+  XREF 007a7708 007a76c0 FUN_007a76c0
+DATA 00959cc4 js_cocos2dx_ui_Text_getShadowColor
+  XREF 007a6e70 007a6e00 FUN_007a6e00
+DATA 00959ce8 js_cocos2dx_ui_Text_getShadowColor : Invalid Native Object
+  XREF 007a6e86 007a6e00 FUN_007a6e00
+  XREF 007a6e9e 007a6e00 FUN_007a6e00
+DATA 00959d28 js_cocos2dx_ui_Text_getShadowColor : wrong number of arguments: %d, was expecting %d
+  XREF 007a6e54 007a6e00 FUN_007a6e00
+DATA 0096c6f8 js_cocos2dx_ui_RichText_getAnchorTextShadowBlurRadius
+  XREF 0078de19 0078ddb0 FUN_0078ddb0
+DATA 0096c730 js_cocos2dx_ui_RichText_getAnchorTextShadowBlurRadius : Invalid Native Object
+  XREF 0078de2f 0078ddb0 FUN_0078ddb0
+  XREF 0078de47 0078ddb0 FUN_0078ddb0
+DATA 0096c780 js_cocos2dx_ui_RichText_getAnchorTextShadowBlurRadius : wrong number of arguments: %d, was expecting %d
+  XREF 0078ddfd 0078ddb0 FUN_0078ddb0
+DATA 0096c7e8 js_cocos2dx_ui_RichText_setAnchorTextShadow
+  XREF 00790351 00790150 FUN_00790150
+  XREF 007904a4 00790150 FUN_00790150
+  XREF 0079060a 00790150 FUN_00790150
+  XREF 00790652 00790150 FUN_00790150
+DATA 0096c818 js_cocos2dx_ui_RichText_setAnchorTextShadow : Invalid Native Object
+  XREF 00790668 00790150 FUN_00790150
+  XREF 00790680 00790150 FUN_00790150
+DATA 0096c860 js_cocos2dx_ui_RichText_setAnchorTextShadow : Error processing arguments
+  XREF 0079036d 00790150 FUN_00790150
+  XREF 00790386 00790150 FUN_00790150
+DATA 0096c8b0 js_cocos2dx_ui_RichText_setAnchorTextShadow : wrong number of arguments: %d, was expecting %d
+  XREF 00790632 00790150 FUN_00790150
+DATA 0096db98 js_cocos2dx_ui_RichText_isAnchorTextShadowEnabled
+  XREF 0078efc4 0078ef60 FUN_0078ef60
+DATA 0096dbd0 js_cocos2dx_ui_RichText_isAnchorTextShadowEnabled : Invalid Native Object
+  XREF 0078efda 0078ef60 FUN_0078ef60
+  XREF 0078eff2 0078ef60 FUN_0078ef60
+DATA 0096dc20 js_cocos2dx_ui_RichText_isAnchorTextShadowEnabled : wrong number of arguments: %d, was expecting %d
+  XREF 0078efa8 0078ef60 FUN_0078ef60
+DATA 0096e3e8 js_cocos2dx_ui_RichText_getAnchorTextShadowOffset
+  XREF 0078df97 0078df20 FUN_0078df20
+DATA 0096e420 js_cocos2dx_ui_RichText_getAnchorTextShadowOffset : Invalid Native Object
+  XREF 0078dfad 0078df20 FUN_0078df20
+  XREF 0078dfc5 0078df20 FUN_0078df20
+DATA 0096e470 js_cocos2dx_ui_RichText_getAnchorTextShadowOffset : wrong number of arguments: %d, was expecting %d
+  XREF 0078df79 0078df20 FUN_0078df20
+DATA 0096e5b4 js_cocos2dx_ui_RichText_getAnchorTextShadowColor3B
+  XREF 0078ded5 0078de60 FUN_0078de60
+DATA 0096e5e8 js_cocos2dx_ui_RichText_getAnchorTextShadowColor3B : Invalid Native Object
+  XREF 0078deeb 0078de60 FUN_0078de60
+  XREF 0078df03 0078de60 FUN_0078de60
+DATA 0096e638 js_cocos2dx_ui_RichText_getAnchorTextShadowColor3B : wrong number of arguments: %d, was expecting %d
+  XREF 0078deb7 0078de60 FUN_0078de60
+DATA 0096ed84 getAnchorTextShadowBlurRadius
+DATA 0096eda4 setAnchorTextShadow
+DATA 0096ef04 isAnchorTextShadowEnabled
+DATA 0096efa4 getAnchorTextShadowOffset
+DATA 0096efd8 getAnchorTextShadowColor3B
+DATA 00970090 js_cocos2dx_ui_Scale9Sprite_copyTo
+  XREF 00791707 00791670 FUN_00791670
+  XREF 00791756 00791670 FUN_00791670
+  XREF 007917bd 00791670 FUN_00791670
+DATA 009700b4 js_cocos2dx_ui_Scale9Sprite_copyTo : Invalid Native Object
+  XREF 007917d3 00791670 FUN_00791670
+  XREF 007917eb 00791670 FUN_00791670
+DATA 009700f0 js_cocos2dx_ui_Scale9Sprite_copyTo : Error processing arguments
+  XREF 0079176c 00791670 FUN_00791670
+  XREF 00791784 00791670 FUN_00791670
+DATA 00970130 js_cocos2dx_ui_Scale9Sprite_copyTo : wrong number of arguments: %d, was expecting %d
+  XREF 0079179e 00791670 FUN_00791670
+DATA 009712a0 copyTo
+DATA 0097b8a8 js_cocos2dx_studio_ActionObject_setCurrentTime
+  XREF 007c27d4 007c2710 FUN_007c2710
+  XREF 007c2868 007c2710 FUN_007c2710
+DATA 0097b900 js_cocos2dx_studio_ActionObject_setCurrentTime : Invalid Native Object
+  XREF 007c287b 007c2710 FUN_007c2710
+  XREF 007c2893 007c2710 FUN_007c2710
+DATA 0097b948 js_cocos2dx_studio_ActionObject_setCurrentTime : Error processing arguments
+  XREF 007c27e7 007c2710 FUN_007c2710
+  XREF 007c2800 007c2710 FUN_007c2710
+DATA 0097b998 js_cocos2dx_studio_ActionObject_setCurrentTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c2848 007c2710 FUN_007c2710
+DATA 0097b9fc js_cocos2dx_studio_ActionObject_pause
+  XREF 007c23b5 007c2350 FUN_007c2350
+DATA 0097ba24 js_cocos2dx_studio_ActionObject_pause : Invalid Native Object
+  XREF 007c23c8 007c2350 FUN_007c2350
+  XREF 007c23e0 007c2350 FUN_007c2350
+DATA 0097ba68 js_cocos2dx_studio_ActionObject_pause : wrong number of arguments: %d, was expecting %d
+  XREF 007c2399 007c2350 FUN_007c2350
+DATA 0097bac0 js_cocos2dx_studio_ActionObject_setName
+  XREF 007c2ac4 007c2a20 FUN_007c2a20
+  XREF 007c2b4d 007c2a20 FUN_007c2a20
+DATA 0097bae8 js_cocos2dx_studio_ActionObject_setName : Invalid Native Object
+  XREF 007c2b60 007c2a20 FUN_007c2a20
+  XREF 007c2b75 007c2a20 FUN_007c2a20
+DATA 0097bb28 js_cocos2dx_studio_ActionObject_setName : Error processing arguments
+  XREF 007c2ad7 007c2a20 FUN_007c2a20
+  XREF 007c2aec 007c2a20 FUN_007c2a20
+DATA 0097bb70 js_cocos2dx_studio_ActionObject_setName : wrong number of arguments: %d, was expecting %d
+  XREF 007c2b36 007c2a20 FUN_007c2a20
+DATA 0097bbcc js_cocos2dx_studio_ActionObject_setUnitTime
+  XREF 007c2c74 007c2bb0 FUN_007c2bb0
+  XREF 007c2d08 007c2bb0 FUN_007c2bb0
+DATA 0097bbf8 js_cocos2dx_studio_ActionObject_setUnitTime : Invalid Native Object
+  XREF 007c2d1b 007c2bb0 FUN_007c2bb0
+  XREF 007c2d33 007c2bb0 FUN_007c2bb0
+DATA 0097bc40 js_cocos2dx_studio_ActionObject_setUnitTime : Error processing arguments
+  XREF 007c2c87 007c2bb0 FUN_007c2bb0
+  XREF 007c2ca0 007c2bb0 FUN_007c2bb0
+DATA 0097bc90 js_cocos2dx_studio_ActionObject_setUnitTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c2ce8 007c2bb0 FUN_007c2bb0
+DATA 0097bcf0 js_cocos2dx_studio_ActionObject_getTotalTime
+  XREF 007c1fd4 007c1f40 FUN_007c1f40
+DATA 0097bd20 js_cocos2dx_studio_ActionObject_getTotalTime : Invalid Native Object
+  XREF 007c1fe7 007c1f40 FUN_007c1f40
+  XREF 007c1fff 007c1f40 FUN_007c1f40
+DATA 0097bd68 js_cocos2dx_studio_ActionObject_getTotalTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c1fb6 007c1f40 FUN_007c1f40
+DATA 0097bdc8 js_cocos2dx_studio_ActionObject_getName
+  XREF 007c1efb 007c1e90 FUN_007c1e90
+DATA 0097bdf0 js_cocos2dx_studio_ActionObject_getName : Invalid Native Object
+  XREF 007c1f0e 007c1e90 FUN_007c1e90
+  XREF 007c1f26 007c1e90 FUN_007c1e90
+DATA 0097be30 js_cocos2dx_studio_ActionObject_getName : wrong number of arguments: %d, was expecting %d
+  XREF 007c1edf 007c1e90 FUN_007c1e90
+DATA 0097be8c js_cocos2dx_studio_ActionObject_stop
+  XREF 007c2f65 007c2f00 FUN_007c2f00
+DATA 0097beb4 js_cocos2dx_studio_ActionObject_stop : Invalid Native Object
+  XREF 007c2f7b 007c2f00 FUN_007c2f00
+  XREF 007c2f93 007c2f00 FUN_007c2f00
+DATA 0097bef8 js_cocos2dx_studio_ActionObject_stop : wrong number of arguments: %d, was expecting %d
+  XREF 007c2f49 007c2f00 FUN_007c2f00
+DATA 0097bf50 js_cocos2dx_studio_ActionObject_play
+  XREF 007c2497 007c2400 FUN_007c2400
+  XREF 007c2520 007c2400 FUN_007c2400
+DATA 0097bf78 js_cocos2dx_studio_ActionObject_play : Invalid Native Object
+  XREF 007c2536 007c2400 FUN_007c2400
+  XREF 007c254e 007c2400 FUN_007c2400
+DATA 0097bfb8 js_cocos2dx_studio_ActionObject_play : wrong number of arguments
+  XREF 007c2501 007c2400 FUN_007c2400
+DATA 0097bffc js_cocos2dx_studio_ActionObject_getCurrentTime
+  XREF 007c1d94 007c1d00 FUN_007c1d00
+DATA 0097c030 js_cocos2dx_studio_ActionObject_getCurrentTime : Invalid Native Object
+  XREF 007c1daa 007c1d00 FUN_007c1d00
+  XREF 007c1dc2 007c1d00 FUN_007c1d00
+DATA 0097c078 js_cocos2dx_studio_ActionObject_getCurrentTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c1d76 007c1d00 FUN_007c1d00
+DATA 0097c0dc js_cocos2dx_studio_ActionObject_removeActionNode
+  XREF 007c2607 007c2570 FUN_007c2570
+  XREF 007c2656 007c2570 FUN_007c2570
+  XREF 007c26bd 007c2570 FUN_007c2570
+DATA 0097c110 js_cocos2dx_studio_ActionObject_removeActionNode : Invalid Native Object
+  XREF 007c26d3 007c2570 FUN_007c2570
+  XREF 007c26eb 007c2570 FUN_007c2570
+DATA 0097c160 js_cocos2dx_studio_ActionObject_removeActionNode : Error processing arguments
+  XREF 007c266c 007c2570 FUN_007c2570
+  XREF 007c2684 007c2570 FUN_007c2570
+DATA 0097c1b0 js_cocos2dx_studio_ActionObject_removeActionNode : wrong number of arguments: %d, was expecting %d
+  XREF 007c269e 007c2570 FUN_007c2570
+DATA 0097c214 js_cocos2dx_studio_ActionObject_getLoop
+  XREF 007c1e44 007c1de0 FUN_007c1de0
+DATA 0097c240 js_cocos2dx_studio_ActionObject_getLoop : Invalid Native Object
+  XREF 007c1e5a 007c1de0 FUN_007c1de0
+  XREF 007c1e72 007c1de0 FUN_007c1de0
+DATA 0097c280 js_cocos2dx_studio_ActionObject_getLoop : wrong number of arguments: %d, was expecting %d
+  XREF 007c1e28 007c1de0 FUN_007c1de0
+DATA 0097c2dc js_cocos2dx_studio_ActionObject_initWithBinary
+  XREF 007c2168 007c2100 FUN_007c2100
+  XREF 007c21e1 007c2100 FUN_007c2100
+  XREF 007c21f3 007c2100 FUN_007c2100
+  XREF 007c2258 007c2100 FUN_007c2100
+DATA 0097c310 js_cocos2dx_studio_ActionObject_initWithBinary : Invalid Native Object
+  XREF 007c226e 007c2100 FUN_007c2100
+  XREF 007c2286 007c2100 FUN_007c2100
+DATA 0097c358 js_cocos2dx_studio_ActionObject_initWithBinary : Error processing arguments
+  XREF 007c2209 007c2100 FUN_007c2100
+  XREF 007c2221 007c2100 FUN_007c2100
+DATA 0097c3a8 js_cocos2dx_studio_ActionObject_initWithBinary : wrong number of arguments: %d, was expecting %d
+  XREF 007c223a 007c2100 FUN_007c2100
+DATA 0097c40c js_cocos2dx_studio_ActionObject_addActionNode
+  XREF 007c1ae7 007c1a50 FUN_007c1a50
+  XREF 007c1b36 007c1a50 FUN_007c1a50
+  XREF 007c1b9d 007c1a50 FUN_007c1a50
+DATA 0097c440 js_cocos2dx_studio_ActionObject_addActionNode : Invalid Native Object
+  XREF 007c1bb3 007c1a50 FUN_007c1a50
+  XREF 007c1bcb 007c1a50 FUN_007c1a50
+DATA 0097c488 js_cocos2dx_studio_ActionObject_addActionNode : Error processing arguments
+  XREF 007c1b4c 007c1a50 FUN_007c1a50
+  XREF 007c1b64 007c1a50 FUN_007c1a50
+DATA 0097c4d8 js_cocos2dx_studio_ActionObject_addActionNode : wrong number of arguments: %d, was expecting %d
+  XREF 007c1b7e 007c1a50 FUN_007c1a50
+DATA 0097c538 js_cocos2dx_studio_ActionObject_getUnitTime
+  XREF 007c20b4 007c2020 FUN_007c2020
+DATA 0097c568 js_cocos2dx_studio_ActionObject_getUnitTime : Invalid Native Object
+  XREF 007c20ca 007c2020 FUN_007c2020
+  XREF 007c20e2 007c2020 FUN_007c2020
+DATA 0097c5b0 js_cocos2dx_studio_ActionObject_getUnitTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c2096 007c2020 FUN_007c2020
+DATA 0097c610 js_cocos2dx_studio_ActionObject_isPlaying
+  XREF 007c2304 007c22a0 FUN_007c22a0
+DATA 0097c640 js_cocos2dx_studio_ActionObject_isPlaying : Invalid Native Object
+  XREF 007c231a 007c22a0 FUN_007c22a0
+  XREF 007c2332 007c22a0 FUN_007c22a0
+DATA 0097c688 js_cocos2dx_studio_ActionObject_isPlaying : wrong number of arguments: %d, was expecting %d
+  XREF 007c22e8 007c22a0 FUN_007c22a0
+DATA 0097c6e4 js_cocos2dx_studio_ActionObject_updateToFrameByTime
+  XREF 007c3074 007c2fb0 FUN_007c2fb0
+  XREF 007c310b 007c2fb0 FUN_007c2fb0
+DATA 0097c718 js_cocos2dx_studio_ActionObject_updateToFrameByTime : Invalid Native Object
+  XREF 007c3121 007c2fb0 FUN_007c2fb0
+  XREF 007c3139 007c2fb0 FUN_007c2fb0
+DATA 0097c768 js_cocos2dx_studio_ActionObject_updateToFrameByTime : Error processing arguments
+  XREF 007c308a 007c2fb0 FUN_007c2fb0
+  XREF 007c30a3 007c2fb0 FUN_007c2fb0
+DATA 0097c7c0 js_cocos2dx_studio_ActionObject_updateToFrameByTime : wrong number of arguments: %d, was expecting %d
+  XREF 007c30eb 007c2fb0 FUN_007c2fb0
+DATA 0097c828 js_cocos2dx_studio_ActionObject_setLoop
+  XREF 007c29cc 007c28b0 FUN_007c28b0
+DATA 0097c850 js_cocos2dx_studio_ActionObject_setLoop : Invalid Native Object
+  XREF 007c29e2 007c28b0 FUN_007c28b0
+  XREF 007c29fa 007c28b0 FUN_007c28b0
+DATA 0097c890 js_cocos2dx_studio_ActionObject_setLoop : wrong number of arguments: %d, was expecting %d
+  XREF 007c29ad 007c28b0 FUN_007c28b0
+DATA 0097c8ec js_cocos2dx_studio_ActionObject_simulationActionUpdate
+  XREF 007c2e14 007c2d50 FUN_007c2d50
+  XREF 007c2eab 007c2d50 FUN_007c2d50
+DATA 0097c928 js_cocos2dx_studio_ActionObject_simulationActionUpdate : Invalid Native Object
+  XREF 007c2ec1 007c2d50 FUN_007c2d50
+  XREF 007c2ed9 007c2d50 FUN_007c2d50
+DATA 0097c978 js_cocos2dx_studio_ActionObject_simulationActionUpdate : Error processing arguments
+  XREF 007c2e2a 007c2d50 FUN_007c2d50
+  XREF 007c2e43 007c2d50 FUN_007c2d50
+DATA 0097c9d0 js_cocos2dx_studio_ActionObject_simulationActionUpdate : wrong number of arguments: %d, was expecting %d
+  XREF 007c2e8b 007c2d50 FUN_007c2d50
+DATA 0097ca3c cocostudio::ActionObject
+  XREF 007c1c5f 007c1bf0 FUN_007c1bf0
+DATA 0097cb24 ActionObject
+  XREF 007e3efe 007e3eb0 FUN_007e3eb0
+  XREF 007e3fad 007e3eb0 FUN_007e3eb0
+DATA 0097d1b8 js_cocos2dx_studio_ActionManagerEx_destroyInstance : wrong number of arguments
+  XREF 007c0ef3 007c0ed0 FUN_007c0ed0
+DATA 0097d228 js_cocos2dx_studio_ActionManagerEx_getInstance : wrong number of arguments
+  XREF 007c1183 007c1130 FUN_007c1130
+DATA 00986338 js_cocos2dx_studio_ArmatureDataManager_destroyInstance : wrong number of arguments
+  XREF 007c9e43 007c9e20 FUN_007c9e20
+DATA 009863b0 js_cocos2dx_studio_ArmatureDataManager_getInstance : wrong number of arguments
+  XREF 007ca373 007ca320 FUN_007ca320
+DATA 0098b504 js_cocos2dx_studio_Frame_clone
+  XREF 007da87c 007da7e0 FUN_007da7e0
+DATA 0098b524 js_cocos2dx_studio_Frame_clone : Invalid Native Object
+  XREF 007da892 007da7e0 FUN_007da7e0
+  XREF 007da8aa 007da7e0 FUN_007da7e0
+DATA 0098b560 js_cocos2dx_studio_Frame_clone : wrong number of arguments: %d, was expecting %d
+  XREF 007da860 007da7e0 FUN_007da7e0
+DATA 0098f3d0 js_cocos2dx_studio_Timeline_clone
+  XREF 007e1b5c 007e1ac0 FUN_007e1ac0
+DATA 0098f3f4 js_cocos2dx_studio_Timeline_clone : Invalid Native Object
+  XREF 007e1b72 007e1ac0 FUN_007e1ac0
+  XREF 007e1b8a 007e1ac0 FUN_007e1ac0
+DATA 0098f430 js_cocos2dx_studio_Timeline_clone : wrong number of arguments: %d, was expecting %d
+  XREF 007e1b40 007e1ac0 FUN_007e1ac0
+DATA 009a03a0 js_cocos2dx_extension_ControlSaturationBrightnessPicker_getShadow
+  XREF 007fc75f 007fc6c0 FUN_007fc6c0
+DATA 009a03e8 js_cocos2dx_extension_ControlSaturationBrightnessPicker_getShadow : Invalid Native Object
+  XREF 007fc775 007fc6c0 FUN_007fc6c0
+  XREF 007fc78d 007fc6c0 FUN_007fc6c0
+DATA 009a0448 js_cocos2dx_extension_ControlSaturationBrightnessPicker_getShadow : wrong number of arguments: %d, was expecting %d
+  XREF 007fc743 007fc6c0 FUN_007fc6c0
+DATA 009a0e5c getShadow
+DATA 009b2d10 js_cocos2dx_3d_Sprite3DCache_destroyInstance : wrong number of arguments
+  XREF 00817313 008172f0 FUN_008172f0
+DATA 009b2d60 js_cocos2dx_3d_Sprite3DCache_getInstance : wrong number of arguments
+  XREF 008173af 00817330 FUN_00817330
+DATA 009b778c js_cocos2dx_3d_extension_PUParticleSystem3D_clone
+  XREF 0081f4af 0081f410 FUN_0081f410
+DATA 009b77c0 js_cocos2dx_3d_extension_PUParticleSystem3D_clone : Invalid Native Object
+  XREF 0081f4c5 0081f410 FUN_0081f410
+  XREF 0081f4dd 0081f410 FUN_0081f410
+DATA 009b7810 js_cocos2dx_3d_extension_PUParticleSystem3D_clone : wrong number of arguments: %d, was expecting %d
+  XREF 0081f493 0081f410 FUN_0081f410
+DATA 009b79d8 js_cocos2dx_3d_extension_PUParticleSystem3D_copyAttributesTo
+  XREF 0081f6b9 0081f620 FUN_0081f620
+  XREF 0081f708 0081f620 FUN_0081f620
+  XREF 0081f76f 0081f620 FUN_0081f620
+DATA 009b7a18 js_cocos2dx_3d_extension_PUParticleSystem3D_copyAttributesTo : Invalid Native Object
+  XREF 0081f785 0081f620 FUN_0081f620
+  XREF 0081f79d 0081f620 FUN_0081f620
+DATA 009b7a70 js_cocos2dx_3d_extension_PUParticleSystem3D_copyAttributesTo : Error processing arguments
+  XREF 0081f71e 0081f620 FUN_0081f620
+  XREF 0081f736 0081f620 FUN_0081f620
+DATA 009b7ad0 js_cocos2dx_3d_extension_PUParticleSystem3D_copyAttributesTo : wrong number of arguments: %d, was expecting %d
+  XREF 0081f750 0081f620 FUN_0081f620
+DATA 009b8e78 copyAttributesTo
+DATA 009bd020 copyTexImage2D
+  XREF 00831ba9 008317f0 FUN_008317f0
+DATA 009bd030 copyTexSubImage2D
+  XREF 00831bc5 008317f0 FUN_008317f0
+DATA 009d3ed4 js_cocos2dx_audioengine_AudioProfile_get_maxInstances
+  XREF 0085c0f5 0085c0b0 FUN_0085c0b0
+DATA 009d3f10 js_cocos2dx_audioengine_AudioProfile_get_maxInstances : Invalid Native Object
+  XREF 0085c108 0085c0b0 FUN_0085c0b0
+  XREF 0085c120 0085c0b0 FUN_0085c0b0
+DATA 009d3f60 js_cocos2dx_audioengine_AudioProfile_set_maxInstances
+  XREF 0085c2df 0085c280 FUN_0085c280
+  XREF 0085c332 0085c280 FUN_0085c280
+DATA 009d3f98 js_cocos2dx_audioengine_AudioProfile_set_maxInstances : Invalid Native Object
+  XREF 0085c345 0085c280 FUN_0085c280
+  XREF 0085c35d 0085c280 FUN_0085c280
+DATA 009d3fe8 js_cocos2dx_audioengine_AudioProfile_set_maxInstances : Error processing new value
+  XREF 0085c2f2 0085c280 FUN_0085c280
+  XREF 0085c307 0085c280 FUN_0085c280
+DATA 009d41c4 maxInstances
+DATA 009d4630 js_cocos2dx_audioengine_AudioEngine_getMaxAudioInstance : wrong number of arguments
+  XREF 0085a6c7 0085a6a0 FUN_0085a6a0
+DATA 009d47a8 js_cocos2dx_audioengine_AudioEngine_setMaxAudioInstance
+  XREF 0085bb87 0085bb50 FUN_0085bb50
+DATA 009d47e0 js_cocos2dx_audioengine_AudioEngine_setMaxAudioInstance : Error processing arguments
+  XREF 0085bb9d 0085bb50 FUN_0085bb50
+  XREF 0085bbb2 0085bb50 FUN_0085bb50
+DATA 009d4838 js_cocos2dx_audioengine_AudioEngine_setMaxAudioInstance : wrong number of arguments
+  XREF 0085bbe6 0085bb50 FUN_0085bb50
+DATA 009d51fc getMaxAudioInstance
+DATA 009d5210 setMaxAudioInstance
+DATA 009d800c JSB_glCopyTexImage2D
+  XREF 0087a9d3 0087a9c0 FUN_0087a9c0
+  XREF 0087aab0 0087a9c0 FUN_0087a9c0
+DATA 009d8024 JSB_glCopyTexSubImage2D
+  XREF 0087ab43 0087ab30 FUN_0087ab30
+  XREF 0087ac20 0087ab30 FUN_0087ab30
+DATA 009da468 # Director GetInstance
+  XREF 00438bce 00438380 FUN_00438380
+DATA 009da5dc # FontManager GetInstance
+  XREF 00438ff8 00438380 FUN_00438380
+DATA 009da614 # DebugManager GetInstance
+  XREF 00439085 00438380 FUN_00438380
+DATA 009e3018 actionObjectId
+  XREF 004520a3 00452060 init
+  XREF 004520ba 00452060 init
+  XREF 0045217e 00452110 init
+DATA 009e31b8 instanceConfigurable
+  XREF 00453994 00453940 init
+DATA 009e3704 nearPlayerLockedPlayerPrior
+  XREF 00453b84 00453a20 init
+  XREF 00453f0b 00453c90 init
+DATA 009e375c apartNearPlayerLockedPlayerPrior
+  XREF 00453bfa 00453a20 init
+  XREF 00453f86 00453c90 init
+DATA 009e3830 objectCreate
+  XREF 00454734 00454710 init
+DATA 009e3aa8 playerObject
+  XREF 004563b4 00455e40 init
+  XREF 00455946 00455400 init
+DATA 009e3bdc ignorePlayerObject
+  XREF 00456477 00456410 init
+DATA 009e3c90 playerAttackArea
+  XREF 00456852 00456710 init
+DATA 009e4264 excludePlayerObject
+  XREF 0045b717 0045b400 init
+DATA 009e5f3c initialPlayerPosition
+  XREF 004670f0 004670e0 init
+DATA 009e5f8c scrollToShowAllPlayers
+  XREF 004671b7 004670e0 init
+DATA 009e5fa4 scaleToShowAllPlayers
+  XREF 004671d6 004670e0 init
+DATA 009e6380 Copy file
+DATA 009e6ae4 Player count
+DATA 009e6c94 1P instance
+DATA 009e6ce4 2P instance
+DATA 009e6d34 3P instance
+DATA 009e6d84 4P instance
+DATA 009e7010 Copy destination file slot
+DATA 009e77a8 Parent Object Instance ID
+DATA 009e7cc0 Player ID
+DATA 009e7ebc Instance ID
+DATA 009e7f34 Instance count
+DATA 009e7f98 Single instance ID
+DATA 009e88bc preMoveInvalidateTouchedPlayer
+  XREF 0046e1f1 0046e080 init
+  XREF 0046e20c 0046e080 init
+DATA 009e89a8 postMoveOnlyTransportPlayersTouching
+  XREF 0046e4ad 0046e080 init
+  XREF 0046e4c9 0046e080 init
+  XREF 0046e4e4 0046e080 init
+DATA 009e89d0 postMoveShowPlayersInTouchedOrder
+  XREF 0046e50b 0046e080 init
+  XREF 0046e526 0046e080 init
+DATA 009e8d8c playerCount
+  XREF 004731af 004730d0 init
+  XREF 004731c6 004730d0 init
+DATA 009e9020 playerCharacter
+  XREF 00474170 004730d0 init
+  XREF 0047418b 004730d0 init
+  XREF 004f1bc5 004f1a80 FUN_004f1a80
+DATA 009e9578 startPointPlayerBit
+  XREF 0047c423 0047c3c0 init
+DATA 009e99cc playerMoveType
+  XREF 00480334 0047fa30 init
+DATA 009f3c84 objectInstances
+  XREF 004e1775 004e1690 FUN_004e1690
+  XREF 004e17bf 004e1690 FUN_004e1690
+DATA 009f3c94 objectInstance
+  XREF 004e1954 004e17f0 FUN_004e17f0
+DATA 009f3ca4 getAttackerInstanceIdList
+DATA 009f3cf0 execCommandObjectCreate
+DATA 009f443c instanceId
+  XREF 004ea0e9 004ea050 FUN_004ea050
+  XREF 004ea2be 004ea1f0 FUN_004ea1f0
+  XREF 004e98b9 004e9820 FUN_004e9820
+  XREF 004e9a8c 004e99c0 FUN_004e99c0
+  XREF 004e9d2d 004e9bb0 FUN_004e9bb0
+  XREF 004e9d61 004e9bb0 FUN_004e9bb0
+  XREF 004e9f38 004e9e90 FUN_004e9e90
+  XREF 004e94fd 004e9380 FUN_004e9380
+  XREF 004e9531 004e9380 FUN_004e9380
+  XREF 004e9708 004e9660 FUN_004e9660
+  XREF 004e930a 004e8ae0 FUN_004e8ae0
+  XREF 004e8a76 004e86f0 FUN_004e86f0
+  XREF 005c887b 005c8780 FUN_005c8780
+  XREF 005c97b1 005c8780 FUN_005c8780
+  XREF 005c9a43 005c8780 FUN_005c8780
+  XREF 005c9a85 005c8780 FUN_005c8780
+  XREF 005c9d2d 005c8780 FUN_005c8780
+  XREF 005c9d66 005c8780 FUN_005c8780
+  XREF 005cfc25 005cfbb0 FUN_005cfbb0
+  XREF 005cff95 005cfee0 FUN_005cfee0
+  XREF 005cffaf 005cfee0 FUN_005cfee0
+  XREF 005cf56a 005cf4f0 FUN_005cf4f0
+  XREF 005cf685 005cf610 FUN_005cf610
+  XREF 005cddf3 005cc3a0 attachLoadData
+  XREF 005cdf03 005cc3a0 attachLoadData
+  XREF 005d2627 005d2580 FUN_005d2580
+  XREF 005d2646 005d2580 FUN_005d2580
+  XREF 005d1c56 005d1a20 FUN_005d1a20
+  XREF 005d0c1d 005d0be0 FUN_005d0be0
+  XREF 005d0c34 005d0be0 FUN_005d0be0
+DATA 009f44f8 ParentObjectInstanceIDId
+  XREF 004e8e25 004e8ae0 FUN_004e8ae0
+DATA 009f452c PlayerIDId
+  XREF 004e8ea9 004e8ae0 FUN_004e8ae0
+DATA 009f459c InstanceIDId
+  XREF 004e8fb1 004e8ae0 FUN_004e8ae0
+DATA 009f45ac InstanceCountId
+  XREF 004e8fdd 004e8ae0 FUN_004e8ae0
+DATA 009f45bc SingleInstanceIDId
+  XREF 004e9009 004e8ae0 FUN_004e8ae0
+DATA 009f4768 sceneInstances
+  XREF 004ee3d5 004ee2f0 FUN_004ee2f0
+  XREF 004ee41f 004ee2f0 FUN_004ee2f0
+DATA 009f4784 sceneInstance
+  XREF 004ee562 004ee450 FUN_004ee450
+DATA 009f48e8 playerCharacters
+  XREF 004f19cf 004f18f0 FUN_004f18f0
+  XREF 004f1a19 004f18f0 FUN_004f18f0
+DATA 009f61f0 player
+  XREF 00522df3 00522d80 createPlayer
+DATA 009f62a0 Runtime error in switchVariableChange(objectId: %d, instanceId: %d, actionId: %d, commandId: %d, script: %s).
+  XREF 0053f360 0053ed20 FUN_0053ed20
+DATA 009f6318 Runtime error in scriptEvaluate(objectId: %d, instanceId: %d, actionId: %d, commandId: %d, script: %s).
+  XREF 00541ac7 00541730 execActionScriptEvaluate
+DATA 009f63c8 Runtime error in linkConditionScript(objectId: %d, instanceId: %d, script: %s).
+  XREF 0054b243 0054af40 checkLinkConditionScript
+DATA 009f6418 Runtime error in linkConditionCustom(pluginId: %d, index: %d, value: %s, objectId: %d, instanceId: %d, linkId: %d).
+  XREF 0054b965 0054b650 checkLinkConditionCustom
+DATA 00a08cd0 Instance ID: %d
+  XREF 005ba6e7 005ba320 FUN_005ba320
+  XREF 005bf735 005bf420 FUN_005bf420
+DATA 00a090dc player.ini
+  XREF 005c1317 005c12e0 FUN_005c12e0
+  XREF 005c0e87 005c0e50 FUN_005c0e50
+DATA 00a09248 Show Debugging for Player Move Range Restriction
+DATA 00a09af0 lockObjectInstanceId
+  XREF 005ca57f 005c8780 FUN_005c8780
+  XREF 005ca743 005c8780 FUN_005c8780
+  XREF 005cfdb5 005cfd40 FUN_005cfd40
+DATA 00a09b08 targetObjectInstanceId
+  XREF 005ca554 005c8780 FUN_005c8780
+  XREF 005ca71e 005c8780 FUN_005c8780
+DATA 00a09ca4 instance%d
+  XREF 005c7dd1 005c5e70 saveData
+DATA 00a09ccc playerDataList
+  XREF 005ce631 005cc3a0 attachLoadData
+  XREF 005ce641 005cc3a0 attachLoadData
+  XREF 005ce713 005cc3a0 attachLoadData
+  XREF 005c7e57 005c5e70 saveData
+DATA 00a0cbc0 Failed to compile command script: %s(sceneId: %d, objectId: %d, instanceId: %d, actionId: %d, commandId: %d, script: %s).
+  XREF 005dcf0e 005dccc0 compileSceneObjectScripts
+DATA 00a0cc40 Failed to compile command script: %s(sceneId: %d, objectId: %d, instanceId: %d, commonActionSettingId: %d, commandId: %d, script: %s).
+  XREF 005dd179 005dccc0 compileSceneObjectScripts
+DATA 00a0ceb8 Failed to compile command script: %s(sceneId: %d, objectId: %d, instanceId: %d, disappearSetting, commandId: %d, script: %s).
+  XREF 005dd3b3 005dccc0 compileSceneObjectScripts
+DATA 00a0d924 CopyFileId
+  XREF 005f1489 005f12d0 FUN_005f12d0
+DATA 00a0d97c PlayerCountId
+  XREF 005f16e5 005f15b0 FUN_005f15b0
+DATA 00a0d9a4 _1PInstanceId
+  XREF 005f17c1 005f15b0 FUN_005f15b0
+DATA 00a0d9c0 _3PInstanceId
+  XREF 005f1819 005f15b0 FUN_005f15b0
+DATA 00a0d9d0 _2PInstanceId
+  XREF 005f17ed 005f15b0 FUN_005f15b0
+DATA 00a0d9f0 _4PInstanceId
+  XREF 005f1845 005f15b0 FUN_005f15b0
+DATA 00a0da48 CopyDestinationFileSlotId
+  XREF 005f1979 005f15b0 FUN_005f15b0
+DATA 00a0e16c %s\player%s.dmp
+  XREF 005f91b6 005f9090 FUN_005f9090
+DATA 00a66f08 player.exe
+DATA 00a6745d ??0BasePlayer@agtk@@IAE@XZ
+DATA 00a67478 ??0BasePlayer@agtk@@QAE@ABV01@@Z
+DATA 00a67f61 ??0ImagePlayer@agtk@@IAE@XZ
+DATA 00a6a732 ??0ObjectCommandObjectCreateData@data@agtk@@AAE@XZ
+DATA 00a6a765 ??0ObjectCommandObjectCreateData@data@agtk@@QAE@ABV012@@Z
+DATA 00a6c6bc ??0Player@agtk@@AAE@XZ
+DATA 00a6c6d3 ??0PlayerCharacterData@data@agtk@@AAE@XZ
+DATA 00a6c6fc ??0PlayerCharacterData@data@agtk@@QAE@ABV012@@Z
+DATA 00a6c72c ??0PlayerSprite@agtk@@AAE@XZ
+DATA 00a6dccd ??1BasePlayer@agtk@@MAE@XZ
+DATA 00a6e1c1 ??1ImagePlayer@agtk@@MAE@XZ
+DATA 00a6f406 ??1ObjectCommandObjectCreateData@data@agtk@@EAE@XZ
+DATA 00a7040f ??1Player@agtk@@EAE@XZ
+DATA 00a70426 ??1PlayerCharacterData@data@agtk@@EAE@XZ
+DATA 00a7044f ??1PlayerSprite@agtk@@EAE@XZ
+DATA 00a71078 ??4BasePlayer@agtk@@QAEAAV01@ABV01@@Z
+DATA 00a72e87 ??4ObjectCommandObjectCreateData@data@agtk@@QAEAAV012@ABV012@@Z
+DATA 00a73fcd ??4PlayerCharacterData@data@agtk@@QAEAAV012@ABV012@@Z
+DATA 00a74df9 ??_7BasePlayer@agtk@@6B@
+DATA 00a75307 ??_7ImagePlayer@agtk@@6B@
+DATA 00a75321 ??_7ImagePlayer@agtk@@6BNode@cocos2d@@@
+DATA 00a75349 ??_7ImagePlayer@agtk@@6BTextureProtocol@cocos2d@@@
+DATA 00a764ee ??_7ObjectCommandObjectCreateData@data@agtk@@6B@
+DATA 00a774a0 ??_7Player@agtk@@6B@
+DATA 00a774b5 ??_7PlayerCharacterData@data@agtk@@6B@
+DATA 00a774dc ??_7PlayerSprite@agtk@@6BNode@cocos2d@@@
+DATA 00a77505 ??_7PlayerSprite@agtk@@6BTextureProtocol@cocos2d@@@
+DATA 00a7868f ?VertListCacheClear@Player@agtk@@QAEXW4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00a788c8 ?_createWithAnimationData@ImagePlayer@agtk@@SAPAV12@PAVAnimationData@data@2@PAVResourceInfoData@42@H@Z
+DATA 00a79c31 ?addPosition@Player@agtk@@QAE?AVVec2@cocos2d@@V34@@Z
+DATA 00a79d37 ?addRotation@Player@agtk@@QAEMM@Z
+DATA 00a7a7b2 ?calcAnchorPoint@Player@agtk@@AAE?AVVec2@cocos2d@@AAVSize@4@@Z
+DATA 00a7ca16 ?checkRequestCopy@GameManager@@QAEXXZ
+DATA 00a7d394 ?clone@ActionCamera@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d3c3 ?clone@ActionCamera@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d3fa ?clone@ActionCamera@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d42b ?clone@ActionCamera@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d464 ?clone@ActionFloat@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d492 ?clone@ActionFloat@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d4c8 ?clone@ActionFloat@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d4f8 ?clone@ActionFloat@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d530 ?clone@ActionInterval@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d561 ?clone@ActionInterval@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d594 ?clone@ActionInterval@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d5cf ?clone@ActionTimeline@timeline@cocostudio@@QBEPAVAction@cocos2d@@XZ
+DATA 00a7d613 ?clone@ActionTimeline@timeline@cocostudio@@QBEPAVClonable@cocos2d@@XZ
+DATA 00a7d659 ?clone@Animate3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d685 ?clone@Animate3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d6b9 ?clone@Animate3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d6e7 ?clone@Animate3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d71d ?clone@Animate@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d747 ?clone@Animate@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d779 ?clone@Animate@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d7a5 ?clone@Animate@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d7d9 ?clone@Animation@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d807 ?clone@AnimationFrame@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d83a ?clone@BezierBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d865 ?clone@BezierBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d898 ?clone@BezierBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d8c5 ?clone@BezierBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d8fa ?clone@BezierTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7d925 ?clone@BezierTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7d958 ?clone@BezierTo@cocos2d@@QBEPAVBezierBy@2@XZ
+DATA 00a7d985 ?clone@BezierTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7d9b2 ?clone@BezierTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7d9e7 ?clone@Blink@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7da0f ?clone@Blink@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7da3f ?clone@Blink@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7da69 ?clone@Blink@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7da9b ?clone@CallFunc@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7dac6 ?clone@CallFunc@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a7daf8 ?clone@CallFunc@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7db25 ?clone@CallFunc@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7db5a ?clone@CallFuncN@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7db86 ?clone@CallFuncN@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a7dbb9 ?clone@CallFuncN@cocos2d@@QBEPAVCallFunc@2@XZ
+DATA 00a7dbe7 ?clone@CallFuncN@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7dc15 ?clone@CallFuncN@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7dc4b ?clone@CardinalSplineBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7dc7e ?clone@CardinalSplineBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7dcb9 ?clone@CardinalSplineBy@cocos2d@@QBEPAVCardinalSplineTo@2@XZ
+DATA 00a7dcf6 ?clone@CardinalSplineBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7dd2b ?clone@CardinalSplineBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7dd68 ?clone@CardinalSplineTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7dd9b ?clone@CardinalSplineTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ddd6 ?clone@CardinalSplineTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7de0b ?clone@CardinalSplineTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7de48 ?clone@CatmullRomBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7de77 ?clone@CatmullRomBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7deae ?clone@CatmullRomBy@cocos2d@@QBEPAVCardinalSplineBy@2@XZ
+DATA 00a7dee7 ?clone@CatmullRomBy@cocos2d@@QBEPAVCardinalSplineTo@2@XZ
+DATA 00a7df20 ?clone@CatmullRomBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7df51 ?clone@CatmullRomBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7df8a ?clone@CatmullRomTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7dfb9 ?clone@CatmullRomTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7dff0 ?clone@CatmullRomTo@cocos2d@@QBEPAVCardinalSplineTo@2@XZ
+DATA 00a7e029 ?clone@CatmullRomTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e05a ?clone@CatmullRomTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e093 ?clone@DelayTime@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e0bf ?clone@DelayTime@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e0f3 ?clone@DelayTime@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e121 ?clone@DelayTime@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e157 ?clone@EaseBackIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e184 ?clone@EaseBackIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e1b9 ?clone@EaseBackIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e1e8 ?clone@EaseBackIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e21f ?clone@EaseBackInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e24f ?clone@EaseBackInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e287 ?clone@EaseBackInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e2b9 ?clone@EaseBackInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e2f3 ?clone@EaseBackOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e321 ?clone@EaseBackOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e357 ?clone@EaseBackOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e387 ?clone@EaseBackOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e3bf ?clone@EaseBezierAction@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e3f2 ?clone@EaseBezierAction@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e42d ?clone@EaseBezierAction@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e462 ?clone@EaseBezierAction@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e49f ?clone@EaseBounceIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e4ce ?clone@EaseBounceIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e505 ?clone@EaseBounceIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e536 ?clone@EaseBounceIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e56f ?clone@EaseBounceInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e5a1 ?clone@EaseBounceInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e5db ?clone@EaseBounceInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e60f ?clone@EaseBounceInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e64b ?clone@EaseBounceOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e67b ?clone@EaseBounceOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e6b3 ?clone@EaseBounceOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e6e5 ?clone@EaseBounceOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e71f ?clone@EaseCircleActionIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e754 ?clone@EaseCircleActionIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e791 ?clone@EaseCircleActionIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e7c8 ?clone@EaseCircleActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e807 ?clone@EaseCircleActionInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e83f ?clone@EaseCircleActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e87f ?clone@EaseCircleActionInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e8b9 ?clone@EaseCircleActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e8fb ?clone@EaseCircleActionOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7e931 ?clone@EaseCircleActionOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7e96f ?clone@EaseCircleActionOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7e9a7 ?clone@EaseCircleActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7e9e7 ?clone@EaseCubicActionIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ea1b ?clone@EaseCubicActionIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ea57 ?clone@EaseCubicActionIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7ea8d ?clone@EaseCubicActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7eacb ?clone@EaseCubicActionInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7eb02 ?clone@EaseCubicActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7eb41 ?clone@EaseCubicActionInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7eb7a ?clone@EaseCubicActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7ebbb ?clone@EaseCubicActionOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ebf0 ?clone@EaseCubicActionOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ec2d ?clone@EaseCubicActionOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7ec64 ?clone@EaseCubicActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7eca3 ?clone@EaseElasticIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ecd3 ?clone@EaseElasticIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ed0b ?clone@EaseElasticIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7ed3d ?clone@EaseElasticIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7ed77 ?clone@EaseElasticInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7edaa ?clone@EaseElasticInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ede5 ?clone@EaseElasticInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7ee1a ?clone@EaseElasticInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7ee57 ?clone@EaseElasticOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ee88 ?clone@EaseElasticOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7eec1 ?clone@EaseElasticOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7eef4 ?clone@EaseElasticOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7ef2f ?clone@EaseExponentialIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ef63 ?clone@EaseExponentialIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ef9f ?clone@EaseExponentialIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7efd5 ?clone@EaseExponentialIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f013 ?clone@EaseExponentialInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f04a ?clone@EaseExponentialInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f089 ?clone@EaseExponentialInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f0c2 ?clone@EaseExponentialInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f103 ?clone@EaseExponentialOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f138 ?clone@EaseExponentialOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f175 ?clone@EaseExponentialOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f1ac ?clone@EaseExponentialOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f1eb ?clone@EaseIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f214 ?clone@EaseIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f245 ?clone@EaseIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f270 ?clone@EaseIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f2a3 ?clone@EaseInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f2cf ?clone@EaseInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f303 ?clone@EaseInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f331 ?clone@EaseInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f367 ?clone@EaseOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f391 ?clone@EaseOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f3c3 ?clone@EaseOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f3ef ?clone@EaseOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f423 ?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f45b ?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f49b ?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f4d5 ?clone@EaseQuadraticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f517 ?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f552 ?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f595 ?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f5d2 ?clone@EaseQuadraticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f617 ?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f650 ?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f691 ?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f6cc ?clone@EaseQuadraticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f70f ?clone@EaseQuarticActionIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f745 ?clone@EaseQuarticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f783 ?clone@EaseQuarticActionIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f7bb ?clone@EaseQuarticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f7fb ?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f834 ?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f875 ?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f8b0 ?clone@EaseQuarticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f8f3 ?clone@EaseQuarticActionOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7f92a ?clone@EaseQuarticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7f969 ?clone@EaseQuarticActionOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7f9a2 ?clone@EaseQuarticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7f9e3 ?clone@EaseQuinticActionIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fa19 ?clone@EaseQuinticActionIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7fa57 ?clone@EaseQuinticActionIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fa8f ?clone@EaseQuinticActionIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7facf ?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fb08 ?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7fb49 ?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fb84 ?clone@EaseQuinticActionInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7fbc7 ?clone@EaseQuinticActionOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fbfe ?clone@EaseQuinticActionOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7fc3d ?clone@EaseQuinticActionOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fc76 ?clone@EaseQuinticActionOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7fcb7 ?clone@EaseSineIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fce4 ?clone@EaseSineIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7fd19 ?clone@EaseSineIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fd48 ?clone@EaseSineIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7fd7f ?clone@EaseSineInOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fdaf ?clone@EaseSineInOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7fde7 ?clone@EaseSineInOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fe19 ?clone@EaseSineInOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7fe53 ?clone@EaseSineOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7fe81 ?clone@EaseSineOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7feb7 ?clone@EaseSineOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7fee7 ?clone@EaseSineOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a7ff1f ?clone@FadeIn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a7ff48 ?clone@FadeIn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a7ff79 ?clone@FadeIn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a7ffa4 ?clone@FadeIn@cocos2d@@QBEPAVFadeTo@2@XZ
+DATA 00a7ffcd ?clone@FadeIn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80000 ?clone@FadeOut@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8002a ?clone@FadeOut@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8005c ?clone@FadeOut@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80088 ?clone@FadeOut@cocos2d@@QBEPAVFadeTo@2@XZ
+DATA 00a800b2 ?clone@FadeOut@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a800e6 ?clone@FadeOutBLTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80117 ?clone@FadeOutBLTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80150 ?clone@FadeOutBLTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80183 ?clone@FadeOutBLTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ
+DATA 00a801bc ?clone@FadeOutBLTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a801f7 ?clone@FadeOutBLTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8022c ?clone@FadeOutBLTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a80268 ?clone@FadeOutDownTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8029b ?clone@FadeOutDownTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a802d6 ?clone@FadeOutDownTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8030b ?clone@FadeOutDownTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ
+DATA 00a80346 ?clone@FadeOutDownTiles@cocos2d@@QBEPAVFadeOutUpTiles@2@XZ
+DATA 00a80381 ?clone@FadeOutDownTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a803be ?clone@FadeOutDownTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a803f5 ?clone@FadeOutDownTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a80433 ?clone@FadeOutTRTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80464 ?clone@FadeOutTRTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8049d ?clone@FadeOutTRTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a804d0 ?clone@FadeOutTRTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8050b ?clone@FadeOutTRTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a80540 ?clone@FadeOutTRTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a8057c ?clone@FadeOutUpTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a805ad ?clone@FadeOutUpTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a805e6 ?clone@FadeOutUpTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80619 ?clone@FadeOutUpTiles@cocos2d@@QBEPAVFadeOutTRTiles@2@XZ
+DATA 00a80652 ?clone@FadeOutUpTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8068d ?clone@FadeOutUpTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a806c2 ?clone@FadeOutUpTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a806fe ?clone@FadeTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80727 ?clone@FadeTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80758 ?clone@FadeTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80783 ?clone@FadeTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a807b6 ?clone@FlipX3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a807e0 ?clone@FlipX3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80812 ?clone@FlipX3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8083e ?clone@FlipX3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80872 ?clone@FlipX3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a808a2 ?clone@FlipX3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a808d0 ?clone@FlipX@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a808f8 ?clone@FlipX@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a80927 ?clone@FlipX@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80951 ?clone@FlipX@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80983 ?clone@FlipY3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a809ad ?clone@FlipY3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a809df ?clone@FlipY3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80a0b ?clone@FlipY3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80a3f ?clone@FlipY3D@cocos2d@@QBEPAVFlipX3D@2@XZ
+DATA 00a80a6a ?clone@FlipY3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a80a9a ?clone@FlipY3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a80ac8 ?clone@FlipY@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80af0 ?clone@FlipY@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a80b1f ?clone@FlipY@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80b49 ?clone@FlipY@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80b7b ?clone@Follow@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80ba4 ?clone@Follow@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80bcf ?clone@Hide@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80bf6 ?clone@Hide@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a80c24 ?clone@Hide@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80c4d ?clone@Hide@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80c7e ?clone@IfCallFunc@agtk@@QBEPAVAction@cocos2d@@XZ
+DATA 00a80caf ?clone@IfCallFunc@agtk@@QBEPAVActionInstant@cocos2d@@XZ
+DATA 00a80ce7 ?clone@IfCallFunc@agtk@@QBEPAVClonable@cocos2d@@XZ
+DATA 00a80d1a ?clone@IfCallFunc@agtk@@QBEPAVFiniteTimeAction@cocos2d@@XZ
+DATA 00a80d55 ?clone@IfCallFunc@agtk@@UBEPAV12@XZ
+DATA 00a80d79 ?clone@JumpBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80da2 ?clone@JumpBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80dd3 ?clone@JumpBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80dfe ?clone@JumpBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80e31 ?clone@JumpTiles3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80e5f ?clone@JumpTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80e95 ?clone@JumpTiles3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80ec5 ?clone@JumpTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a80efd ?clone@JumpTiles3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a80f2f ?clone@JumpTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a80f68 ?clone@JumpTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a80f91 ?clone@JumpTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a80fc2 ?clone@JumpTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a80fed ?clone@JumpTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81020 ?clone@JumpTo@cocos2d@@QBEPAVJumpBy@2@XZ
+DATA 00a81049 ?clone@Lens3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81072 ?clone@Lens3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a810a3 ?clone@Lens3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a810ce ?clone@Lens3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81101 ?clone@Lens3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a81130 ?clone@Lens3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8115d ?clone@Liquid@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81186 ?clone@Liquid@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a811b7 ?clone@Liquid@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a811e2 ?clone@Liquid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81215 ?clone@Liquid@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a81244 ?clone@Liquid@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a81271 ?clone@MoveBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8129a ?clone@MoveBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a812cb ?clone@MoveBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a812f6 ?clone@MoveBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81329 ?clone@MoveTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81352 ?clone@MoveTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81383 ?clone@MoveTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a813ae ?clone@MoveTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a813e1 ?clone@MoveTo@cocos2d@@QBEPAVMoveBy@2@XZ
+DATA 00a8140a ?clone@OrbitCamera@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81438 ?clone@OrbitCamera@cocos2d@@QBEPAVActionCamera@2@XZ
+DATA 00a8146c ?clone@OrbitCamera@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a814a2 ?clone@OrbitCamera@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a814d2 ?clone@OrbitCamera@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8150a ?clone@Place@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81532 ?clone@Place@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a81561 ?clone@Place@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8158b ?clone@Place@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a815bd ?clone@ProgressFromTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a815ee ?clone@ProgressFromTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81627 ?clone@ProgressFromTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8165a ?clone@ProgressFromTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81695 ?clone@ProgressTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a816c2 ?clone@ProgressTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a816f7 ?clone@ProgressTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81726 ?clone@ProgressTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8175d ?clone@RemoveSelf@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8178a ?clone@RemoveSelf@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a817be ?clone@RemoveSelf@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a817ed ?clone@RemoveSelf@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81824 ?clone@Repeat@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8184d ?clone@Repeat@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8187e ?clone@Repeat@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a818a9 ?clone@Repeat@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a818dc ?clone@RepeatForever@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8190c ?clone@RepeatForever@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81944 ?clone@RepeatForever@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81976 ?clone@RepeatForever@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a819b0 ?clone@ReuseGrid@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a819dc ?clone@ReuseGrid@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a81a0f ?clone@ReuseGrid@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81a3d ?clone@ReuseGrid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81a73 ?clone@ReverseTime@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81aa1 ?clone@ReverseTime@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81ad7 ?clone@ReverseTime@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81b07 ?clone@ReverseTime@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81b3f ?clone@Ripple3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81b6a ?clone@Ripple3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81b9d ?clone@Ripple3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81bca ?clone@Ripple3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81bff ?clone@Ripple3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a81c30 ?clone@Ripple3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a81c5f ?clone@RotateBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81c8a ?clone@RotateBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81cbd ?clone@RotateBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81cea ?clone@RotateBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81d1f ?clone@RotateTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81d4a ?clone@RotateTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81d7d ?clone@RotateTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81daa ?clone@RotateTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81ddf ?clone@ScaleBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81e09 ?clone@ScaleBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81e3b ?clone@ScaleBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81e67 ?clone@ScaleBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81e9b ?clone@ScaleBy@cocos2d@@QBEPAVScaleTo@2@XZ
+DATA 00a81ec6 ?clone@ScaleTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a81ef0 ?clone@ScaleTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a81f22 ?clone@ScaleTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a81f4e ?clone@ScaleTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a81f82 ?clone@Sequence@agtk@@QBEPAVAction@cocos2d@@XZ
+DATA 00a81fb1 ?clone@Sequence@agtk@@QBEPAVActionInterval@cocos2d@@XZ
+DATA 00a81fe8 ?clone@Sequence@agtk@@QBEPAVClonable@cocos2d@@XZ
+DATA 00a82019 ?clone@Sequence@agtk@@QBEPAVFiniteTimeAction@cocos2d@@XZ
+DATA 00a82052 ?clone@Sequence@agtk@@UBEPAV12@XZ
+DATA 00a82074 ?clone@Sequence@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8209f ?clone@Sequence@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a820d2 ?clone@Sequence@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a820ff ?clone@Sequence@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82134 ?clone@Shaky3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8215e ?clone@Shaky3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82190 ?clone@Shaky3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a821bc ?clone@Shaky3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a821f0 ?clone@Shaky3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a82220 ?clone@Shaky3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8224e ?clone@ShakyTiles3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8227d ?clone@ShakyTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a822b4 ?clone@ShakyTiles3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a822e5 ?clone@ShakyTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8231e ?clone@ShakyTiles3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a82351 ?clone@ShakyTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a8238b ?clone@ShatteredTiles3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a823be ?clone@ShatteredTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a823f9 ?clone@ShatteredTiles3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8242e ?clone@ShatteredTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8246b ?clone@ShatteredTiles3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a824a2 ?clone@ShatteredTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a824e0 ?clone@Show@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82507 ?clone@Show@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a82535 ?clone@Show@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8255e ?clone@Show@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8258f ?clone@ShuffleTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a825be ?clone@ShuffleTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a825f5 ?clone@ShuffleTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82626 ?clone@ShuffleTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8265f ?clone@ShuffleTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a82692 ?clone@ShuffleTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a826cc ?clone@SkewBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a826f5 ?clone@SkewBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82726 ?clone@SkewBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82751 ?clone@SkewBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82784 ?clone@SkewBy@cocos2d@@QBEPAVSkewTo@2@XZ
+DATA 00a827ad ?clone@SkewTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a827d6 ?clone@SkewTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82807 ?clone@SkewTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82832 ?clone@SkewTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82865 ?clone@Spawn@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8288d ?clone@Spawn@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a828bd ?clone@Spawn@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a828e7 ?clone@Spawn@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82919 ?clone@Speed@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82941 ?clone@Speed@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8296b ?clone@SplitCols@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82997 ?clone@SplitCols@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a829cb ?clone@SplitCols@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a829f9 ?clone@SplitCols@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82a2f ?clone@SplitCols@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a82a5f ?clone@SplitCols@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a82a96 ?clone@SplitRows@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82ac2 ?clone@SplitRows@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82af6 ?clone@SplitRows@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82b24 ?clone@SplitRows@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82b5a ?clone@SplitRows@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a82b8a ?clone@SplitRows@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a82bc1 ?clone@SpriteFrame@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82bf1 ?clone@StopGrid@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82c1c ?clone@StopGrid@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a82c4e ?clone@StopGrid@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82c7b ?clone@StopGrid@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82cb0 ?clone@TargetedAction@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82ce1 ?clone@TargetedAction@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82d1a ?clone@TargetedAction@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82d4d ?clone@TargetedAction@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82d88 ?clone@TintBy@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82db1 ?clone@TintBy@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82de2 ?clone@TintBy@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82e0d ?clone@TintBy@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82e40 ?clone@TintTo@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82e69 ?clone@TintTo@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a82e9a ?clone@TintTo@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82ec5 ?clone@TintTo@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82ef8 ?clone@ToggleVisibility@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a82f2b ?clone@ToggleVisibility@cocos2d@@QBEPAVActionInstant@2@XZ
+DATA 00a82f65 ?clone@ToggleVisibility@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a82f9a ?clone@ToggleVisibility@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a82fd7 ?clone@TurnOffTiles@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a83006 ?clone@TurnOffTiles@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8303d ?clone@TurnOffTiles@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8306e ?clone@TurnOffTiles@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a830a7 ?clone@TurnOffTiles@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a830da ?clone@TurnOffTiles@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a83114 ?clone@Twirl@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8313c ?clone@Twirl@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8316c ?clone@Twirl@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a83196 ?clone@Twirl@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a831c8 ?clone@Twirl@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a831f6 ?clone@Twirl@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a83222 ?clone@Waves3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a8324c ?clone@Waves3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a8327e ?clone@Waves3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a832aa ?clone@Waves3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a832de ?clone@Waves3D@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a8330e ?clone@Waves3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8333c ?clone@Waves@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a83364 ?clone@Waves@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a83394 ?clone@Waves@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a833be ?clone@Waves@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a833f0 ?clone@Waves@cocos2d@@QBEPAVGrid3DAction@2@XZ
+DATA 00a8341e ?clone@Waves@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8344a ?clone@WavesTiles3D@cocos2d@@QBEPAVAction@2@XZ
+DATA 00a83479 ?clone@WavesTiles3D@cocos2d@@QBEPAVActionInterval@2@XZ
+DATA 00a834b0 ?clone@WavesTiles3D@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a834e1 ?clone@WavesTiles3D@cocos2d@@QBEPAVFiniteTimeAction@2@XZ
+DATA 00a8351a ?clone@WavesTiles3D@cocos2d@@QBEPAVGridAction@2@XZ
+DATA 00a8354d ?clone@WavesTiles3D@cocos2d@@QBEPAVTiledGrid3DAction@2@XZ
+DATA 00a83587 ?clone@__Bool@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a835b2 ?clone@__Double@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a835df ?clone@__Float@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8360b ?clone@__Integer@cocos2d@@QBEPAVClonable@2@XZ
+DATA 00a8368b ?compareResourceInfo@Player@agtk@@QAE_NHH@Z
+DATA 00a83890 ?continuePlayCurrentAnime@Player@agtk@@QAEXXZ
+DATA 00a838be ?convertToLayerSpacePosition2@Player@agtk@@QAE?AVVec2@cocos2d@@V34@_N@Z
+DATA 00a83906 ?convertToLayerSpacePosition@Player@agtk@@QAE?AVVec2@cocos2d@@V34@_N@Z
+DATA 00a839c4 ?convertToLayerSpaceTimelineRect@Player@agtk@@QAEXHAAVRect@cocos2d@@@Z
+DATA 00a83a0b ?convertToLayerSpaceTimelineRectList@Player@agtk@@QAEXW4EnumTimelineType@TimelineInfoData@data@2@AAV?$vector@VRect@cocos2d@@V?$allocator@VRect@cocos2d@@@std@@@std@@@Z
+DATA 00a83ab2 ?convertToLayerSpaceTimelineVertex4@Player@agtk@@QAE_NHAAUVertex4@2@W4EnumCollidedBit@12@H@Z
+DATA 00a83b0f ?convertToLayerSpaceTimelineVertex4List@Player@agtk@@QAEXW4EnumTimelineType@TimelineInfoData@data@2@AAV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@W4EnumCollidedBit@12@H@Z
+DATA 00a83c45 ?convertToWorldSpaceTimelineVertex4@Player@agtk@@AAE_NPAVAnimationTimeline@2@AAUVertex4@2@W4EnumCollidedBit@12@H@Z
+DATA 00a83d2f ?copy@InputMapping@data@agtk@@QAEXPBV123@@Z
+DATA 00a83d5b ?copy@InputMappingData@data@agtk@@QAEXABV123@@Z
+DATA 00a83d8b ?copy@OperationKey@data@agtk@@QAEXPBV123@@Z
+DATA 00a83db7 ?copy@PolygonShape@agtk@@IAEXPAPAVVec2@cocos2d@@AAV34@@Z
+DATA 00a83df0 ?copyData@GameManager@@QAEXXZ
+DATA 00a84c6a ?create@DummyParameterGaugeUi@agtk@@SAPAV12@PAVPlayer@2@PAVObjectParameterGaugeUi@2@@Z
+DATA 00a89763 ?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+DATA 00a89806 ?create@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@PAX0@Z
+DATA 00a8cfc5 ?create@Player@agtk@@SAPAV12@PAVAnimationData@data@2@@Z
+DATA 00a8cffd ?create@PlayerCharacterData@data@agtk@@SAPAV123@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+DATA 00a8d096 ?create@PlayerSprite@agtk@@SAPAV12@HHM@Z
+DATA 00a8ebfe ?createAnimationTimelineList@Player@agtk@@AAEXXZ
+DATA 00a8eca3 ?createBasePlayer@Player@agtk@@AAEXPAVResourceInfoData@data@2@H@Z
+DATA 00a8f0e7 ?createForScript@ObjectCommandObjectCreateData@data@agtk@@SAPAV123@XZ
+DATA 00a8f453 ?createObject@ActionCommandMessageTextUi@agtk@@AAEX_N@Z
+DATA 00a8f48b ?createObject@ActionCommandScrollMessageTextUi@agtk@@AAEX_N@Z
+DATA 00a8f4c9 ?createObjectCommandRenderTexture@SceneBackground@agtk@@QAEXXZ
+DATA 00a8f508 ?createObjectCommandRenderTexture@SceneTopMost@agtk@@QAEXXZ
+DATA 00a8f544 ?createObjectCommandWithMenuRenderTexture@SceneTopMost@agtk@@QAEXXZ
+DATA 00a8f84c ?createPlayer@Object@agtk@@IAEPAVPlayer@2@PAVAnimationData@data@2@@Z
+DATA 00a8fb06 ?createRenderTexture@Player@agtk@@AAEXXZ
+DATA 00a90851 ?createWithAnimationData@ImagePlayer@agtk@@2P6APAV12@PAVAnimationData@data@2@PAVResourceInfoData@42@H@ZA
+DATA 00a90ddb ?decrementObjectInstanceCount@Scene@agtk@@QAEHH@Z
+DATA 00a92047 ?execActionObjectChange@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a92095 ?execActionObjectCreate@Object@agtk@@IAEXPAVObjectCommandData@data@2@@Z
+DATA 00a920dd ?execActionObjectCreate@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a9212b ?execActionObjectCreateForScript@ObjectAction@agtk@@SAHHHHH@Z
+DATA 00a92169 ?execActionObjectFilterEffect@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a921bd ?execActionObjectFilterEffect@ObjectAction@agtk@@QAEXXZ
+DATA 00a921f5 ?execActionObjectFilterEffectRemove@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a9224f ?execActionObjectLock@ObjectAction@agtk@@QAE_NPAVObjectCommandData@data@2@@Z
+DATA 00a9229c ?execActionObjectMove@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a922e8 ?execActionObjectPushPull@ObjectAction@agtk@@QAE_NPAVObjectCommandData@data@2@@Z
+DATA 00a92339 ?execActionObjectUnlock@ObjectAction@agtk@@QAEXPAVObjectCommandData@data@2@@Z
+DATA 00a92bd5 ?forceUpdateObjectInstanceId@Scene@agtk@@QAEXH_N@Z
+DATA 00a932c3 ?getActionId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ
+DATA 00a9358c ?getActionObjectId@ObjectActionLinkConditionObjectActionChangedData@data@agtk@@UBEHXZ
+DATA 00a939a1 ?getAdjustX@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ
+DATA 00a93ca2 ?getAdjustY@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ
+DATA 00a94542 ?getAnimationData@BasePlayer@agtk@@QBEPAVAnimationData@data@2@XZ
+DATA 00a94583 ?getAnimationData@Player@agtk@@UBEPAVAnimationData@data@2@XZ
+DATA 00a94ac3 ?getAnimationMotionList@BasePlayer@agtk@@UBEPAV__Dictionary@cocos2d@@XZ
+DATA 00a94d85 ?getAnimeTimelineAttackList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a94dc8 ?getAnimeTimelineConnectList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a94e0c ?getAnimeTimelineHitList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a94e4c ?getAnimeTimelineList@Player@agtk@@AAEPAV__Array@cocos2d@@W4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00a94eb4 ?getAnimeTimelineWallList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a95c48 ?getAttackVertListCache@Player@agtk@@UBE?AV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@XZ
+DATA 00a95cb6 ?getAttackVertRectCache@Player@agtk@@UBE?AVRect@cocos2d@@XZ
+DATA 00a95cf2 ?getAttackerObjectInstanceIdList@Object@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a9658a ?getAutoGenerationCenterNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00a965cb ?getAutoGenerationNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00a96606 ?getAutoGenerationRotation@Player@agtk@@QAEMXZ
+DATA 00a96d0c ?getBasePlayer@Object@agtk@@UBEPAVBasePlayer@2@XZ
+DATA 00a96d3e ?getBasePlayer@Player@agtk@@QAEPAVBasePlayer@2@XZ
+DATA 00a97cff ?getCenter@BasePlayer@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00a97e5d ?getCenterNode@Player@agtk@@UBEPAVCenterNode@12@XZ
+DATA 00a97e90 ?getCenterNodePosition2@Player@agtk@@QAE?AVVec2@cocos2d@@XZ
+DATA 00a97ecc ?getCenterNodePosition@Player@agtk@@QAE?AVVec2@cocos2d@@XZ
+DATA 00a97f48 ?getCenterOffset@Player@agtk@@IAE?AVVec2@cocos2d@@XZ
+DATA 00a97fe2 ?getCenterPosition@Player@agtk@@UBE?AVVec2@cocos2d@@XZ
+DATA 00a98019 ?getCenterPositionForSpriteStudio@Player@agtk@@IAE?AVVec2@cocos2d@@XZ
+DATA 00a980cd ?getCenterRotation@Player@agtk@@QAEMXZ
+DATA 00a980f4 ?getCenterRotationOld@Player@agtk@@UBEMXZ
+DATA 00a9846c ?getChildObject@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+DATA 00a98adc ?getClippingPostAdjustNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00a98b1b ?getClippingPreAdjustNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00a98b59 ?getClippingRectangleNode@Player@agtk@@UBEPAVClippingRectangleNode@cocos2d@@XZ
+DATA 00a9a698 ?getConnectId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ
+DATA 00a9ac98 ?getConnectVertListCache@Player@agtk@@UBE?AV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@XZ
+DATA 00a9ad07 ?getConnectVertRectCache@Player@agtk@@UBE?AVRect@cocos2d@@XZ
+DATA 00a9ba2a ?getCreateObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00a9baad ?getCreatePosition@ObjectCommandObjectCreateData@data@agtk@@UBE?AW4EnumCreatePosition@123@XZ
+DATA 00a9bc81 ?getCurrentActionNo@Player@agtk@@QAEHXZ
+DATA 00a9bcd5 ?getCurrentAnimationMotion@BasePlayer@agtk@@UBEPAVAnimationMotion@2@XZ
+DATA 00a9be54 ?getCurrentDirectionData@Player@agtk@@QAEPAVDirectionData@data@2@XZ
+DATA 00a9be98 ?getCurrentDirectionNo@Player@agtk@@QAEHXZ
+DATA 00a9c0fc ?getCurrentResourceInfoId@Player@agtk@@QAEHXZ
+DATA 00a9e045 ?getDispPosition@Player@agtk@@QAE?AVVec2@cocos2d@@XZ
+DATA 00aa0261 ?getExecActionObjectCreateList@Object@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00aa02a7 ?getExecActionSpriteList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00aa15c0 ?getFixedFrame@BasePlayer@agtk@@QAEHXZ
+DATA 00aa1615 ?getFixedFrameNo@BasePlayer@agtk@@QAEHXZ
+DATA 00aa294a ?getFrameNo@BasePlayer@agtk@@UBEHXZ
+DATA 00aa385f ?getGridMagnet@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+DATA 00aa3ce7 ?getHasRotation@BasePlayer@agtk@@UBE_NXZ
+DATA 00aa4310 ?getHitVertListCache@Player@agtk@@UBE?AV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@XZ
+DATA 00aa437b ?getHitVertRectCache@Player@agtk@@UBE?AVRect@cocos2d@@XZ
+DATA 00aa52e1 ?getIgnoreCreatePlayerList@GameManager@@UBEPAV__Array@cocos2d@@XZ
+DATA 00aa5452 ?getIgnorePlayerObject@ObjectCommandParentChildChangeData@data@agtk@@UBE_NXZ
+DATA 00aa5aba ?getImageId@PlayerSprite@agtk@@UBEHXZ
+DATA 00aa65aa ?getInitialPlayerPosition@OthersCameraData@data@agtk@@UBE_NXZ
+DATA 00aa6793 ?getInnerRotation@BasePlayer@agtk@@UBEMXZ
+DATA 00aa67bd ?getInnerScale@BasePlayer@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00aa6e98 ?getInstance@AudioManager@@SAPAV1@XZ
+DATA 00aa6ebd ?getInstance@BulletManager@@SAPAV1@XZ
+DATA 00aa6ee3 ?getInstance@EffectManager@@SAPAV1@XZ
+DATA 00aa6f09 ?getInstance@FontManager@@SAPAV1@XZ
+DATA 00aa6f2d ?getInstance@GameManager@@SAPAV1@XZ
+DATA 00aa6f51 ?getInstance@GuiManager@@SAPAV1@XZ
+DATA 00aa6f74 ?getInstance@ImageManager@@SAPAV1@XZ
+DATA 00aa6f99 ?getInstance@InputManager@@SAPAV1@XZ
+DATA 00aa6fbe ?getInstance@MovieManager@@SAPAV1@XZ
+DATA 00aa6fe3 ?getInstance@ParticleManager@@SAPAV1@XZ
+DATA 00aa700b ?getInstance@PrimitiveManager@@SAPAV1@XZ
+DATA 00aa7034 ?getInstanceConfigurable@ObjectCommandData@data@agtk@@UBE_NXZ
+DATA 00aa7072 ?getInstanceCount@PlayObjectData@data@agtk@@QAEHXZ
+DATA 00aa70a5 ?getInstanceId@Object@agtk@@QAEHXZ
+DATA 00aa70c8 ?getInstanceId@PlayObjectData@data@agtk@@QAEHXZ
+DATA 00aa9e29 ?getLowerPriority@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+DATA 00aad559 ?getNodePlayer@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00aad5c1 ?getNodeToParentTransform@Player@agtk@@EBEABVMat4@cocos2d@@XZ
+DATA 00aada7e ?getObjCommandListByInstanceConfigurable@ObjectAction@agtk@@AAEPAV__Dictionary@cocos2d@@PAV34@0@Z
+DATA 00aadae0 ?getObjCommandListByInstanceConfigurable@ObjectAction@agtk@@CAPAV__Dictionary@cocos2d@@PAV34@0PAVObject@2@@Z
+DATA 00aaf31f ?getObjectId@ObjectCommandObjectCreateData@data@agtk@@UBEHXZ
+DATA 00aaf569 ?getObjectInstance@Scene@agtk@@QAEPAVObject@2@HHW4EnumType@SceneLayer@2@@Z
+DATA 00aaf5b4 ?getObjectInstanceByName@Scene@agtk@@QAEPAVObject@2@HPBD@Z
+DATA 00aaf5ef ?getObjectInstanceCount@Scene@agtk@@QAEHH@Z
+DATA 00aaf61b ?getObjectInstanceId@Scene@agtk@@QAEHH_N@Z
+DATA 00aaf646 ?getObjectInstanceId@Scene@agtk@@QAEHPAVObject@2@@Z
+DATA 00aaf67a ?getObjectInstanceId@Scene@agtk@@QAEH_N@Z
+DATA 00aaf96e ?getObjectPlayer@Scene@agtk@@AAEPAVObject@2@XZ
+DATA 00ab0630 ?getOffset@BasePlayer@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00ab0b98 ?getOpacityTimer@PlayerSprite@agtk@@UBEPAVOpacityTimer@12@XZ
+DATA 00ab0d7b ?getOrigin@BasePlayer@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00ab0dae ?getOriginNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00ab0de1 ?getOriginOffset@BasePlayer@agtk@@UBE?AVVec2@cocos2d@@XZ
+DATA 00ab1784 ?getParentObjectInstanceId@PlayObjectData@data@agtk@@QAEHXZ
+DATA 00ab2c82 ?getPlayer1CharacterList@PlayerCharacterData@data@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab2cd4 ?getPlayer2CharacterList@PlayerCharacterData@data@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab2d26 ?getPlayer3CharacterList@PlayerCharacterData@data@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab2d78 ?getPlayer4CharacterList@PlayerCharacterData@data@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab2dca ?getPlayer@EffectAnimation@agtk@@UBEPAVPlayer@2@XZ
+DATA 00ab2dfd ?getPlayer@Object@agtk@@UBEPAVPlayer@2@XZ
+DATA 00ab2e27 ?getPlayer@ObjectSceneLoop@agtk@@UBEPAVPlayer@2@XZ
+DATA 00ab2e5a ?getPlayerCharacterData@ProjectData@data@agtk@@UBEPAVPlayerCharacterData@23@XZ
+DATA 00ab2ea9 ?getPlayerCharacterLine@PlayerCharacterData@data@agtk@@QAEPAV__Array@cocos2d@@H@Z
+DATA 00ab2efb ?getPlayerCharacterList@PlayerCharacterData@data@agtk@@QAEPAV__Array@cocos2d@@H@Z
+DATA 00ab2f4d ?getPlayerCount@ProjectData@data@agtk@@UBEHXZ
+DATA 00ab2f7b ?getPlayerId@Object@agtk@@QAEHXZ
+DATA 00ab2f9c ?getPlayerId@PlayObjectData@data@agtk@@QAEHXZ
+DATA 00ab2fca ?getPlayerMoveType@TileData@data@agtk@@UBE?AW4EnumPlayerMoveType@123@XZ
+DATA 00ab3012 ?getPlayerScale@Player@agtk@@UBE?AVVec2@cocos2d@@XZ
+DATA 00ab3046 ?getPlayerVisible@Object@agtk@@UBE_NXZ
+DATA 00ab3677 ?getPortalTouchedPlayerList@GameManager@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab3816 ?getPosition@ImagePlayer@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00ab384c ?getPosition@ImagePlayer@agtk@@UBEXPAM0@Z
+DATA 00ab3927 ?getPosition@Player@agtk@@UBEABVVec2@cocos2d@@XZ
+DATA 00ab4314 ?getPostMoveOnlyTransportPlayersTouching@MoveSettingData@data@agtk@@UBE_NXZ
+DATA 00ab441b ?getPostMoveShowPlayersInTouchedOrder@MoveSettingData@data@agtk@@UBE_NXZ
+DATA 00ab482f ?getPreMoveInvalidateTouchedPlayer@MoveSettingData@data@agtk@@UBE_NXZ
+DATA 00ab53ce ?getProbability@ObjectCommandObjectCreateData@data@agtk@@UBENXZ
+DATA 00ab5de0 ?getRealPosition@BasePlayer@agtk@@IAE?AVVec2@cocos2d@@XZ
+DATA 00ab5e19 ?getRealPosition@Player@agtk@@UBE?AVVec2@cocos2d@@XZ
+DATA 00ab5ed3 ?getRealRotation@BasePlayer@agtk@@IAEMXZ
+DATA 00ab5efc ?getRealScale@BasePlayer@agtk@@IAE?AVVec2@cocos2d@@XZ
+DATA 00ab67cd ?getRemoveShaderList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ab69d6 ?getRenderTexture@Player@agtk@@UBEPAVRenderTextureCtrl@2@XZ
+DATA 00ab6c7e ?getRenderTextureSize@Player@agtk@@UBE?AVSize@cocos2d@@XZ
+DATA 00ab6ec0 ?getRequestSwitchCopyFile@Scene@agtk@@UBE_NXZ
+DATA 00ab70e9 ?getResourceInfoId@Player@agtk@@QAEHHH@Z
+DATA 00ab7a03 ?getRotation@ImagePlayer@agtk@@UBEMXZ
+DATA 00ab7b60 ?getRotation@Player@agtk@@UBEMXZ
+DATA 00ab7f6c ?getScaleToShowAllPlayers@OthersCameraData@data@agtk@@UBE_NXZ
+DATA 00ab7faa ?getScaleX@ImagePlayer@agtk@@UBEMXZ
+DATA 00ab8062 ?getScaleX@Player@agtk@@UBEMXZ
+DATA 00ab8081 ?getScaleY@ImagePlayer@agtk@@UBEMXZ
+DATA 00ab8139 ?getScaleY@Player@agtk@@UBEMXZ
+DATA 00ab9876 ?getScrollToShowAllPlayers@OthersCameraData@data@agtk@@UBE_NXZ
+DATA 00ab9f9d ?getShader@Player@agtk@@QAEPAVShader@2@W4ShaderKind@32@@Z
+DATA 00abb551 ?getStartPointPlayerBit@ScenePartObjectData@data@agtk@@UBEHXZ
+DATA 00abbb1e ?getStockShaderInfoFlag@Player@agtk@@UBE_NXZ
+DATA 00abbb4b ?getStockShaderInfoList@Player@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00abd8d2 ?getTargetObjectByInstanceId@GameManager@@QAEPAVObject@agtk@@H@Z
+DATA 00abdd00 ?getTargetObjectInstanceId@ObjectAction@agtk@@AAEPAVObject@2@HH@Z
+DATA 00abf66e ?getTimelineBackside@Player@agtk@@QAE_NH@Z
+DATA 00abf699 ?getTimelineCountMax@Player@agtk@@AAEHW4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00abf867 ?getTimelinePosition@Player@agtk@@AAE?AVVec2@cocos2d@@VRect@4@VSize@4@@Z
+DATA 00abf8b0 ?getTimelineRectCenterVertex4@Player@agtk@@AAE?AUVertex4@2@VRect@cocos2d@@VSize@5@VVec2@5@@Z
+DATA 00abf90d ?getTimelineRectList@Player@agtk@@AAEPAVRect@cocos2d@@W4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00abf971 ?getTimelineRectVertex4@Player@agtk@@AAE?AUVertex4@2@VRect@cocos2d@@VSize@5@@Z
+DATA 00abfa0c ?getTimelineValid@Player@agtk@@QAE_NH@Z
+DATA 00abfa34 ?getTimelineVertList@Player@agtk@@AAEPAV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@W4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00abfaca ?getTimelineVertListCache@Player@agtk@@QAEXW4EnumTimelineType@TimelineInfoData@data@2@AAV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@W4EnumCollidedBit@12@H@Z
+DATA 00ac02f0 ?getTransformNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00ac083a ?getType@BasePlayer@agtk@@UBE?AW4Type@12@XZ
+DATA 00ac0a7e ?getType@Player@agtk@@UBE?AW4Type@BasePlayer@2@XZ
+DATA 00ac0bfd ?getUncreateObjectList@SceneLayer@agtk@@UBEPAV__Array@cocos2d@@XZ
+DATA 00ac1154 ?getUseConnect@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+DATA 00ac13b3 ?getUseRotation@ObjectCommandObjectCreateData@data@agtk@@UBE_NXZ
+DATA 00ac353b ?getVisibleCtrlNode@Player@agtk@@UBEPAVNode@cocos2d@@XZ
+DATA 00ac3b60 ?getWallAreaAttackFlag@Player@agtk@@UBE_NXZ
+DATA 00ac448d ?getWallVertListCache@Player@agtk@@UBE?AV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@XZ
+DATA 00ac44f9 ?getWallVertRectCache@Player@agtk@@UBE?AVRect@cocos2d@@XZ
+DATA 00ac56ca ?incrementObjectInstanceCount@Scene@agtk@@QAEHH@Z
+DATA 00ac64be ?init@DummyParameterGaugeUi@agtk@@EAE_NPAVPlayer@2@PAVObjectParameterGaugeUi@2@@Z
+DATA 00aca9c4 ?init@ObjectCommandObjectCreateData@data@agtk@@AAE_NPAX0@Z
+DATA 00aca9ff ?init@ObjectCommandObjectCreateData@data@agtk@@EAE_NABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+DATA 00acdf95 ?init@Player@agtk@@EAE_NPAVAnimationData@data@2@@Z
+DATA 00acdfc8 ?init@PlayerCharacterData@data@agtk@@EAE_NABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+DATA 00ace05b ?init@PlayerSprite@agtk@@EAE_NHHM@Z
+DATA 00ad00be ?initWithAnimationData@ImagePlayer@agtk@@MAE_NPAVAnimationData@data@2@PAVResourceInfoData@42@H@Z
+DATA 00ad0c4c ?isAutoGeneration@Player@agtk@@QAE_NXZ
+DATA 00ad124e ?isFlipY@Player@agtk@@QAE_NXZ
+DATA 00ad12ca ?isGroupPlayer@ObjectData@data@agtk@@QBE_NXZ
+DATA 00ad17b1 ?isNowPlaying@BasePlayer@agtk@@QAE_NHH@Z
+DATA 00ad212c ?isUpdateTimelineVertListCache@Player@agtk@@QAE_NW4EnumTimelineType@TimelineInfoData@data@2@@Z
+DATA 00ad29b0 ?lock@Player@agtk@@QAEXXZ
+DATA 00ad3347 ?play@ImagePlayer@agtk@@UAEXHHM_N0@Z
+DATA 00ad33a1 ?play@Player@agtk@@UAEXHH_N0@Z
+DATA 00ad43bb ?removeAllShader@Player@agtk@@QAEXXZ
+DATA 00ad43e0 ?removeBasePlayer@Player@agtk@@AAEXXZ
+DATA 00ad4772 ?removeExecActionSprite@Player@agtk@@QAEXM@Z
+DATA 00ad4d9c ?removeShader@Player@agtk@@QAEXW4ShaderKind@Shader@2@M@Z
+DATA 00ad65ae ?setActionId@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z
+DATA 00ad67fb ?setActionObjectId@ObjectActionLinkConditionObjectActionChangedData@data@agtk@@UAEXH@Z
+DATA 00ad6c21 ?setAdjustX@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z
+DATA 00ad6f2f ?setAdjustY@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z
+DATA 00ad774a ?setAnimationData@BasePlayer@agtk@@QAEXPAVAnimationData@data@2@@Z
+DATA 00ad778c ?setAnimationData@Player@agtk@@UAEXPAVAnimationData@data@2@@Z
+DATA 00ad792b ?setAnimationMotionList@BasePlayer@agtk@@UAEXPAV__Dictionary@cocos2d@@@Z
+DATA 00ad7b3e ?setAnimeTimelineAttackList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ad7b82 ?setAnimeTimelineConnectList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ad7bc7 ?setAnimeTimelineHitList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ad7c08 ?setAnimeTimelineWallList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ad863b ?setAttackVertListCache@Player@agtk@@UAEXV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@@Z
+DATA 00ad86a8 ?setAttackVertRectCache@Player@agtk@@UAEXVRect@cocos2d@@@Z
+DATA 00ad86e3 ?setAttackerObjectInstanceIdList@Object@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ad8f5f ?setAutoGenerationCenterNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00ad8fa1 ?setAutoGenerationNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00ad9679 ?setBasePlayer@Object@agtk@@UAEXPAVBasePlayer@2@@Z
+DATA 00ada50d ?setCenter@BasePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00ada541 ?setCenter@BasePlayer@agtk@@UAEXMM@Z
+DATA 00ada620 ?setCenterNode@Player@agtk@@UAEXPAVCenterNode@12@@Z
+DATA 00ada6c5 ?setCenterPosition@Player@agtk@@UAEXVVec2@cocos2d@@@Z
+DATA 00ada768 ?setCenterRotation@Player@agtk@@QAEXM@Z
+DATA 00ada790 ?setCenterRotationOld@Player@agtk@@UAEXM@Z
+DATA 00adaaf5 ?setChildObject@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+DATA 00adb134 ?setClippingPostAdjustNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00adb174 ?setClippingPreAdjustNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00adb1b3 ?setClippingRectangleNode@Player@agtk@@UAEXPAVClippingRectangleNode@cocos2d@@@Z
+DATA 00adc8aa ?setConnectId@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z
+DATA 00adce7b ?setConnectVertListCache@Player@agtk@@UAEXV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@@Z
+DATA 00adcee9 ?setConnectVertRectCache@Player@agtk@@UAEXVRect@cocos2d@@@Z
+DATA 00add988 ?setCreateObjectList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00adda0d ?setCreatePosition@ObjectCommandObjectCreateData@data@agtk@@UAEXW4EnumCreatePosition@123@@Z
+DATA 00adda9f ?setCreateWithAnimationData@ImagePlayer@agtk@@SAXP6APAV12@PAVAnimationData@data@2@PAVResourceInfoData@42@H@Z@Z
+DATA 00addcfc ?setCurrentAnimationMotion@BasePlayer@agtk@@UAEXPAVAnimationMotion@2@@Z
+DATA 00ae1c29 ?setExecActionObjectCreateList@Object@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ae1c70 ?setExecActionSprite@Player@agtk@@QAEXHHM@Z
+DATA 00ae1c9c ?setExecActionSpriteList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ae2df6 ?setFixedFrame@BasePlayer@agtk@@QAEXH_N@Z
+DATA 00ae2e4f ?setFixedFrameNo@BasePlayer@agtk@@QAEXH_N@Z
+DATA 00ae3f91 ?setFrameNo@BasePlayer@agtk@@UAEXH@Z
+DATA 00ae4c70 ?setGridMagnet@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+DATA 00ae4f42 ?setHasRotation@BasePlayer@agtk@@UAEX_N@Z
+DATA 00ae5588 ?setHitVertListCache@Player@agtk@@UAEXV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@@Z
+DATA 00ae55f2 ?setHitVertRectCache@Player@agtk@@UAEXVRect@cocos2d@@@Z
+DATA 00ae6502 ?setIgnoreCreatePlayerList@GameManager@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00ae6679 ?setIgnorePlayerObject@ObjectCommandParentChildChangeData@data@agtk@@UAEX_N@Z
+DATA 00ae6b4c ?setImageId@PlayerSprite@agtk@@UAEXH@Z
+DATA 00ae75c5 ?setInitialPlayerPosition@OthersCameraData@data@agtk@@UAEX_N@Z
+DATA 00ae7759 ?setInnerRotation@BasePlayer@agtk@@UAEXM@Z
+DATA 00ae7784 ?setInnerScale@BasePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00ae77bc ?setInnerScale@BasePlayer@agtk@@UAEXMM@Z
+DATA 00ae7d42 ?setInstanceConfigurable@ObjectCommandData@data@agtk@@UAEX_N@Z
+DATA 00ae7d81 ?setInstanceCount@PlayObjectData@data@agtk@@QAEHH@Z
+DATA 00ae7db5 ?setInstanceId@PlayObjectData@data@agtk@@QAEXH@Z
+DATA 00aea67f ?setLowerPriority@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+DATA 00aed0e4 ?setNodePlayer@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00aee89a ?setObjectId@ObjectCommandObjectCreateData@data@agtk@@UAEXH@Z
+DATA 00aeeac9 ?setObjectInstanceCount@Scene@agtk@@QAEHHH@Z
+DATA 00aeed91 ?setObjectNode@BasePlayer@agtk@@QAEXPAVNode@cocos2d@@@Z
+DATA 00aef9f0 ?setOffset@BasePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00aefa24 ?setOffset@BasePlayer@agtk@@UAEXMM@Z
+DATA 00aefed2 ?setOpacityTimer@PlayerSprite@agtk@@UAEXPAVOpacityTimer@12@@Z
+DATA 00af000b ?setOrigin@BasePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00af003f ?setOrigin@BasePlayer@agtk@@UAEXMM@Z
+DATA 00af0064 ?setOriginNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00af0098 ?setOriginOffset@BasePlayer@agtk@@QAEXMM@Z
+DATA 00af00c3 ?setOriginOffset@BasePlayer@agtk@@UAEXVVec2@cocos2d@@@Z
+DATA 00af0a41 ?setParentObjectInstanceId@PlayObjectData@data@agtk@@QAEXH@Z
+DATA 00af1c39 ?setPlayer1CharacterList@PlayerCharacterData@data@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af1c8c ?setPlayer2CharacterList@PlayerCharacterData@data@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af1cdf ?setPlayer3CharacterList@PlayerCharacterData@data@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af1d32 ?setPlayer4CharacterList@PlayerCharacterData@data@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af1d85 ?setPlayer@EffectAnimation@agtk@@UAEXPAVPlayer@2@@Z
+DATA 00af1db9 ?setPlayer@Object@agtk@@UAEXPAVPlayer@2@@Z
+DATA 00af1de4 ?setPlayer@ObjectSceneLoop@agtk@@UAEXPAVPlayer@2@@Z
+DATA 00af1e18 ?setPlayerCharacterData@ProjectData@data@agtk@@UAEXPAVPlayerCharacterData@23@@Z
+DATA 00af1e68 ?setPlayerCount@ProjectData@data@agtk@@UAEXH@Z
+DATA 00af1e97 ?setPlayerId@PlayObjectData@data@agtk@@QAEXH@Z
+DATA 00af1ec6 ?setPlayerMoveType@TileData@data@agtk@@UAEXW4EnumPlayerMoveType@123@@Z
+DATA 00af1f0d ?setPlayerScale@Player@agtk@@UAEXVVec2@cocos2d@@@Z
+DATA 00af1f40 ?setPlayerVisible@Object@agtk@@UAEX_N@Z
+DATA 00af227f ?setPortalTouchedPlayerList@GameManager@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af23f5 ?setPosition@ImagePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00af242c ?setPosition@ImagePlayer@agtk@@UAEXMM@Z
+DATA 00af2527 ?setPosition@Player@agtk@@UAEXABVVec2@cocos2d@@_N@Z
+DATA 00af255b ?setPosition@Player@agtk@@UAEXMM_N@Z
+DATA 00af2deb ?setPostMoveOnlyTransportPlayersTouching@MoveSettingData@data@agtk@@UAEX_N@Z
+DATA 00af2ef6 ?setPostMoveShowPlayersInTouchedOrder@MoveSettingData@data@agtk@@UAEX_N@Z
+DATA 00af3311 ?setPreMoveInvalidateTouchedPlayer@MoveSettingData@data@agtk@@UAEX_N@Z
+DATA 00af3eb4 ?setProbability@ObjectCommandObjectCreateData@data@agtk@@UAEXN@Z
+DATA 00af4835 ?setRealPosition@Player@agtk@@UAEXVVec2@cocos2d@@@Z
+DATA 00af4dc2 ?setRemoveShaderList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00af4fd3 ?setRenderTexture@Player@agtk@@UAEXPAVRenderTextureCtrl@2@@Z
+DATA 00af5202 ?setRenderTextureSize@Player@agtk@@UAEXVSize@cocos2d@@@Z
+DATA 00af5483 ?setRequestSwitchCopyFile@Scene@agtk@@UAEX_N@Z
+DATA 00af5680 ?setResourceSetId@BasePlayer@agtk@@UAEXH@Z
+DATA 00af56ab ?setResourceSetId@ImagePlayer@agtk@@UAEXH@Z
+DATA 00af5746 ?setResourceSetId@Player@agtk@@QAEXH@Z
+DATA 00af5e5c ?setRotation@ImagePlayer@agtk@@UAEXM@Z
+DATA 00af5fc0 ?setRotation@Player@agtk@@UAEXM@Z
+DATA 00af6208 ?setScale@ImagePlayer@agtk@@UAEXABVVec2@cocos2d@@@Z
+DATA 00af623c ?setScale@ImagePlayer@agtk@@UAEXMM@Z
+DATA 00af62cd ?setScale@Player@agtk@@UAEXMM@Z
+DATA 00af6330 ?setScaleToShowAllPlayers@OthersCameraData@data@agtk@@UAEX_N@Z
+DATA 00af75b9 ?setScrollToShowAllPlayers@OthersCameraData@data@agtk@@UAEX_N@Z
+DATA 00af7b58 ?setShader@Player@agtk@@QAEPAVShader@2@W4ShaderKind@32@ABV?$GenericValue@U?$UTF8@D@rapidjson@@V?$MemoryPoolAllocator@VCrtAllocator@rapidjson@@@2@@rapidjson@@@Z
+DATA 00af7bf8 ?setShader@Player@agtk@@QAEPAVShader@2@W4ShaderKind@32@MM@Z
+DATA 00af7c34 ?setShader@Player@agtk@@QAEPAVShader@2@W4ShaderKind@32@MMM@Z
+DATA 00af7c71 ?setShader@Player@agtk@@QAEPAVShader@2@W4ShaderKind@32@PAVShaderValue@2@@Z
+DATA 00af9083 ?setStartPointPlayerBit@ScenePartObjectData@data@agtk@@UAEXH@Z
+DATA 00af951d ?setStockShaderInfoFlag@Player@agtk@@UAEX_N@Z
+DATA 00af954b ?setStockShaderInfoList@Player@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00afce89 ?setTransformNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00afd2c9 ?setType@BasePlayer@agtk@@UAEXW4Type@12@@Z
+DATA 00afd473 ?setType@Player@agtk@@UAEXW4Type@BasePlayer@2@@Z
+DATA 00afd590 ?setUncreateObjectList@SceneLayer@agtk@@UAEXPAV__Array@cocos2d@@@Z
+DATA 00afdb44 ?setUseConnect@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+DATA 00afddad ?setUseRotation@ObjectCommandObjectCreateData@data@agtk@@UAEX_N@Z
+DATA 00aff94a ?setVisibleCtrlNode@Player@agtk@@UAEXPAVNode@cocos2d@@@Z
+DATA 00affdff ?setWallAreaAttackFlag@Player@agtk@@UAEX_N@Z
+DATA 00b00360 ?setWallVertListCache@Player@agtk@@UAEXV?$vector@UVertex4@agtk@@V?$allocator@UVertex4@agtk@@@std@@@std@@@Z
+DATA 00b003cb ?setWallVertRectCache@Player@agtk@@UAEXVRect@cocos2d@@@Z
+DATA 00b020b4 ?stopAnimeContinuePlaying@Player@agtk@@QAEXXZ
+DATA 00b0255a ?unlock@Player@agtk@@QAEXXZ
+DATA 00b0293b ?update@ImagePlayer@agtk@@UAEXM@Z
+DATA 00b0301f ?update@Player@agtk@@UAEXM@Z
+DATA 00b0303c ?update@PlayerSprite@agtk@@UAEXM@Z
+DATA 00b03864 ?updateExecActionObjectCreate@Object@agtk@@QAEXXZ
+DATA 00b0398a ?updateInputPlayer@Object@agtk@@QAEXXZ
+DATA 00b039b1 ?updateInputPlayerDirection@Object@agtk@@QAEXXZ
+DATA 00b039e1 ?updateInputPlayerMoveNormal@Object@agtk@@QAEHXZ
+DATA 00b03a12 ?updateInputPlayerMoveTankCar@Object@agtk@@QAEHXZ
+DATA 00b03d9f ?updateObjectInstanceCount@Scene@agtk@@QAEXH@Z
+DATA 00b03f60 ?updateRealPosition@BasePlayer@agtk@@IAEXXZ
+DATA 00b03f8c ?updateRealRotation@BasePlayer@agtk@@IAEXXZ
+DATA_SCANNED 371680 MATCHES 1500 CANDIDATES 742
