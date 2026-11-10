@@ -1,0 +1,58 @@
+name: Shirono v0.7 removal hook preimage verification
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-v070-remove-abi.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PE exact hash and removal detour instruction boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/game"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/d.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/d.7z" "-o$RUNNER_TEMP/game" -y >/dev/null
+          python3 - "$RUNNER_TEMP/game/player.exe" <<'PY'
+          import struct,hashlib,sys
+          f=open(sys.argv[1],"rb").read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          pe=struct.unpack_from("<I",f,0x3c)[0];base=pe+24
+          assert f[pe:pe+4]==b"PE\0\0"
+          imbase=struct.unpack_from("<I",f,base+28)[0]
+          secs=[]
+          for i in range(struct.unpack_from("<H",f,pe+6)[0]):
+            s=base+struct.unpack_from("<H",f,pe+20)[0]+i*40
+            size,rva,raw,ptr=struct.unpack_from("<IIII",f,s+8)
+            secs.append((rva,max(size,raw),ptr))
+          def read(va,n):
+            r=va-imbase
+            for start,size,ptr in secs:
+              if start<=r<start+size:return f[ptr+r-start:ptr+r-start+n]
+            raise RuntimeError(hex(va))
+          for n,va in [("NativeObjectCreate",0x5284a0),("SceneLayerRemoveObject",0x57cdc0),("SceneLayerGetSceneData",0x4292f0),("GameManagerIsSceneChanging",0x436d60)]:
+            print(n,hex(va),read(va,24).hex(" "))
+          assert read(0x5284a0,5)==bytes.fromhex("55 8b ec 6a ff")
+          # 55 push ebp + 8b ec mov ebp,esp + 83 ec xx sub esp,imm8
+          # or 55 push ebp + 8b ec mov ebp,esp + 6a xx push imm8
+          patch=read(0x57cdc0,12)
+          assert patch[:3]==bytes.fromhex("55 8b ec"),"no 3-byte expected preamble"
+          if patch[3:5]==bytes.fromhex("6a ff"):
+            size=5
+          elif patch[3]==0x83 and patch[4]==0xec:
+            size=6
+          elif patch[3:5]==bytes.fromhex("83 e4"):
+            size=6
+          else:
+            raise AssertionError("unsupported removal prologue; inspect manually "+patch.hex())
+          print("REMOVE_PREIMAGE_PASS",patch[:size].hex(" "),"hook_bytes=",size)
+          PY
