@@ -67,5 +67,14 @@ jobs:
           for x in dis(start_va,end_va):
             if x.bytes.startswith(bytes.fromhex('558bec')) and len(x.bytes)>=3:
               print("POSSIBLE_PROLOGUE",hex(x.address))
+          for name,addr in [("ObjectRemoveSelf",0x526d30),("SceneLayerRemoveObject",0x57cdc0)]:
+            print("HOOK_PREIMAGE",name,read(addr,20).hex(" "))
+          target=0x526d30
+          print("DIRECT_CALLERS_REMOVE_SELF")
+          for x in md.disasm(code,imbase+rva):
+            if x.mnemonic=="call" and x.op_str.startswith("0x"):
+              try: value=int(x.op_str,16)
+              except: continue
+              if value==target:print("DIRECT_CALL",hex(x.address),"return",hex(x.address+x.size),"bytes",x.bytes.hex())
           print("ANALYSIS_DONE")
           PY
