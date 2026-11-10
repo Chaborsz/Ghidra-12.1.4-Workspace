@@ -1,0 +1,70 @@
+name: Shirono v0.9 clone disappear action ABI and JSON audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-v090-action-abi.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact x86 action getters and original clone disappear action graph
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26 capstone==5.0.6
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-v090
+          curl -fL --retry 4 https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z -o "$RUNNER_TEMP/demo.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/demo.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/demo.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/player.exe" "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-v090/cause_report.txt <<'PY'
+          import sys,struct,json,hashlib,pefile
+          from capstone import Cs,CS_ARCH_X86,CS_MODE_32
+          exe=sys.argv[1]
+          f=open(exe,'rb').read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          p=pefile.PE(exe)
+          def read(va,n):
+            r=va-0x400000
+            for s in p.sections:
+              if s.VirtualAddress <= r < s.VirtualAddress+max(s.Misc_VirtualSize,s.SizeOfRawData):
+                return f[s.PointerToRawData+r-s.VirtualAddress:s.PointerToRawData+r-s.VirtualAddress+n]
+            raise ValueError(hex(va))
+          md=Cs(CS_ARCH_X86,CS_MODE_32)
+          report=[]
+          def out(t):print(t);report.append(t)
+          out("EXE exact SHA PASS")
+          for e in p.DIRECTORY_ENTRY_EXPORT.symbols:
+            name=(e.name or b'').decode('utf8','ignore')
+            if any(z in name for z in ["getObjectActionData@ObjectAction@","getId@ObjectActionData@","getCurrentObjectAction@Object@","getObjectActionId@Object@","getObjectActionData@Object@", "ObjectAction::", "getId@ObjectAction@","getObjectData@ObjectAction@"]):
+              va=p.OPTIONAL_HEADER.ImageBase+e.address
+              out("SYMBOL "+hex(va)+" "+name+" code="+read(va,18).hex(' '))
+          for name,va in [('execDisappear',0x53b880),('removeSelf',0x526d30),('objectLateUpdate',0x51ba40),('objectUpdateRemoveSelfCall',0x519888)]:
+            out("PREIMAGE "+name+" "+hex(va)+" "+read(va,24).hex(' '))
+          j=json.load(open(sys.argv[2],encoding='utf-8-sig'))
+          for o in j['objectList']:
+            if o.get('id') != 19:continue
+            for a in o['actionList']:
+              ds=[c for c in a.get('objCommandList',[]) if c['commandType']==10]
+              if ds:out("DISAPPEAR_ACTION "+json.dumps({"id":a['id'],"name":a['name'],"commands":ds},ensure_ascii=False))
+            for l in o['actionLinkList']:
+              pairs=l.get('typeIdPair',[])
+              if len(pairs)>1 and pairs[1][1] in (9,10):
+                out("DISAPPEAR_INBOUND "+json.dumps({"id":l['id'],"from":pairs[0][1],"to":pairs[1][1],"conditions":l.get('linkConditionList',[])},ensure_ascii=False))
+          open(sys.argv[3],'w',encoding='utf8').write('\n'.join(report)+'\n')
+          PY
+      - name: Commit compact cause report
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-v090/cause_report.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit exact clone disappearance action IDs and x86 getter ABI"
+            git push origin HEAD:analysis/shirono-multiclone
+          fi
