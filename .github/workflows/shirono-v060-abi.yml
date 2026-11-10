@@ -1,0 +1,68 @@
+name: Shirono v0.6 native command factory ABI verification
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-v060-abi.yml
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  abi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact player executable ABI for v0.6
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/game"
+          curl -fL --retry 4 https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z -o "$RUNNER_TEMP/d.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/d.7z" "-o$RUNNER_TEMP/game" -y >/dev/null
+          python3 - "$RUNNER_TEMP/game/player.exe" <<'PY'
+          import hashlib,struct,sys
+          b=open(sys.argv[1],"rb").read()
+          assert hashlib.sha256(b).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          pe=struct.unpack_from("<I",b,0x3c)[0]
+          assert b[pe:pe+4]==b"PE\x00\x00"
+          size=struct.unpack_from("<H",b,pe+20)[0]
+          nsec=struct.unpack_from("<H",b,pe+6)[0]
+          opt=pe+24
+          base=struct.unpack_from("<I",b,opt+28)[0]
+          sections=[]
+          for i in range(nsec):
+            x=opt+size+i*40
+            name=b[x:x+8].rstrip(b"\0").decode()
+            virtualsize,rva,rawsize,rawptr=struct.unpack_from("<IIII",b,x+8)
+            sections.append((name,rva,max(virtualsize,rawsize),rawptr))
+          def get(va,size):
+            rva=va-base
+            for name,start,length,rawptr in sections:
+              if start<=rva<start+length:
+                return b[rawptr+rva-start:rawptr+rva-start+size]
+            raise Exception(hex(va))
+          def u32(a):return struct.unpack("<I",get(a,4))[0]
+          for name,addr in [
+            ("createForScript",0x454690),("sceneGetObjectAll",0x58d140),
+            ("gameManagerGetInstance",0x5c4da0),("objExecCreate",0x5284a0),
+          ]:
+            print("FUNC",name,hex(addr),get(addr,20).hex(' '))
+            assert get(addr,2)!=b"\xcc\xcc"
+          v=0x9e0378
+          expected={
+            0x28:0x402f80,0x2c:0x404c20,0x30:0x402fd0,0x34:0x403950,
+            0x38:0x403020,0x3c:0x403960,
+            0x40:0x403970,0x44:0x403980,0x48:0x403200,0x4c:0x406950,
+            0x50:0x403340,0x54:0x4039d0,0x58:0x4039e0,0x5c:0x4039f0,
+            0x60:0x405430,0x64:0x405440,0x68:0x406980,0x6c:0x406990,
+            0x70:0x4069a0,0x74:0x4069b0}
+          for off,addr in expected.items():
+            assert u32(v+off)==addr,(hex(off),hex(u32(v+off)),hex(addr))
+          for off in [0x78,0x7c,0x80,0x84]:
+            p=u32(v+off)
+            assert 0x400000<p<0x9e0000
+            print("F6_FIELD",hex(off),hex(p),get(p,16).hex(' '))
+          print("ABI_PASS exact game factory and 20 known command getters/setters")
+          PY
