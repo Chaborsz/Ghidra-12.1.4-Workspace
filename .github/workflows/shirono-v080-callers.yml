@@ -18,7 +18,7 @@ jobs:
           set -euo pipefail
           sudo apt-get update -qq
           sudo apt-get install -y -qq p7zip-full
-          python3 -m pip -q install --break-system-packages capstone==5.0.6
+          python3 -m pip -q install --break-system-packages capstone==5.0.6 pefile==2024.8.26
           mkdir -p "$RUNNER_TEMP/shirono"
           curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/d.7z"
           echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
@@ -26,6 +26,12 @@ jobs:
           python3 - "$RUNNER_TEMP/shirono/player.exe" <<'PY'
           import struct,hashlib,sys
           from capstone import Cs, CS_ARCH_X86,CS_MODE_32
+          import pefile
+          exe=pefile.PE(sys.argv[1])
+          for x in exe.DIRECTORY_ENTRY_EXPORT.symbols:
+            name=(x.name or b'').decode('utf8','ignore')
+            if ('removeSelf' in name or 'lateUpdate@Object@' in name or ('ObjectAction' in name and ('execAction' in name or 'changeAction' in name or 'check' in name))):
+              print('EXPORTED_MATCH',hex(imbase+x.address) if 'imbase' in locals() else hex(0x400000+x.address),name)
           f=open(sys.argv[1],"rb").read()
           assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
           pe=struct.unpack_from("<I",f,0x3c)[0];base=pe+24
