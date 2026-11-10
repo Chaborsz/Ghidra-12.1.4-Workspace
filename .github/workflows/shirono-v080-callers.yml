@@ -67,7 +67,7 @@ jobs:
           for x in dis(start_va,end_va):
             if x.bytes.startswith(bytes.fromhex('558bec')) and len(x.bytes)>=3:
               print("POSSIBLE_PROLOGUE",hex(x.address))
-          for name,addr in [("ObjectRemoveSelf",0x526d30),("SceneLayerRemoveObject",0x57cdc0)]:
+          for name,addr in [("ObjectRemoveSelf",0x526d30),("SceneLayerRemoveObject",0x57cdc0),("ExecActionDisappear",0x53b880)]:
             print("HOOK_PREIMAGE",name,read(addr,20).hex(" "))
           target=0x526d30
           print("DIRECT_CALLERS_REMOVE_SELF")
@@ -76,5 +76,11 @@ jobs:
               try: value=int(x.op_str,16)
               except: continue
               if value==target:print("DIRECT_CALL",hex(x.address),"return",hex(x.address+x.size),"bytes",x.bytes.hex())
+          print("RAW_CALLS_REMOVE_SELF")
+          for i in range(len(code)-5):
+            if code[i]!=0xe8:continue
+            offset=struct.unpack_from("<i",code,i+1)[0]
+            addr=imbase+rva+i
+            if addr+5+offset==0x526d30:print("RAW_DIRECT_CALL",hex(addr),hex(addr+5))
           print("ANALYSIS_DONE")
           PY
