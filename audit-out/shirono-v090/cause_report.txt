@@ -1,0 +1,16 @@
+EXE exact SHA PASS
+SYMBOL 0x426ab0 ?getCurrentObjectAction@Object@agtk@@UBEPAVObjectAction@2@XZ code=8b 81 94 02 00 00 c3 cc cc cc cc cc cc cc cc cc 55 8b
+SYMBOL 0x543e90 ?getId@ObjectAction@agtk@@QAEHXZ code=8b 01 ff 50 10 8b c8 8b 10 ff 62 10 cc cc cc cc cc cc
+SYMBOL 0x402bf0 ?getId@ObjectActionData@data@agtk@@UBEIXZ code=8b 41 18 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b
+SYMBOL 0x403900 ?getObjectActionData@ObjectAction@agtk@@UBEPAVObjectActionData@data@2@XZ code=8b 41 20 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b
+SYMBOL 0x535c30 ?getObjectData@ObjectAction@agtk@@QAEPAVObjectData@data@2@XZ code=8b 49 48 8b 01 ff a0 d4 02 00 00 cc cc cc cc cc 8b 41
+SYMBOL 0x403630 ?getObjectData@ObjectAction@agtk@@UBEPAVObjectData@data@2@XZ code=8b 41 1c c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b
+PREIMAGE execDisappear 0x53b880 55 8b ec 56 6a 00 68 50 4c ba 00 68 a8 4e ba 00 6a 00 ff 75 08 8b f1 e8
+PREIMAGE removeSelf 0x526d30 55 8b ec 6a ff 68 02 5d 8a 00 64 a1 00 00 00 00 50 83 ec 28 53 56 57 a1
+PREIMAGE objectLateUpdate 0x51ba40 55 8b ec 6a ff 68 8a 51 8a 00 64 a1 00 00 00 00 50 81 ec ac 00 00 00 53
+PREIMAGE objectUpdateRemoveSelfCall 0x519888 e8 a3 d4 00 00 8b 07 8b cf 6a 01 ff 90 b4 03 00 00 e9 04 0f 00 00 0f 57
+DISAPPEAR_ACTION {"id": 9, "name": "正面ピクピク主人公(1)(1)(1)", "commands": [{"id": 1, "commandType": 10, "ignored": false, "instanceConfigurable": false, "disappear": {}}]}
+DISAPPEAR_ACTION {"id": 10, "name": "H中(1)", "commands": [{"id": 1, "commandType": 10, "ignored": false, "instanceConfigurable": false, "disappear": {}}]}
+DISAPPEAR_INBOUND {"id": 6, "from": 8, "to": 9, "conditions": [{"id": 1, "ignored": false, "type": 16, "condAnd": true, "notFlag": false, "waitTime": {"time": 1}}]}
+DISAPPEAR_INBOUND {"id": 7, "from": 3, "to": 10, "conditions": [{"id": 1, "ignored": false, "type": 16, "condAnd": true, "notFlag": false, "waitTime": {"time": 0.01}}]}
+DISAPPEAR_INBOUND {"id": 9, "from": 11, "to": 9, "conditions": [{"id": 1, "ignored": false, "type": 16, "condAnd": true, "notFlag": false, "waitTime": {"time": 0.01}}]}
