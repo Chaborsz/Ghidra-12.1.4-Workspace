@@ -1,0 +1,65 @@
+name: Shirono v0.8 removeSelf caller and lifetime audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths:
+      - .github/workflows/shirono-v080-callers.yml
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Disassemble exact removal call and its enclosing function
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages capstone==5.0.6
+          mkdir -p "$RUNNER_TEMP/shirono"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/d.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/d.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/player.exe" <<'PY'
+          import struct,hashlib,sys
+          from capstone import Cs, CS_ARCH_X86,CS_MODE_32
+          f=open(sys.argv[1],"rb").read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          pe=struct.unpack_from("<I",f,0x3c)[0];base=pe+24
+          imbase=struct.unpack_from("<I",f,base+28)[0]
+          secs=[]
+          for i in range(struct.unpack_from("<H",f,pe+6)[0]):
+            s=base+struct.unpack_from("<H",f,pe+20)[0]+i*40
+            name=f[s:s+8].rstrip(b"\0").decode()
+            size,rva,raw,ptr=struct.unpack_from("<IIII",f,s+8)
+            secs.append((name,rva,max(size,raw),ptr))
+          def read(va,n):
+            r=va-imbase
+            for name,start,size,ptr in secs:
+              if start<=r<start+size:return f[ptr+r-start:ptr+r-start+n]
+            raise RuntimeError(hex(va))
+          md=Cs(CS_ARCH_X86,CS_MODE_32)
+          def dis(a,b):
+            return list(md.disasm(read(a,b-a),a))
+          for a,b in [(0x527000,0x527350),(0x526500,0x5266c0),(0x5272a0,0x5272f0)]:
+            print("DISASM_START",hex(a),hex(b))
+            for x in dis(a,b):
+              if a==0x527000 or x.address in range(0x527270,0x5272e0):
+                print(f"  {x.address:08x} {x.bytes.hex():16} {x.mnemonic:8} {x.op_str}")
+          print("RETADDR_5272A0_PRECEDING")
+          for x in dis(0x527290,0x5272a5):print(f"  {x.address:08x} {x.bytes.hex()} {x.mnemonic} {x.op_str}")
+          # Find direct calls to removeSelf from all code sections, if entry can be located.
+          section=next(x for x in secs if x[0]=='.text')
+          name,rva,size,ptr=section
+          code=f[ptr:ptr+size]
+          print("PROLOGUES_BEFORE_5272A0")
+          start_va=0x526000
+          end_va=0x5272a0
+          for x in dis(start_va,end_va):
+            if x.bytes.startswith(bytes.fromhex('558bec')) and len(x.bytes)>=3:
+              print("POSSIBLE_PROLOGUE",hex(x.address))
+          print("ANALYSIS_DONE")
+          PY
