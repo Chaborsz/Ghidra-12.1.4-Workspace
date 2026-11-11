@@ -1,0 +1,5041 @@
+{
+  "enemyId": 36,
+  "playerTargetingCommands": [
+    {
+      "action": 1,
+      "name": "★ホップ走って来る",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 7.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 5,
+      "name": "いぶかしむ",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 21,
+      "name": "音に反応！(1)(1)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2023,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 23,
+      "name": "カメラ移動　左",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 7.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 24,
+      "name": "カメラ移動　左　終わり",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 31,
+      "name": "ゆっくりうしろに(1)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": -1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 36,
+      "name": "変数６",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2023,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 51,
+      "name": "これに触れたらイベ開始(1)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2019,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 68,
+      "name": "主人公歩いてくる(1)(1)(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": -3.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 69,
+      "name": "イベント変数2",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 117,
+      "name": "★暗転",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2023,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 140,
+      "name": "マウント右",
+      "commandId": 10,
+      "type": 1,
+      "refs": [
+        ".objectLock.objectType",
+        ".objectLock.objectId"
+      ],
+      "command": {
+        "id": 10,
+        "commandType": 1,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectLock": {
+          "lockTouchedObject": false,
+          "lockViewportLightObject": false,
+          "lockObjectOnScreen": false,
+          "lockObjectTouchedByThisObjectAttack": false,
+          "objectTypeByType": 1,
+          "objectGroup": -1,
+          "objectType": 1,
+          "objectId": 1,
+          "useType": 2,
+          "switchId": -1,
+          "switchCondition": 0,
+          "variableId": -1,
+          "compareVariableOperator": 2,
+          "compareValueType": 0,
+          "compareValue": 0,
+          "compareVariableObjectId": -1,
+          "compareVariableQualifierId": -1,
+          "compareVariableId": -1
+        }
+      }
+    },
+    {
+      "action": 140,
+      "name": "マウント右",
+      "commandId": 7,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 7,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2021,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 140,
+      "name": "マウント右",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 140,
+      "name": "マウント右",
+      "commandId": 3,
+      "type": 4,
+      "refs": [
+        ".objectMove.targetObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 4,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectMove": {
+          "moveType": 2,
+          "angle": 0,
+          "moveDistance": 128,
+          "posX": 0,
+          "posY": 0,
+          "moveInDisplayCoordinates": false,
+          "followCameraMoving": false,
+          "centerObjectId": -2,
+          "centerQualifierId": -1,
+          "centerAdjustX": 0,
+          "centerAdjustY": 0,
+          "connectId": -1,
+          "useObjectParameter": true,
+          "changeMoveSpeed": 100,
+          "moveDuration300": 3,
+          "targettingType": 1,
+          "targetObjectType": 1,
+          "targetObjectGroup": -1,
+          "targetObjectId": 1,
+          "targetQualifierId": -2,
+          "playerObject": false,
+          "enemyObject": false,
+          "objectGroupBit": 0,
+          "excludeObjectGroupBit": 0,
+          "fitDispDirToMoveDir": false,
+          "dispWhileMoving": false,
+          "stopActionWhileMoving": false,
+          "stopAnimWhileMoving": false,
+          "finalGridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 146,
+      "name": "挿入(1)",
+      "commandId": 4,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 4,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2008,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 147,
+      "name": "交尾1",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2018,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 148,
+      "name": "交尾2",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 149,
+      "name": "痙攣",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2012,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 150,
+      "name": "射精！",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2017,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 150,
+      "name": "射精！",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2041,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 151,
+      "name": "根こそぎ搾り1",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 152,
+      "name": "根こそぎ搾り２",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 153,
+      "name": "噴き出す",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 154,
+      "name": "射精余韻",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2023,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 154,
+      "name": "射精余韻",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2020,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 155,
+      "name": "マウント左",
+      "commandId": 1,
+      "type": 1,
+      "refs": [
+        ".objectLock.objectType",
+        ".objectLock.objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 1,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectLock": {
+          "lockTouchedObject": false,
+          "lockViewportLightObject": false,
+          "lockObjectOnScreen": false,
+          "lockObjectTouchedByThisObjectAttack": false,
+          "objectTypeByType": 1,
+          "objectGroup": -1,
+          "objectType": 1,
+          "objectId": 1,
+          "useType": 2,
+          "switchId": -1,
+          "switchCondition": 0,
+          "variableId": -1,
+          "compareVariableOperator": 2,
+          "compareValueType": 0,
+          "compareValue": 0,
+          "compareVariableObjectId": -1,
+          "compareVariableQualifierId": -1,
+          "compareVariableId": -1
+        }
+      }
+    },
+    {
+      "action": 155,
+      "name": "マウント左",
+      "commandId": 5,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 5,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2021,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 155,
+      "name": "マウント左",
+      "commandId": 6,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 6,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 155,
+      "name": "マウント左",
+      "commandId": 7,
+      "type": 4,
+      "refs": [
+        ".objectMove.targetObjectId"
+      ],
+      "command": {
+        "id": 7,
+        "commandType": 4,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectMove": {
+          "moveType": 2,
+          "angle": 0,
+          "moveDistance": 128,
+          "posX": 0,
+          "posY": 0,
+          "moveInDisplayCoordinates": false,
+          "followCameraMoving": false,
+          "centerObjectId": -2,
+          "centerQualifierId": -1,
+          "centerAdjustX": 0,
+          "centerAdjustY": 0,
+          "connectId": -1,
+          "useObjectParameter": true,
+          "changeMoveSpeed": 100,
+          "moveDuration300": 3,
+          "targettingType": 1,
+          "targetObjectType": 1,
+          "targetObjectGroup": -1,
+          "targetObjectId": 1,
+          "targetQualifierId": -2,
+          "playerObject": false,
+          "enemyObject": false,
+          "objectGroupBit": 0,
+          "excludeObjectGroupBit": 0,
+          "fitDispDirToMoveDir": false,
+          "dispWhileMoving": false,
+          "stopActionWhileMoving": false,
+          "stopAnimWhileMoving": false,
+          "finalGridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 161,
+      "name": "イベント後主人公射出",
+      "commandId": 1,
+      "type": 2,
+      "refs": [
+        ".objectCreate.objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 2,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectCreate": {
+          "objectId": 1,
+          "actionId": -1,
+          "createPosition": 0,
+          "useConnect": true,
+          "connectId": -1,
+          "adjustX": 0,
+          "adjustY": 0,
+          "probability": 100,
+          "childObject": false,
+          "useRotation": true,
+          "lowerPriority": false,
+          "gridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 176,
+      "name": "交尾1(1)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2018,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 177,
+      "name": "交尾2(1)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 178,
+      "name": "痙攣(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2012,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 179,
+      "name": "射精！(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2017,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 180,
+      "name": "根こそぎ搾り1(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 181,
+      "name": "根こそぎ搾り２(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 182,
+      "name": "噴き出す(1)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 183,
+      "name": "射精余韻(2)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2020,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 184,
+      "name": "無限ループ",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2008,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 185,
+      "name": "射精余韻(3)",
+      "commandId": 1,
+      "type": 32,
+      "refs": [
+        ".switchVariableReset[0].objectId",
+        ".switchVariableReset[1].objectId",
+        ".switchVariableReset[2].objectId",
+        ".switchVariableReset[3].objectId",
+        ".switchVariableReset[4].objectId",
+        ".switchVariableReset[5].objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 32,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableReset": [
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2008
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2012
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2017
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2018
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2019
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2020
+          }
+        ]
+      }
+    },
+    {
+      "action": 186,
+      "name": "射精余韻(3)(1)",
+      "commandId": 1,
+      "type": 32,
+      "refs": [
+        ".switchVariableReset[0].objectId",
+        ".switchVariableReset[1].objectId",
+        ".switchVariableReset[2].objectId",
+        ".switchVariableReset[3].objectId",
+        ".switchVariableReset[4].objectId",
+        ".switchVariableReset[5].objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 32,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableReset": [
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2008
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2012
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2017
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2018
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2019
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2020
+          }
+        ]
+      }
+    },
+    {
+      "action": 197,
+      "name": "カメラ←へ",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 7.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 205,
+      "name": "★主人公逃げる",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 2.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 206,
+      "name": "カメラ停止",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 208,
+      "name": "カメラ停止",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2001,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 211,
+      "name": "交尾1(2)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2018,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 212,
+      "name": "交尾2(2)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 213,
+      "name": "痙攣(2)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2012,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 214,
+      "name": "射精！(2)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2017,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 215,
+      "name": "噴き出す(2)",
+      "commandId": 1,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2020,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 218,
+      "name": "★箪笥H無限",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 218,
+      "name": "★箪笥H無限",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2008,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 218,
+      "name": "★箪笥H無限",
+      "commandId": 4,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 4,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 218,
+      "name": "★箪笥H無限",
+      "commandId": 5,
+      "type": 4,
+      "refs": [
+        ".objectMove.targetObjectId"
+      ],
+      "command": {
+        "id": 5,
+        "commandType": 4,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectMove": {
+          "moveType": 2,
+          "angle": 0,
+          "moveDistance": 128,
+          "posX": 0,
+          "posY": 0,
+          "moveInDisplayCoordinates": false,
+          "followCameraMoving": false,
+          "centerObjectId": -2,
+          "centerQualifierId": -1,
+          "centerAdjustX": 0,
+          "centerAdjustY": 0,
+          "connectId": -1,
+          "useObjectParameter": true,
+          "changeMoveSpeed": 2000,
+          "moveDuration300": 3,
+          "targettingType": 1,
+          "targetObjectType": 1,
+          "targetObjectGroup": -1,
+          "targetObjectId": 1,
+          "targetQualifierId": -2,
+          "playerObject": false,
+          "enemyObject": false,
+          "objectGroupBit": 0,
+          "excludeObjectGroupBit": 0,
+          "fitDispDirToMoveDir": false,
+          "dispWhileMoving": false,
+          "stopActionWhileMoving": false,
+          "stopAnimWhileMoving": false,
+          "finalGridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 216,
+      "name": "射精余韻(3)(1)(1)",
+      "commandId": 1,
+      "type": 32,
+      "refs": [
+        ".switchVariableReset[0].objectId",
+        ".switchVariableReset[1].objectId",
+        ".switchVariableReset[2].objectId",
+        ".switchVariableReset[3].objectId",
+        ".switchVariableReset[4].objectId",
+        ".switchVariableReset[5].objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 32,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableReset": [
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2008
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2012
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2017
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2018
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2019
+          },
+          {
+            "swtch": true,
+            "objectId": 1,
+            "itemId": 2020
+          }
+        ]
+      }
+    },
+    {
+      "action": 220,
+      "name": "カメラ発生",
+      "commandId": 1,
+      "type": 2,
+      "refs": [
+        ".objectCreate.objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 2,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectCreate": {
+          "objectId": 1,
+          "actionId": -1,
+          "createPosition": 0,
+          "useConnect": false,
+          "connectId": -1,
+          "adjustX": 0,
+          "adjustY": 0,
+          "probability": 100,
+          "childObject": false,
+          "useRotation": false,
+          "lowerPriority": false,
+          "gridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 220,
+      "name": "カメラ発生",
+      "commandId": 2,
+      "type": 40,
+      "refs": [
+        ".actionExec.objectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 40,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "actionExec": {
+          "objectId": 1,
+          "qualifierId": -2,
+          "actionId": 6
+        }
+      }
+    },
+    {
+      "action": 159,
+      "name": "★魔石(1)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2016,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 159,
+      "name": "★魔石(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.variableObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": false,
+          "switchObjectId": -1,
+          "switchQualifierId": -1,
+          "switchId": -1,
+          "switchValue": 0,
+          "variableObjectId": 1,
+          "variableQualifierId": -2,
+          "variableId": 2018,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 1.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 222,
+      "name": "★イベ後プレイヤー召喚(1)",
+      "commandId": 1,
+      "type": 2,
+      "refs": [
+        ".objectCreate.objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 2,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectCreate": {
+          "objectId": 1,
+          "actionId": -1,
+          "createPosition": 0,
+          "useConnect": true,
+          "connectId": 4,
+          "adjustX": 0,
+          "adjustY": 0,
+          "probability": 100,
+          "childObject": false,
+          "useRotation": false,
+          "lowerPriority": false,
+          "gridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 157,
+      "name": "マウント左(カラー２選択)",
+      "commandId": 1,
+      "type": 1,
+      "refs": [
+        ".objectLock.objectType",
+        ".objectLock.objectId"
+      ],
+      "command": {
+        "id": 1,
+        "commandType": 1,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectLock": {
+          "lockTouchedObject": false,
+          "lockViewportLightObject": false,
+          "lockObjectOnScreen": false,
+          "lockObjectTouchedByThisObjectAttack": false,
+          "objectTypeByType": 1,
+          "objectGroup": -1,
+          "objectType": 1,
+          "objectId": 1,
+          "useType": 2,
+          "switchId": -1,
+          "switchCondition": 0,
+          "variableId": -1,
+          "compareVariableOperator": 2,
+          "compareValueType": 0,
+          "compareValue": 0,
+          "compareVariableObjectId": -1,
+          "compareVariableQualifierId": -1,
+          "compareVariableId": -1
+        }
+      }
+    },
+    {
+      "action": 157,
+      "name": "マウント左(カラー２選択)",
+      "commandId": 5,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 5,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2021,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 157,
+      "name": "マウント左(カラー２選択)",
+      "commandId": 6,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 6,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 157,
+      "name": "マウント左(カラー２選択)",
+      "commandId": 7,
+      "type": 4,
+      "refs": [
+        ".objectMove.targetObjectId"
+      ],
+      "command": {
+        "id": 7,
+        "commandType": 4,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectMove": {
+          "moveType": 2,
+          "angle": 0,
+          "moveDistance": 128,
+          "posX": 0,
+          "posY": 0,
+          "moveInDisplayCoordinates": false,
+          "followCameraMoving": false,
+          "centerObjectId": -2,
+          "centerQualifierId": -1,
+          "centerAdjustX": 0,
+          "centerAdjustY": 0,
+          "connectId": -1,
+          "useObjectParameter": true,
+          "changeMoveSpeed": 100,
+          "moveDuration300": 3,
+          "targettingType": 1,
+          "targetObjectType": 1,
+          "targetObjectGroup": -1,
+          "targetObjectId": 1,
+          "targetQualifierId": -2,
+          "playerObject": false,
+          "enemyObject": false,
+          "objectGroupBit": 0,
+          "excludeObjectGroupBit": 0,
+          "fitDispDirToMoveDir": false,
+          "dispWhileMoving": false,
+          "stopActionWhileMoving": false,
+          "stopAnimWhileMoving": false,
+          "finalGridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 194,
+      "name": "マウント右((カラー２選択)",
+      "commandId": 10,
+      "type": 1,
+      "refs": [
+        ".objectLock.objectType",
+        ".objectLock.objectId"
+      ],
+      "command": {
+        "id": 10,
+        "commandType": 1,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectLock": {
+          "lockTouchedObject": false,
+          "lockViewportLightObject": false,
+          "lockObjectOnScreen": false,
+          "lockObjectTouchedByThisObjectAttack": false,
+          "objectTypeByType": 1,
+          "objectGroup": -1,
+          "objectType": 1,
+          "objectId": 1,
+          "useType": 2,
+          "switchId": -1,
+          "switchCondition": 0,
+          "variableId": -1,
+          "compareVariableOperator": 2,
+          "compareValueType": 0,
+          "compareValue": 0,
+          "compareVariableObjectId": -1,
+          "compareVariableQualifierId": -1,
+          "compareVariableId": -1
+        }
+      }
+    },
+    {
+      "action": 194,
+      "name": "マウント右((カラー２選択)",
+      "commandId": 7,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 7,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2021,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 194,
+      "name": "マウント右((カラー２選択)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2000,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 194,
+      "name": "マウント右((カラー２選択)",
+      "commandId": 3,
+      "type": 4,
+      "refs": [
+        ".objectMove.targetObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 4,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "objectMove": {
+          "moveType": 2,
+          "angle": 0,
+          "moveDistance": 128,
+          "posX": 0,
+          "posY": 0,
+          "moveInDisplayCoordinates": false,
+          "followCameraMoving": false,
+          "centerObjectId": -2,
+          "centerQualifierId": -1,
+          "centerAdjustX": 0,
+          "centerAdjustY": 0,
+          "connectId": -1,
+          "useObjectParameter": true,
+          "changeMoveSpeed": 100,
+          "moveDuration300": 3,
+          "targettingType": 1,
+          "targetObjectType": 1,
+          "targetObjectGroup": -1,
+          "targetObjectId": 1,
+          "targetQualifierId": -2,
+          "playerObject": false,
+          "enemyObject": false,
+          "objectGroupBit": 0,
+          "excludeObjectGroupBit": 0,
+          "fitDispDirToMoveDir": false,
+          "dispWhileMoving": false,
+          "stopActionWhileMoving": false,
+          "stopAnimWhileMoving": false,
+          "finalGridMagnet": false
+        }
+      }
+    },
+    {
+      "action": 204,
+      "name": "根こそぎ搾り２(2)",
+      "commandId": 3,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 3,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    },
+    {
+      "action": 223,
+      "name": "根こそぎ搾り２(1)(1)",
+      "commandId": 2,
+      "type": 31,
+      "refs": [
+        ".switchVariableChange.switchObjectId"
+      ],
+      "command": {
+        "id": 2,
+        "commandType": 31,
+        "ignored": false,
+        "instanceConfigurable": false,
+        "switchVariableChange": {
+          "swtch": true,
+          "switchObjectId": 1,
+          "switchQualifierId": -2,
+          "switchId": 2019,
+          "switchValue": 0,
+          "variableObjectId": -1,
+          "variableQualifierId": -1,
+          "variableId": -1,
+          "variableAssignOperator": 0,
+          "variableAssignValueType": 0,
+          "assignValue": 0.0,
+          "assignVariableObjectId": -1,
+          "assignVariableQualifierId": -1,
+          "assignVariableId": -1,
+          "randomMin": 0,
+          "randomMax": 100,
+          "useCoffeeScript": false
+        }
+      }
+    }
+  ],
+  "targetActionDetails": [
+    {
+      "actionId": 1,
+      "actionName": "★ホップ走って来る",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 7.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 5,
+      "actionName": "いぶかしむ",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 21,
+      "actionName": "音に反応！(1)(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2023,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 23,
+      "actionName": "カメラ移動　左",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 7.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 24,
+      "actionName": "カメラ移動　左　終わり",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 31,
+      "actionName": "ゆっくりうしろに(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": -1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 36,
+      "actionName": "変数６",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2023,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 51,
+      "actionName": "これに触れたらイベ開始(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2019,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 68,
+      "actionName": "主人公歩いてくる(1)(1)(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": -3.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 69,
+      "actionName": "イベント変数2",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 117,
+      "actionName": "★暗転",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2023,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 140,
+      "actionName": "マウント右",
+      "commands": [
+        {
+          "id": 10,
+          "commandType": 1,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectLock": {
+            "lockTouchedObject": false,
+            "lockViewportLightObject": false,
+            "lockObjectOnScreen": false,
+            "lockObjectTouchedByThisObjectAttack": false,
+            "objectTypeByType": 1,
+            "objectGroup": -1,
+            "objectType": 1,
+            "objectId": 1,
+            "useType": 2,
+            "switchId": -1,
+            "switchCondition": 0,
+            "variableId": -1,
+            "compareVariableOperator": 2,
+            "compareValueType": 0,
+            "compareValue": 0,
+            "compareVariableObjectId": -1,
+            "compareVariableQualifierId": -1,
+            "compareVariableId": -1
+          }
+        },
+        {
+          "id": 8,
+          "commandType": 2,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectCreate": {
+            "objectId": 27,
+            "actionId": 4,
+            "createPosition": 1,
+            "useConnect": false,
+            "connectId": -1,
+            "adjustX": 0,
+            "adjustY": 0,
+            "probability": 100,
+            "childObject": false,
+            "useRotation": false,
+            "lowerPriority": true,
+            "gridMagnet": false
+          }
+        },
+        {
+          "id": 6,
+          "commandType": 24,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "cameraAreaChange": {
+            "xRate": 0.5,
+            "yRate": 0.5,
+            "duration300": 300
+          }
+        },
+        {
+          "id": 7,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2021,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 3,
+          "commandType": 4,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectMove": {
+            "moveType": 2,
+            "angle": 0,
+            "moveDistance": 128,
+            "posX": 0,
+            "posY": 0,
+            "moveInDisplayCoordinates": false,
+            "followCameraMoving": false,
+            "centerObjectId": -2,
+            "centerQualifierId": -1,
+            "centerAdjustX": 0,
+            "centerAdjustY": 0,
+            "connectId": -1,
+            "useObjectParameter": true,
+            "changeMoveSpeed": 100,
+            "moveDuration300": 3,
+            "targettingType": 1,
+            "targetObjectType": 1,
+            "targetObjectGroup": -1,
+            "targetObjectId": 1,
+            "targetQualifierId": -2,
+            "playerObject": false,
+            "enemyObject": false,
+            "objectGroupBit": 0,
+            "excludeObjectGroupBit": 0,
+            "fitDispDirToMoveDir": false,
+            "dispWhileMoving": false,
+            "stopActionWhileMoving": false,
+            "stopAnimWhileMoving": false,
+            "finalGridMagnet": false
+          }
+        },
+        {
+          "id": 4,
+          "commandType": 25,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "soundPlay": {
+            "soundType": 0,
+            "seId": 52,
+            "voiceId": -1,
+            "bgmId": -1,
+            "loop": false,
+            "fadein": false,
+            "duration300": 300,
+            "specifyAudioPosition": false,
+            "audioPositionVariableObjectId": -1,
+            "audioPositionVariableQualifierId": -1,
+            "audioPositionVariableId": -1,
+            "volume": 100,
+            "pan": 0,
+            "pitch": -10
+          }
+        },
+        {
+          "id": 5,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 0,
+            "variableQualifierId": -1,
+            "variableId": 2021,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 146,
+      "actionName": "挿入(1)",
+      "commands": [
+        {
+          "id": 4,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2008,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 147,
+      "actionName": "交尾1",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2018,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 148,
+      "actionName": "交尾2",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 149,
+      "actionName": "痙攣",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2012,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 150,
+      "actionName": "射精！",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2017,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2041,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 151,
+      "actionName": "根こそぎ搾り1",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 152,
+      "actionName": "根こそぎ搾り２",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 153,
+      "actionName": "噴き出す",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 154,
+      "actionName": "射精余韻",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2023,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2020,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 155,
+      "actionName": "マウント左",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 1,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectLock": {
+            "lockTouchedObject": false,
+            "lockViewportLightObject": false,
+            "lockObjectOnScreen": false,
+            "lockObjectTouchedByThisObjectAttack": false,
+            "objectTypeByType": 1,
+            "objectGroup": -1,
+            "objectType": 1,
+            "objectId": 1,
+            "useType": 2,
+            "switchId": -1,
+            "switchCondition": 0,
+            "variableId": -1,
+            "compareVariableOperator": 2,
+            "compareValueType": 0,
+            "compareValue": 0,
+            "compareVariableObjectId": -1,
+            "compareVariableQualifierId": -1,
+            "compareVariableId": -1
+          }
+        },
+        {
+          "id": 2,
+          "commandType": 2,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectCreate": {
+            "objectId": 27,
+            "actionId": 2,
+            "createPosition": 1,
+            "useConnect": false,
+            "connectId": -1,
+            "adjustX": 0,
+            "adjustY": 0,
+            "probability": 100,
+            "childObject": false,
+            "useRotation": false,
+            "lowerPriority": true,
+            "gridMagnet": false
+          }
+        },
+        {
+          "id": 4,
+          "commandType": 24,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "cameraAreaChange": {
+            "xRate": 0.5,
+            "yRate": 0.5,
+            "duration300": 300
+          }
+        },
+        {
+          "id": 5,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2021,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 6,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 7,
+          "commandType": 4,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectMove": {
+            "moveType": 2,
+            "angle": 0,
+            "moveDistance": 128,
+            "posX": 0,
+            "posY": 0,
+            "moveInDisplayCoordinates": false,
+            "followCameraMoving": false,
+            "centerObjectId": -2,
+            "centerQualifierId": -1,
+            "centerAdjustX": 0,
+            "centerAdjustY": 0,
+            "connectId": -1,
+            "useObjectParameter": true,
+            "changeMoveSpeed": 100,
+            "moveDuration300": 3,
+            "targettingType": 1,
+            "targetObjectType": 1,
+            "targetObjectGroup": -1,
+            "targetObjectId": 1,
+            "targetQualifierId": -2,
+            "playerObject": false,
+            "enemyObject": false,
+            "objectGroupBit": 0,
+            "excludeObjectGroupBit": 0,
+            "fitDispDirToMoveDir": false,
+            "dispWhileMoving": false,
+            "stopActionWhileMoving": false,
+            "stopAnimWhileMoving": false,
+            "finalGridMagnet": false
+          }
+        },
+        {
+          "id": 8,
+          "commandType": 25,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "soundPlay": {
+            "soundType": 0,
+            "seId": 52,
+            "voiceId": -1,
+            "bgmId": -1,
+            "loop": false,
+            "fadein": false,
+            "duration300": 300,
+            "specifyAudioPosition": false,
+            "audioPositionVariableObjectId": -1,
+            "audioPositionVariableQualifierId": -1,
+            "audioPositionVariableId": -1,
+            "volume": 100,
+            "pan": 0,
+            "pitch": -10
+          }
+        },
+        {
+          "id": 9,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 0,
+            "variableQualifierId": -1,
+            "variableId": 2021,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 10,
+          "commandType": 2,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectCreate": {
+            "objectId": 17,
+            "actionId": -1,
+            "createPosition": 0,
+            "useConnect": false,
+            "connectId": -1,
+            "adjustX": 0,
+            "adjustY": 0,
+            "probability": 100,
+            "childObject": false,
+            "useRotation": false,
+            "lowerPriority": false,
+            "gridMagnet": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 176,
+      "actionName": "交尾1(1)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2018,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 177,
+      "actionName": "交尾2(1)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 178,
+      "actionName": "痙攣(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2012,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 179,
+      "actionName": "射精！(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2017,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 180,
+      "actionName": "根こそぎ搾り1(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 181,
+      "actionName": "根こそぎ搾り２(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 182,
+      "actionName": "噴き出す(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 183,
+      "actionName": "射精余韻(2)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2020,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 184,
+      "actionName": "無限ループ",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2008,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 185,
+      "actionName": "射精余韻(3)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 32,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableReset": [
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2008
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2012
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2017
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2018
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2019
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2020
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": 186,
+      "actionName": "射精余韻(3)(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 32,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableReset": [
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2008
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2012
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2017
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2018
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2019
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2020
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": 197,
+      "actionName": "カメラ←へ",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 7.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 205,
+      "actionName": "★主人公逃げる",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 206,
+      "actionName": "カメラ停止",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 208,
+      "actionName": "カメラ停止",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2001,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 211,
+      "actionName": "交尾1(2)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2018,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 212,
+      "actionName": "交尾2(2)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 213,
+      "actionName": "痙攣(2)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2012,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 214,
+      "actionName": "射精！(2)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2017,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 215,
+      "actionName": "噴き出す(2)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2020,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 218,
+      "actionName": "★箪笥H無限",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2008,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 4,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 5,
+          "commandType": 4,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectMove": {
+            "moveType": 2,
+            "angle": 0,
+            "moveDistance": 128,
+            "posX": 0,
+            "posY": 0,
+            "moveInDisplayCoordinates": false,
+            "followCameraMoving": false,
+            "centerObjectId": -2,
+            "centerQualifierId": -1,
+            "centerAdjustX": 0,
+            "centerAdjustY": 0,
+            "connectId": -1,
+            "useObjectParameter": true,
+            "changeMoveSpeed": 2000,
+            "moveDuration300": 3,
+            "targettingType": 1,
+            "targetObjectType": 1,
+            "targetObjectGroup": -1,
+            "targetObjectId": 1,
+            "targetQualifierId": -2,
+            "playerObject": false,
+            "enemyObject": false,
+            "objectGroupBit": 0,
+            "excludeObjectGroupBit": 0,
+            "fitDispDirToMoveDir": false,
+            "dispWhileMoving": false,
+            "stopActionWhileMoving": false,
+            "stopAnimWhileMoving": false,
+            "finalGridMagnet": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 216,
+      "actionName": "射精余韻(3)(1)(1)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 32,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableReset": [
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2008
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2012
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2017
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2018
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2019
+            },
+            {
+              "swtch": true,
+              "objectId": 1,
+              "itemId": 2020
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actionId": 220,
+      "actionName": "カメラ発生",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 40,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "actionExec": {
+            "objectId": 1,
+            "qualifierId": -2,
+            "actionId": 6
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 159,
+      "actionName": "★魔石(1)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2016,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 1,
+            "variableQualifierId": -2,
+            "variableId": 2018,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 1.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 157,
+      "actionName": "マウント左(カラー２選択)",
+      "commands": [
+        {
+          "id": 1,
+          "commandType": 1,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectLock": {
+            "lockTouchedObject": false,
+            "lockViewportLightObject": false,
+            "lockObjectOnScreen": false,
+            "lockObjectTouchedByThisObjectAttack": false,
+            "objectTypeByType": 1,
+            "objectGroup": -1,
+            "objectType": 1,
+            "objectId": 1,
+            "useType": 2,
+            "switchId": -1,
+            "switchCondition": 0,
+            "variableId": -1,
+            "compareVariableOperator": 2,
+            "compareValueType": 0,
+            "compareValue": 0,
+            "compareVariableObjectId": -1,
+            "compareVariableQualifierId": -1,
+            "compareVariableId": -1
+          }
+        },
+        {
+          "id": 3,
+          "commandType": 40,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "actionExec": {
+            "objectId": 27,
+            "qualifierId": -2,
+            "actionId": 4
+          }
+        },
+        {
+          "id": 4,
+          "commandType": 24,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "cameraAreaChange": {
+            "xRate": 0.5,
+            "yRate": 0.5,
+            "duration300": 300
+          }
+        },
+        {
+          "id": 5,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2021,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 6,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 7,
+          "commandType": 4,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectMove": {
+            "moveType": 2,
+            "angle": 0,
+            "moveDistance": 128,
+            "posX": 0,
+            "posY": 0,
+            "moveInDisplayCoordinates": false,
+            "followCameraMoving": false,
+            "centerObjectId": -2,
+            "centerQualifierId": -1,
+            "centerAdjustX": 0,
+            "centerAdjustY": 0,
+            "connectId": -1,
+            "useObjectParameter": true,
+            "changeMoveSpeed": 100,
+            "moveDuration300": 3,
+            "targettingType": 1,
+            "targetObjectType": 1,
+            "targetObjectGroup": -1,
+            "targetObjectId": 1,
+            "targetQualifierId": -2,
+            "playerObject": false,
+            "enemyObject": false,
+            "objectGroupBit": 0,
+            "excludeObjectGroupBit": 0,
+            "fitDispDirToMoveDir": false,
+            "dispWhileMoving": false,
+            "stopActionWhileMoving": false,
+            "stopAnimWhileMoving": false,
+            "finalGridMagnet": false
+          }
+        },
+        {
+          "id": 8,
+          "commandType": 25,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "soundPlay": {
+            "soundType": 0,
+            "seId": 52,
+            "voiceId": -1,
+            "bgmId": -1,
+            "loop": false,
+            "fadein": false,
+            "duration300": 300,
+            "specifyAudioPosition": false,
+            "audioPositionVariableObjectId": -1,
+            "audioPositionVariableQualifierId": -1,
+            "audioPositionVariableId": -1,
+            "volume": 100,
+            "pan": 0,
+            "pitch": -10
+          }
+        },
+        {
+          "id": 9,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 0,
+            "variableQualifierId": -1,
+            "variableId": 2021,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 194,
+      "actionName": "マウント右((カラー２選択)",
+      "commands": [
+        {
+          "id": 12,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": -2,
+            "switchQualifierId": -1,
+            "switchId": 2005,
+            "switchValue": 1,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 11,
+          "commandType": 0,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "templateMove": {
+            "moveType": 6,
+            "horizontalMoveStartRight": false,
+            "horizontalMoveDuration300": 300,
+            "horizontalInfinite": false,
+            "verticalMoveStartDown": false,
+            "verticalMoveDuration300": 300,
+            "verticalInfinite": false,
+            "randomMoveDuration300": 300,
+            "randomMoveStop300": 300,
+            "nearObjectGroup": -1,
+            "nearObjectLockedObjectPrior": false,
+            "nearPlayerLockedPlayerPrior": false,
+            "apartNearObjectGroup": -1,
+            "apartNearObjectLockedObjectPrior": false,
+            "apartNearPlayerLockedPlayerPrior": false,
+            "fallFromStep": true,
+            "ignoreOtherObjectWallArea": false,
+            "ignoreWall": false
+          }
+        },
+        {
+          "id": 1,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 29,
+            "variableQualifierId": -2,
+            "variableId": 2014,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 10,
+          "commandType": 1,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectLock": {
+            "lockTouchedObject": false,
+            "lockViewportLightObject": false,
+            "lockObjectOnScreen": false,
+            "lockObjectTouchedByThisObjectAttack": false,
+            "objectTypeByType": 1,
+            "objectGroup": -1,
+            "objectType": 1,
+            "objectId": 1,
+            "useType": 2,
+            "switchId": -1,
+            "switchCondition": 0,
+            "variableId": -1,
+            "compareVariableOperator": 2,
+            "compareValueType": 0,
+            "compareValue": 0,
+            "compareVariableObjectId": -1,
+            "compareVariableQualifierId": -1,
+            "compareVariableId": -1
+          }
+        },
+        {
+          "id": 8,
+          "commandType": 2,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectCreate": {
+            "objectId": 27,
+            "actionId": -1,
+            "createPosition": 1,
+            "useConnect": false,
+            "connectId": -1,
+            "adjustX": 0,
+            "adjustY": 0,
+            "probability": 100,
+            "childObject": false,
+            "useRotation": false,
+            "lowerPriority": true,
+            "gridMagnet": false
+          }
+        },
+        {
+          "id": 9,
+          "commandType": 40,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "actionExec": {
+            "objectId": 27,
+            "qualifierId": -2,
+            "actionId": 4
+          }
+        },
+        {
+          "id": 6,
+          "commandType": 24,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "cameraAreaChange": {
+            "xRate": 0.5,
+            "yRate": 0.5,
+            "duration300": 300
+          }
+        },
+        {
+          "id": 7,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2021,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2000,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 3,
+          "commandType": 4,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "objectMove": {
+            "moveType": 2,
+            "angle": 0,
+            "moveDistance": 128,
+            "posX": 0,
+            "posY": 0,
+            "moveInDisplayCoordinates": false,
+            "followCameraMoving": false,
+            "centerObjectId": -2,
+            "centerQualifierId": -1,
+            "centerAdjustX": 0,
+            "centerAdjustY": 0,
+            "connectId": -1,
+            "useObjectParameter": true,
+            "changeMoveSpeed": 100,
+            "moveDuration300": 3,
+            "targettingType": 1,
+            "targetObjectType": 1,
+            "targetObjectGroup": -1,
+            "targetObjectId": 1,
+            "targetQualifierId": -2,
+            "playerObject": false,
+            "enemyObject": false,
+            "objectGroupBit": 0,
+            "excludeObjectGroupBit": 0,
+            "fitDispDirToMoveDir": false,
+            "dispWhileMoving": false,
+            "stopActionWhileMoving": false,
+            "stopAnimWhileMoving": false,
+            "finalGridMagnet": false
+          }
+        },
+        {
+          "id": 4,
+          "commandType": 25,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "soundPlay": {
+            "soundType": 0,
+            "seId": 52,
+            "voiceId": -1,
+            "bgmId": -1,
+            "loop": false,
+            "fadein": false,
+            "duration300": 300,
+            "specifyAudioPosition": false,
+            "audioPositionVariableObjectId": -1,
+            "audioPositionVariableQualifierId": -1,
+            "audioPositionVariableId": -1,
+            "volume": 100,
+            "pan": 0,
+            "pitch": -10
+          }
+        },
+        {
+          "id": 5,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": false,
+            "switchObjectId": -1,
+            "switchQualifierId": -1,
+            "switchId": -1,
+            "switchValue": 0,
+            "variableObjectId": 0,
+            "variableQualifierId": -1,
+            "variableId": 2021,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 2.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        },
+        {
+          "id": 13,
+          "commandType": 58,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "resourceSetChange": {
+            "objectId": 36,
+            "qualifierId": -1,
+            "resourceSetId": 2
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 204,
+      "actionName": "根こそぎ搾り２(2)",
+      "commands": [
+        {
+          "id": 3,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    },
+    {
+      "actionId": 223,
+      "actionName": "根こそぎ搾り２(1)(1)",
+      "commands": [
+        {
+          "id": 2,
+          "commandType": 31,
+          "ignored": false,
+          "instanceConfigurable": false,
+          "switchVariableChange": {
+            "swtch": true,
+            "switchObjectId": 1,
+            "switchQualifierId": -2,
+            "switchId": 2019,
+            "switchValue": 0,
+            "variableObjectId": -1,
+            "variableQualifierId": -1,
+            "variableId": -1,
+            "variableAssignOperator": 0,
+            "variableAssignValueType": 0,
+            "assignValue": 0.0,
+            "assignVariableObjectId": -1,
+            "assignVariableQualifierId": -1,
+            "assignVariableId": -1,
+            "randomMin": 0,
+            "randomMax": 100,
+            "useCoffeeScript": false
+          }
+        }
+      ]
+    }
+  ],
+  "types": {
+    "38": 8,
+    "31": 112,
+    "51": 8,
+    "25": 34,
+    "26": 12,
+    "2": 32,
+    "17": 2,
+    "24": 6,
+    "20": 1,
+    "1": 4,
+    "4": 5,
+    "32": 3,
+    "40": 3,
+    "58": 3,
+    "0": 1
+  }
+}
