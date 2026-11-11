@@ -44,7 +44,7 @@ jobs:
           candidates=[("near",0x547690),("facingEachOther",0x547df0),("facing",0x548660),("found",0x548300),("facingDirection",0x548a20),("hit",0x54b2b0)]
           for typ,addr in candidates:
             print("CANDIDATE_PROLOGUE",typ,hex(addr),read(addr,16).hex(" "))
-                    va=0x547690
+          va=0x547690
           md=Cs(CS_ARCH_X86,CS_MODE_32)
           print("HOOK_NEAR_PROLOGUE",read(va,24).hex(" "))
           for i in md.disasm(read(va,38),va):print("NEAR_INST",hex(i.address),i.mnemonic,i.op_str,i.bytes.hex())
