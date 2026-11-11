@@ -1,0 +1,64 @@
+name: Shirono clone existing HUD trace audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-existing-clone-hud.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact game-owned clone gauge readers and variables
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-existing-hud
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/x.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/x.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/x.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-existing-hud/report.json <<'PY'
+          import sys,json,collections
+          p=sys.argv[1];out=sys.argv[2]
+          j=json.load(open(p,encoding='utf-8-sig'))
+          objects=j.get('objectList',[])
+          refids={'2045','2050','2031','2039','2021','2000','19','22'}
+          gauges=[]
+          for o in objects:
+            name=o.get('name','')
+            if o.get('id') in (1,19,7,17,18,20,22,24,31,41):
+              gauges.append({'id':o['id'],'name':name,'keys':list(o.keys()),'variables':o.get('variableList',[]),'actions':[{'id':a.get('id'),'name':a.get('name')} for a in o.get('actionList',[])],'conditions':len(o.get('actionLinkList',[]))})
+          refs=[]
+          def walk(node,path,owner,depth=0):
+            if depth>16:return
+            if isinstance(node,dict):
+              keys={k:str(v) for k,v in node.items() if isinstance(v,(int,float,str,bool))}
+              for k,v in keys.items():
+                if v in refids and k.lower() in ('variableid','comparevariableid','objectid','variableobjectid','targetobjectid','otherobjectid','targetid','itemid','id','switchid','comparevariableswitchid'):
+                  if k=='id' and 'command' not in path.lower() and 'variable' not in path.lower() and 'condition' not in path.lower():continue
+                  refs.append({'object':owner['id'],'objectName':owner.get('name'),'where':path,'field':k,'value':v,'context':{a:b for a,b in keys.items() if a in ('id','type','commandType','swtch','variableObjectId','variableId','compareVariableId','compareVariableObjectId','variableQualifierId','switchObjectId','switchId','objectId','itemId','compareValue','assignValue','variableAssignOperator','name')}})
+              for k,v in node.items():
+                if k in ('memo','javaScript','assignScript','imageList','keyframeList'):continue
+                walk(v,path+'/'+k,owner,depth+1)
+            elif isinstance(node,list):
+              for i,v in enumerate(node):walk(v,path+'/'+str(i),owner,depth+1)
+          for obj in objects:walk(obj,'object'+str(obj['id']),obj)
+          data={'gauges':gauges,'refs':refs,'objectCount':len(objects)}
+          with open(out,'w',encoding='utf8') as w:json.dump(data,w,ensure_ascii=False,indent=2)
+          print('OBJECT_COUNT',len(objects),'REF_COUNT',len(refs))
+          for obj in gauges:
+            print('GAUGE_OBJECT',obj['id'],obj['name'],'vars',[(x.get('id'),x.get('name')) for x in obj['variables'] if isinstance(x,dict)][:45], 'actions',len(obj['actions']))
+          for o in (1,19,7,17,18,20,22,24,31,41):
+            matches=[z for z in refs if z['object']==o and z['value'] in ('2045','2050','2031','2039')]
+            print('GAUGE_REFS',o,'count',len(matches))
+            for z in matches[:24]:print('HUD_REFERENCE',str(z)[:800])
+          PY
+      - name: Commit report
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-existing-hud/report.json
+          if ! git diff --cached --quiet; then git commit -m "Audit original game clone meter and its data sources"; git push origin HEAD:analysis/shirono-multiclone; fi
