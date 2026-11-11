@@ -1,0 +1,62 @@
+name: Shirono v0.13 native clone HUD tree audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v013-hud-tree.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract exact game HUD tree and clone gauge state sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/game" audit-out/shirono-v013
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/game.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/game.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/game.7z" "-o$RUNNER_TEMP/game" -y >/dev/null
+          python3 - "$RUNNER_TEMP/game/project_decrypted.json" audit-out/shirono-v013/native-hud-tree.txt <<'PY'
+          import sys,json,collections
+          j=json.load(open(sys.argv[1],encoding='utf-8-sig'))
+          lines=[]
+          def out(x):lines.append(x)
+          def process(o,path):
+            id=o.get('id')
+            name=o.get('name','')
+            if not id:return
+            acts=o.get('actionList',[])
+            links=o.get('actionLinkList',[])
+            vars=o.get('variableList',[])
+            out(f'OBJECT {path} ID {id} NAME {name} ACTIONS {len(acts)} LINKS {len(links)} VARIABLES {len(vars)}')
+            if id in (7,13,17,18,19,20,22,24,31):
+              for a in acts:
+                out('  ACTION '+str(a.get('id'))+' '+a.get('name',''))
+              for c in links:
+                for cc in c.get('linkConditionList',[]):
+                  cv=cc.get('switchVariableChanged')
+                  if cv and (cv.get('variableId',-1)>=2000 or cv.get('switchId',-1)>=2000):
+                    out('  LINK '+str(c.get('id'))+' '+str([x[1] for x in c.get('typeIdPair',[]) if isinstance(x,list) and len(x)>1])+' '+str(cv)[:600])
+              for a in acts:
+                for c in a.get('objCommandList',[]):
+                  sv=c.get('switchVariableChange')
+                  if sv and (sv.get('variableId',-1)>=2000 or sv.get('switchId',-1)>=2000 or sv.get('variableObjectId') in (1,19)):
+                    out('  COMMAND '+str(a.get('id'))+' '+str(c.get('commandType'))+' '+str(sv)[:700])
+            for c in o.get('children',[]):
+              if isinstance(c,dict):process(c,path+'/'+str(c.get('id'))+':'+c.get('name',''))
+          for x in j.get('objectList',[]):process(x,str(x.get('id'))+':'+x.get('name',''))
+          open(sys.argv[2],'w',encoding='utf8').write('\n'.join(lines)+'\n')
+          for x in lines:
+            if x.startswith('OBJECT ') or '2045' in x or '2050' in x or '2031' in x:print(x[:900])
+          print('TREE_LINES',len(lines))
+          PY
+      - name: Commit HUD tree evidence
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-v013/native-hud-tree.txt
+          if ! git diff --cached --quiet; then git commit -m "Trace native clone HUD object graph and linked variable conditions"; git push origin HEAD:analysis/shirono-multiclone; fi
