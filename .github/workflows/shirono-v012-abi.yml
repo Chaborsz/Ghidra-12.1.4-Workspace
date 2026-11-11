@@ -1,0 +1,59 @@
+name: Shirono v0.12 event isolation ABI
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v012-abi.yml]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  abi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact switch variable and clone action entrypoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26 capstone==5.0.6
+          mkdir -p "$RUNNER_TEMP/game"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/x.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/x.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/x.7z" "-o$RUNNER_TEMP/game" -y >/dev/null
+          python3 - "$RUNNER_TEMP/game/player.exe" <<'PY'
+          import pefile,hashlib,sys
+          from capstone import Cs,CS_ARCH_X86,CS_MODE_32
+          p=sys.argv[1];f=open(p,'rb').read()
+          assert hashlib.sha256(f).hexdigest()=='d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154'
+          pe=pefile.PE(p);base=pe.OPTIONAL_HEADER.ImageBase
+          def read(va,n):
+            rva=va-base
+            for s in pe.sections:
+              if s.VirtualAddress<=rva<s.VirtualAddress+max(s.Misc_VirtualSize,s.SizeOfRawData):
+                return f[s.PointerToRawData+rva-s.VirtualAddress:s.PointerToRawData+rva-s.VirtualAddress+n]
+            raise Exception(hex(va))
+          keys=[
+            'execActionSwitchVariableChange@ObjectAction@',
+            'execActionSwitchVariableReset@ObjectAction@',
+            'execActionActionExec@ObjectAction@',
+            'playAction@Object@',
+            'getDispDirection@Object@',
+            'getObjectActionId@Object@',
+            'getSwitchObjectId@ObjectCommandSwitchVariableChangeData@',
+            'getVariableObjectId@ObjectCommandSwitchVariableChangeData@',
+            'getSwtch@ObjectCommandSwitchVariableChangeData@',
+            'getSwitchQualifierId@ObjectCommandSwitchVariableChangeData@',
+            'getVariableQualifierId@ObjectCommandSwitchVariableChangeData@',
+            'getSwitchId@ObjectCommandSwitchVariableChangeData@',
+            'getVariableId@ObjectCommandSwitchVariableChangeData@',
+            'getSwitchValue@ObjectCommandSwitchVariableChangeData@',
+            'getObjectId@ObjectCommandActionExecData@',
+            'setObjectId@ObjectCommandActionExecData@']
+          for x in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+            n=(x.name or b'').decode('utf8','ignore')
+            if any(k in n for k in keys):
+              va=base+x.address
+              print('ABI_SYMBOL',hex(va),n,'code',read(va,22).hex(' '))
+          print('ABI_EVENT_AUDIT_DONE')
+          PY
