@@ -1,0 +1,13 @@
+ABI 0x549a10 ?checkLinkConditionSwitchVariableChanged@ObjectAction@agtk@@QAE_NPAVObjectActionLinkConditionData@data@2@@Z bytes 55 8b ec 6a ff 68 42 78 8a 00 64 a1 00 00 00 00 50 83 ec 78 a1 d4 1d b9 00 33
+ABI 0x405490 ?getCompareValue@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBENXZ bytes dd 41 50 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec f2 0f 10 45 08 f2 0f
+ABI 0x402be0 ?getCompareValueType@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBE?AW4EnumVariableCompareValueType@123@XZ bytes 8b 41 48 c3 cc cc cc cc cc cc cc cc cc cc cc cc 8b 41 18 c3 cc cc cc cc cc cc
+ABI 0x408630 ?getCompareVariableObjectId@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBEHXZ bytes 8b 41 58 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8b 45 08 89 41 58 5d
+ABI 0x405ae0 ?getCompareVariableOperator@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBEHXZ bytes 8b 41 44 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8b 45 08 89 41 44 5d
+ABI 0x520df0 ?getInstanceId@Object@agtk@@QAEHXZ bytes 51 8b 01 ff 90 4c 03 00 00 6a 13 8b c8 e8 4e 9b f4 ff f2 0f 2c 40 28 59 c3 cc
+ABI 0x4053e0 ?getSwtch@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBE_NXZ bytes 8a 41 24 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8a 45 08 88 41 24 5d
+ABI 0x404890 ?getValue@PlaySwitchData@data@agtk@@QAE_NXZ bytes 8a 41 21 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8a 45 08 88 41 21 5d
+ABI 0x405a40 ?getValue@PlayVariableData@data@agtk@@QAENXZ bytes dd 41 28 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec f2 0f 10 45 08 f2 0f
+ABI 0x4039e0 ?getVariableId@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBEHXZ bytes 8b 41 3c c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8b 45 08 89 41 3c 5d
+ABI 0x403340 ?getVariableObjectId@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBEHXZ bytes 8b 41 38 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 6a ff 68 91 7f 89 00
+ABI 0x4066e0 ?getVariableQualifierId@ObjectActionLinkConditionSwitchVariableChangedData@data@agtk@@UBE?AW4EnumQualifierType@ObjectActionLinkConditionData@23@XZ bytes 8b 41 40 c3 cc cc cc cc cc cc cc cc cc cc cc cc 55 8b ec 8b 45 08 89 41 40 5d
+EXE_SHA256_OK
