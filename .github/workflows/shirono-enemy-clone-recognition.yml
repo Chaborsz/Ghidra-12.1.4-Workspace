@@ -1,0 +1,91 @@
+name: Shirono enemy recognition vs clone ID19 evidence audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-enemy-clone-recognition.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract verified original DEMO
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-enemy-recognition
+          curl -fL --retry 4 --retry-delay 2 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/shirono.7z"
+          printf '%s  %s\n' 4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b "$RUNNER_TEMP/shirono.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/shirono.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-enemy-recognition <<'PY'
+          import sys,json,collections,pathlib
+          src=json.loads(pathlib.Path(sys.argv[1]).read_text(encoding='utf-8-sig'))
+          out=pathlib.Path(sys.argv[2])
+          objects=sorted([o for o in src.get('objectList',[]) if isinstance(o,dict)],key=lambda o:o.get('id',-1))
+          links_types=collections.Counter()
+          rows=[]
+          def simplify(node,depth=0):
+            if depth>3:return '<depth>'
+            if isinstance(node,list):return [simplify(x,depth+1) for x in node[:10]]
+            if isinstance(node,dict):
+              return {k:simplify(v,depth+1) for k,v in node.items() if k not in ('imageList','keyframeList','sceneList','actionList','actionLinkList','javaScript','assignScript','useCoffeeScript','memo','coordList') and (isinstance(v,(bool,int,float,str,dict,list)))}
+            return node
+          def walk(node):
+            if isinstance(node,dict):
+              yield node
+              for v in node.values():yield from walk(v)
+            elif isinstance(node,list):
+              for v in node:yield from walk(v)
+          for o in objects:
+            row={'id':o.get('id'),'name':o.get('name'),'group':o.get('group'),'type':o.get('type'),
+                 'attackGroups':{'hitPlayerGroup':o.get('hitPlayerGroup'),'hitEnemyGroup':o.get('hitEnemyGroup'),'collideWithPlayerGroup':o.get('collideWithPlayerGroup'),'collideWithEnemyGroup':o.get('collideWithEnemyGroup')},
+                 'actions':len(o.get('actionList',[])),'links':len(o.get('actionLinkList',[])),
+                 'templateMoves':[],'recognitionLinks':[],'targetReferences':[],'lockCommands':[]}
+            for a in o.get('actionList',[]):
+              for c in a.get('objCommandList',[]):
+                typ=c.get('commandType')
+                if typ==0:
+                  row['templateMoves'].append({'action':a.get('id'),'name':a.get('name'),'data':simplify(c.get('templateMove',{}))})
+                if typ in (1,4,8,9):
+                  row['lockCommands'].append({'action':a.get('id'),'name':a.get('name'),'cmdType':typ,'data':simplify(c)})
+                for k,v in c.items():
+                  if k in ('objectCreate','javaScript','assignScript'):continue
+                  if k in ('objectLock','objectMove','templateMove','attackSetting','directionMove'):
+                    if isinstance(v,dict):
+                      row['targetReferences'].append({'action':a.get('id'),'type':typ,'key':k,'data':simplify(v)})
+            for l in o.get('actionLinkList',[]):
+              for c in l.get('linkConditionList',[]):
+                t=c.get('type')
+                links_types[t]+=1
+                if t in (4,5,6,7,8,9,10,11,14,17,25):
+                  row['recognitionLinks'].append({'fromTo':[x[1] for x in l.get('typeIdPair',[]) if isinstance(x,list) and len(x)>1],
+                      'linkId':l.get('id'),'type':t,'data':simplify(c)})
+            rows.append(row)
+          (out/'recognition.json').write_text(json.dumps({'objects':rows,'conditionTypeCounts':links_types},indent=2,ensure_ascii=False,default=lambda x:dict(x)),encoding='utf-8')
+          lines=['ORIGINAL_PROJECT objectCount='+str(len(rows)),'CLONE19 '+str(next((x for x in rows if x['id']==19),None))[:500],
+            'LINK_CONDITION_COUNTS '+str(links_types)]
+          for r in rows:
+            if r['group']!=1:continue
+            lines.append('ENEMY id='+str(r['id'])+' name='+str(r['name'])+' actions='+str(r['actions'])+' links='+str(r['links']))
+            lines.append('  attack='+str(r['attackGroups'])+' templateMoves='+str(len(r['templateMoves']))+' recognitionLinks='+str(len(r['recognitionLinks']))+' locks='+str(len(r['lockCommands'])))
+            for z in r['recognitionLinks'][:16]:lines.append('  DETECT '+str(z)[:650])
+            for z in r['templateMoves'][:12]:lines.append('  MOVE '+str(z)[:650])
+            for z in r['lockCommands'][:12]:lines.append('  LOCK '+str(z)[:650])
+          (out/'summary.txt').write_text('\n'.join(lines)+'\n',encoding='utf8')
+          print('\n'.join(lines[:45]))
+          print('OUTPUT_JSON_BYTES',(out/'recognition.json').stat().st_size,'SUMMARY_LINES',len(lines))
+          PY
+      - name: Commit read-only recognition evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-enemy-recognition
+          if ! git diff --cached --quiet; then
+            git commit -m "Audit enemy group targeting and player-only logic for clone recognition"
+            git push origin HEAD:analysis/shirono-multiclone
+          fi
