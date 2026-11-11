@@ -1,0 +1,54 @@
+name: Shirono v0.11 enemy target ABI mapping
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v011-enemy-abi.yml]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact target, command and coordinate getter ABI
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26
+          mkdir -p "$RUNNER_TEMP/shirono"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/d.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/d.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/player.exe" <<'PY'
+          import pefile,hashlib,sys
+          path=sys.argv[1]; f=open(path,'rb').read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          exe=pefile.PE(path)
+          def read(va,n):
+            rva=va-exe.OPTIONAL_HEADER.ImageBase
+            for s in exe.sections:
+              if s.VirtualAddress<=rva<s.VirtualAddress+max(s.SizeOfRawData,s.Misc_VirtualSize):
+                return f[s.PointerToRawData+rva-s.VirtualAddress:s.PointerToRawData+rva-s.VirtualAddress+n]
+            raise ValueError(hex(va))
+          needles=[
+            'getCenterPosition@Object@','getPosition@Object@',
+            'getPositionX@','getPositionY@','getX@Object@','getY@Object@',
+            'execActionObjectMove@ObjectAction@','execActionObjectLock@ObjectAction@',
+            'getObjectId@ObjectCommandObjectLockData@','setObjectId@ObjectCommandObjectLockData@',
+            'getObjectType@ObjectCommandObjectLockData@',
+            'getTargetObjectId@ObjectCommandObjectMoveData@','setTargetObjectId@ObjectCommandObjectMoveData@',
+            'getCenterObjectId@ObjectCommandObjectMoveData@','setCenterObjectId@ObjectCommandObjectMoveData@',
+            'getTargetQualifierId@ObjectCommandObjectMoveData@','setTargetQualifierId@ObjectCommandObjectMoveData@',
+            'getCenterQualifierId@ObjectCommandObjectMoveData@','setCenterQualifierId@ObjectCommandObjectMoveData@',
+            'getId@ObjectAction@','getId@Object@'
+          ]
+          for item in exe.DIRECTORY_ENTRY_EXPORT.symbols:
+            name=(item.name or b'').decode('utf8','ignore')
+            if any(q in name for q in needles):
+              va=exe.OPTIONAL_HEADER.ImageBase+item.address
+              print("ABI_SYMBOL",hex(va),name,"code",read(va,22).hex(" "))
+          print("ABI_COMPLETE")
+          PY
