@@ -65,6 +65,21 @@ jobs:
                       'linkId':l.get('id'),'type':t,'data':simplify(c)})
             rows.append(row)
           (out/'recognition.json').write_text(json.dumps({'objects':rows,'conditionTypeCounts':links_types},indent=2,ensure_ascii=False,default=lambda x:dict(x)),encoding='utf-8')
+          # Compact per-enemy counts for precisely targeted clone-acceptance patching.
+          target_rows=[]
+          for obj in rows:
+            if obj['group']!=1:continue
+            det=[z for z in obj['recognitionLinks'] if z['type'] in (7,8,9,10,11,14,25)]
+            player_by_id=[z for z in det if any(isinstance(v,dict) and v.get('objectType')==1 and v.get('objectId')==1 for v in z['data'].values())]
+            player_group=[z for z in det if any(isinstance(v,dict) and v.get('objectType')==0 and v.get('objectGroup')==0 for v in z['data'].values())]
+            lock_to_player=[z for z in obj['lockCommands'] if z['cmdType']==1 and z['data'].get('objectLock',{}).get('objectType')==1 and z['data'].get('objectLock',{}).get('objectId')==1]
+            move_to_player=[z for z in obj['lockCommands'] if z['cmdType']==4 and (z['data'].get('objectMove',{}).get('centerObjectId')==1 or z['data'].get('objectMove',{}).get('targetObjectId')==1)]
+            target_rows.append({'id':obj['id'],'name':obj['name'],'group':obj['group'],'condition_player_id_1':len(player_by_id),'condition_group_0':len(player_group),
+             'object_lock_player_id_1':len(lock_to_player),'object_move_player_id_1':len(move_to_player),
+             'examples_player_only':[{'link_id':z['linkId'],'type':z['type'],'fromTo':z['fromTo']} for z in player_by_id[:4]],
+             'examples_group_0':[{'link_id':z['linkId'],'type':z['type'],'fromTo':z['fromTo']} for z in player_group[:3]]})
+          (out/'target_stats.json').write_text(json.dumps(target_rows,indent=2,ensure_ascii=False),encoding='utf-8')
+          for x in target_rows: print('ENEMY_STATS',json.dumps(x,ensure_ascii=False))
           lines=['ORIGINAL_PROJECT objectCount='+str(len(rows)),'CLONE19 '+str(next((x for x in rows if x['id']==19),None))[:500],
             'LINK_CONDITION_COUNTS '+str(links_types)]
           for r in rows:
