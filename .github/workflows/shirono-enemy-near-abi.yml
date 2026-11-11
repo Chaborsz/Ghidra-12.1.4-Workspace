@@ -1,0 +1,51 @@
+name: Shirono runtime Near-vtable ABI read-only
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-enemy-near-abi.yml]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  abi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact x86 exported detection functions & data accessors
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26 capstone==5.0.6
+          mkdir -p "$RUNNER_TEMP/shirono"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/d.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/d.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/d.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/player.exe" <<'PY'
+          import pefile,hashlib,sys
+          from capstone import Cs,CS_ARCH_X86,CS_MODE_32
+          path=sys.argv[1]; f=open(path,'rb').read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          exe=pefile.PE(path)
+          def read(va,n):
+            rva=va-exe.OPTIONAL_HEADER.ImageBase
+            for s in exe.sections:
+              if s.VirtualAddress<=rva<s.VirtualAddress+max(s.SizeOfRawData,s.Misc_VirtualSize):
+                return f[s.PointerToRawData+rva-s.VirtualAddress:s.PointerToRawData+rva-s.VirtualAddress+n]
+            raise ValueError(hex(va))
+          k=["ObjectActionLinkConditionObjectNearData","checkLinkConditionObjectNear@ObjectAction","getObjectData@ObjectAction@","getObjectType@ObjectActionLinkCondition","getObjectId@ObjectActionLinkCondition","setObjectId@ObjectActionLinkCondition","getObjectActionData@ObjectAction"]
+          for item in exe.DIRECTORY_ENTRY_EXPORT.symbols:
+            name=(item.name or b'').decode('utf8','ignore')
+            if any(q in name for q in k):
+              va=exe.OPTIONAL_HEADER.ImageBase+item.address
+              if "ObjectActionLinkConditionObjectNearData" in name and not any(y in name for y in ("getObjectType","getObjectId","setObjectId","getObjectGroup","getDistance","getDirection","getOtherDirections","getObjectDirection","getDistanceType")):continue
+              print("SYMBOL",hex(va),name,"code",read(va,20).hex(" "))
+          va=0x547690
+          md=Cs(CS_ARCH_X86,CS_MODE_32)
+          print("HOOK_NEAR_PROLOGUE",read(va,24).hex(" "))
+          for i in md.disasm(read(va,38),va):print("NEAR_INST",hex(i.address),i.mnemonic,i.op_str,i.bytes.hex())
+          print("OBJ_GET_TYPE_VT",read(0x426ab0,12).hex(" "))
+          print("OWNER_ACCESS",read(0x535c30,14).hex(" "))
+          print("ABI_COMPLETE")
+          PY
