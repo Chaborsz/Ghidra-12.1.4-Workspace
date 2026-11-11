@@ -1,0 +1,50 @@
+name: Shirono v0.13 clone condition ABI audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v013-clone-condition-abi.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact local clone state read fields and native condition entrypoint
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26
+          mkdir -p "$RUNNER_TEMP/game" audit-out/shirono-v013
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/a.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/a.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/a.7z" "-o$RUNNER_TEMP/game" -y >/dev/null
+          python3 - "$RUNNER_TEMP/game/player.exe" audit-out/shirono-v013/condition-abi.txt <<'PY'
+          import pefile,sys,hashlib
+          f=open(sys.argv[1],'rb').read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          pe=pefile.PE(sys.argv[1]);b=pe.OPTIONAL_HEADER.ImageBase
+          def read(va,n):
+            r=va-b
+            for s in pe.sections:
+              if s.VirtualAddress<=r<s.VirtualAddress+max(s.Misc_VirtualSize,s.SizeOfRawData):
+                return f[s.PointerToRawData+r-s.VirtualAddress:s.PointerToRawData+r-s.VirtualAddress+n]
+            raise ValueError(hex(va))
+          hits=[]
+          needles=["checkLinkConditionSwitchVariableChanged@ObjectAction@","getSwtch@ObjectActionLinkConditionSwitchVariableChangedData@","getVariableObjectId@ObjectActionLinkConditionSwitchVariableChangedData@","getVariableId@ObjectActionLinkConditionSwitchVariableChangedData@","getVariableQualifierId@ObjectActionLinkConditionSwitchVariableChangedData@","getCompareVariableOperator@ObjectActionLinkConditionSwitchVariableChangedData@","getCompareValueType@ObjectActionLinkConditionSwitchVariableChangedData@","getCompareValue@ObjectActionLinkConditionSwitchVariableChangedData@","getCompareVariableObjectId@ObjectActionLinkConditionSwitchVariableChangedData@","getInstanceId@Object@","getValue@PlayVariableData@","setValue@PlayVariableData@","getValue@PlaySwitchData@"]
+          for s in pe.DIRECTORY_ENTRY_EXPORT.symbols:
+            n=(s.name or b'').decode('utf8','ignore')
+            if any(q in n for q in needles):
+              va=b+s.address;hits.append('ABI '+hex(va)+' '+n+' bytes '+read(va,26).hex(' '))
+          assert any('checkLinkConditionSwitchVariableChanged@ObjectAction@' in x for x in hits)
+          open(sys.argv[2],'w').write('\n'.join(hits)+'\nEXE_SHA256_OK\n')
+          for h in hits:print(h)
+          PY
+      - name: Commit ABI evidence
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-v013/condition-abi.txt
+          if ! git diff --cached --quiet; then git commit -m "Verify clone private variable read condition ABI"; git push origin HEAD:analysis/shirono-multiclone; fi
