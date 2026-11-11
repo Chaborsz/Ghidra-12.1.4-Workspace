@@ -1,0 +1,62 @@
+name: Shirono v0.13 private HUD and player effect ABI audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v013-effect-abi.yml]
+  workflow_dispatch:
+permissions: {contents: read}
+jobs:
+  abi:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify real variable setter and HUD data read ABI
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full
+          python3 -m pip -q install --break-system-packages pefile==2024.8.26
+          mkdir -p "$RUNNER_TEMP/g"
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/g.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/g.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/g.7z" "-o$RUNNER_TEMP/g" -y >/dev/null
+          python3 - "$RUNNER_TEMP/g/player.exe" "$RUNNER_TEMP/g/project_decrypted.json" <<'PY'
+          import sys,hashlib,pefile,json
+          f=open(sys.argv[1],'rb').read()
+          assert hashlib.sha256(f).hexdigest()=="d91263d4245e029dc0942c1f66bfde712dbc7aeb940737fc3515e48f4f0eb154"
+          p=pefile.PE(sys.argv[1]);base=p.OPTIONAL_HEADER.ImageBase
+          def read(va,n):
+            x=va-base
+            for s in p.sections:
+              if s.VirtualAddress<=x<s.VirtualAddress+max(s.SizeOfRawData,s.Misc_VirtualSize):
+                return f[s.PointerToRawData+x-s.VirtualAddress:s.PointerToRawData+x-s.VirtualAddress+n]
+            raise ValueError(hex(va))
+          needles=["getPlayObjectData","getHp@PlayObjectData","getVariableData@PlayObjectData","getValue@PlayVariableData",
+                   "setValue@PlayVariableData","setValue@PlaySwitchData","getVariableAssignOperator@ObjectCommandSwitchVariableChangeData",
+                   "getAssignValue@ObjectCommandSwitchVariableChangeData","getVariableAssignValueType@ObjectCommandSwitchVariableChangeData",
+                   "getAssignVariableObjectId@ObjectCommandSwitchVariableChangeData",
+                   "execActionSwitchVariableChange@ObjectAction@","getValue@PlaySwitchData"]
+          for s in p.DIRECTORY_ENTRY_EXPORT.symbols:
+            n=(s.name or b'').decode('utf8','ignore')
+            if any(z in n for z in needles):
+              va=base+s.address
+              print('SYMBOL',hex(va),n,read(va,22).hex(' '))
+          j=json.load(open(sys.argv[2],encoding='utf-8-sig'))
+          for id in (1,19,36):
+            o=next(z for z in j['objectList'] if z['id']==id)
+            if id==19:
+              for a in o['actionList']:
+                if a['id'] in (1,4,8,9,10,12,13):
+                  print('CLONE_ACTION',a['id'],a['name'])
+                  for c in a['objCommandList']:
+                    if c.get('commandType')==31:print('CLONE_VARIABLE_COMMAND',a['id'],str(c['switchVariableChange'])[:950])
+            if id==36:
+              for a in o['actionList']:
+                if a['id'] in (140,157,146,147,148,149,150,154,155):
+                  print('PUPPET_ACTION',a['id'],a['name'])
+                  for c in a['objCommandList']:
+                    if c.get('commandType') in (31,32,40):print('PUPPET_EVENT_CMD',a['id'],c['commandType'],str(c)[:850])
+          print('FINISHED')
+          PY
