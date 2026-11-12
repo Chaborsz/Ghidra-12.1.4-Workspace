@@ -22,7 +22,7 @@ jobs:
           7z x "$RUNNER_TEMP/x.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
           python3 - "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-v014/native-graph.json <<'PY'
           import json,sys,collections
-          j=json.load(open(sys.argv[1],encoding='utf8-sig'))
+          j=json.load(open(sys.argv[1],encoding='utf-8-sig'))
           objs={}
           def traverse(x,path=""):
             if not isinstance(x,dict):return
