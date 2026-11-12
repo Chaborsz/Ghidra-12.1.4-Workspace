@@ -1,0 +1,72 @@
+name: Shirono v0.14 native space and HUD actor audit
+on:
+  push:
+    branches: [analysis/shirono-multiclone]
+    paths: [.github/workflows/shirono-v014-native-graph.yml]
+  workflow_dispatch:
+permissions: {contents: write}
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect exact DEMO native Space action and object-owned meter
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq && sudo apt-get install -y -qq p7zip-full
+          mkdir -p "$RUNNER_TEMP/shirono" audit-out/shirono-v014
+          curl -fL --retry 4 'https://github.com/Chaborsz/Temporary/releases/download/ShironoYakata-DEMO/project_decrypted.7z' -o "$RUNNER_TEMP/x.7z"
+          echo "4266d91cbf13a90b6ffc04b1e0465fd0cf918ba44aa20ab272fb6b6c12cda85b  $RUNNER_TEMP/x.7z" | sha256sum -c -
+          7z x "$RUNNER_TEMP/x.7z" "-o$RUNNER_TEMP/shirono" -y >/dev/null
+          python3 - "$RUNNER_TEMP/shirono/project_decrypted.json" audit-out/shirono-v014/native-graph.json <<'PY'
+          import json,sys,collections
+          j=json.load(open(sys.argv[1],encoding='utf8-sig'))
+          objs={}
+          def traverse(x,path=""):
+            if not isinstance(x,dict):return
+            id=x.get("id");path+="/"+str(id)+":"+str(x.get('name',''))
+            if id is not None:objs.setdefault(id,[]).append((path,x))
+            for c in x.get("children",[]):traverse(c,path)
+          for o in j['objectList']:traverse(o)
+          def cmd_ref(c):
+            for k in ('objectCreate','switchVariableChange','switchVariableReset','actionExec','objectMove','objectLock'):
+              if k in c: return {k:c[k]}
+            return {}
+          lines=[]
+          def out(x):lines.append(x)
+          interest=[1,19,36,13,17,22,7]
+          o1=objs[1][0][1]
+          for k in interest:
+            for path,o in objs.get(k,[]):
+              acts=o.get('actionList',[])
+              out("OBJECT "+path+" ACTIONS="+str(len(acts))+" LINKS="+str(len(o.get('actionLinkList',[]))))
+              for a in acts:
+                cmds=a.get('objCommandList',[])
+                relevant=k in (19,22,17,7) and any('switchVariableChange' in c for c in cmds)
+                if k==1:
+                  relevant=any(c.get('objectCreate',{}).get('objectId')==19 or c.get('switchVariableChange',{}).get('variableId') in (2045,2050,2047) or c.get('switchVariableChange',{}).get('switchId') in (2000,2008,2018) for c in cmds)
+                if k==36:
+                  relevant=any(c.get('switchVariableChange',{}).get('variableId') in (2021,2045,2050,2005,2052) or c.get('switchVariableChange',{}).get('switchId') in (2000,2008,2018,2021) for c in cmds)
+                if relevant:
+                  out(" ACTION "+str(a['id'])+" "+str(a.get('name'))+" motion="+str(a.get('animMotionId'))+" direction="+str(a.get('animDirectionId')))
+                  for c in cmds:
+                    if c.get('commandType') in (31,40,1,4,10,16,17):out("   CMD "+str(c.get('id'))+" type="+str(c.get('commandType'))+" "+str(cmd_ref(c))[:1000])
+              if k==19 or k==1:
+                for l in o.get('actionLinkList',[]):
+                  co=l.get('linkConditionList',[])
+                  isSpace=bool(l.get('inputConditionList')) or bool(l.get('useInput')) 
+                  if k==19 or isSpace or any(z.get('switchVariableChanged',{}).get('switchId') in (2000,2008) for z in co) or any(z.get('switchVariableChanged',{}).get('variableId') in (2045,2050) for z in co):
+                    out(" LINK "+str(l.get('id'))+" "+str(l.get('typeIdPair'))+" useInput="+str(l.get('useInput'))+" changeType="+str(l.get('changeConditionType'))+" input="+str(l.get('inputConditionList'))[:550]+" cond="+str(co)[:1000])
+          with open(sys.argv[2],'w',encoding='utf8') as f:json.dump({'lines':lines},f,ensure_ascii=False)
+          print('LINES',len(lines),'OBJECTS',len(objs))
+          for l in lines:
+            if 'OBJECT ' in l[:8] or 'OBJECT 19' in l or ('LINK ' in l and ('useInput=True' in l or 'switchId' in l) and len(l)<1800):print(l[:1100])
+          PY
+      - name: Commit native graph
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add audit-out/shirono-v014
+          if ! git diff --cached --quiet; then git commit -m "Audit exact native Space animation and HUD graph"; git push origin HEAD:analysis/shirono-multiclone; fi
